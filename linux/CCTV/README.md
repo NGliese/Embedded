@@ -11,6 +11,10 @@ As our security camera is positioned in an outdoor enviroment, we have to consid
 
 ## Software achitecture
 
+The software design is fairly simple, as the project is fairly simple;
+1) we want to obtain an image
+2) we want to extract the foreground
+3) we want to detect movement
 
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/flowdiagram.png" width="400" height="500">
