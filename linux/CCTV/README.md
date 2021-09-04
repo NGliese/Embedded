@@ -15,8 +15,17 @@ The software design is fairly simple, as the project is fairly simple;
 1) we want to obtain an image
 2) we want to extract the foreground
 3) we want to detect movement
+4) act on the result
+
+All of this can be handled in a sequencial manner and therefor a simple for-ever loop is chosen as the main driver.
 
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/flowdiagram.png" width="400" height="500">
+</p>
+
+
+
+
+<p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/blockdiagram.png" width="550" height="500">
 </p>
