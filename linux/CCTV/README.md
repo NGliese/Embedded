@@ -8,3 +8,11 @@ As our security camera is positioned in an outdoor enviroment, we have to consid
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/20210904_103507.jpg" width="400" height="600">
 </p>
+
+## Software achitecture
+
+
+<p align="center">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/flowdiagram.png" width="400" height="600">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/blockdiagram.png" width="400" height="600">
+</p>
