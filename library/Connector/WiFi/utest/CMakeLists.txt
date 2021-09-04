@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.13)
 
 project(UNIT)
 
+set(LIB_DIR "~/github/Embedded/library")
 
-add_compile_options(-g -std=c++14 -Wall -w -Wextra)
+include(${LIB_DIR}/CMake/CompilerParameters.cmake)
+include(${LIB_DIR}/CMake/LibDir.cmake)
 
 set(APP_NAME unit)
 

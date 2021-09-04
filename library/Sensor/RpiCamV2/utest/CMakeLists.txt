@@ -5,8 +5,7 @@ project(UNIT)
 
 set(APP_NAME unit)
 
-
-set(LIB_DIR "~/github/library")
+set(LIB_DIR "~/github/Embedded/library")
 
 include(${LIB_DIR}/CMake/CompilerParameters.cmake)
 include(${LIB_DIR}/CMake/LibDir.cmake)
