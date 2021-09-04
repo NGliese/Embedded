@@ -33,7 +33,7 @@
 
 #ifdef __ESP32__
 
-#define DEBUG // default uncommeted
+//#define DEBUG // default uncommeted
 
 #ifdef DEBUG
 static const char *LOG_TAG = "WiFi_Event_Handler";
@@ -48,7 +48,7 @@ esp_err_t WiFi_Event_Handler::apStaDisconnected(
     LOG_PRINT_INFO(LOG_TAG, ">> WiFi_Event_Handler::apStaDisconnected >> ");
     #endif
     // Executable code:
-    LOG_PRINT_INFO(LOG_TAG, "esp_wifi_connect");
+   // LOG_PRINT_INFO(LOG_TAG, "esp_wifi_connect");
     esp_err_t errRc = ::esp_wifi_connect();
     if (errRc != ESP_OK) {
         abort();
