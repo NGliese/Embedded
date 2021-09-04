@@ -5,7 +5,7 @@ The collection is divided into three subfolders:
 
 **Library**; Collection of portable c++ projects for use in the "real projects" <br>
 - Every project in the library collection is unit testet using cpputest. We are not fully TDD complient, 
-  but for the most part this is they way
+  but for the most part _this is they way_
 
 
 **Linux**; linux-based projects such as security system based on movement detection <br>
