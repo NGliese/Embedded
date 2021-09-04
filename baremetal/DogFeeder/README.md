@@ -14,6 +14,7 @@ The PCB board developed is ment to support a esp32-dev board with up to 3 actuat
   <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Images/pcb_board.png" width="600" height="500">
 </p>
 
+## Software achitecture
 
 
 
