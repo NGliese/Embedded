@@ -52,6 +52,6 @@ The Camera is recording 24/7 but will only save images when it sees movement, wh
 
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/delivery.gif" width="400" height="400" >
-  &nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/walkTheDog.gif" width="400" height="400">
 </p>
