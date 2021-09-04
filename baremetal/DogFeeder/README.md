@@ -1,19 +1,21 @@
-# Embedded Repo
-This repository is a collection of hobby projects by Nikolaj Gliese Pedersen.
+# DogFeeder Repo
 
-The collection is divided into three subfolders: 
-
-**Library**; Collection of portable c++ projects for use in the "real projects" <br>
-- Every project in the library collection is unit testet using cpputest. We are not fully TDD complient, 
-  but for the most part: _this is they way._
+In a not so far future, our dog will be home alone for +8 hours.
+Some of the residense fear that our dog will be lonely and therefor the need for some active toys which can be fully automated to start at given periods throughout the day.
 
 
-**Linux**; linux-based projects such as security system based on movement detection <br>
-- Every linux based project has an integration test enviroment. As an example rpiCam has a integration test class called RPICam_Capture, which
-only objective is to make sure that when we call RPICam_Capture::stream() we can see that there is a connection to the rpi cam. 
- -- see https://github.com/NGliese/Embedded/tree/master/linux/CCTV 
+## The dogfeeder project
+This project is ment to be a solution to a lonly and starving dog. The dogfeeder is required to automatically open up a door to deliever delicious dog food at specific periodes through out the day.
 
-**Bare_Metal**; esp32 based projects ....  
+## PCB board
+The PCB board developed is ment to support a esp32-dev board with up to 3 actuators powered by an external power source. 
+
+
+<p align="center">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/flowdiagram.png" width="400" height="500">
+</p>
+
+
 
 
 
