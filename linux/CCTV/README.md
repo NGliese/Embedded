@@ -24,6 +24,8 @@ All of this can be handled in a sequencial manner and therefor a simple for-ever
 </p>
 
 
+The main loop has four components; RPI_Cam, Image_Helper, Utility_Image and Background_Extractor.
+
 
 
 <p align="center">
