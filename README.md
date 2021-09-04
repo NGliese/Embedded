@@ -14,7 +14,7 @@ only objective is to make sure that when we call RPICam_Capture::stream() we can
 
 
 
-**Bare-Metal**; esp32 based projects ....  
+**Bare_Metal**; esp32 based projects ....  
 
 
 
