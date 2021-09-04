@@ -78,6 +78,8 @@ ConnectedComponents::container_t Background_Extractor::statsConnectedComponents(
 
 }
 
+
+
 void Background_Extractor::view(void) const {
 
 

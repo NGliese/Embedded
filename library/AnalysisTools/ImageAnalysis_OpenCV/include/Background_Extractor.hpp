@@ -98,7 +98,6 @@ public:
     ~Background_Extractor();
     uint32_t countConnectedComponents(const cv::Mat& raw) ;
     ConnectedComponents::container_t statsConnectedComponents(const cv::Mat& raw) ;
-
    inline const cv::Mat& getBackgroundImage(void)const {return m_background;} ;
    inline const cv::Mat& getForgroundImage(void) const {return m_forground;} ;
 
