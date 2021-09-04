@@ -24,8 +24,23 @@ All of this can be handled in a sequencial manner and therefor a simple for-ever
 </p>
 
 
-The main loop has four components; RPI_Cam, Image_Helper, Utility_Image and Background_Extractor.
+The main loop has four components; RPI_Cam, Utility_Image,  Background_Extractor and Image_Helper.
 
+The RPI_Cam class is a camera class derived from a camera base class. 
+  The objective of the camera base class is to standadize the way we tread a camera.
+  The rpi cam is also using the 3rd part library delivered by : [ https://www.uco.es/investiga/grupos/ava/node/40 ]
+  
+The Utility_Image class is a class containing of static functions in order to ease the development of image analysis 
+  examples of functions could be:
+      static cv::Mat zoom(const cv::Mat& img, double scale = 5);
+      static void view_image(const cv::Mat& m,const std::string& name = "Viewer") ;
+      static general_err_t rotateImage(cv::Mat& src,const double newAngle);
+      And much more.
+      
+The Background_Extractor class is encapsulating the OpenCV [ https://github.com/opencv ] background extracor models.
+
+The Image_Helper class is used to split up the code in the main loop, i dont like 1000-lines of code in a for-loop.
+      
 
 
 <p align="center">
