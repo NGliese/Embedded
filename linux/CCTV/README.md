@@ -46,3 +46,10 @@ The Image_Helper class is used to split up the code in the main loop, i dont lik
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/blockdiagram.png" width="550" height="500">
 </p>
+
+## Demonstration
+
+<p align="center">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/delivery.gif" width="550" height="500">
+    <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/walkTheDog.gif" width="550" height="500">
+</p>
