@@ -11,11 +11,11 @@ As our security camera is positioned in an outdoor enviroment, we have to consid
 
 ## Software achitecture
 
-The software design is fairly simple, as the project is fairly simple;
+The software design is fairly simple, as is the complexity of the project requirements;
 1) we want to obtain an image
 2) we want to extract the foreground
 3) we want to detect movement
-4) act on the result
+4) and we want to act on the result
 
 All of this can be handled in a sequencial manner and therefor a simple for-ever loop is chosen as the main driver.
 
