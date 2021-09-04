@@ -12,7 +12,7 @@ The PCB board developed is ment to support a esp32-dev board with up to 3 actuat
 
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/flowdiagram.png" width="400" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Images/pcb_board.png" width="400" height="500">
 </p>
 
 
