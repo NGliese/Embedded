@@ -48,6 +48,7 @@ The Image_Helper class is used to split up the code in the main loop, i dont lik
 </p>
 
 ## Demonstration
+The Camera is recording 24/7 but will only save images when it sees movement, which is decieded in the foreground extracting together with the connected component analysis.
 
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/linux/CCTV/Images/delivery.gif" width="400" height="400">
