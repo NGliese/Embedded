@@ -8,7 +8,7 @@
 #ifndef BPS_INCLUDE_BASIC_HPP_
 #define BPS_INCLUDE_BASIC_HPP_
 
-//#define UNIT_TEST_MODE (1)
+#define UNIT_TEST_MODE (1)
 
 #define __WITH_OPENCV__ (1)
 
