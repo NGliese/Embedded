@@ -50,7 +50,7 @@ HAL_ESP32::HAL_ESP32(const config& conf) : m_conf{conf}{
 
     ledc_timer_config_t timer_conf;
     timer_conf.speed_mode = conf.mode;
-    timer_conf.duty_resolution = LEDC_TIMER_8_BIT; // 8bit = 0 -> 255 resolution
+    timer_conf.duty_resolution = LEDC_TIMER_10_BIT; // 8bit = 0 -> 1024 resolution
     timer_conf.timer_num = LEDC_TIMER_1;
     timer_conf.freq_hz = conf.frequency;
     timer_conf.clk_cfg = LEDC_AUTO_CLK; // deicde for yourself
@@ -90,7 +90,7 @@ HAL_ESP32::HAL_ESP32(const config& conf) : m_conf{conf}{
 HAL_ESP32::~HAL_ESP32() {
 }
 
-general_err_t HAL_ESP32::setDutyCycle(const float &duty) {
+general_err_t HAL_ESP32::setDutyCycle(const uint32_t &duty) {
 
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setDutyCycle >> ");
@@ -192,6 +192,6 @@ general_err_t HAL_ESP32::destroy(void) {
  *    -
  */
 uint32_t HAL_ESP32::calculateDutyCycleBasedOnResolution(const float &duty) {
-   // return (duty/100)*255 ;
-    return static_cast<uint32_t>(duty);
+    return (duty/100)*1024 ;
+
 }

@@ -31,7 +31,7 @@
 
 #include "../include/hal_mqtt_log.hpp"
 
-#if 0
+
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
@@ -40,8 +40,8 @@ static const char *LOG_TAG = "hal_mqtt_log";
 
 void hal_mqtt_log::write(const std::string& str) {
     mqtt_api_v2 mqtt;
-    mqtt.publish("mqtt/sensor_log_msg",str); // ToDo find en god måde at sende topic med
+    mqtt.publish("mqtt/sensor_log",str); // ToDo find en god måde at sende topic med
 
 }
 
-#endif
+

@@ -110,7 +110,7 @@ public:
 
     HAL_ESP32(const config& conf) ;
     ~HAL_ESP32();
-    general_err_t setDutyCycle(const float& duty);
+    general_err_t setDutyCycle(const uint32_t& duty);
     general_err_t setFrequency(const uint32_t& frequency);
     general_err_t stop(void);
     general_err_t destroy(void);

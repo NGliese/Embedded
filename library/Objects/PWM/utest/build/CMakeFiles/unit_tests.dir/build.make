@@ -83,18 +83,18 @@ CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/00_TEMPLATE.cpp -o CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.s
 
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: ../test/pwm_api_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_test.cpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: ../test/pwm_api_esp32_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_esp32_test.cpp
 
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_test.cpp > CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.i
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_esp32_test.cpp > CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.i
 
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_test.cpp -o CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.s
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_esp32_test.cpp -o CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.s
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp
@@ -109,18 +109,18 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/H
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.s
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp > CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp > CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o: /home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp
@@ -421,13 +421,26 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.s
 
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp
+
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp > CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i
+
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s
+
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/test_main.cpp.o" \
 "CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o" \
-"CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o" \
+"CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o" \
-"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o" \
+"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o" \
@@ -450,16 +463,17 @@ unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o" \
-"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o"
+"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o" \
+"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
 
 unit_tests: CMakeFiles/unit_tests.dir/test_main.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o
-unit_tests: CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o
-unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o
@@ -483,6 +497,7 @@ unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/build.make
 unit_tests: /usr/local/lib/libopencv_gapi.so.4.5.3
 unit_tests: /usr/local/lib/libopencv_stitching.so.4.5.3
@@ -539,7 +554,7 @@ unit_tests: /usr/local/lib/libopencv_photo.so.4.5.3
 unit_tests: /usr/local/lib/libopencv_imgproc.so.4.5.3
 unit_tests: /usr/local/lib/libopencv_core.so.4.5.3
 unit_tests: CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

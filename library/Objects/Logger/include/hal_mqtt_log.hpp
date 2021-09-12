@@ -64,7 +64,7 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-#if 0
+
 #include "../../../Protocols/MQTT/include/mqtt_api_v2.hpp"
 
 
@@ -109,7 +109,7 @@ private:
     hal_mqtt_log * m_sensor;
 };
 #endif
-#endif
+
 
 
 

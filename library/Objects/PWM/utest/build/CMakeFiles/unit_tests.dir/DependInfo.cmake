@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o"
   "/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o"
+  "/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o"
@@ -17,7 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o"
-  "/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o"
+  "/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o"
   "/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o"
@@ -30,7 +31,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o"
   "/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/00_TEMPLATE.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o"
-  "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_test.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o"
+  "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/test/pwm_api_esp32_test.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o"
   "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/test_main.cpp" "/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir/test_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

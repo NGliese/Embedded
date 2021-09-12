@@ -165,11 +165,7 @@ private:
            uint16_t medium;
            uint16_t high;
     };
-
-
-
     counters_t m_counters;
-
 };
 
 

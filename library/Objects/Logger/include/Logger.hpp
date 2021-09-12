@@ -67,8 +67,8 @@
 
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 #ifdef __UNITTEST__
-//#define LOGGER_STDOUT (1)
-#define LOGGER_MQTT (1)
+#define LOGGER_STDOUT (1)
+//#define LOGGER_MQTT (1)
 #endif
 
 
@@ -79,19 +79,19 @@
 #endif
 
 
-#define LOGGER_STDOUT (1)
+//#define LOGGER_STDOUT (1)
 // This macro should also be placed in the top of the main function ( best way? )
 #ifdef LOGGER_STDOUT
 #include "hal_stdout.hpp"
 using hal = hal_stdout;
 #endif
 
-#if 0
+
 #ifdef LOGGER_MQTT
 #include "hal_mqtt_log.hpp"
 using hal = hal_mqtt_log;
 #endif
-#endif
+
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/

@@ -286,6 +286,33 @@ home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.
 	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.s
 .PHONY : home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.s
 
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.o: home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o
+
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.o
+
+# target to build an object file
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o
+
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.i: home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i
+
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.i
+
+# target to preprocess a source file
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i
+
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.s: home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s
+
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.s
+
+# target to generate assembly for a file
+home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s
+.PHONY : home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.s
+
 home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.o: home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o
 
 .PHONY : home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.o
@@ -475,32 +502,32 @@ home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.s:
 	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.s
 .PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.s
 
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.o: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.o: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o
 
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.o
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.o
 
 # target to build an object file
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o
 
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.i: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.i: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i
 
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.i
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.i
 
 # target to preprocess a source file
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.i
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.i
 
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.s: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.s: home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s
 
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.s
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.s
 
 # target to generate assembly for a file
-home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s
-.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.s
+home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s
+.PHONY : home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.s
 
 home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.o: home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o
 
@@ -826,32 +853,32 @@ test/00_TEMPLATE.cpp.s:
 	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.s
 .PHONY : test/00_TEMPLATE.cpp.s
 
-test/pwm_api_test.o: test/pwm_api_test.cpp.o
+test/pwm_api_esp32_test.o: test/pwm_api_esp32_test.cpp.o
 
-.PHONY : test/pwm_api_test.o
+.PHONY : test/pwm_api_esp32_test.o
 
 # target to build an object file
-test/pwm_api_test.cpp.o:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o
-.PHONY : test/pwm_api_test.cpp.o
+test/pwm_api_esp32_test.cpp.o:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o
+.PHONY : test/pwm_api_esp32_test.cpp.o
 
-test/pwm_api_test.i: test/pwm_api_test.cpp.i
+test/pwm_api_esp32_test.i: test/pwm_api_esp32_test.cpp.i
 
-.PHONY : test/pwm_api_test.i
+.PHONY : test/pwm_api_esp32_test.i
 
 # target to preprocess a source file
-test/pwm_api_test.cpp.i:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.i
-.PHONY : test/pwm_api_test.cpp.i
+test/pwm_api_esp32_test.cpp.i:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.i
+.PHONY : test/pwm_api_esp32_test.cpp.i
 
-test/pwm_api_test.s: test/pwm_api_test.cpp.s
+test/pwm_api_esp32_test.s: test/pwm_api_esp32_test.cpp.s
 
-.PHONY : test/pwm_api_test.s
+.PHONY : test/pwm_api_esp32_test.s
 
 # target to generate assembly for a file
-test/pwm_api_test.cpp.s:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.s
-.PHONY : test/pwm_api_test.cpp.s
+test/pwm_api_esp32_test.cpp.s:
+	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.s
+.PHONY : test/pwm_api_esp32_test.cpp.s
 
 test_main.o: test_main.cpp.o
 
@@ -907,6 +934,9 @@ help:
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.o"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.i"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.s"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.o"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.i"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.s"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.o"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.i"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.s"
@@ -928,9 +958,9 @@ help:
 	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.o"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.i"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.s"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.o"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.i"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.s"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.o"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.i"
+	@echo "... home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.s"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.o"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.i"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.s"
@@ -967,9 +997,9 @@ help:
 	@echo "... test/00_TEMPLATE.o"
 	@echo "... test/00_TEMPLATE.i"
 	@echo "... test/00_TEMPLATE.s"
-	@echo "... test/pwm_api_test.o"
-	@echo "... test/pwm_api_test.i"
-	@echo "... test/pwm_api_test.s"
+	@echo "... test/pwm_api_esp32_test.o"
+	@echo "... test/pwm_api_esp32_test.i"
+	@echo "... test/pwm_api_esp32_test.s"
 	@echo "... test_main.o"
 	@echo "... test_main.i"
 	@echo "... test_main.s"

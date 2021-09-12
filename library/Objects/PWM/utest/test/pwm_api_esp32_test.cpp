@@ -5,18 +5,17 @@
  *      Author: espenv
  */
 //#include "../../../SSP/main/components/Sensor_Handler/include/Sensor_Dummy_Handler.hpp"
-#include "../../include/PWM_API.hpp"
-
 #include <iostream>
 
 #include "CppUTest/TestHarness.h"
+#include "../../include/PWM_API_ESP32.hpp"
 
 
 
 
 TEST_GROUP(PWM_GRP)
 {
-    PWM_API m_api{{16,10,10000}};
+    PWM_API_ESP32 m_api{{16,10,10000},"test"};
     friend_PWM_API m_friend{&m_api};
 	void setup(){
 

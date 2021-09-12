@@ -25,7 +25,7 @@
  ***********************************************************************************************/
 
 
-#include "../include/PWM_API.hpp"
+#include "../include/PWM_API_ESP32.hpp"
 
 
 //#define DEBUG // default uncommeted
@@ -34,10 +34,10 @@
 static const char *LOG_TAG = "PWM_API";
 #endif
 
-PWM_API::PWM_API(const HAL_ESP32::config &conf) : m_hal{conf}{
+PWM_API_ESP32::PWM_API_ESP32(const HAL_ESP32::config &conf, const std::string & name) : PWMBase(conf,name){
 }
 
-PWM_API::~PWM_API() {
+PWM_API_ESP32::~PWM_API_ESP32() {
     m_hal.stop();
 }
 
@@ -56,7 +56,7 @@ PWM_API::~PWM_API() {
  *    - GE_OUT_OF_RANGE
  *    -
  */
-general_err_t PWM_API::setDutyCycle(const float &duty) {
+general_err_t PWM_API_ESP32::setDutyCycle(const float &duty) {
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, ">> PWM_API::setDutyCycle >> ");
     #endif
@@ -64,10 +64,12 @@ general_err_t PWM_API::setDutyCycle(const float &duty) {
 
     if(duty > 100.0)
     {
+        m_faulthanlder.handleFault({FaultHandler_n::severity::low,"PWM_API_ESP32::setDutyCycle(const float &duty)"," duty cycle above 100 value is : "+std::to_string(duty) });
         return GE_OUT_OF_RANGE;
     }
     if(duty < 0.0)
     {
+        m_faulthanlder.handleFault({FaultHandler_n::severity::low,"PWM_API_ESP32::setDutyCycle(const float &duty)"," duty cycle below 0 value is : "+std::to_string(duty) });
         return GE_OUT_OF_RANGE;
     }
 
@@ -93,7 +95,7 @@ general_err_t PWM_API::setDutyCycle(const float &duty) {
  *    -
  *    -
  */
-general_err_t PWM_API::setFrequency(const uint32_t &frequency) {
+general_err_t PWM_API_ESP32::setFrequency(const uint32_t &frequency) {
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, ">> PWM_API::setFrequency >> ");
     #endif
@@ -118,7 +120,7 @@ general_err_t PWM_API::setFrequency(const uint32_t &frequency) {
  *    -
  *    -
  */
-general_err_t PWM_API::stop(void) {
+general_err_t PWM_API_ESP32::stop(void) {
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, ">> PWM_API::stop >> ");
     #endif

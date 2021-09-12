@@ -545,6 +545,18 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp
 
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/include/Fault_Handler.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/Logger.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_mqtt_log.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_stdout.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/RTC_HAL.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/Timeservice.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/MQTT/include/mqtt_api_v2.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/include/FreeRTOS.h
+
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Gpio/include/GPIO_API.hpp
@@ -590,11 +602,20 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/H
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/HAL.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/HAL.cpp
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/HAL.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/PWM_API.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API.cpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Interfaces/PWMBase/include/PWMBase.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/include/Fault_Handler.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/Logger.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_mqtt_log.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_stdout.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/HAL.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/PWM_API_ESP32.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/RTC_HAL.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/Timeservice.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/MQTT/include/mqtt_api_v2.hpp
+CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/PWM/src/PWM_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/include/FreeRTOS.h
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
@@ -771,11 +792,20 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src
 
 CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o: ../test/00_TEMPLATE.cpp
 
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/HAL.hpp
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/PWM_API.hpp
-CMakeFiles/unit_tests.dir/test/pwm_api_test.cpp.o: ../test/pwm_api_test.cpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Interfaces/PWMBase/include/PWMBase.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/include/Fault_Handler.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/Logger.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_mqtt_log.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/include/hal_stdout.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/HAL.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/PWM/include/PWM_API_ESP32.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: ../test/pwm_api_esp32_test.cpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/RTC_HAL.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/Timeservice.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/MQTT/include/mqtt_api_v2.hpp
+CMakeFiles/unit_tests.dir/test/pwm_api_esp32_test.cpp.o: /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/include/FreeRTOS.h
 
 CMakeFiles/unit_tests.dir/test_main.cpp.o: ../test_main.cpp
 
