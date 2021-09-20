@@ -75,7 +75,7 @@ void test_pwm()
 
     conf.channel = LEDC_CHANNEL_0;
     conf.duty = 50;
-    conf.frequency = 5000;
+    conf.frequency = 50;
     conf.m_pin = GPIO_NUM_27;
     conf.mode = LEDC_LOW_SPEED_MODE;
     conf3 = conf2 = conf ;
@@ -86,26 +86,84 @@ void test_pwm()
     std::array<PWM_API_ESP32,3> vec{PWM_API_ESP32{conf,"pwm1"},PWM_API_ESP32{conf2,"pwm2"},PWM_API_ESP32{conf3,"pwm3"}};
 
 
-
+    //assuming 120 degrees rotation,
+    //assuming duty = 0 - 13%
+    // duty = (14/120) * wanted_degree;
 
     int i = 0;
     for(;;) // we must not exit the main thread
     {
-
-        std::cout<<"test i is : " << i << " \n";
+        float duty = (12.0/120.0) * i;
+        std::cout<<"test i is : " << i <<  "duty is : " << duty << " \n";
         for(auto& ele:vec)
         {
-            ele.setDutyCycle(i);
+            ele.setDutyCycle(duty);
         }
 
         ++i;
-        if(i == 100)
+        if(i == 120)
         {
             i = 0;
         }
 
-        vTaskDelay(100);
+        vTaskDelay(1000);
     }
+}
+
+void test_adc()
+{
+    simple_connect();
+
+       HAL_ESP32::config conf;
+
+       conf.channel = LEDC_CHANNEL_0;
+       conf.duty = 50;
+       conf.frequency = 50;
+       conf.m_pin = GPIO_NUM_25; // pwm3
+       conf.mode = LEDC_LOW_SPEED_MODE;
+
+       std::array<PWM_API_ESP32,1> vec{PWM_API_ESP32{conf,"pwm3"}};
+
+
+
+
+       int i = 0;
+       for(;;) // we must not exit the main thread
+       {
+
+           std::cout<<"test i is : 0%  \n";
+           for(auto& ele:vec)
+           {
+               ele.setDutyCycle(0);
+           }
+
+           vTaskDelay(5000);
+
+
+           std::cout<<"test i is : 25%  \n";
+           for(auto& ele:vec)
+           {
+               ele.setDutyCycle(25);
+           }
+
+           vTaskDelay(5000);
+
+           std::cout<<"test i is : 75%  \n";
+           for(auto& ele:vec)
+           {
+               ele.setDutyCycle(75);
+           }
+
+           vTaskDelay(5000);
+           std::cout<<"test i is : 100%  \n";
+           for(auto& ele:vec)
+           {
+               ele.setDutyCycle(100);
+           }
+
+           vTaskDelay(5000);
+
+       }
 }
 int runnable(void)
 {
@@ -113,6 +171,7 @@ int runnable(void)
  //  test_mqtt();
 
     test_pwm();
+ //   test_adc();
    return 0;
 }
 
