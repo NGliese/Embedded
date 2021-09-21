@@ -15,6 +15,7 @@
 
 #include <MQTT_Message.hpp>
 #include <PWM_API_ESP32.hpp>
+#include <ADC_API_ESP32.hpp>
 #include <array>
 void test_mqtt()
 {
@@ -97,7 +98,7 @@ void test_pwm()
         std::cout<<"test i is : " << i <<  "duty is : " << duty << " \n";
         for(auto& ele:vec)
         {
-            ele.setDutyCycle(duty);
+          //  ele.setDutyCycle(duty);
         }
 
         ++i;
@@ -124,45 +125,19 @@ void test_adc()
 
        std::array<PWM_API_ESP32,1> vec{PWM_API_ESP32{conf,"pwm3"}};
 
+       ADC_API_ESP32::config adc_conf;
 
+       adc_conf.name = "adc_test";
+       adc_conf.samples = 64;
+       adc_conf.channel = ADC1_CHANNEL_5;
+       adc_conf.vRef  = 1107;
 
+       ADC_API_ESP32 m_adc{adc_conf};
 
-       int i = 0;
        for(;;) // we must not exit the main thread
        {
-
-           std::cout<<"test i is : 0%  \n";
-           for(auto& ele:vec)
-           {
-               ele.setDutyCycle(0);
-           }
-
-           vTaskDelay(5000);
-
-
-           std::cout<<"test i is : 25%  \n";
-           for(auto& ele:vec)
-           {
-               ele.setDutyCycle(25);
-           }
-
-           vTaskDelay(5000);
-
-           std::cout<<"test i is : 75%  \n";
-           for(auto& ele:vec)
-           {
-               ele.setDutyCycle(75);
-           }
-
-           vTaskDelay(5000);
-           std::cout<<"test i is : 100%  \n";
-           for(auto& ele:vec)
-           {
-               ele.setDutyCycle(100);
-           }
-
-           vTaskDelay(5000);
-
+           std::cout << " measure adc value is : " << std::to_string(m_adc.measureValue()) << "\n";
+           vTaskDelay(1000);
        }
 }
 int runnable(void)
@@ -170,8 +145,8 @@ int runnable(void)
 
  //  test_mqtt();
 
-    test_pwm();
- //   test_adc();
+  //  test_pwm();
+   test_adc();
    return 0;
 }
 

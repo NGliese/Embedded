@@ -7,6 +7,7 @@ idf_component_register(SRC_DIRS "."									INCLUDE_DIRS "${LIB_DIR}/Global_Incl
 			SRC_DIRS  "${LIB_DIR}/Objects/Logger/src/"  			INCLUDE_DIRS "${LIB_DIR}/Objects/Logger/include/" 
 			SRC_DIRS  "${LIB_DIR}/Objects/Timeservice/src/"  		INCLUDE_DIRS "${LIB_DIR}/Objects/Timeservice/include/"
 			SRC_DIRS  "${LIB_DIR}/Objects/PWM/src/"  				INCLUDE_DIRS "${LIB_DIR}/Objects/PWM/include/"  
+			SRC_DIRS  "${LIB_DIR}/Objects/ADC/src/"  				INCLUDE_DIRS "${LIB_DIR}/Objects/ADC/include/"  
 			SRC_DIRS  "${LIB_DIR}/RTOS/FreeRTOS/src/"  				INCLUDE_DIRS "${LIB_DIR}/RTOS/FreeRTOS/include/" 
 			SRC_DIRS  "${LIB_DIR}/Connector/WiFi/src/"  			INCLUDE_DIRS "${LIB_DIR}/Connector/WiFi/include/" 
 			SRC_DIRS  "${LIB_DIR}/Protocols/MQTT/src/"  			INCLUDE_DIRS "${LIB_DIR}/Protocols/MQTT/include/" 
