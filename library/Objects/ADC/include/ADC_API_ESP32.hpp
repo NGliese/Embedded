@@ -95,7 +95,7 @@ public:
         std::string name;           // name of the device
         size_t samples;             // amount of samples to average
         adc1_channel_t channel;     // the channel / gpio pin
-        uint32_t vRef = 1107;       // calibration refereance, lookup makemenu
+        uint32_t vRef = 1107;       // calibration refereance, lookup  $IDF_PATH/components/esptool_py/esptool/espefuse.py --port /dev/ttyUSB0 adc_info
     };
     ADC_API_ESP32(const config& conf) ;
     ~ADC_API_ESP32();

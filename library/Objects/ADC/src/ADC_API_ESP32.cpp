@@ -66,6 +66,11 @@ uint32_t ADC_API_ESP32::measureValue(void) {
     #endif
     }
     // check that we do not divide by zero
-    return   adc_reading > 0 ? static_cast<uint32_t>(adc_reading /= m_number_of_samples) : 0 ;
+    auto val =   adc_reading > 0 ? static_cast<uint32_t>(adc_reading /= m_number_of_samples) : 0 ;
+#ifdef __ESP32__
+    return esp_adc_cal_raw_to_voltage(val, &m_adc_chars);
+#else
+    return val;
+#endif
 
 }

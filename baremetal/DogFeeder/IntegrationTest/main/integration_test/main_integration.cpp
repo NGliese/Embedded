@@ -120,24 +120,39 @@ void test_adc()
        conf.channel = LEDC_CHANNEL_0;
        conf.duty = 50;
        conf.frequency = 50;
-       conf.m_pin = GPIO_NUM_25; // pwm3
+       conf.m_pin = GPIO_NUM_27; // pwm1
        conf.mode = LEDC_LOW_SPEED_MODE;
 
-       std::array<PWM_API_ESP32,1> vec{PWM_API_ESP32{conf,"pwm3"}};
+       std::array<PWM_API_ESP32,1> vec{PWM_API_ESP32{conf,"pwm1"}};
 
        ADC_API_ESP32::config adc_conf;
 
        adc_conf.name = "adc_test";
        adc_conf.samples = 64;
        adc_conf.channel = ADC1_CHANNEL_5;
-       adc_conf.vRef  = 1107;
+       adc_conf.vRef  = 1114;
 
        ADC_API_ESP32 m_adc{adc_conf};
-
+       int i = 0;
        for(;;) // we must not exit the main thread
        {
+
+           float duty = (12.0/120.0) * i;
+         //  std::cout<<"test i is : " << i <<  "duty is : " << duty << " \n";
+           for(auto& ele:vec)
+           {
+              ele.setDutyCycle(duty);
+           }
            std::cout << " measure adc value is : " << std::to_string(m_adc.measureValue()) << "\n";
-           vTaskDelay(1000);
+
+           ++i;
+           if(i == 120)
+           {
+               i = 0;
+           }
+
+           vTaskDelay(100);
+
        }
 }
 int runnable(void)
