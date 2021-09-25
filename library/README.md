@@ -15,6 +15,6 @@ We are aiming for ~60% code coverage. Simple classes is not unit tested, complex
     </head>
     <body>
         If you are not redirected automatically, 
-        follow the <a href="http://htmlpreview.github.com/?https://github.com/NGliese/Embedded/edit/master/library/DOCS/html/index.html">link to the documentation</a>
+        follow the <a href="https://htmlpreview.github.io/?https://github.com/NGliese/Embedded/blob/master/library/DOCS/html/index.html">link to the documentation</a>
     </body>
 </html>
