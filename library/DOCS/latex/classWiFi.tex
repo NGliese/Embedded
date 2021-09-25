@@ -1,0 +1,550 @@
+\hypertarget{classWiFi}{}\doxysection{Wi\+Fi Class Reference}
+\label{classWiFi}\index{WiFi@{WiFi}}
+
+
+Wi\+Fi driver.  
+
+
+
+
+{\ttfamily \#include $<$Wi\+Fi.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWiFi_a35af2c72328c41e79e7aef97b6a64fba}\label{classWiFi_a35af2c72328c41e79e7aef97b6a64fba}} 
+\mbox{\hyperlink{classWiFi_a35af2c72328c41e79e7aef97b6a64fba}{Wi\+Fi}} ()
+\begin{DoxyCompactList}\small\item\em Creates and uses a default event handler. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}\label{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}} 
+\mbox{\hyperlink{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}{$\sim$\+Wi\+Fi}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the event handler that was used by the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWiFi_a1b79df0ff40c783e062649ad96564905}{add\+D\+N\+S\+Server}} (const std\+::string \&ip)
+\begin{DoxyCompactList}\small\item\em Add a reference to a D\+NS server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_ae479a70bda65638c17bad006d37fcd4f}\label{classWiFi_ae479a70bda65638c17bad006d37fcd4f}} 
+void {\bfseries add\+D\+N\+S\+Server} (const char $\ast$ip)
+\item 
+\mbox{\Hypertarget{classWiFi_a0e18a65abef194619017323cc3b53ac2}\label{classWiFi_a0e18a65abef194619017323cc3b53ac2}} 
+void {\bfseries add\+D\+N\+S\+Server} (ip\+\_\+addr\+\_\+t ip)
+\item 
+void \mbox{\hyperlink{classWiFi_a99cd00c2301a303e7c856192d2e16160}{set\+D\+N\+S\+Server}} (int numdns, const std\+::string \&ip)
+\begin{DoxyCompactList}\small\item\em Set a reference to a D\+NS server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_afa9a51b68dd80936ff67e6428c60545e}\label{classWiFi_afa9a51b68dd80936ff67e6428c60545e}} 
+void {\bfseries set\+D\+N\+S\+Server} (int numdns, const char $\ast$ip)
+\item 
+\mbox{\Hypertarget{classWiFi_a99e5bb712b7941215e603be5b7c76e28}\label{classWiFi_a99e5bb712b7941215e603be5b7c76e28}} 
+void {\bfseries set\+D\+N\+S\+Server} (int numdns, ip\+\_\+addr\+\_\+t ip)
+\item 
+struct in\+\_\+addr \mbox{\hyperlink{classWiFi_a0ce7f33b938cfeb19a1f36a3080b602b}{get\+Host\+By\+Name}} (const std\+::string \&host\+Name)
+\begin{DoxyCompactList}\small\item\em Lookup an IP address by host name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_a09060de8fa5d9f284fb9aff7d885d81b}\label{classWiFi_a09060de8fa5d9f284fb9aff7d885d81b}} 
+struct in\+\_\+addr {\bfseries get\+Host\+By\+Name} (const char $\ast$host\+Name)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classWiFi_a6b11726f65299092288f68f129929303}{connect\+AP}} (const std\+::string \&ssid, const std\+::string \&password, bool wait\+For\+Connection=true, wifi\+\_\+mode\+\_\+t mode=W\+I\+F\+I\+\_\+\+M\+O\+D\+E\+\_\+\+S\+TA)
+\begin{DoxyCompactList}\small\item\em Connect to an external access point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_aa06d7cb11e23c95b873b37b37e1c7d27}\label{classWiFi_aa06d7cb11e23c95b873b37b37e1c7d27}} 
+void \mbox{\hyperlink{classWiFi_aa06d7cb11e23c95b873b37b37e1c7d27}{dump}} ()
+\begin{DoxyCompactList}\small\item\em Dump diagnostics to the log. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_a8b9634fee0d3c7d27a77ca35823a1f86}\label{classWiFi_a8b9634fee0d3c7d27a77ca35823a1f86}} 
+bool \mbox{\hyperlink{classWiFi_a8b9634fee0d3c7d27a77ca35823a1f86}{is\+Connected\+To\+AP}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether wifi is connected to an access point. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classWiFiAPRecord}{Wi\+Fi\+A\+P\+Record}} $>$ \mbox{\hyperlink{classWiFi_a97592a3ac47f6f301a2417385c4e8ea2}{scan}} ()
+\begin{DoxyCompactList}\small\item\em Perform a \mbox{\hyperlink{classWiFi}{Wi\+Fi}} scan looking for access points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWiFi_ae5d8dc106189ee9a4cf332e4363fac58}{start\+AP}} (const std\+::string \&ssid, const std\+::string \&passwd, wifi\+\_\+auth\+\_\+mode\+\_\+t auth=W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+O\+P\+EN)
+\begin{DoxyCompactList}\small\item\em Start being an access point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWiFi_afe587b246a0a1a4024877bebd1dd3453}{start\+AP}} (const std\+::string \&ssid, const std\+::string \&passwd, wifi\+\_\+auth\+\_\+mode\+\_\+t auth, uint8\+\_\+t channel, bool ssid\+\_\+hidden, uint8\+\_\+t max\+\_\+connection)
+\begin{DoxyCompactList}\small\item\em Start being an access point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWiFi_a9af2e6f3f5bf0dcf9a319954cf6ec5a0}{set\+I\+P\+Info}} (const std\+::string \&ip, const std\+::string \&gw, const std\+::string \&netmask)
+\begin{DoxyCompactList}\small\item\em Set the IP info and enable D\+H\+CP if ip != 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWiFi_a73b2b5e2a5a046aa2c2137ce2b1bcfe9}\label{classWiFi_a73b2b5e2a5a046aa2c2137ce2b1bcfe9}} 
+void {\bfseries set\+I\+P\+Info} (const char $\ast$ip, const char $\ast$gw, const char $\ast$netmask)
+\item 
+void \mbox{\hyperlink{classWiFi_ac791bd68948ead18bc9775fc936e0938}{set\+I\+P\+Info}} (uint32\+\_\+t ip, uint32\+\_\+t gw, uint32\+\_\+t netmask)
+\begin{DoxyCompactList}\small\item\em Set the IP Info based on the IP address, gateway and netmask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWiFi_abf6df73f23fed380a5109a29def8d08f}{set\+Wifi\+Event\+Handler}} (\mbox{\hyperlink{classWiFiEventHandler}{Wi\+Fi\+Event\+Handler}} $\ast$wifi\+Event\+Handler)
+\begin{DoxyCompactList}\small\item\em Set the event handler to use to process detected events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a6b4031d4fa81fe133c7a6390669aa851}{get\+Ap\+Mac}} ()
+\begin{DoxyCompactList}\small\item\em Get the M\+AC address of the AP interface. \end{DoxyCompactList}\item 
+static tcpip\+\_\+adapter\+\_\+ip\+\_\+info\+\_\+t \mbox{\hyperlink{classWiFi_aa158786a3a91c13956be956e7d094622}{get\+Ap\+Ip\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Get the AP IP Info. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_abe209be37e5626ace49f182c57f96747}{get\+Ap\+S\+S\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Get the AP S\+S\+ID. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_aff9498a1f42011f3d38876444a153963}{get\+Ap\+Ip}} ()
+\begin{DoxyCompactList}\small\item\em Get the current E\+S\+P32 IP form AP. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a7ba16ba35e5543c23db71dd9e054f555}{get\+Ap\+Netmask}} ()
+\begin{DoxyCompactList}\small\item\em Get the current AP netmask. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_af77c417d0a5a3285c8cedf1d7cc9ea23}{get\+Ap\+Gateway}} ()
+\begin{DoxyCompactList}\small\item\em Get the current AP Gateway IP. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_abe399adb8a5d43f6affff8ceb78fc3fc}{get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classWiFi}{Wi\+Fi}} Mode. \end{DoxyCompactList}\item 
+static tcpip\+\_\+adapter\+\_\+ip\+\_\+info\+\_\+t \mbox{\hyperlink{classWiFi_a2aa9896c734e6e2e920d3216f175c596}{get\+Sta\+Ip\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Get the S\+TA IP Info. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a08647c8bdbb4d8612abb2a4daf5dbdb1}{get\+Sta\+Mac}} ()
+\begin{DoxyCompactList}\small\item\em Get the M\+AC address of the S\+TA interface. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a888168c815c5363e79b2896b3790df25}{get\+Sta\+S\+S\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Get the S\+TA S\+S\+ID. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a68cb65b5b2ce951ae7cc348d977ee78e}{get\+Sta\+Ip}} ()
+\begin{DoxyCompactList}\small\item\em Get the current E\+S\+P32 IP form S\+TA. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a30e6d1c318cad75f44822fce97ded972}{get\+Sta\+Netmask}} ()
+\begin{DoxyCompactList}\small\item\em Get the current S\+TA netmask. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classWiFi_a6e72ca5bdf809465049966ef99bef570}{get\+Sta\+Gateway}} ()
+\begin{DoxyCompactList}\small\item\em Get the current S\+TA Gateway IP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wi\+Fi driver. 
+
+Encapsulate control of Wi\+Fi functions.
+
+Here is an example fragment that illustrates connecting to an access point. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <WiFi.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <WiFiEventHandler.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }TargetWiFiEventHandler: \textcolor{keyword}{public} \mbox{\hyperlink{classWiFiEventHandler}{WiFiEventHandler}} \{}
+\DoxyCodeLine{   esp\_err\_t staGotIp(system\_event\_sta\_got\_ip\_t event\_sta\_got\_ip) \{}
+\DoxyCodeLine{      ESP\_LOGD(tag, \textcolor{stringliteral}{"MyWiFiEventHandler(Class): staGotIp"});}
+\DoxyCodeLine{      \textcolor{comment}{// Do something ...}}
+\DoxyCodeLine{      \textcolor{keywordflow}{return} ESP\_OK;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classWiFi}{WiFi}} wifi;}
+\DoxyCodeLine{}
+\DoxyCodeLine{TargetWiFiEventHandler *eventHandler = \textcolor{keyword}{new} TargetWiFiEventHandler();}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_abf6df73f23fed380a5109a29def8d08f}{setWifiEventHandler}}(eventHandler);}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_a6b11726f65299092288f68f129929303}{connectAP}}(\textcolor{stringliteral}{"myssid"}, \textcolor{stringliteral}{"mypassword"});}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWiFi_a1b79df0ff40c783e062649ad96564905}\label{classWiFi_a1b79df0ff40c783e062649ad96564905}} 
+\index{WiFi@{WiFi}!addDNSServer@{addDNSServer}}
+\index{addDNSServer@{addDNSServer}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{addDNSServer()}{addDNSServer()}}
+{\footnotesize\ttfamily void Wi\+Fi\+::add\+D\+N\+S\+Server (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Add a reference to a D\+NS server. 
+
+Here we define a server that will act as a D\+NS server. We can add two D\+NS servers in total. The first will be the primary, the second will be the backup. The public Google D\+NS servers are \char`\"{}8.\+8.\+8.\+8\char`\"{} and \char`\"{}8.\+8.\+4.\+4\char`\"{}.
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_a1b79df0ff40c783e062649ad96564905}{addDNSServer}}(\textcolor{stringliteral}{"8.8.8.8"});}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_a1b79df0ff40c783e062649ad96564905}{addDNSServer}}(\textcolor{stringliteral}{"8.8.4.4"});}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ip} & The IP address of the D\+NS Server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a6b11726f65299092288f68f129929303}\label{classWiFi_a6b11726f65299092288f68f129929303}} 
+\index{WiFi@{WiFi}!connectAP@{connectAP}}
+\index{connectAP@{connectAP}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{connectAP()}{connectAP()}}
+{\footnotesize\ttfamily uint8\+\_\+t Wi\+Fi\+::connect\+AP (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ssid,  }\item[{const std\+::string \&}]{password,  }\item[{bool}]{wait\+For\+Connection = {\ttfamily true},  }\item[{wifi\+\_\+mode\+\_\+t}]{mode = {\ttfamily WIFI\+\_\+MODE\+\_\+STA} }\end{DoxyParamCaption})}
+
+
+
+Connect to an external access point. 
+
+The event handler will be called back with the outcome of the connection.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ssid} & The network S\+S\+ID of the access point to which we wish to connect. \\
+\hline
+\mbox{\texttt{ in}}  & {\em password} & The password of the access point to which we wish to connect. \\
+\hline
+\mbox{\texttt{ in}}  & {\em wait\+For\+Connection} & Block until the connection has an outcome. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mode} & W\+I\+F\+I\+\_\+\+M\+O\+D\+E\+\_\+\+AP for normal or W\+I\+F\+I\+\_\+\+M\+O\+D\+E\+\_\+\+A\+P\+S\+TA if you want to keep an Access Point running while you connect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+E\+S\+P\+\_\+\+OK if we are now connected and wifi\+\_\+err\+\_\+reason\+\_\+t if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_af77c417d0a5a3285c8cedf1d7cc9ea23}\label{classWiFi_af77c417d0a5a3285c8cedf1d7cc9ea23}} 
+\index{WiFi@{WiFi}!getApGateway@{getApGateway}}
+\index{getApGateway@{getApGateway}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApGateway()}{getApGateway()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Ap\+Gateway (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current AP Gateway IP. 
+
+\begin{DoxyReturn}{Returns}
+The Gateway IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_aff9498a1f42011f3d38876444a153963}\label{classWiFi_aff9498a1f42011f3d38876444a153963}} 
+\index{WiFi@{WiFi}!getApIp@{getApIp}}
+\index{getApIp@{getApIp}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApIp()}{getApIp()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Ap\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current E\+S\+P32 IP form AP. 
+
+\begin{DoxyReturn}{Returns}
+The E\+S\+P32 IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_aa158786a3a91c13956be956e7d094622}\label{classWiFi_aa158786a3a91c13956be956e7d094622}} 
+\index{WiFi@{WiFi}!getApIpInfo@{getApIpInfo}}
+\index{getApIpInfo@{getApIpInfo}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApIpInfo()}{getApIpInfo()}}
+{\footnotesize\ttfamily tcpip\+\_\+adapter\+\_\+ip\+\_\+info\+\_\+t Wi\+Fi\+::get\+Ap\+Ip\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the AP IP Info. 
+
+\begin{DoxyReturn}{Returns}
+The AP IP Info. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a6b4031d4fa81fe133c7a6390669aa851}\label{classWiFi_a6b4031d4fa81fe133c7a6390669aa851}} 
+\index{WiFi@{WiFi}!getApMac@{getApMac}}
+\index{getApMac@{getApMac}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApMac()}{getApMac()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Ap\+Mac (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the M\+AC address of the AP interface. 
+
+\begin{DoxyReturn}{Returns}
+The M\+AC address of the AP interface. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a7ba16ba35e5543c23db71dd9e054f555}\label{classWiFi_a7ba16ba35e5543c23db71dd9e054f555}} 
+\index{WiFi@{WiFi}!getApNetmask@{getApNetmask}}
+\index{getApNetmask@{getApNetmask}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApNetmask()}{getApNetmask()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Ap\+Netmask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current AP netmask. 
+
+\begin{DoxyReturn}{Returns}
+The Netmask IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_abe209be37e5626ace49f182c57f96747}\label{classWiFi_abe209be37e5626ace49f182c57f96747}} 
+\index{WiFi@{WiFi}!getApSSID@{getApSSID}}
+\index{getApSSID@{getApSSID}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getApSSID()}{getApSSID()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Ap\+S\+S\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the AP S\+S\+ID. 
+
+\begin{DoxyReturn}{Returns}
+The AP S\+S\+ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a0ce7f33b938cfeb19a1f36a3080b602b}\label{classWiFi_a0ce7f33b938cfeb19a1f36a3080b602b}} 
+\index{WiFi@{WiFi}!getHostByName@{getHostByName}}
+\index{getHostByName@{getHostByName}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getHostByName()}{getHostByName()}}
+{\footnotesize\ttfamily struct in\+\_\+addr Wi\+Fi\+::get\+Host\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host\+Name }\end{DoxyParamCaption})}
+
+
+
+Lookup an IP address by host name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em host\+Name} & The hostname to resolve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The IP address of the host or 0.\+0.\+0.\+0 if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_abe399adb8a5d43f6affff8ceb78fc3fc}\label{classWiFi_abe399adb8a5d43f6affff8ceb78fc3fc}} 
+\index{WiFi@{WiFi}!getMode@{getMode}}
+\index{getMode@{getMode}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the \mbox{\hyperlink{classWiFi}{Wi\+Fi}} Mode. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classWiFi}{Wi\+Fi}} Mode. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a6e72ca5bdf809465049966ef99bef570}\label{classWiFi_a6e72ca5bdf809465049966ef99bef570}} 
+\index{WiFi@{WiFi}!getStaGateway@{getStaGateway}}
+\index{getStaGateway@{getStaGateway}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaGateway()}{getStaGateway()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Sta\+Gateway (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current S\+TA Gateway IP. 
+
+\begin{DoxyReturn}{Returns}
+The Gateway IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a68cb65b5b2ce951ae7cc348d977ee78e}\label{classWiFi_a68cb65b5b2ce951ae7cc348d977ee78e}} 
+\index{WiFi@{WiFi}!getStaIp@{getStaIp}}
+\index{getStaIp@{getStaIp}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaIp()}{getStaIp()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Sta\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current E\+S\+P32 IP form S\+TA. 
+
+\begin{DoxyReturn}{Returns}
+The E\+S\+P32 IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a2aa9896c734e6e2e920d3216f175c596}\label{classWiFi_a2aa9896c734e6e2e920d3216f175c596}} 
+\index{WiFi@{WiFi}!getStaIpInfo@{getStaIpInfo}}
+\index{getStaIpInfo@{getStaIpInfo}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaIpInfo()}{getStaIpInfo()}}
+{\footnotesize\ttfamily tcpip\+\_\+adapter\+\_\+ip\+\_\+info\+\_\+t Wi\+Fi\+::get\+Sta\+Ip\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the S\+TA IP Info. 
+
+\begin{DoxyReturn}{Returns}
+The S\+TA IP Info. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a08647c8bdbb4d8612abb2a4daf5dbdb1}\label{classWiFi_a08647c8bdbb4d8612abb2a4daf5dbdb1}} 
+\index{WiFi@{WiFi}!getStaMac@{getStaMac}}
+\index{getStaMac@{getStaMac}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaMac()}{getStaMac()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Sta\+Mac (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the M\+AC address of the S\+TA interface. 
+
+\begin{DoxyReturn}{Returns}
+The M\+AC address of the S\+TA interface. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a30e6d1c318cad75f44822fce97ded972}\label{classWiFi_a30e6d1c318cad75f44822fce97ded972}} 
+\index{WiFi@{WiFi}!getStaNetmask@{getStaNetmask}}
+\index{getStaNetmask@{getStaNetmask}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaNetmask()}{getStaNetmask()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Sta\+Netmask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current S\+TA netmask. 
+
+\begin{DoxyReturn}{Returns}
+The Netmask IP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a888168c815c5363e79b2896b3790df25}\label{classWiFi_a888168c815c5363e79b2896b3790df25}} 
+\index{WiFi@{WiFi}!getStaSSID@{getStaSSID}}
+\index{getStaSSID@{getStaSSID}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{getStaSSID()}{getStaSSID()}}
+{\footnotesize\ttfamily std\+::string Wi\+Fi\+::get\+Sta\+S\+S\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the S\+TA S\+S\+ID. 
+
+\begin{DoxyReturn}{Returns}
+The S\+TA S\+S\+ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a97592a3ac47f6f301a2417385c4e8ea2}\label{classWiFi_a97592a3ac47f6f301a2417385c4e8ea2}} 
+\index{WiFi@{WiFi}!scan@{scan}}
+\index{scan@{scan}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classWiFiAPRecord}{Wi\+Fi\+A\+P\+Record}} $>$ Wi\+Fi\+::scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Perform a \mbox{\hyperlink{classWiFi}{Wi\+Fi}} scan looking for access points. 
+
+An access point scan is performed and a vector of \mbox{\hyperlink{classWiFi}{Wi\+Fi}} access point records is built and returned with one record per found scan instance. The scan is performed in a blocking fashion and will not return until the set of scanned access points has been built.
+
+\begin{DoxyReturn}{Returns}
+A vector of \mbox{\hyperlink{classWiFiAPRecord}{Wi\+Fi\+A\+P\+Record}} instances. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a99cd00c2301a303e7c856192d2e16160}\label{classWiFi_a99cd00c2301a303e7c856192d2e16160}} 
+\index{WiFi@{WiFi}!setDNSServer@{setDNSServer}}
+\index{setDNSServer@{setDNSServer}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{setDNSServer()}{setDNSServer()}}
+{\footnotesize\ttfamily void Wi\+Fi\+::set\+D\+N\+S\+Server (\begin{DoxyParamCaption}\item[{int}]{numdns,  }\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Set a reference to a D\+NS server. 
+
+Here we define a server that will act as a D\+NS server. We use numdns to specify which D\+NS server to set
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_a99cd00c2301a303e7c856192d2e16160}{setDNSServer}}(0, \textcolor{stringliteral}{"8.8.8.8"});}
+\DoxyCodeLine{wifi.\mbox{\hyperlink{classWiFi_a99cd00c2301a303e7c856192d2e16160}{setDNSServer}}(1, \textcolor{stringliteral}{"8.8.4.4"});}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em numdns} & The D\+NS number we wish to set \\
+\hline
+\mbox{\texttt{ in}}  & {\em ip} & The IP address of the D\+NS Server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_a9af2e6f3f5bf0dcf9a319954cf6ec5a0}\label{classWiFi_a9af2e6f3f5bf0dcf9a319954cf6ec5a0}} 
+\index{WiFi@{WiFi}!setIPInfo@{setIPInfo}}
+\index{setIPInfo@{setIPInfo}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{setIPInfo()}{setIPInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Wi\+Fi\+::set\+I\+P\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{const std\+::string \&}]{gw,  }\item[{const std\+::string \&}]{netmask }\end{DoxyParamCaption})}
+
+
+
+Set the IP info and enable D\+H\+CP if ip != 0. 
+
+If called with ip == 0 then D\+H\+CP is enabled. If called with bad values it will do nothing.
+
+Do not call this method if we are being an access point ourselves.
+
+For example, prior to calling {\ttfamily \mbox{\hyperlink{classWiFi_a6b11726f65299092288f68f129929303}{connect\+A\+P()}}} we could invoke\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myWifi.setIPInfo(\textcolor{stringliteral}{"192.168.1.99"}, \textcolor{stringliteral}{"192.168.1.1"}, \textcolor{stringliteral}{"255.255.255.0"});}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ip} & IP address value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em gw} & Gateway value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em netmask} & Netmask value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_ac791bd68948ead18bc9775fc936e0938}\label{classWiFi_ac791bd68948ead18bc9775fc936e0938}} 
+\index{WiFi@{WiFi}!setIPInfo@{setIPInfo}}
+\index{setIPInfo@{setIPInfo}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{setIPInfo()}{setIPInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Wi\+Fi\+::set\+I\+P\+Info (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ip,  }\item[{uint32\+\_\+t}]{gw,  }\item[{uint32\+\_\+t}]{netmask }\end{DoxyParamCaption})}
+
+
+
+Set the IP Info based on the IP address, gateway and netmask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ip} & The IP address of our E\+S\+P32. \\
+\hline
+\mbox{\texttt{ in}}  & {\em gw} & The gateway we should use. \\
+\hline
+\mbox{\texttt{ in}}  & {\em netmask} & Our T\+C\+P/\+IP netmask value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWiFi_abf6df73f23fed380a5109a29def8d08f}\label{classWiFi_abf6df73f23fed380a5109a29def8d08f}} 
+\index{WiFi@{WiFi}!setWifiEventHandler@{setWifiEventHandler}}
+\index{setWifiEventHandler@{setWifiEventHandler}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{setWifiEventHandler()}{setWifiEventHandler()}}
+{\footnotesize\ttfamily void Wi\+Fi\+::set\+Wifi\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWiFiEventHandler}{Wi\+Fi\+Event\+Handler}} $\ast$}]{wifi\+Event\+Handler }\end{DoxyParamCaption})}
+
+
+
+Set the event handler to use to process detected events. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em wifi\+Event\+Handler} & The class that will be used to process events. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWiFi_afe587b246a0a1a4024877bebd1dd3453}\label{classWiFi_afe587b246a0a1a4024877bebd1dd3453}} 
+\index{WiFi@{WiFi}!startAP@{startAP}}
+\index{startAP@{startAP}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{startAP()}{startAP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Wi\+Fi\+::start\+AP (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ssid,  }\item[{const std\+::string \&}]{password,  }\item[{wifi\+\_\+auth\+\_\+mode\+\_\+t}]{auth,  }\item[{uint8\+\_\+t}]{channel,  }\item[{bool}]{ssid\+\_\+hidden,  }\item[{uint8\+\_\+t}]{max\+\_\+connection }\end{DoxyParamCaption})}
+
+
+
+Start being an access point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ssid} & The S\+S\+ID to use to advertize for stations. \\
+\hline
+\mbox{\texttt{ in}}  & {\em password} & The password to use for station connections. \\
+\hline
+\mbox{\texttt{ in}}  & {\em auth} & The authorization mode for access to this access point. Options are\+:
+\begin{DoxyItemize}
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+O\+P\+EN
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A2\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A\+\_\+\+W\+P\+A2\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A2\+\_\+\+E\+N\+T\+E\+R\+P\+R\+I\+SE
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+EP 
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{ in}}  & {\em channel} & from the access point. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is} & the ssid hidden, ore not. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limiting} & number of clients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWiFi_ae5d8dc106189ee9a4cf332e4363fac58}\label{classWiFi_ae5d8dc106189ee9a4cf332e4363fac58}} 
+\index{WiFi@{WiFi}!startAP@{startAP}}
+\index{startAP@{startAP}!WiFi@{WiFi}}
+\doxysubsubsection{\texorpdfstring{startAP()}{startAP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Wi\+Fi\+::start\+AP (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ssid,  }\item[{const std\+::string \&}]{password,  }\item[{wifi\+\_\+auth\+\_\+mode\+\_\+t}]{auth = {\ttfamily WIFI\+\_\+AUTH\+\_\+OPEN} }\end{DoxyParamCaption})}
+
+
+
+Start being an access point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ssid} & The S\+S\+ID to use to advertize for stations. \\
+\hline
+\mbox{\texttt{ in}}  & {\em password} & The password to use for station connections. \\
+\hline
+\mbox{\texttt{ in}}  & {\em auth} & The authorization mode for access to this access point. Options are\+:
+\begin{DoxyItemize}
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+O\+P\+EN
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A2\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A\+\_\+\+W\+P\+A2\+\_\+\+P\+SK
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+P\+A2\+\_\+\+E\+N\+T\+E\+R\+P\+R\+I\+SE
+\item W\+I\+F\+I\+\_\+\+A\+U\+T\+H\+\_\+\+W\+EP 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Connector/\+Wi\+Fi/include/Wi\+Fi.\+h\item 
+Connector/\+Wi\+Fi/src/Wi\+Fi.\+cpp\end{DoxyCompactItemize}

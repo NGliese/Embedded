@@ -93,6 +93,9 @@ enum general_resp_t{
     GR_EXIT
 };
 
+/**
+ * @class basic error class used for detecting failiurse in the system
+ */
 class General_Error {
 public:
     static const char* errorToString(general_err_t errCode);

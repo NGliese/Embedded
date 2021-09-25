@@ -4,6 +4,10 @@
  *  Created on: May 22, 2020
  *      Author: nikolaj
  */
+/**
+ * @brief header file to interchange between UnitTestMode, ESP32 and RPI.
+ *        Macro definition decides what state the system is in.
+ */
 
 #ifndef BPS_INCLUDE_BASIC_HPP_
 #define BPS_INCLUDE_BASIC_HPP_

@@ -90,14 +90,29 @@ public:
     ADCBase(const std::string& name, const size_t samples) : m_faulthanlder{name}, m_number_of_samples{samples} {};
     virtual ~ADCBase(){};
 
-    //@brief we measure the value of
+    /**
+     * measure the value of the adc
+     * @return template variable T
+     *
+     */
     virtual T measureValue(void) = 0;
-    inline void setSampleNumber(const size_t samples) {
+    /**
+     * set the number of samples for the low pass filter
+     * @param [in] const size_t& samples
+     * @return N/A
+     *
+     */
+    inline void setSampleNumber(const size_t& samples) {
         if( (samples >= minimum_number_of_samples) and (samples <= maximum_number_of_samples) )
         {
             m_number_of_samples = samples;
         }
     }
+    /**
+     * get the sample number
+     * @return size_t sample_number
+     *
+     */
     inline auto getSampleNumber(void) {return m_number_of_samples;}
 protected:
     Fault_Handler m_faulthanlder;

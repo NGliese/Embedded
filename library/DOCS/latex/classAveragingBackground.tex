@@ -1,0 +1,97 @@
+\hypertarget{classAveragingBackground}{}\doxysection{Averaging\+Background Class Reference}
+\label{classAveragingBackground}\index{AveragingBackground@{AveragingBackground}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAveragingBackground_a5e421bddf54cb4e79e5fe0e0889b1ba0}\label{classAveragingBackground_a5e421bddf54cb4e79e5fe0e0889b1ba0}} 
+{\bfseries Averaging\+Background} (const cv\+::\+Mat \&img)
+\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classAveragingBackground_ae9c574895eeff4c4535a8da499f64e76}{run}} (const cv\+::\+Mat \&img, cv\+::\+Mat \&foreground)
+\begin{DoxyCompactList}\small\item\em Main function to call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAveragingBackground_a903b28cec79ec63311c001b3bf62409f}\label{classAveragingBackground_a903b28cec79ec63311c001b3bf62409f}} 
+general\+\_\+err\+\_\+t {\bfseries clear\+Background} (const cv\+::\+Mat \&img)
+\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classAveragingBackground_aad863d6b32b26c4f7b0532bca69c52f5}{accumulate\+Background}} (const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em Learn the background statistcs for one more frame img is a color sample of the background, 3-\/channel , 8u. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAveragingBackground_a39f4086a8ba64ae26c09d9944425aaab}\label{classAveragingBackground_a39f4086a8ba64ae26c09d9944425aaab}} 
+general\+\_\+err\+\_\+t {\bfseries create\+Models\+From\+Stats} (void)
+\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classAveragingBackground_aac46736cc351d0fd4190608046eff591}{get\+Foreground}} (const cv\+::\+Mat \&img, cv\+::\+Mat \&foreground)
+\begin{DoxyCompactList}\small\item\em Create a binary 0,255 mask where 255 means foreground pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAveragingBackground_a7a8db5992cbd7e6d173798f9ef917bb0}\label{classAveragingBackground_a7a8db5992cbd7e6d173798f9ef917bb0}} 
+general\+\_\+err\+\_\+t {\bfseries update\+Background} (const cv\+::\+Mat \&img)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAveragingBackground_aad863d6b32b26c4f7b0532bca69c52f5}\label{classAveragingBackground_aad863d6b32b26c4f7b0532bca69c52f5}} 
+\index{AveragingBackground@{AveragingBackground}!accumulateBackground@{accumulateBackground}}
+\index{accumulateBackground@{accumulateBackground}!AveragingBackground@{AveragingBackground}}
+\doxysubsubsection{\texorpdfstring{accumulateBackground()}{accumulateBackground()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t Averaging\+Background\+::accumulate\+Background (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})}
+
+
+
+Learn the background statistcs for one more frame img is a color sample of the background, 3-\/channel , 8u. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & cv\+::\+Mat \&img\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAveragingBackground_aac46736cc351d0fd4190608046eff591}\label{classAveragingBackground_aac46736cc351d0fd4190608046eff591}} 
+\index{AveragingBackground@{AveragingBackground}!getForeground@{getForeground}}
+\index{getForeground@{getForeground}!AveragingBackground@{AveragingBackground}}
+\doxysubsubsection{\texorpdfstring{getForeground()}{getForeground()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t Averaging\+Background\+::get\+Foreground (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Mat \&}]{foreground }\end{DoxyParamCaption})}
+
+
+
+Create a binary 0,255 mask where 255 means foreground pixel. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & cv\+::\+Mat \&img \+: the raw image \\
+\hline
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAveragingBackground_ae9c574895eeff4c4535a8da499f64e76}\label{classAveragingBackground_ae9c574895eeff4c4535a8da499f64e76}} 
+\index{AveragingBackground@{AveragingBackground}!run@{run}}
+\index{run@{run}!AveragingBackground@{AveragingBackground}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t Averaging\+Background\+::run (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Mat \&}]{foreground }\end{DoxyParamCaption})}
+
+
+
+Main function to call. 
+
+If we return G\+E\+\_\+\+OK, we know that a foreground has been captured The creation of background and how we are segmenting the foreground from the background is encapsulated inside the function
+
+\begin{DoxyAttention}{Attention}
+If error code is not G\+E\+\_\+\+OK, the foreground is not usable
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & cv\+::\+Mat \&img \\
+\hline
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Analysis\+Tools/\+Image\+Analysis\+\_\+\+Open\+C\+V/include/Averaging\+Background.\+hpp\item 
+Analysis\+Tools/\+Image\+Analysis\+\_\+\+Open\+C\+V/src/Averaging\+Background.\+cpp\end{DoxyCompactItemize}

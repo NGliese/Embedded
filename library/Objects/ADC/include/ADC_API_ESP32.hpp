@@ -33,27 +33,6 @@
  +-----------------------------------------------------------------------------*/
 
 
-/*------------------------------------------------------------------------------+
- |   		 					Datasheet Awareness              		        |
- +------------------------------------------------------------------------------+
- |
- |
- |  Datasheet Awareness 1):
- |  	Link:[ ], Sep 21, 2021
- |		Brief:
- |
- |  Datasheet Awareness 2):
- |  	Link:[ ], Sep 21, 2021
- |
- |		Brief:
- |
- |
- |
- |
- |
-  +-----------------------------------------------------------------------------*/
-
-
 
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
@@ -80,7 +59,17 @@
 #define adc1_channel_t int
 #endif
 
-
+/**
+ * @class ADC interface to use for the ESP32
+ *        the class is derived from @see ADCBase
+ *
+ * @code {.cpp}
+ *  //implement a basic adc and measure the value
+ *  ADC_API_ESP32::config conf{"adc_test",64,ADC_CHANNEL_1};
+ *  ADC_API_ESP32 m_adc{conf};
+ *  auto val = m_adc.measureValue();
+ * @endcode
+ */
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
@@ -92,10 +81,10 @@ class ADC_API_ESP32 final : public ADCBase<uint32_t>{
 #endif
 public:
     struct config{
-        std::string name;           // name of the device
-        size_t samples;             // amount of samples to average
-        adc1_channel_t channel;     // the channel / gpio pin
-        uint32_t vRef = 1107;       // calibration refereance, lookup  $IDF_PATH/components/esptool_py/esptool/espefuse.py --port /dev/ttyUSB0 adc_info
+        std::string name;           ///< name of the device
+        size_t samples;             ///< amount of samples to average
+        adc1_channel_t channel;     ///< the channel / gpio pin
+        uint32_t vRef = 1107;       ///< calibration refereance, lookup  $IDF_PATH/components/esptool_py/esptool/espefuse.py --port /dev/ttyUSB0 adc_info
     };
     ADC_API_ESP32(const config& conf) ;
     ~ADC_API_ESP32();

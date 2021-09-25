@@ -1,0 +1,133 @@
+\hypertarget{classGPIO__HAL}{}\doxysection{G\+P\+I\+O\+\_\+\+H\+AL Class Reference}
+\label{classGPIO__HAL}\index{GPIO\_HAL@{GPIO\_HAL}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_a913ff566ac54dd335c35d3a7e90adcdf}\label{classGPIO__HAL_a913ff566ac54dd335c35d3a7e90adcdf}} 
+enum {\bfseries io\+\_\+def\+\_\+t} \{ {\bfseries I\+N\+P\+UT} = 0, 
+{\bfseries O\+U\+T\+P\+UT} = 1
+ \}
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_a6aafb351a374e41050e2c727b70cd20b}\label{classGPIO__HAL_a6aafb351a374e41050e2c727b70cd20b}} 
+enum {\bfseries io\+\_\+val\+\_\+t} \{ {\bfseries L\+OW} = 0, 
+{\bfseries H\+I\+GH} = 1
+ \}
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_ab50e0161f1c12b594aa1794774c3daad}\label{classGPIO__HAL_ab50e0161f1c12b594aa1794774c3daad}} 
+enum {\bfseries io\+\_\+intr\+\_\+t} \{ {\bfseries F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries A\+N\+Y\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_a17e36e46b317bdfcea1fc054210365b2}\label{classGPIO__HAL_a17e36e46b317bdfcea1fc054210365b2}} 
+typedef gpio\+\_\+num\+\_\+t {\bfseries pin}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classGPIO__HAL_a8cbd35dab03e2e4da58b6d02f3ee0e4f}{set\+Direction}} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin, const G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+def\+\_\+t \&dir)
+\begin{DoxyCompactList}\small\item\em set the direction of the pin \end{DoxyCompactList}\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classGPIO__HAL_a8cf996ac134efeac4d932d4af16fa9a4}{set\+Value}} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin, const G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+val\+\_\+t \&val)
+\begin{DoxyCompactList}\small\item\em set the value of the pin \end{DoxyCompactList}\item 
+G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+val\+\_\+t \mbox{\hyperlink{classGPIO__HAL_a04875eade94de7cdab73ee6aeef0cf96}{get\+Value}} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin) const
+\begin{DoxyCompactList}\small\item\em read the value of the pin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGPIO__HAL_ac5cee6fad60a3795151b8381c6b818f0}\label{classGPIO__HAL_ac5cee6fad60a3795151b8381c6b818f0}} 
+general\+\_\+err\+\_\+t {\bfseries install\+Interrupt\+Driver} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin, void($\ast$callbackfunction)(void $\ast$), const G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+intr\+\_\+t \&intr)
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_a5a3d38784a1622549786a0a9fdb437fb}\label{classGPIO__HAL_a5a3d38784a1622549786a0a9fdb437fb}} 
+general\+\_\+err\+\_\+t {\bfseries enable\+Interrupt} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin)
+\item 
+\mbox{\Hypertarget{classGPIO__HAL_af1b55635186408e40a4b3bcbc05bcbac}\label{classGPIO__HAL_af1b55635186408e40a4b3bcbc05bcbac}} 
+general\+\_\+err\+\_\+t {\bfseries disable\+Interrupt} (const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&pin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPIO__HAL_a04875eade94de7cdab73ee6aeef0cf96}\label{classGPIO__HAL_a04875eade94de7cdab73ee6aeef0cf96}} 
+\index{GPIO\_HAL@{GPIO\_HAL}!getValue@{getValue}}
+\index{getValue@{getValue}!GPIO\_HAL@{GPIO\_HAL}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+val\+\_\+t G\+P\+I\+O\+\_\+\+H\+A\+L\+::get\+Value (\begin{DoxyParamCaption}\item[{const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&}]{pin }\end{DoxyParamCaption}) const}
+
+
+
+read the value of the pin 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & H\+A\+L\+::pin\& pin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIO__HAL_a8cbd35dab03e2e4da58b6d02f3ee0e4f}\label{classGPIO__HAL_a8cbd35dab03e2e4da58b6d02f3ee0e4f}} 
+\index{GPIO\_HAL@{GPIO\_HAL}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!GPIO\_HAL@{GPIO\_HAL}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t G\+P\+I\+O\+\_\+\+H\+A\+L\+::set\+Direction (\begin{DoxyParamCaption}\item[{const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&}]{pin,  }\item[{const G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+def\+\_\+t \&}]{dir }\end{DoxyParamCaption})}
+
+
+
+set the direction of the pin 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & H\+A\+L\+::pin\& pin \\
+\hline
+\mbox{\texttt{ in}}  & {\em const} & H\+A\+L\+::io\+\_\+def\& dir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIO__HAL_a8cf996ac134efeac4d932d4af16fa9a4}\label{classGPIO__HAL_a8cf996ac134efeac4d932d4af16fa9a4}} 
+\index{GPIO\_HAL@{GPIO\_HAL}!setValue@{setValue}}
+\index{setValue@{setValue}!GPIO\_HAL@{GPIO\_HAL}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t G\+P\+I\+O\+\_\+\+H\+A\+L\+::set\+Value (\begin{DoxyParamCaption}\item[{const G\+P\+I\+O\+\_\+\+H\+A\+L\+::pin \&}]{pin,  }\item[{const G\+P\+I\+O\+\_\+\+H\+A\+L\+::io\+\_\+val\+\_\+t \&}]{val }\end{DoxyParamCaption})}
+
+
+
+set the value of the pin 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & H\+A\+L\+::pin\& pin \\
+\hline
+\mbox{\texttt{ in}}  & {\em const} & H\+A\+L\+::io\+\_\+val\+\_\+t\& val\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Objects/\+Gpio/include/H\+A\+L.\+hpp\item 
+Objects/\+Gpio/src/H\+A\+L.\+cpp\end{DoxyCompactItemize}

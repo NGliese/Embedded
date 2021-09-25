@@ -40,16 +40,7 @@ RTC_HAL m_hal;
 static const char *LOG_TAG = "Timeservice";
 #endif
 
-/**
- * @brief  return the time in ms
- *
- * @attention
- *
- * @return
- *    - GE_OK
- *    -
- *    -
- */
+
 uint64_t Timeservice::getTimeNow(void) {
     return std::chrono::duration_cast<std::chrono::milliseconds>(
                  std::chrono::system_clock::now().time_since_epoch()).count();
@@ -92,16 +83,6 @@ LOG_PRINT_INFO(LOG_TAG, "<< Timeservice::wait_poll_ms << ");
 
 return GE_OK;
 }
-/**
- * @brief  return the time in µs
- *
- * @attention
- *
- * @return
- *    - GE_OK
- *    -
- *    -
- */
 uint64_t Timeservice::getTimeInUsNow(void) {
     return std::chrono::duration_cast<std::chrono::microseconds>(
                  std::chrono::system_clock::now().time_since_epoch()).count();

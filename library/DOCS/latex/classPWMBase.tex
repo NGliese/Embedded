@@ -1,0 +1,84 @@
+\hypertarget{classPWMBase}{}\doxysection{P\+W\+M\+Base$<$ T, U $>$ Class Template Reference}
+\label{classPWMBase}\index{PWMBase$<$ T, U $>$@{PWMBase$<$ T, U $>$}}
+
+
+Collaboration diagram for P\+W\+M\+Base$<$ T, U $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classPWMBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPWMBase_a0dae4f105e81b0c17caaf1953d228910}\label{classPWMBase_a0dae4f105e81b0c17caaf1953d228910}} 
+\mbox{\hyperlink{classPWMBase_a0dae4f105e81b0c17caaf1953d228910}{P\+W\+M\+Base}} (const T \&config, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em following R\+A\+II @instantiation we activate and start P\+WM \end{DoxyCompactList}\item 
+virtual general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWMBase_a7b3b98f15a601e23110143e0d9120626}{set\+Duty\+Cycle}} (const float \&duty)=0
+\begin{DoxyCompactList}\small\item\em between 0 and 100. \end{DoxyCompactList}\item 
+virtual general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWMBase_afcffe3aae5d239a01f6c684ee5db9edf}{set\+Frequency}} (const uint32\+\_\+t \&frequency)=0
+\begin{DoxyCompactList}\small\item\em set frequency in Hz we are allowed to update the frequency without the need of handling start and stop conditions for the pwm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPWMBase_a7769531718c7ab5a1b9d5d2b70ef6e30}\label{classPWMBase_a7769531718c7ab5a1b9d5d2b70ef6e30}} 
+U \mbox{\hyperlink{classPWMBase_a7769531718c7ab5a1b9d5d2b70ef6e30}{m\+\_\+hal}}
+\begin{DoxyCompactList}\small\item\em internal H\+AL object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPWMBase_a1e16d8877c0db0f12d8075c4f4f3a8aa}\label{classPWMBase_a1e16d8877c0db0f12d8075c4f4f3a8aa}} 
+\mbox{\hyperlink{classFault__Handler}{Fault\+\_\+\+Handler}} \mbox{\hyperlink{classPWMBase_a1e16d8877c0db0f12d8075c4f4f3a8aa}{m\+\_\+faulthanlder}}
+\begin{DoxyCompactList}\small\item\em internal faulthandler \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPWMBase_a7b3b98f15a601e23110143e0d9120626}\label{classPWMBase_a7b3b98f15a601e23110143e0d9120626}} 
+\index{PWMBase$<$ T, U $>$@{PWMBase$<$ T, U $>$}!setDutyCycle@{setDutyCycle}}
+\index{setDutyCycle@{setDutyCycle}!PWMBase$<$ T, U $>$@{PWMBase$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{setDutyCycle()}{setDutyCycle()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+virtual general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWMBase}{P\+W\+M\+Base}}$<$ T, U $>$\+::set\+Duty\+Cycle (\begin{DoxyParamCaption}\item[{const float \&}]{duty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+between 0 and 100. 
+
+decimal allowed we are allowed to update the duty cycle without the need of handling start and stop conditions for the pwm. in other words, we can update live 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & float\& duty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+general\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPWM__API__ESP32_a65d9cbc213fa835e0c930709f2fb004f}{P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32}}.
+
+\mbox{\Hypertarget{classPWMBase_afcffe3aae5d239a01f6c684ee5db9edf}\label{classPWMBase_afcffe3aae5d239a01f6c684ee5db9edf}} 
+\index{PWMBase$<$ T, U $>$@{PWMBase$<$ T, U $>$}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!PWMBase$<$ T, U $>$@{PWMBase$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+virtual general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWMBase}{P\+W\+M\+Base}}$<$ T, U $>$\+::set\+Frequency (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+set frequency in Hz we are allowed to update the frequency without the need of handling start and stop conditions for the pwm. 
+
+in other words, we can update live 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & uint32\+\_\+t\& frequency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+general\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPWM__API__ESP32_a2d8bb80044875cc884c303a3201ac256}{P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Interfaces/\+P\+W\+M\+Base/include/P\+W\+M\+Base.\+hpp\end{DoxyCompactItemize}

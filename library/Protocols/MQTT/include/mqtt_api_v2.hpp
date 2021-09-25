@@ -96,10 +96,27 @@ class mqtt_api_v2 {
 public:
     mqtt_api_v2(const std::string & uri = GLOBAL_MQTT_SERVER);
     ~mqtt_api_v2();
-
+    /**
+     * function to publish a topic to the mqtt server, with a given payload
+     * @param [in] const std::string& topic
+     * @param [in] const std::string& payload
+     * @return general_err_t
+     */
     general_err_t publish(const std::string& topic,const std::string& payload);
+    /**
+     * function to subscribe to a given topic from the mqtt server
+     * @attention the user can use the returned semaphore to look for new data
+     *            if the semaphore is release at some point, it means that new data has
+     *            arrived. (used for blocking)
+     * @param [in] const std::string& topic
+     * @return FreeRTOS::Semaphore*
+     */
     FreeRTOS::Semaphore*  subscribe(const std::string& topic);
-
+    /**
+     * get the recived data from the subscribtion
+     * @param [out] std::string * str
+     * @return general_err_t
+     */
     general_err_t getData(std::string * str);
 private:
     std::string m_uri;

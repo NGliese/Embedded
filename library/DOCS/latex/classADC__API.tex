@@ -1,0 +1,89 @@
+\hypertarget{classADC__API}{}\doxysection{A\+D\+C\+\_\+\+A\+PI Class Reference}
+\label{classADC__API}\index{ADC\_API@{ADC\_API}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classADC__API_ad1c3b13703bbb93444aab88a9b2889f3}\label{classADC__API_ad1c3b13703bbb93444aab88a9b2889f3}} 
+{\bfseries A\+D\+C\+\_\+\+A\+PI} (const adc1\+\_\+channel\+\_\+t channel)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classADC__API_a88edc6a026fdd1da56e19c2ba942502f}{get\+\_\+raw\+\_\+adc}} (void)
+\begin{DoxyCompactList}\small\item\em retunr raw adc value \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classADC__API_a854f85956ead38a162935cd99dee7c2a}{get\+\_\+m\+V\+\_\+adc}} (void)
+\begin{DoxyCompactList}\small\item\em return the measure voltage, in mV \end{DoxyCompactList}\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classADC__API_a10a75b0cf6674551e3aaac6fade8f706}{set\+\_\+number\+\_\+samples}} (const uint16\+\_\+t number\+\_\+of\+\_\+samples)
+\begin{DoxyCompactList}\small\item\em set multi-\/sample for adc \end{DoxyCompactList}\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classADC__API_a7e0b82b1d9c7747912ee84516a780845}{callibrate}} (void)
+\begin{DoxyCompactList}\small\item\em calibrate the A\+DC \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classADC__API_a7e0b82b1d9c7747912ee84516a780845}\label{classADC__API_a7e0b82b1d9c7747912ee84516a780845}} 
+\index{ADC\_API@{ADC\_API}!callibrate@{callibrate}}
+\index{callibrate@{callibrate}!ADC\_API@{ADC\_API}}
+\doxysubsubsection{\texorpdfstring{callibrate()}{callibrate()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t A\+D\+C\+\_\+\+A\+P\+I\+::callibrate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+calibrate the A\+DC 
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classADC__API_a854f85956ead38a162935cd99dee7c2a}\label{classADC__API_a854f85956ead38a162935cd99dee7c2a}} 
+\index{ADC\_API@{ADC\_API}!get\_mV\_adc@{get\_mV\_adc}}
+\index{get\_mV\_adc@{get\_mV\_adc}!ADC\_API@{ADC\_API}}
+\doxysubsubsection{\texorpdfstring{get\_mV\_adc()}{get\_mV\_adc()}}
+{\footnotesize\ttfamily uint32\+\_\+t A\+D\+C\+\_\+\+A\+P\+I\+::get\+\_\+m\+V\+\_\+adc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+return the measure voltage, in mV 
+
+\mbox{\Hypertarget{classADC__API_a88edc6a026fdd1da56e19c2ba942502f}\label{classADC__API_a88edc6a026fdd1da56e19c2ba942502f}} 
+\index{ADC\_API@{ADC\_API}!get\_raw\_adc@{get\_raw\_adc}}
+\index{get\_raw\_adc@{get\_raw\_adc}!ADC\_API@{ADC\_API}}
+\doxysubsubsection{\texorpdfstring{get\_raw\_adc()}{get\_raw\_adc()}}
+{\footnotesize\ttfamily uint32\+\_\+t A\+D\+C\+\_\+\+A\+P\+I\+::get\+\_\+raw\+\_\+adc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+retunr raw adc value 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\mbox{\Hypertarget{classADC__API_a10a75b0cf6674551e3aaac6fade8f706}\label{classADC__API_a10a75b0cf6674551e3aaac6fade8f706}} 
+\index{ADC\_API@{ADC\_API}!set\_number\_samples@{set\_number\_samples}}
+\index{set\_number\_samples@{set\_number\_samples}!ADC\_API@{ADC\_API}}
+\doxysubsubsection{\texorpdfstring{set\_number\_samples()}{set\_number\_samples()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t A\+D\+C\+\_\+\+A\+P\+I\+::set\+\_\+number\+\_\+samples (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{number\+\_\+of\+\_\+samples }\end{DoxyParamCaption})}
+
+
+
+set multi-\/sample for adc 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em number\+\_\+of\+\_\+samples} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Objects/\+A\+D\+C/include/A\+D\+C\+\_\+\+A\+P\+I.\+hpp\item 
+Objects/\+A\+D\+C/src/A\+D\+C\+\_\+\+A\+P\+I.\+cpp\end{DoxyCompactItemize}

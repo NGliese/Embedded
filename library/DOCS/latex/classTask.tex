@@ -1,0 +1,229 @@
+\hypertarget{classTask}{}\doxysection{Task Class Reference}
+\label{classTask}\index{Task@{Task}}
+
+
+Encapsulate a runnable task.  
+
+
+
+
+{\ttfamily \#include $<$Task.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTask_ac117ffac38e110f3196793488df631e7}{Task}} (const std\+::string \&task\+Name=\char`\"{}Task\char`\"{}, const uint16\+\_\+t \&stack\+Size=10000, const uint8\+\_\+t \&priority=5)
+\begin{DoxyCompactList}\small\item\em Create an instance of the task class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_afe0f5594c56b8cc7ac96c2198d5d81b4}{set\+Stack\+Size}} (uint16\+\_\+t stack\+Size)
+\begin{DoxyCompactList}\small\item\em Set the stack size of the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_aaa220be4e5007ede0bd3e5349d36eae9}{set\+Priority}} (uint8\+\_\+t priority)
+\begin{DoxyCompactList}\small\item\em Set the priority of the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_a23abd79183a5c2bb1e6d3ff37b1cbf23}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_a5ec932fb35fd295c78eafcf06af1d91d}{set\+Core}} (Base\+Type\+\_\+t core\+Id)
+\begin{DoxyCompactList}\small\item\em Set the core number the task has to be executed on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_a6f13d13787e21dc929b61d112b863433}{start}} (void $\ast$task\+Data=nullptr)
+\begin{DoxyCompactList}\small\item\em Start an instance of the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_aba5eb3d6c2a034aa0e319383fbec68c4}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the task. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTask_a399f60ad8cd91d34dba2de57b4ac6d65}{run}} (void $\ast$data)=0
+\begin{DoxyCompactList}\small\item\em Body of the task to execute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTask_aa4b603c866f4b8e0f0c6b524bb0e287e}{delay}} (int ms)
+\begin{DoxyCompactList}\small\item\em Suspend the task for the specified milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encapsulate a runnable task. 
+
+This class is designed to be subclassed with the method\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{classTask_a399f60ad8cd91d34dba2de57b4ac6d65}{run}}(\textcolor{keywordtype}{void} *data) \{ ... \}}
+\end{DoxyCode}
+
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }CurlTestTask : \textcolor{keyword}{public} \mbox{\hyperlink{classTask}{Task}} \{}
+\DoxyCodeLine{   \textcolor{keywordtype}{void} \mbox{\hyperlink{classTask_a399f60ad8cd91d34dba2de57b4ac6d65}{run}}(\textcolor{keywordtype}{void} *data) \{}
+\DoxyCodeLine{      \textcolor{comment}{// Do something}}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+implemented. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTask_ac117ffac38e110f3196793488df631e7}\label{classTask_ac117ffac38e110f3196793488df631e7}} 
+\index{Task@{Task}!Task@{Task}}
+\index{Task@{Task}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}}
+{\footnotesize\ttfamily Task\+::\+Task (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{task\+Name = {\ttfamily \char`\"{}Task\char`\"{}},  }\item[{const uint16\+\_\+t \&}]{stack\+Size = {\ttfamily 10000},  }\item[{const uint8\+\_\+t \&}]{priority = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+
+
+Create an instance of the task class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task\+Name} & The name of the task to create. \\
+\hline
+\mbox{\texttt{ in}}  & {\em stack\+Size} & The size of the stack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTask_aa4b603c866f4b8e0f0c6b524bb0e287e}\label{classTask_aa4b603c866f4b8e0f0c6b524bb0e287e}} 
+\index{Task@{Task}!delay@{delay}}
+\index{delay@{delay}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void Task\+::delay (\begin{DoxyParamCaption}\item[{int}]{ms }\end{DoxyParamCaption})}
+
+
+
+Suspend the task for the specified milliseconds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ms} & The delay time in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_a399f60ad8cd91d34dba2de57b4ac6d65}\label{classTask_a399f60ad8cd91d34dba2de57b4ac6d65}} 
+\index{Task@{Task}!run@{run}}
+\index{run@{run}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void Task\+::run (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Body of the task to execute. 
+
+This function must be implemented in the subclass that represents the actual task to run. When a task is started by calling \mbox{\hyperlink{classTask_a6f13d13787e21dc929b61d112b863433}{start()}}, this is the code that is executed in the newly created task.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data passed in to the newly started task. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTask_a5ec932fb35fd295c78eafcf06af1d91d}\label{classTask_a5ec932fb35fd295c78eafcf06af1d91d}} 
+\index{Task@{Task}!setCore@{setCore}}
+\index{setCore@{setCore}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{setCore()}{setCore()}}
+{\footnotesize\ttfamily void Task\+::set\+Core (\begin{DoxyParamCaption}\item[{Base\+Type\+\_\+t}]{core\+Id }\end{DoxyParamCaption})}
+
+
+
+Set the core number the task has to be executed on. 
+
+If the core number is not set, tsk\+N\+O\+\_\+\+A\+F\+F\+I\+N\+I\+TY will be used
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em core\+Id} & The id of the core. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_a23abd79183a5c2bb1e6d3ff37b1cbf23}\label{classTask_a23abd79183a5c2bb1e6d3ff37b1cbf23}} 
+\index{Task@{Task}!setName@{setName}}
+\index{setName@{setName}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Task\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name for the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_aaa220be4e5007ede0bd3e5349d36eae9}\label{classTask_aaa220be4e5007ede0bd3e5349d36eae9}} 
+\index{Task@{Task}!setPriority@{setPriority}}
+\index{setPriority@{setPriority}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
+{\footnotesize\ttfamily void Task\+::set\+Priority (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{priority }\end{DoxyParamCaption})}
+
+
+
+Set the priority of the task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em priority} & The priority for the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_afe0f5594c56b8cc7ac96c2198d5d81b4}\label{classTask_afe0f5594c56b8cc7ac96c2198d5d81b4}} 
+\index{Task@{Task}!setStackSize@{setStackSize}}
+\index{setStackSize@{setStackSize}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{setStackSize()}{setStackSize()}}
+{\footnotesize\ttfamily void Task\+::set\+Stack\+Size (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{stack\+Size }\end{DoxyParamCaption})}
+
+
+
+Set the stack size of the task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stack\+Size} & The size of the stack for the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_a6f13d13787e21dc929b61d112b863433}\label{classTask_a6f13d13787e21dc929b61d112b863433}} 
+\index{Task@{Task}!start@{start}}
+\index{start@{start}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Task\+::start (\begin{DoxyParamCaption}\item[{void $\ast$}]{task\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Start an instance of the task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task\+Data} & Data to be passed into the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTask_aba5eb3d6c2a034aa0e319383fbec68c4}\label{classTask_aba5eb3d6c2a034aa0e319383fbec68c4}} 
+\index{Task@{Task}!stop@{stop}}
+\index{stop@{stop}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Task\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the task. 
+
+\begin{DoxyReturn}{Returns}
+N/A. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+R\+T\+O\+S/\+Free\+R\+T\+O\+S/include/Task.\+h\item 
+R\+T\+O\+S/\+Free\+R\+T\+O\+S/src/Task.\+cpp\end{DoxyCompactItemize}

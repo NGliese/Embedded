@@ -1,0 +1,91 @@
+\hypertarget{classADCBase}{}\doxysection{A\+D\+C\+Base$<$ T $>$ Class Template Reference}
+\label{classADCBase}\index{ADCBase$<$ T $>$@{ADCBase$<$ T $>$}}
+
+
+Collaboration diagram for A\+D\+C\+Base$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classADCBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classADCBase_a45da7ff245042cfd59952b6cfc206368}\label{classADCBase_a45da7ff245042cfd59952b6cfc206368}} 
+{\bfseries A\+D\+C\+Base} (const std\+::string \&name, const size\+\_\+t samples)
+\item 
+virtual T \mbox{\hyperlink{classADCBase_a01ac4ba9d216c65054e2b039e62b8e67}{measure\+Value}} (void)=0
+\begin{DoxyCompactList}\small\item\em measure the value of the adc \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classADCBase_adadc9b482e46bf3352073136f9498249}{set\+Sample\+Number}} (const size\+\_\+t \&samples)
+\begin{DoxyCompactList}\small\item\em set the number of samples for the low pass filter \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classADCBase_a5880775a83445cfa006792c20357b8bb}{get\+Sample\+Number}} (void)
+\begin{DoxyCompactList}\small\item\em get the sample number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classADCBase_ae6198e34871b8037c8da01612fe83c12}\label{classADCBase_ae6198e34871b8037c8da01612fe83c12}} 
+\mbox{\hyperlink{classFault__Handler}{Fault\+\_\+\+Handler}} {\bfseries m\+\_\+faulthanlder}
+\item 
+\mbox{\Hypertarget{classADCBase_a328bebdbcc92bb57f877012fa747b1e7}\label{classADCBase_a328bebdbcc92bb57f877012fa747b1e7}} 
+size\+\_\+t {\bfseries m\+\_\+number\+\_\+of\+\_\+samples}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classADCBase_a5880775a83445cfa006792c20357b8bb}\label{classADCBase_a5880775a83445cfa006792c20357b8bb}} 
+\index{ADCBase$<$ T $>$@{ADCBase$<$ T $>$}!getSampleNumber@{getSampleNumber}}
+\index{getSampleNumber@{getSampleNumber}!ADCBase$<$ T $>$@{ADCBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSampleNumber()}{getSampleNumber()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto \mbox{\hyperlink{classADCBase}{A\+D\+C\+Base}}$<$ T $>$\+::get\+Sample\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the sample number 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t sample\+\_\+number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classADCBase_a01ac4ba9d216c65054e2b039e62b8e67}\label{classADCBase_a01ac4ba9d216c65054e2b039e62b8e67}} 
+\index{ADCBase$<$ T $>$@{ADCBase$<$ T $>$}!measureValue@{measureValue}}
+\index{measureValue@{measureValue}!ADCBase$<$ T $>$@{ADCBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{measureValue()}{measureValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T \mbox{\hyperlink{classADCBase}{A\+D\+C\+Base}}$<$ T $>$\+::measure\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+measure the value of the adc 
+
+\begin{DoxyReturn}{Returns}
+template variable T 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classADC__API__ESP32_a0c9c4c65a7dc8ee9f69ad22f2a8e1edf}{A\+D\+C\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32}}.
+
+\mbox{\Hypertarget{classADCBase_adadc9b482e46bf3352073136f9498249}\label{classADCBase_adadc9b482e46bf3352073136f9498249}} 
+\index{ADCBase$<$ T $>$@{ADCBase$<$ T $>$}!setSampleNumber@{setSampleNumber}}
+\index{setSampleNumber@{setSampleNumber}!ADCBase$<$ T $>$@{ADCBase$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleNumber()}{setSampleNumber()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classADCBase}{A\+D\+C\+Base}}$<$ T $>$\+::set\+Sample\+Number (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{samples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the number of samples for the low pass filter 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & size\+\_\+t\& samples \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Interfaces/\+A\+D\+C\+Base/include/A\+D\+C\+Base.\+hpp\end{DoxyCompactItemize}

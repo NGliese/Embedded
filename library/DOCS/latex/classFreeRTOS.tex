@@ -1,0 +1,105 @@
+\hypertarget{classFreeRTOS}{}\doxysection{Free\+R\+T\+OS Class Reference}
+\label{classFreeRTOS}\index{FreeRTOS@{FreeRTOS}}
+
+
+Interface to Free\+R\+T\+OS functions.  
+
+
+
+
+{\ttfamily \#include $<$Free\+R\+T\+O\+S.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classFreeRTOS_1_1Queue}{Queue}}
+\item 
+class \mbox{\hyperlink{classFreeRTOS_1_1Semaphore}{Semaphore}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classFreeRTOS_abea19fd141147c054f47c6a00e77f2ff}{sleep}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Sleep for the specified number of milliseconds. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classFreeRTOS_ae2540d35409fe97ce0c95c3b4a3dd9e6}{start\+Task}} (void task(void $\ast$), std\+::string task\+Name, void $\ast$param=nullptr, int stack\+Size=2048)
+\begin{DoxyCompactList}\small\item\em Start a new task. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classFreeRTOS_a965b07cf1ca57fd0eb61df092b98edab}{delete\+Task}} (Task\+Handle\+\_\+t p\+Task=nullptr)
+\begin{DoxyCompactList}\small\item\em Delete the task. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \mbox{\hyperlink{classFreeRTOS_aa2f4b1bd2944ae5e0c97a5dcbca65e66}{get\+Time\+Since\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Get the time in milliseconds since the Free\+R\+T\+OS scheduler started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to Free\+R\+T\+OS functions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFreeRTOS_a965b07cf1ca57fd0eb61df092b98edab}\label{classFreeRTOS_a965b07cf1ca57fd0eb61df092b98edab}} 
+\index{FreeRTOS@{FreeRTOS}!deleteTask@{deleteTask}}
+\index{deleteTask@{deleteTask}!FreeRTOS@{FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{deleteTask()}{deleteTask()}}
+{\footnotesize\ttfamily void Free\+R\+T\+O\+S\+::delete\+Task (\begin{DoxyParamCaption}\item[{Task\+Handle\+\_\+t}]{p\+Task = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Delete the task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+Task} & An optional handle to the task to be deleted. If not supplied the calling task will be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFreeRTOS_aa2f4b1bd2944ae5e0c97a5dcbca65e66}\label{classFreeRTOS_aa2f4b1bd2944ae5e0c97a5dcbca65e66}} 
+\index{FreeRTOS@{FreeRTOS}!getTimeSinceStart@{getTimeSinceStart}}
+\index{getTimeSinceStart@{getTimeSinceStart}!FreeRTOS@{FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{getTimeSinceStart()}{getTimeSinceStart()}}
+{\footnotesize\ttfamily uint32\+\_\+t Free\+R\+T\+O\+S\+::get\+Time\+Since\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the time in milliseconds since the Free\+R\+T\+OS scheduler started. 
+
+\begin{DoxyReturn}{Returns}
+The time in milliseconds since the Free\+R\+T\+OS scheduler started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFreeRTOS_abea19fd141147c054f47c6a00e77f2ff}\label{classFreeRTOS_abea19fd141147c054f47c6a00e77f2ff}} 
+\index{FreeRTOS@{FreeRTOS}!sleep@{sleep}}
+\index{sleep@{sleep}!FreeRTOS@{FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void Free\+R\+T\+O\+S\+::sleep (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sleep for the specified number of milliseconds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ms} & The period in milliseconds for which to sleep. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFreeRTOS_ae2540d35409fe97ce0c95c3b4a3dd9e6}\label{classFreeRTOS_ae2540d35409fe97ce0c95c3b4a3dd9e6}} 
+\index{FreeRTOS@{FreeRTOS}!startTask@{startTask}}
+\index{startTask@{startTask}!FreeRTOS@{FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{startTask()}{startTask()}}
+{\footnotesize\ttfamily void Free\+R\+T\+O\+S\+::start\+Task (\begin{DoxyParamCaption}\item[{void }]{taskvoid $\ast$,  }\item[{std\+::string}]{task\+Name,  }\item[{void $\ast$}]{param = {\ttfamily nullptr},  }\item[{int}]{stack\+Size = {\ttfamily 2048} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Start a new task. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task} & The function pointer to the function to be run in the task. \\
+\hline
+\mbox{\texttt{ in}}  & {\em task\+Name} & A string identifier for the task. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & An optional parameter to be passed to the started task. \\
+\hline
+\mbox{\texttt{ in}}  & {\em stack\+Size} & An optional paremeter supplying the size of the stack in which to run the task. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+R\+T\+O\+S/\+Free\+R\+T\+O\+S/include/Free\+R\+T\+O\+S.\+h\item 
+R\+T\+O\+S/\+Free\+R\+T\+O\+S/src/Free\+R\+T\+O\+S.\+cpp\end{DoxyCompactItemize}

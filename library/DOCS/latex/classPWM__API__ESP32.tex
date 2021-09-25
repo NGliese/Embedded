@@ -1,0 +1,106 @@
+\hypertarget{classPWM__API__ESP32}{}\doxysection{P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32 Class Reference}
+\label{classPWM__API__ESP32}\index{PWM\_API\_ESP32@{PWM\_API\_ESP32}}
+
+
+Inheritance diagram for P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classPWM__API__ESP32__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classPWM__API__ESP32__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPWM__API__ESP32_a33b95da7c43614a225413fe354f8cb9b}\label{classPWM__API__ESP32_a33b95da7c43614a225413fe354f8cb9b}} 
+\mbox{\hyperlink{classPWM__API__ESP32_a33b95da7c43614a225413fe354f8cb9b}{P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32}} (const \mbox{\hyperlink{structHAL__ESP32_1_1config}{H\+A\+L\+\_\+\+E\+S\+P32\+::config}} \&conf, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em following R\+A\+II @instantiation we activate and start P\+WM \end{DoxyCompactList}\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWM__API__ESP32_a65d9cbc213fa835e0c930709f2fb004f}{set\+Duty\+Cycle}} (const float \&duty)
+\begin{DoxyCompactList}\small\item\em set the duty cycle of the pwm \end{DoxyCompactList}\item 
+general\+\_\+err\+\_\+t \mbox{\hyperlink{classPWM__API__ESP32_a2d8bb80044875cc884c303a3201ac256}{set\+Frequency}} (const uint32\+\_\+t \&frequency)
+\begin{DoxyCompactList}\small\item\em set the frequency of the pwm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPWM__API__ESP32_a65d9cbc213fa835e0c930709f2fb004f}\label{classPWM__API__ESP32_a65d9cbc213fa835e0c930709f2fb004f}} 
+\index{PWM\_API\_ESP32@{PWM\_API\_ESP32}!setDutyCycle@{setDutyCycle}}
+\index{setDutyCycle@{setDutyCycle}!PWM\_API\_ESP32@{PWM\_API\_ESP32}}
+\doxysubsubsection{\texorpdfstring{setDutyCycle()}{setDutyCycle()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32\+::set\+Duty\+Cycle (\begin{DoxyParamCaption}\item[{const float \&}]{duty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set the duty cycle of the pwm 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classPWMBase_a7b3b98f15a601e23110143e0d9120626}{P\+W\+M\+Base\+::set\+Duty\+Cycle(const float\& duty)}}
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+the function will call update() and automatically handle start/stop conditions for the pulse width modulation
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & uint32\+\_\+t \&frequency\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item G\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPWMBase_a7b3b98f15a601e23110143e0d9120626}{P\+W\+M\+Base$<$ H\+A\+L\+\_\+\+E\+S\+P32\+::config, H\+A\+L\+\_\+\+E\+S\+P32 $>$}}.
+
+\mbox{\Hypertarget{classPWM__API__ESP32_a2d8bb80044875cc884c303a3201ac256}\label{classPWM__API__ESP32_a2d8bb80044875cc884c303a3201ac256}} 
+\index{PWM\_API\_ESP32@{PWM\_API\_ESP32}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!PWM\_API\_ESP32@{PWM\_API\_ESP32}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily general\+\_\+err\+\_\+t P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32\+::set\+Frequency (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set the frequency of the pwm 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classPWMBase_afcffe3aae5d239a01f6c684ee5db9edf}{P\+W\+M\+Base\+::set\+Frequency(const uint32\+\_\+t\& frequency)}}
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+the function will call update() and automatically handle start/stop conditions for the pulse width modulation
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & uint32\+\_\+t \&frequency\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item G\+E\+\_\+\+OK
+\item 
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPWMBase_afcffe3aae5d239a01f6c684ee5db9edf}{P\+W\+M\+Base$<$ H\+A\+L\+\_\+\+E\+S\+P32\+::config, H\+A\+L\+\_\+\+E\+S\+P32 $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Objects/\+P\+W\+M/include/P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32.\+hpp\item 
+Objects/\+P\+W\+M/src/P\+W\+M\+\_\+\+A\+P\+I\+\_\+\+E\+S\+P32.\+cpp\end{DoxyCompactItemize}

@@ -87,18 +87,18 @@ class PWM_API_ESP32 final : public PWMBase<HAL_ESP32::config, HAL_ESP32>{
 #endif
 public:
 
-    //@brief following RAII @instantiation we activate and start PWM
+    /**
+     * @brief following RAII @instantiation we activate and start PWM
+     */
     PWM_API_ESP32(const HAL_ESP32::config& conf,const std::string & name) ;
     ~PWM_API_ESP32();
-    //@brief between 0 and 100. decimal allowed
-    // we are allowed to update the duty cycle without the need
-    // of handling start and stop conditions for the pwm.
-    // in other words, we can update live
+    /**
+     * @see PWMBase::setDutyCycle(const float& duty)
+     */
     general_err_t setDutyCycle(const float& duty);
-    //@brief set frequency in Hz
-    // we are allowed to update the frequency without the need
-    // of handling start and stop conditions for the pwm.
-    // in other words, we can update live
+    /**
+     * @see PWMBase::setFrequency(const uint32_t& frequency)
+     */
     general_err_t setFrequency(const uint32_t& frequency);
 
 

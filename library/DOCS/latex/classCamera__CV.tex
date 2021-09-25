@@ -1,0 +1,62 @@
+\hypertarget{classCamera__CV}{}\doxysection{Camera\+\_\+\+CV Class Reference}
+\label{classCamera__CV}\index{Camera\_CV@{Camera\_CV}}
+
+
+Inheritance diagram for Camera\+\_\+\+CV\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classCamera__CV__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual general\+\_\+err\+\_\+t \mbox{\hyperlink{classCamera__CV_af8e095ea584e8f63fbfb7eeb87369e43}{take\+Picture}} (void)=0
+\begin{DoxyCompactList}\small\item\em virtual function in order to encapsulate the take picture functionallity for any given camera component \end{DoxyCompactList}\item 
+const cv\+::\+Mat \& \mbox{\hyperlink{classCamera__CV_ac2c0e587e2af3e82da810f4ffe141523}{get\+Picture}} ()
+\begin{DoxyCompactList}\small\item\em get function to retrive the newest image \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCamera__CV_a38f68fa8e181edfdd71e8567e0d3736b}\label{classCamera__CV_a38f68fa8e181edfdd71e8567e0d3736b}} 
+cv\+::\+Mat \mbox{\hyperlink{classCamera__CV_a38f68fa8e181edfdd71e8567e0d3736b}{m\+\_\+image}}
+\begin{DoxyCompactList}\small\item\em internal open\+Cv image variable \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera__CV_ac2c0e587e2af3e82da810f4ffe141523}\label{classCamera__CV_ac2c0e587e2af3e82da810f4ffe141523}} 
+\index{Camera\_CV@{Camera\_CV}!getPicture@{getPicture}}
+\index{getPicture@{getPicture}!Camera\_CV@{Camera\_CV}}
+\doxysubsubsection{\texorpdfstring{getPicture()}{getPicture()}}
+{\footnotesize\ttfamily const cv\+::\+Mat\& Camera\+\_\+\+C\+V\+::get\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get function to retrive the newest image 
+
+\begin{DoxyReturn}{Returns}
+const cv\+::\+Mat\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera__CV_af8e095ea584e8f63fbfb7eeb87369e43}\label{classCamera__CV_af8e095ea584e8f63fbfb7eeb87369e43}} 
+\index{Camera\_CV@{Camera\_CV}!takePicture@{takePicture}}
+\index{takePicture@{takePicture}!Camera\_CV@{Camera\_CV}}
+\doxysubsubsection{\texorpdfstring{takePicture()}{takePicture()}}
+{\footnotesize\ttfamily virtual general\+\_\+err\+\_\+t Camera\+\_\+\+C\+V\+::take\+Picture (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+virtual function in order to encapsulate the take picture functionallity for any given camera component 
+
+\begin{DoxyReturn}{Returns}
+error\+\_\+code 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRPICamV2_af549ffd27565b75e7c144ea7c0a17990}{R\+P\+I\+Cam\+V2}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Interfaces/\+Camera/include/Camera.\+hpp\end{DoxyCompactItemize}

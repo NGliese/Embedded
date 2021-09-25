@@ -89,14 +89,29 @@
  |                               Class                                          |
  +------------------------------------------------------------------------------*/
 
+/**
+ * @class interface to provide an easy and standadized way of handling any camera module
+ *        and using OpenCV as primary image analysis SDK
+ */
 class Camera_CV {
 public:
     Camera_CV() {};
     virtual ~Camera_CV() {};
+    /**
+     * virtual function in order to encapsulate the take picture functionallity for any given
+     * camera component
+     * @return error_code
+     *
+     */
     virtual general_err_t takePicture(void) =0 ;
+    /**
+     * get function to retrive the newest image
+     * @return  const cv::Mat&
+     *
+     */
     const cv::Mat& getPicture() {return m_image;};
 protected:
-    cv::Mat m_image;
+    cv::Mat m_image; /**< internal openCv image variable */
 private:
 };
 

@@ -109,28 +109,27 @@ constexpr uint16_t max_count_value_high   = 1;
  +------------------------------------------------------------------------------*/
 
 
-/*
- * Class description and usage
+/**
+ * @class
  * The fault handler should be implemeted in every class which has "something which might go wrong"
  * This could be:
- * # semaphores -> thread-related issues
- * # sensors -> bad measurements / hanging
- * # timeouts -> stuck in a endless loop
- * # other ....
+ * 1) semaphores -> thread-related issues
+ * 2) sensors -> bad measurements / hanging
+ * 3) timeouts -> stuck in a endless loop
+ * 4) other ....
  *
  *
- * @Class constructor:
+ * @code{.cpp}
  * Class A () : m_faultHandler{"Class A"}
+ * @endcode
  *
  *
- *
- *
- * @Faulty code:
+ * @code{.cpp}:
  * void faulty_function
  * if(bug){
  *  m_faultHandler.handleFault( { FaultHandler_n::severity::very_high,"faulty_function","we have found a bug" } );
  * }
- *
+ *@endcode
  */
 
 
@@ -141,8 +140,19 @@ class Fault_Handler {
 public:
     Fault_Handler(const std::string& class_name) ;
     ~Fault_Handler();
-
+    /**
+     * function to handle an occured fault in the system,
+     * the function will log the fault and decide if we need to restart / exit
+     * @param [in] const FaultHandler_n::msg_t& msg
+     * @return error_code
+     */
     general_err_t handleFault(const FaultHandler_n::msg_t& msg);
+    /**
+     * function to let the user reset the internal counter of a given severity level.
+     * This enables the user to manually override the internal fault handling.
+     * @param [in] const FaultHandler_n::severity& level
+     * @return error_code
+     */
     general_err_t resetFaultCounter(const FaultHandler_n::severity& level);
 
 private:

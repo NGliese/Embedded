@@ -93,6 +93,9 @@ class RPICamV2 final : public Camera_CV {
 public:
     RPICamV2() ;
     ~RPICamV2();
+    /**
+     * see @Camera_CV::takePicture(void)
+     */
     general_err_t takePicture(void) override ;
 private:
 #ifdef __RPI__
