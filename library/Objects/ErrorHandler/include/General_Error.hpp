@@ -94,7 +94,7 @@ enum general_resp_t{
 };
 
 /**
- * @class basic error class used for detecting failiurse in the system
+ * @class basic error class used for detecting failures in the system
  */
 class General_Error {
 public:
