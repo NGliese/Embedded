@@ -96,22 +96,9 @@ CMakeFiles/unit_tests.dir/test/ADC_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test/ADC_test.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/ADC/utest/test/ADC_test.cpp -o CMakeFiles/unit_tests.dir/test/ADC_test.cpp.s
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp
-
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp > CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i
-
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s
-
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/A
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o: /home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o -c /home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o -c /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.o -c /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/http_interface.cpp.i: cmake_force
@@ -163,7 +150,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.o -c /home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/postgresql_interface.cpp.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHand
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Handler.cpp.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/s
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/src/Message_Protocol.cpp.i: cmake_force
@@ -215,7 +202,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Message/s
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/RTC_HAL.cpp.i: cmake_force
@@ -228,7 +215,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservi
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservice/src/Timeservice.cpp.i: cmake_force
@@ -241,7 +228,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Timeservi
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.o: /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.o -c /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/AveragingBackground.cpp.i: cmake_force
@@ -254,7 +241,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.o: /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.o -c /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Background_Extractor.cpp.i: cmake_force
@@ -267,7 +254,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o: /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o -c /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.i: cmake_force
@@ -280,7 +267,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o: /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o -c /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.i: cmake_force
@@ -293,7 +280,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o: /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o -c /home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.i: cmake_force
@@ -306,7 +293,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o: /home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.o -c /home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/src/RPICamV2.cpp.i: cmake_force
@@ -319,7 +306,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Sensor/RpiCamV2/s
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.o -c /home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/MQTT_Message.cpp.i: cmake_force
@@ -332,7 +319,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.o: /home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.o -c /home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/src/mqtt_api_v2.cpp.i: cmake_force
@@ -345,7 +332,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/MQTT/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/Logger.cpp.i: cmake_force
@@ -358,7 +345,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/src/hal_mqtt_log.cpp.i: cmake_force
@@ -371,7 +358,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Logger/sr
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o: /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.o -c /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/FreeRTOS.cpp.i: cmake_force
@@ -384,7 +371,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o: /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.o -c /home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src/Task.cpp.i: cmake_force
@@ -397,7 +384,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/RTOS/FreeRTOS/src
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/GPIO_API.cpp.i: cmake_force
@@ -410,7 +397,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o: /home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/HAL.cpp.i: cmake_force
@@ -423,7 +410,7 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/Gpio/src/
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o: /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o -c /home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp
 
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.i: cmake_force
@@ -439,7 +426,6 @@ unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/test_main.cpp.o" \
 "CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o" \
 "CMakeFiles/unit_tests.dir/test/ADC_test.cpp.o" \
-"CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o" \
 "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o" \
@@ -472,7 +458,6 @@ unit_tests_EXTERNAL_OBJECTS =
 unit_tests: CMakeFiles/unit_tests.dir/test_main.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/test/00_TEMPLATE.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/test/ADC_test.cpp.o
-unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Utility/utils/src/utils.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Protocols/HTTP/src/Curl_SAL.cpp.o
@@ -554,7 +539,7 @@ unit_tests: /usr/local/lib/libopencv_photo.so.4.5.3
 unit_tests: /usr/local/lib/libopencv_imgproc.so.4.5.3
 unit_tests: /usr/local/lib/libopencv_core.so.4.5.3
 unit_tests: CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolaj/github/Embedded/library/Objects/ADC/utest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

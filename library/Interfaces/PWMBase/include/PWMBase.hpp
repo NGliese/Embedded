@@ -112,6 +112,8 @@ public:
     * @return general_err_t
     */
    virtual general_err_t setFrequency(const uint32_t& frequency) = 0;
+
+
 protected:
    U m_hal;                      ///< internal HAL object
    Fault_Handler m_faulthanlder; ///< internal faulthandler

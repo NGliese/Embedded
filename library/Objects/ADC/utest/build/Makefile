@@ -259,33 +259,6 @@ home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Util
 	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.s
 .PHONY : home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.s
 
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.o: home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o
-
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.o
-
-# target to build an object file
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o
-
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.i: home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i
-
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.i
-
-# target to preprocess a source file
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.i
-
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.s: home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s
-
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.s
-
-# target to generate assembly for a file
-home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s
-.PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.s
-
 home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.o: home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o
 
 .PHONY : home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.o
@@ -931,9 +904,6 @@ help:
 	@echo "... home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.o"
 	@echo "... home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.i"
 	@echo "... home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.s"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.o"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.i"
-	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.s"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.o"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.i"
 	@echo "... home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.s"

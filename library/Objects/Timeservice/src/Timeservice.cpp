@@ -66,7 +66,7 @@ return m_hal.sntp_update();
     return GE_OK;
 }
 
-general_err_t Timeservice::wait_ms(size_t ms_to_wait) {
+general_err_t Timeservice::wait_ms(const size_t& ms_to_wait) {
 #ifdef __DEBUG__
 LOG_PRINT_INFO(LOG_TAG, ">> Timeservice::wait_poll_ms >> ");
 #endif

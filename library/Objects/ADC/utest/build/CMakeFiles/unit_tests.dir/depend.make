@@ -542,11 +542,6 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o: /usr/local/include/opencv4/opencv2/video/tracking.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o: /usr/local/include/opencv4/opencv2/videoio.hpp
 
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ADC/include/ADC_API.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
-
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Interfaces/ADCBase/include/ADCBase.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o: /home/nikolaj/github/Embedded/library/Objects/ADC/include/ADC_API_ESP32.hpp

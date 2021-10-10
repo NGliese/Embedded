@@ -117,7 +117,6 @@ endif()
 # LIB_FILESOB4 at /home/nikolaj/github/Embedded/library/CMake/LibDir.cmake:36 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false RELATIVE "/home/nikolaj/github/Embedded/library/Objects/ADC/utest" "/home/nikolaj/github/Embedded/library/Objects/ADC/utest/../../..//Objects/ADC/src/*.cpp")
 set(OLD_GLOB
-  "../src/ADC_API.cpp"
   "../src/ADC_API_ESP32.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -366,7 +365,6 @@ endif()
 # COMP_FILES at CMakeLists.txt:33 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false RELATIVE "/home/nikolaj/github/Embedded/library/Objects/ADC/utest" "/home/nikolaj/github/Embedded/library/Objects/ADC/utest/../include/*.hpp")
 set(OLD_GLOB
-  "../include/ADC_API.hpp"
   "../include/ADC_API_ESP32.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -377,7 +375,6 @@ endif()
 # COMP_FILES at CMakeLists.txt:33 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false RELATIVE "/home/nikolaj/github/Embedded/library/Objects/ADC/utest" "/home/nikolaj/github/Embedded/library/Objects/ADC/utest/../src/*.cpp")
 set(OLD_GLOB
-  "../src/ADC_API.cpp"
   "../src/ADC_API_ESP32.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

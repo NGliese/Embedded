@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/ConnectedComponents.cpp.o"
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Image_CodeBook.cpp.o"
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/ImageAnalysis_OpenCV/src/Utility_Image.cpp.o"
-  "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o"
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o"
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ErrorHandler/src/General_Error.cpp.o"
   "CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/FaultHandler/src/Fault_Handler.cpp.o"

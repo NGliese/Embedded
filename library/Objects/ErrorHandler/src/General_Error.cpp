@@ -26,7 +26,47 @@
 #ifdef DEBUG
 static const char *LOG_TAG = "General_Error";
 #endif
-
+std::string General_Error::errorToString(general_err_t errCode) {
+    switch (errCode) {
+       case GE_OK:
+           return ("OK");
+       case GE_FAIL:
+           return ("FAIL");
+       case GE_OUT_OF_RANGE:
+           return ("GE_OUT_OF_RANGE");
+       case GE_OVERFLOW:
+           return ("GE_OVERFLOW");
+       case GE_UNDERFLOW:
+           return ("GE_UNDERFLOW");
+       case GE_NULLPTR:
+           return ("GE_NULLPTR");
+       case GE_TIMEOUT:
+           return ("GE_TIMEOUT");
+       case GE_NO_DATA:
+           return ("GE_NO_DATA");
+       case GE_UPPER_BOUNDERY:
+           return ("GE_UPPER_BOUNDERY");
+       case GE_LOWER_BOUNDERY:
+           return ("GE_LOWER_BOUNDERY");
+       case GE_NOT_INITIALIZED:
+           return ("GE_NOT_INITIALIZED");
+       case GE_CLOSED:
+           return ("GE_CLOSED");
+       case GE_EMPTY:
+           return ("GE_EMPTY");
+       case GE_SEMAPHORE_NOT_TAKEN:
+           return ("GE_SEMAPHORE_NOT_TAKEN");
+       case GE_VIRTUAL_SENSOR:
+           return ("GE_VIRTUAL_SENSOR");
+       case GE_OPEN:
+           return ("GE_OPEN");
+       case GE_NOT_CONNECTED:
+           return ("GE_NOT_CONNECTED");
+           default:
+               return ("UNKNOWN ERROR CODE");
+       }
+}
+#if 0
 const char* General_Error::errorToString(general_err_t errCode) {
     switch (errCode) {
     case GE_OK:
@@ -67,7 +107,7 @@ const char* General_Error::errorToString(general_err_t errCode) {
             return ("UNKNOWN ERROR CODE");
     }
 }
-
+#endif
 void General_Error::printError(general_err_t errCode) {
     if(errCode == GE_OK)
     {

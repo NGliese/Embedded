@@ -90,7 +90,7 @@ HAL_ESP32::HAL_ESP32(const config& conf) : m_conf{conf}{
 HAL_ESP32::~HAL_ESP32() {
 }
 
-general_err_t HAL_ESP32::setDutyCycle(const uint32_t &duty) {
+general_err_t HAL_ESP32::setDutyCycle(const float &duty) {
 
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setDutyCycle >> ");

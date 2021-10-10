@@ -98,7 +98,8 @@ enum general_resp_t{
  */
 class General_Error {
 public:
-    static const char* errorToString(general_err_t errCode);
+ //   static const char* errorToString(general_err_t errCode);
+    static std::string errorToString(general_err_t errCode);
     static const char* responseToString(general_resp_t respCode);
     static void printError(general_err_t errCode);
     static void printError(const std::string &LOGTAG,general_err_t errCode);

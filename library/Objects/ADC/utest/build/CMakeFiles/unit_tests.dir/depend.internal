@@ -542,11 +542,6 @@ CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/AnalysisTools/Ima
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp
  /usr/local/include/opencv4/opencv2/video/tracking.hpp
  /usr/local/include/opencv4/opencv2/videoio.hpp
-CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp.o
- /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
- /home/nikolaj/github/Embedded/library/Objects/ADC/include/ADC_API.hpp
- /home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API.cpp
- /home/nikolaj/github/Embedded/library/Objects/ErrorHandler/include/General_Error.hpp
 CMakeFiles/unit_tests.dir/home/nikolaj/github/Embedded/library/Objects/ADC/src/ADC_API_ESP32.cpp.o
  /home/nikolaj/github/Embedded/library/Global_Include/BASIC.hpp
  /home/nikolaj/github/Embedded/library/Interfaces/ADCBase/include/ADCBase.hpp
