@@ -18,6 +18,11 @@ The PCB board developed is ment to support a esp32-dev board with up to 3 actuat
 
 ### ServoController
 
+The servo controller is a class-container used for encapsulating the functionallity of activating the servo motors. 
+In this project, two servo motors will be used, however the ServoController will make it look like they are a single unit, for the end user.
+
+
+
 <p align="center">
   <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="500" height="600">
 </p>
