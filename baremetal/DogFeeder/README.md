@@ -19,7 +19,7 @@ The PCB board developed is ment to support a esp32-dev board with up to 3 actuat
 ### ServoController
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="600" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="500" height="600">
 </p>
 
 
