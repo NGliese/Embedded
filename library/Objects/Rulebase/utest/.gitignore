@@ -1,4 +1,4 @@
 /.settings/
 .cproject
 .project
-/.metadata/
+/utest/build/

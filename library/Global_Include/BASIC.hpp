@@ -12,14 +12,14 @@
 #ifndef BPS_INCLUDE_BASIC_HPP_
 #define BPS_INCLUDE_BASIC_HPP_
 
-#define UNIT_TEST_MODE (1)
+//#define UNIT_TEST_MODE (1)
 
 #define __WITH_OPENCV__ (1)
 
 #define GLOBAL_MQTT_SERVER ("mqtt://192.168.1.157:1883")
 
 #ifndef UNIT_TEST_MODE
-//#define __RPI__ (1)
+#define __RPI__ (1)
 #define __DATABASE__ (1)
 
 #ifndef __RPI__

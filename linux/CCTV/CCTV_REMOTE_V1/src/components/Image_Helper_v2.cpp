@@ -288,3 +288,24 @@ general_err_t Image_Helper_v2::doImageProcessing(const cv::Mat &src,
     src.copyTo(dist);
 
 }
+
+void Image_Helper_v2::reportAlarm(void) {
+
+    using MSG = Message_Protocol;
+    using HANDLER = Message_Handler;
+
+    std::string str= HANDLER::postgres_start();
+
+
+    auto& time = m_container.m_aquicision.timeOfCapture;
+
+
+
+    str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_ALARM),0} , {100, time} } );
+
+
+    str+= HANDLER::postgres_end();
+
+    m_interface.post( str );
+
+}

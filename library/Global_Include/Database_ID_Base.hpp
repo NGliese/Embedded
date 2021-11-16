@@ -65,7 +65,7 @@ enum class db_id{
         /* ENV01 */
         ENV01_TEMPERATURE,ENV01_HUMIDITY,ENV01_CO2,ENV01_LUX,
         CCTV01_DEBUG1, CCTV01_DEBUG2, CCTV01_DEBUG3, CCTV01_DEBUG4, CCTV01_DEBUG5,
-        CCTV01_KNN_CC,CCTV01_MOG2_CC,CCTV01_HEIGHT,CCTV01_WIDTH,CCTV01_AREA,CCTV01_ASPECT,CCTV01_AMOUNT,
+        CCTV01_KNN_CC,CCTV01_MOG2_CC,CCTV01_HEIGHT,CCTV01_WIDTH,CCTV01_AREA,CCTV01_ASPECT,CCTV01_AMOUNT,CCTV01_ALARM
 };
 
 static const std::map<db_id,uint32_t> map {
@@ -78,7 +78,7 @@ static const std::map<db_id,uint32_t> map {
     {db_id::ENV01_TEMPERATURE, 28 },   {db_id::ENV01_HUMIDITY, 29 },   {db_id::ENV01_CO2, 30 },   {db_id::ENV01_LUX, 31 },
     {db_id::CCTV01_DEBUG1, 32 },   {db_id::CCTV01_DEBUG2, 33 },   {db_id::CCTV01_DEBUG3, 34 },   {db_id::CCTV01_DEBUG4, 35 }, {db_id::CCTV01_DEBUG5, 36 },
     {db_id::CCTV01_KNN_CC, 37 },   {db_id::CCTV01_MOG2_CC, 38 },{db_id::CCTV01_HEIGHT, 39 },{db_id::CCTV01_WIDTH, 40 },{db_id::CCTV01_AREA, 41 },{db_id::CCTV01_ASPECT, 42 },{db_id::CCTV01_AMOUNT,43},
-
+    {db_id::CCTV01_ALARM, 44 },
 };
 
 

@@ -13,7 +13,6 @@ add_compile_options(-DPROJECT_NAME="CCTV01")
 
 
 
-
 find_package( OpenCV REQUIRED )
 
 find_package(raspicam REQUIRED)
@@ -70,7 +69,7 @@ file(GLOB_RECURSE LIB_FILES13 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "$
 file(GLOB_RECURSE LIB_FILES14 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "${LIB_DIR}/Objects/Message/include/*.hpp" "${LIB_DIR}/Objects/Message/src/*.cpp")
 
 file(GLOB_RECURSE LIB_FILES15 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "${LIB_DIR}/Objects/Image/include/*.hpp" "${LIB_DIR}/Objects/Image/src/*.cpp")
-file(GLOB_RECURSE LIB_FILES16 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "${LIB_DIR}/Objects/Logger/include/*.hpp" "${LIB_DIR}/Objects/Logger/src/*.cpp")
+file(GLOB_RECURSE LIB_FILES16 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "${LIB_DIR}/Objects/Rulebase/include/*.hpp" "${LIB_DIR}/Objects/Rulebase/src/*.cpp")
 
 file(GLOB_RECURSE LIB_FILES17 RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS  "${LIB_DIR}/PerformanceTools/StopWatch/include/*.hpp" "${LIB_DIR}/PerformanceTools/StopWatch/src/*.cpp")
 
