@@ -19,7 +19,7 @@
 #define GLOBAL_MQTT_SERVER ("mqtt://192.168.1.157:1883")
 
 #ifndef UNIT_TEST_MODE
-#define __RPI__ (1)
+//#define __RPI__ (1)
 #define __DATABASE__ (1)
 
 #ifndef __RPI__

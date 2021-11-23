@@ -18,10 +18,6 @@
 ../../../Objects/Timeservice/include/Timeservice.hpp
 /home/nikolaj/github/Embedded/library/Objects/Timeservice/include/Timeservice.hpp
 
-/home/nikolaj/github/Embedded/library/Actuator/ServoMotor/src/MG996R.cpp
-../include/MG996R.hpp
-/home/nikolaj/github/Embedded/library/Actuator/ServoMotor/include/MG996R.hpp
-
 /home/nikolaj/github/Embedded/library/Actuator/ServoMotor/utest/test/servo_test.cpp
 iostream
 -

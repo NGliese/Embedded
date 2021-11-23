@@ -1,9 +1,10 @@
 /*
- * Timebased_rules.cpp
+ * DogFeederDoor.cpp
  *
- *  Created on: Nov 16, 2021
+ *  Created on: Nov 23, 2021
  *      Author: nikolaj
  */
+
 
 
 /***********************************************************************************************+
@@ -17,7 +18,7 @@
  *
  *  \note       ANY RELEVANT NOTES
  *
- *  \file       Timebased_rules.cpp
+ *  \file       DogFeederDoor.cpp
  *  \author     N.G Pedersen <nikolajgliese@tutanota.com>
  *  \version    1.0
  *  \date       2021
@@ -27,29 +28,28 @@
  ***********************************************************************************************/
 
 
-#include "../include/Timebased_rules.hpp"
+#include "../include/DogFeederDoor.hpp"
 
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "Timebased_rules";
+static const char *LOG_TAG = "DogFeederDoor";
 #endif
 
+DogFeederDoor::DogFeederDoor(const mg996r_conf_t& conf) : m_motor{conf} {
+}
 
-constexpr int NIGHT_TIME_START = 20;
-constexpr int NIGHT_TIME_END = 5;
-bool Timebased_rules::isItNight(void) {
+DogFeederDoor::~DogFeederDoor() {
+}
 
-    time_t now = time(0);
-    struct tm tstruct;
-    tstruct =*localtime(&now);
+general_err_t DogFeederDoor::open() {
 
 
-    if(tstruct.tm_hour >= NIGHT_TIME_START or tstruct.tm_hour <= NIGHT_TIME_END)
-    {
-        return true;
-    }
 
-    return false;
+    return m_motor.setToMaximum();
+}
+
+general_err_t DogFeederDoor::close() {
+    return m_motor.setToMinimum();
 }

@@ -101,6 +101,14 @@ public:
      * function to return the current value of the actuator
      */
     inline const U& getValue(void) const {  return m_value;  } ;
+    /**
+     * function to set the actuator to the maximum possible value
+     */
+    virtual general_err_t setToMaximum(void) = 0;
+    /**
+     * function to set the actuator to the minimum possible value
+     */
+     virtual general_err_t setToMinimum(void) = 0;
 protected:
     /**
      * Setpoint function, the derived class is able to define its own function to accommodate fault handling

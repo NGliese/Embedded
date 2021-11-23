@@ -31,6 +31,11 @@
 #include "../include/MG996R.hpp"
 
 
+static constexpr float MIN_VALUE = 2.5; //<! start position of servo motor [duty cycle]
+static constexpr float MAX_VALUE = 13; //<! end position of servo motor   [duty cycle]
+
+
+
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
@@ -48,11 +53,11 @@ general_err_t MG996R::setPoint(const float &value) {
     LOG_PRINT_INFO(LOG_TAG, ">> MG996R::setPoint >> ");
     #endif
     // Executable code:
-    if(value > MG996R::max_value )
+    if(value > MAX_VALUE)
     {
         return GE_UPPER_BOUNDERY;
     }
-    if(value < MG996R::min_value )
+    if(value < MIN_VALUE )
     {
         return GE_LOWER_BOUNDERY;
     }
@@ -88,4 +93,12 @@ general_err_t MG996R::actuate(void) {
     #endif
 
     return GE_OK;
+}
+
+general_err_t MG996R::setToMaximum(void) {
+    return execute(MAX_VALUE);
+}
+
+general_err_t MG996R::setToMinimum(void) {
+    return execute(MIN_VALUE);
 }

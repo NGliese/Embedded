@@ -65,10 +65,23 @@ DOUBLES_EQUAL(m_friend.getSetPoint(),0,3);
 }
 
 // test init
-TEST(SERVO_GRP, actuate)
+TEST(SERVO_GRP, actuate_error_TOO_HIGH)
 {
-m_servo.execute(15);
-DOUBLES_EQUAL(m_servo.getValue(),15,1);
+CHECK_EQUAL(GE_UPPER_BOUNDERY,m_servo.execute(15));
+
 }
 
+// test init
+TEST(SERVO_GRP, actuat_max)
+{
+    m_servo.setToMaximum();
 
+   // DOUBLES_EQUAL(m_servo.getValue(),14,1);
+    CHECK( m_servo.getValue() == 13 );
+}
+// test init
+TEST(SERVO_GRP, actuat_min)
+{
+    m_servo.setToMinimum();
+    CHECK( m_servo.getValue() == 2.5 );
+}

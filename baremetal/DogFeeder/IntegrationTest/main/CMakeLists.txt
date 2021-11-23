@@ -16,4 +16,7 @@ idf_component_register(SRC_DIRS "."									INCLUDE_DIRS "${LIB_DIR}/Global_Incl
 			SRC_DIRS  "${LIB_DIR}/Interfaces/SensorBase/src/"    	INCLUDE_DIRS "${LIB_DIR}/Interfaces/SensorBase/include/" 
 			SRC_DIRS  "${LIB_DIR}/Interfaces/ADCBase/src/"    	    INCLUDE_DIRS "${LIB_DIR}/Interfaces/ADCBase/include/" 
 			SRC_DIRS  "${LIB_DIR}/Interfaces/PWMBase/src/"    		INCLUDE_DIRS "${LIB_DIR}/Interfaces/PWMBase/include/" 
+			SRC_DIRS  "${LIB_DIR}/Interfaces/ActuatorBase/src/"    		INCLUDE_DIRS "${LIB_DIR}/Interfaces/ActuatorBase/include/" 
+			SRC_DIRS  "${LIB_DIR}/Actuator/ServoMotor/src/"    		INCLUDE_DIRS "${LIB_DIR}/Actuator/ServoMotor/include/" 
+			SRC_DIRS  "${LIB_DIR}/User/DogFeederDoor/src/"    		INCLUDE_DIRS "${LIB_DIR}/User/DogFeederDoor/include/" 
 		INCLUDE_DIRS "")
