@@ -11,7 +11,7 @@ This project is ment to be a solution to a lonly and starving dog. The dogfeeder
 
 ### User wants to give the dog a treat
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/UseCase_TreatDog.bmp" width="700" height="600">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/UseCase_TreatDog.bmp" width="1000" height="800">
 </p>
 
 
