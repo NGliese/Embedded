@@ -63,7 +63,7 @@ void System_Overall::run(void) {
 
       Utility_Image::rotateImage(raw,180);
 
-      cv::Point p1(800, 450);
+      cv::Point p1(800, 450+160);
       cv::Point p2(raw.cols,raw.rows);
    //   Utility_Image::putMask(raw,masked,p1,p2);
 
@@ -84,7 +84,8 @@ void System_Overall::run(void) {
       {
           m_helper.reportAnalysis();
           m_helper.reportImages(raw, edge, visual);
-          if(Timebased_rules::isItNight())
+          //if(Timebased_rules::isItNight())
+          if(Timebased_rules::isItVacation() or Timebased_rules::isItNight())
           {
               m_helper.reportAlarm();
           }
@@ -92,7 +93,7 @@ void System_Overall::run(void) {
 
 
 
-      std::cout << "Viewing images....  \n";
+     // std::cout << "Viewing images....  \n";
 
       Utility_Image::view_image(Utility_Image::zoom(visual,0.25), "visual color");
       Utility_Image::view_image(Utility_Image::zoom(masked,0.25), "masked color");

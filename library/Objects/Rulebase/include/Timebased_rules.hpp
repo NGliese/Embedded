@@ -91,6 +91,11 @@ public:
      * Nighttime is defined as 20:00 to 05:00
      */
     static bool isItNight(void);
+    /**
+     * Function to decide if it is vacation or not
+     * Vacation is between xx and yy
+     */
+    static bool isItVacation(void);
 private:
 
 };

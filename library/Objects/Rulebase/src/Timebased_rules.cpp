@@ -39,6 +39,9 @@ static const char *LOG_TAG = "Timebased_rules";
 
 constexpr int NIGHT_TIME_START = 20;
 constexpr int NIGHT_TIME_END = 5;
+
+constexpr int VACATION_START = 4;
+constexpr int VACATION_END = 12;
 bool Timebased_rules::isItNight(void) {
 
     time_t now = time(0);
@@ -47,6 +50,21 @@ bool Timebased_rules::isItNight(void) {
 
 
     if(tstruct.tm_hour >= NIGHT_TIME_START or tstruct.tm_hour <= NIGHT_TIME_END)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool Timebased_rules::isItVacation(void) {
+    time_t now = time(0);
+    struct tm tstruct;
+    tstruct =*localtime(&now);
+
+
+    std::cout << " current day is : " << (int)tstruct.tm_mday << "\n";
+    if(tstruct.tm_mday >= VACATION_START and tstruct.tm_mday <= VACATION_END)
     {
         return true;
     }

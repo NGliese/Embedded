@@ -103,7 +103,7 @@ general_err_t Image_Helper_v2::doOutlierDetection(const cv::Mat& image) {
     m_container.m_outlier.background1.data = m_background1.statsConnectedComponents(edge);
     m_container.m_outlier.background2.data = m_background2.statsConnectedComponents(edge);
 
-
+    m_background1.view();
 
     #ifdef DEBUG
     LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doOutlierDetection << ");
