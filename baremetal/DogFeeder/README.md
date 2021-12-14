@@ -25,7 +25,7 @@ In this project, two servo motors and two current sesnors will be used, however 
 
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="500" height="600">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="700" height="800">
 </p>
 
 ## PCB board
