@@ -7,7 +7,7 @@ Some of the residense fear that our dog will be lonely and therefor the need for
 ## The dogfeeder project
 This project is ment to be a solution to a lonly and starving dog. The dogfeeder is required to automatically open up a door to deliever delicious dog food at specific periodes through out the day.
 
-## use cases
+## Use Cases
 
 ### User wants to give the dog a treat
 <p align="center">
