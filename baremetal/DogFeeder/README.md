@@ -7,12 +7,13 @@ Some of the residense fear that our dog will be lonely and therefor the need for
 ## The dogfeeder project
 This project is ment to be a solution to a lonly and starving dog. The dogfeeder is required to automatically open up a door to deliever delicious dog food at specific periodes through out the day.
 
-## PCB board
-The PCB board developed is ment to support a esp32-dev board with up to 3 actuators powered by an external power source. The board is a 4-layer board and is created through the opensource project https://www.kicad.org/
+## use cases
 
+### User wants to give the dog a treat
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Images/pcb_board.png" width="600" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder UseCase_TreatDog.bmp" width="500" height="600">
 </p>
+
 
 ## Software achitecture
 
@@ -27,6 +28,10 @@ In this project, two servo motors and two current sesnors will be used, however 
   <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Docs/diagrams/DogFeeder diagrams.bmp" width="500" height="600">
 </p>
 
+## PCB board
+The PCB board developed is ment to support a esp32-dev board with up to 3 actuators powered by an external power source. The board is a 4-layer board and is created through the opensource project https://www.kicad.org/
 
-
+<p align="center">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/DogFeeder/Images/pcb_board.png" width="600" height="500">
+</p>
 
