@@ -110,7 +110,7 @@
       <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="193.0" width="503.0" x="-320.43484375" y="161.83039999999988"/>
+          <y:Geometry height="193.0" width="503.0" x="592.1000000000008" y="-160.04460000000012"/>
           <y:Fill color="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="307.140625" x="4.0" xml:space="preserve" y="4.0">Use Case Title : User wants to give the dog a treat</y:NodeLabel>
@@ -122,7 +122,7 @@
       <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="156.0" width="503.0" x="-320.43484375" y="198.83039999999988"/>
+          <y:Geometry height="156.0" width="503.0" x="592.1000000000008" y="-123.04460000000012"/>
           <y:Fill color="#808080" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="73.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="467.904296875" x="17.5478515625" xml:space="preserve" y="4.0">1) User takes his/hers phone and connects to the interface
