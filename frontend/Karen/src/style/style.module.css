@@ -1,21 +1,28 @@
 .button {
     cursor: pointer;
-    border: 1px solid #ffffff;
+    border: 2px gray solid;
     background: #6885be;
     padding: 8px;
-    min-width: 64px;  
+    min-width: 80px;  
+    margin: 10px;
     transition: all 0.1s ease-in;
-    color: #ffffff
+    color: #ffffff;
+    float: right;
   }
   .button:hover {
     background: #1a202c;
     color: #ffffff;
   }
-
   .card {
+    cursor: pointer;
     text-align: center;
     background: #a18901;
-    border: 1px solid #ffffff;
+    border: 5px solid #ffffff;
     min-width: 50vh; 
     min-height: 35vh;
+
+  }
+  .card:hover {
+    background: #1a202c;
+    color: #ffffff;
   }
