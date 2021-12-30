@@ -5,7 +5,7 @@
 <!-- default badges end -->
 <!-- default file list -->
 *Files to look at*:
-* [codeCov.xml](./**CS/DXGrid_BindingToXML/Window1.xaml**) 
+* [codeCov.xml](./**library/coverage/coverage.xml**) 
 <!-- default file list end -->
 # How to display data from an XML file
 
