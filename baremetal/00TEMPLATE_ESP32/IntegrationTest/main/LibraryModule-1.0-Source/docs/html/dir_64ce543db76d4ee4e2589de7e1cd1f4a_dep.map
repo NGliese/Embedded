@@ -1,0 +1,17 @@
+<map id="Components/Objects/Watchdog/include" name="Components/Objects/Watchdog/include">
+<area shape="rect" id="node1" href="dir_64ce543db76d4ee4e2589de7e1cd1f4a.html" title="include" alt="" coords="81,52,153,100"/>
+<area shape="rect" id="node2" href="dir_4816d2fb8abcfd1fbfb7e56b67e0baa1.html" title="ErrorHandler" alt="" coords="21,340,125,388"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000131_000019.html" title="1" alt="" coords="34,313,43,328"/>
+<area shape="rect" id="node3" href="dir_1a5504e72c2ab618c124e6472b08d26c.html" title="Global_Include" alt="" coords="153,340,271,388"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000131_000087.html" title="1" alt="" coords="227,317,236,332"/>
+<area shape="rect" id="node4" href="dir_e185953657720ba3a67126696ef566c7.html" title="Interfaces" alt="" coords="115,148,202,196"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000131_000088.html" title="1" alt="" coords="144,121,154,135"/>
+<area shape="rect" id="node5" href="dir_82ae37b9d9d4852b543931d9ede35f57.html" title="Timeservice" alt="" coords="23,244,124,292"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000131_000049.html" title="1" alt="" coords="86,221,96,235"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000088_000019.html" title="9" alt="" coords="114,325,123,340"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000088_000087.html" title="9" alt="" coords="205,313,214,328"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000088_000049.html" title="1" alt="" coords="108,229,117,244"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000049_000019.html" title="2" alt="" coords="77,314,86,329"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000049_000087.html" title="2" alt="" coords="163,315,172,330"/>
+<area shape="rect" id="clust1" href="dir_f5aa2036925efca15e61136d01981e37.html" title="Watchdog" alt="" coords="71,16,164,111"/>
+</map>

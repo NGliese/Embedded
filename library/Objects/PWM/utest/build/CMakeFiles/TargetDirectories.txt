@@ -1,3 +1,0 @@
-/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/rebuild_cache.dir
-/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/edit_cache.dir
-/home/nikolaj/github/Embedded/library/Objects/PWM/utest/build/CMakeFiles/unit_tests.dir

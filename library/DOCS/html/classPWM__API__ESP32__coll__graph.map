@@ -1,6 +1,0 @@
-<map id="PWM_API_ESP32" name="PWM_API_ESP32">
-<area shape="rect" id="node1" title=" " alt="" coords="63,185,193,212"/>
-<area shape="rect" id="node2" href="$classPWMBase.html" title=" " alt="" coords="41,95,215,136"/>
-<area shape="rect" id="node3" href="$classFault__Handler.html" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node4" href="$classHAL__ESP32.html" title=" " alt="" coords="149,5,243,32"/>
-</map>
