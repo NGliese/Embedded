@@ -1,26 +1,88 @@
 import styles from '../style/style.module.css'
 import Button from '../components/Button';
-import { Outlet, Link } from "react-router-dom";
-import axios from 'axios';
+import {  Link } from "react-router-dom";
+import React, { useState,useEffect } from 'react';
+
+
 
 
 function DogFeeder() {
+    const [doorStatus, setDoor] = useState(0);
+    const url = 'http://192.168.1.157:1880/getDogFeederFlag';
+    const DoorIsUnknown =0;
+    const DoorIsOpen = 100;
+    const DoorIsClosed = 200;
+    
+    function updateDoorStatus() {
+ // POST request using fetch inside useEffect React hook
+ const requestOptions = {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    //body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+};
+fetch(url, requestOptions)
+    .then(response => response.json())
+    .then(data =>{
+      console.log("Recieved object is : ");
+      console.log(data); 
+        data.value === DoorIsOpen ? setDoor(DoorIsOpen) :
+        data.value === DoorIsClosed ?  setDoor(DoorIsClosed) :
+        console.log("Error in processing data, value is ",data.value); 
+    });
+    }
+
+    useEffect(() => {
+    updateDoorStatus();
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
+
+
+
     function onOpen()
 {
-    const url = 'http://192.168.1.157:1880/getFlag';
+
     console.log("clicked onOpen from dogfeeder");
-        // GET request using fetch with set headers
-        const headers = { 'Content-Type': 'application/json' }
-        fetch(url, { headers })            
-            .then(data => console.log(data.json()));
+    setDoor(DoorIsClosed)
+        // POST request using fetch inside useEffect React hook
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            //body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+        };
+        fetch('http://192.168.1.157:1880/OpenDogFeederDoor', requestOptions)
+        .then(response => { 
+            console.log("response is  ",response); 
+            updateDoorStatus();
+        } )
+            
+            
+
+}
+function onClose()
+{
+
+    console.log("clicked onClose from dogfeeder");
+    setDoor(DoorIsOpen)
+        // POST request using fetch inside useEffect React hook
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            //body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+        };
+        fetch('http://192.168.1.157:1880/CloseDogFeederDoor', requestOptions)
+        .then(response => { 
+            console.log("response is  ",response); 
+            updateDoorStatus();
+        } ) 
+            
+
 }
 
     return (
        <div className={styles.card} >
-       <h5>Hello world</h5>  
-       <Button onClickFunction={onOpen} button_name="Open"/>
-       <li><Link to="/"> Go Back</Link></li>
-     
+       <p> {doorStatus === DoorIsUnknown ? "Waiting for server ..." : doorStatus > DoorIsOpen ? "The door is Closed" : "The door is Open"} </p>         
+       <Button isDisabled={ doorStatus === DoorIsUnknown ? true : false } onClickFunction={ doorStatus > DoorIsOpen ? onClose : onOpen} button_name={ doorStatus > DoorIsOpen ? "Close" : "Open"} />
+       <li><Link to="/"> Go Back</Link></li>     
       </div>
     );
   }
