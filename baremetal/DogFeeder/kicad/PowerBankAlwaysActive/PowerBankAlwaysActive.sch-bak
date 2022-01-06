@@ -46,23 +46,10 @@ F 3 "" H 3800 1650 50  0001 C CNN
 	1    3800 1650
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+5V #PWR01
-U 1 1 61BC4BAE
-P 3050 2700
-F 0 "#PWR01" H 3050 2550 50  0001 C CNN
-F 1 "+5V" H 3065 2873 50  0000 C CNN
-F 2 "" H 3050 2700 50  0001 C CNN
-F 3 "" H 3050 2700 50  0001 C CNN
-	1    3050 2700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3800 2100 3800 1800
 Wire Wire Line
 	3800 2900 3800 3200
-Wire Wire Line
-	3300 2700 3050 2700
 $Comp
 L Device:R R2
 U 1 1 61BC5AA7
@@ -130,7 +117,7 @@ U 1 1 61BCD26F
 P 4700 3000
 F 0 "C1" H 4815 3046 50  0000 L CNN
 F 1 "10uf" H 4815 2955 50  0000 L CNN
-F 2 "Capacitor_Tantalum_SMD:CP_EIA-1608-10_AVX-L_Pad1.25x1.05mm_HandSolder" H 4738 2850 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 4738 2850 50  0001 C CNN
 F 3 "~" H 4700 3000 50  0001 C CNN
 	1    4700 3000
 	1    0    0    -1  
@@ -364,10 +351,10 @@ F 3 "~" H 6000 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C3
 U 1 1 61BF0616
 P 5850 1950
-F 0 "C?" H 5965 1996 50  0000 L CNN
+F 0 "C3" H 5965 1996 50  0000 L CNN
 F 1 "4.7uf" H 5965 1905 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 5888 1800 50  0001 C CNN
 F 3 "~" H 5850 1950 50  0001 C CNN
@@ -378,14 +365,133 @@ Connection ~ 5850 1800
 Wire Wire Line
 	5850 1800 6650 1800
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0105
 U 1 1 61BF0C7C
 P 5850 2100
-F 0 "#PWR?" H 5850 1850 50  0001 C CNN
+F 0 "#PWR0105" H 5850 1850 50  0001 C CNN
 F 1 "GND" H 5855 1927 50  0000 C CNN
 F 2 "" H 5850 2100 50  0001 C CNN
 F 3 "" H 5850 2100 50  0001 C CNN
 	1    5850 2100
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61D4E561
+P 4350 4000
+F 0 "TP?" H 4408 4118 50  0000 L CNN
+F 1 "TestPoint" H 4408 4027 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 4550 4000 50  0001 C CNN
+F 3 "~" H 4550 4000 50  0001 C CNN
+	1    4350 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61D4F9DD
+P 4950 4000
+F 0 "TP?" H 5008 4118 50  0000 L CNN
+F 1 "TestPoint" H 5008 4027 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5150 4000 50  0001 C CNN
+F 3 "~" H 5150 4000 50  0001 C CNN
+	1    4950 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61D51BB9
+P 5600 4000
+F 0 "TP?" H 5658 4118 50  0000 L CNN
+F 1 "TestPoint" H 5658 4027 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5800 4000 50  0001 C CNN
+F 3 "~" H 5800 4000 50  0001 C CNN
+	1    5600 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4000 4350 4200
+Wire Wire Line
+	4950 4000 4950 4200
+Wire Wire Line
+	5600 4000 5600 4200
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61D550A7
+P 3900 4000
+F 0 "TP?" H 3958 4118 50  0000 L CNN
+F 1 "TestPoint" H 3958 4027 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 4100 4000 50  0001 C CNN
+F 3 "~" H 4100 4000 50  0001 C CNN
+	1    3900 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61D552E7
+P 3350 4000
+F 0 "TP?" H 3408 4118 50  0000 L CNN
+F 1 "TestPoint" H 3408 4027 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3550 4000 50  0001 C CNN
+F 3 "~" H 3550 4000 50  0001 C CNN
+	1    3350 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61D5650B
+P 3350 4000
+F 0 "#PWR?" H 3350 3750 50  0001 C CNN
+F 1 "GND" H 3355 3827 50  0000 C CNN
+F 2 "" H 3350 4000 50  0001 C CNN
+F 3 "" H 3350 4000 50  0001 C CNN
+	1    3350 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 61D56E51
+P 3900 4000
+F 0 "#PWR?" H 3900 3850 50  0001 C CNN
+F 1 "+5V" H 3915 4173 50  0000 C CNN
+F 2 "" H 3900 4000 50  0001 C CNN
+F 3 "" H 3900 4000 50  0001 C CNN
+	1    3900 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61D587FE
+P 2950 2950
+F 0 "R?" V 2743 2950 50  0000 C CNN
+F 1 "0R" V 2834 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 2880 2950 50  0001 C CNN
+F 3 "~" H 2950 2950 50  0001 C CNN
+	1    2950 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 61D59630
+P 2800 2950
+F 0 "#PWR?" H 2800 2800 50  0001 C CNN
+F 1 "+5V" H 2815 3123 50  0000 C CNN
+F 2 "" H 2800 2950 50  0001 C CNN
+F 3 "" H 2800 2950 50  0001 C CNN
+	1    2800 2950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3300 2700 3200 2700
+Wire Wire Line
+	3200 2700 3200 2950
+Wire Wire Line
+	3200 2950 3100 2950
+Text Label 4350 4200 1    50   ~ 0
+trig
+Text Label 4950 4200 1    50   ~ 0
+output
+Text Label 4700 2450 0    50   ~ 0
+disch
+Text Label 5600 4200 1    50   ~ 0
+disch
 $EndSCHEMATC
