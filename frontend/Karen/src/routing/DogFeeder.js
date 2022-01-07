@@ -23,11 +23,11 @@ function DogFeeder() {
 fetch(url, requestOptions)
     .then(response => response.json())
     .then(data =>{
-      console.log("Recieved object is : ");
-      console.log(data); 
-        data.value === DoorIsOpen ? setDoor(DoorIsOpen) :
-        data.value === DoorIsClosed ?  setDoor(DoorIsClosed) :
-        console.log("Error in processing data, value is ",data.value); 
+      console.log("Recieved object is : ",data);
+     // console.log(data); 
+     parseInt(data.value) === DoorIsOpen ? setDoor(DoorIsOpen) :
+     parseInt(data.value) === DoorIsClosed ?  setDoor(DoorIsClosed) :
+     console.log("Error in processing data, value is ",data.value); 
     });
     }
 
