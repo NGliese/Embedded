@@ -6,12 +6,9 @@
  */
 //#include "../../../SSP/main/components/Sensor_Handler/include/Sensor_Dummy_Handler.hpp"
 
-#include <iostream>
 #include "../../include/MG996R.hpp"
 #include "CppUTest/TestHarness.h"
-
-
-
+#include <iostream>
 
 TEST_GROUP(SERVO_GRP)
 {
@@ -25,63 +22,59 @@ TEST_GROUP(SERVO_GRP)
         conf.conf.mode = 3;
         conf.conf = {1,10.0,1000,2,3};
 #endif
-    MG996R m_servo{ {"test",{1,10.0,1000,2,3}} };
-    friend_MG996R m_friend{&m_servo};
+	MG996R m_servo{{"test", {1, 10.0, 1000, 2, 3}}};
+	friend_MG996R m_friend{&m_servo};
 
-	void setup(){
-
-
-	}
+	void setup() {}
 	void teardown()
 	{
-	  // Uninit stuff
-	    m_friend.setPoint(0);
+		// Uninit stuff
+		m_friend.setPoint(0);
 	}
 };
 
 // test init
 TEST(SERVO_GRP, init_val)
 {
-DOUBLES_EQUAL(m_servo.getValue(),0,1);
+	DOUBLES_EQUAL(m_servo.getValue(), 0, 1);
 }
 // test init
 TEST(SERVO_GRP, set_setval)
 {
-m_friend.setPoint(10.1);
-DOUBLES_EQUAL(m_friend.getSetPoint(),10.1,3);
+	m_friend.setPoint(10.1);
+	DOUBLES_EQUAL(m_friend.getSetPoint(), 10.1, 3);
 }
 
 // test init
 TEST(SERVO_GRP, set_setval_upper)
 {
-m_friend.setPoint(100.1);
-DOUBLES_EQUAL(m_friend.getSetPoint(),0,3);
+	m_friend.setPoint(100.1);
+	DOUBLES_EQUAL(m_friend.getSetPoint(), 0, 3);
 }
 // test init
 TEST(SERVO_GRP, set_setval_lower)
 {
-m_friend.setPoint(-100.1);
-DOUBLES_EQUAL(m_friend.getSetPoint(),0,3);
+	m_friend.setPoint(-100.1);
+	DOUBLES_EQUAL(m_friend.getSetPoint(), 0, 3);
 }
 
 // test init
 TEST(SERVO_GRP, actuate_error_TOO_HIGH)
 {
-CHECK_EQUAL(GE_UPPER_BOUNDERY,m_servo.execute(15));
-
+	CHECK_EQUAL(GE_UPPER_BOUNDERY, m_servo.execute(15));
 }
 
 // test init
 TEST(SERVO_GRP, actuat_max)
 {
-    m_servo.setToMaximum();
+	m_servo.setToMaximum();
 
-   // DOUBLES_EQUAL(m_servo.getValue(),14,1);
-    CHECK( m_servo.getValue() == 13 );
+	// DOUBLES_EQUAL(m_servo.getValue(),14,1);
+	CHECK(m_servo.getValue() == 13);
 }
 // test init
 TEST(SERVO_GRP, actuat_min)
 {
-    m_servo.setToMinimum();
-    CHECK( m_servo.getValue() == 2.5 );
+	m_servo.setToMinimum();
+	CHECK(m_servo.getValue() == 2.5);
 }

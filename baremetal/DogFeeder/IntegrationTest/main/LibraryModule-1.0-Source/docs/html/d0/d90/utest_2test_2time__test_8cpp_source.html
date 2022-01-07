@@ -100,26 +100,18 @@ $(document).ready(function(){initNavTree('d0/d90/utest_2test_2time__test_8cpp_so
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../include/Timeservice.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d0/d90/utest_2test_2time__test_8cpp.html#a109b2eb6676a17de7b1a98c13bd7bdec">   16</a></span>&#160;<a class="code" href="../../d8/d50/test_2src_2time__test_8cpp.html#a109b2eb6676a17de7b1a98c13bd7bdec">TEST_GROUP</a>(TIME_GRP)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> setup(){</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d0/d90/utest_2test_2time__test_8cpp.html#a109b2eb6676a17de7b1a98c13bd7bdec">   15</a></span>&#160;<a class="code" href="../../d8/d50/test_2src_2time__test_8cpp.html#a109b2eb6676a17de7b1a98c13bd7bdec">TEST_GROUP</a>(TIME_GRP){<span class="keywordtype">void</span> setup(){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} <span class="keywordtype">void</span> teardown(){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// Uninit stuff</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> teardown()</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="comment">// Uninit stuff</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d0/d90/utest_2test_2time__test_8cpp.html#a60b919de6c171375170445ccd8093057">   29</a></span>&#160;<a class="code" href="../../d8/d50/test_2src_2time__test_8cpp.html#a3abeec1499646c7e405422056b1c4e8d">TEST</a>(TIME_GRP, init)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;std::cout &lt;&lt; <span class="stringliteral">&quot; current date is : &quot;</span>&lt;&lt; <a class="code" href="../../d8/d2c/class_timeservice.html#a7537ddad504b6fc8cde486394ecb67f1">Timeservice::getCurrentDate</a>()&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// test init</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d0/d90/utest_2test_2time__test_8cpp.html#a60b919de6c171375170445ccd8093057">   23</a></span>&#160;<a class="code" href="../../d8/d50/test_2src_2time__test_8cpp.html#a3abeec1499646c7e405422056b1c4e8d">TEST</a>(TIME_GRP, init)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot; current date is : &quot;</span> &lt;&lt; <a class="code" href="../../d8/d2c/class_timeservice.html#a7537ddad504b6fc8cde486394ecb67f1">Timeservice::getCurrentDate</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="atest_2src_2time__test_8cpp_html_a3abeec1499646c7e405422056b1c4e8d"><div class="ttname"><a href="../../d8/d50/test_2src_2time__test_8cpp.html#a3abeec1499646c7e405422056b1c4e8d">TEST</a></div><div class="ttdeci">TEST(TIME_GRP, test_date)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d50/test_2src_2time__test_8cpp_source.html#l00023">time_test.cpp:23</a></div></div>

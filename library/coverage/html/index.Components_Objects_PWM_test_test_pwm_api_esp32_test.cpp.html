@@ -269,13 +269,13 @@
             <td class="headerValue">Components/Objects/PWM/test/test/pwm_api_esp32_test.cpp</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">25</td>
-            <td class="headerTableEntry">25</td>
+            <td class="headerTableEntry">24</td>
+            <td class="headerTableEntry">24</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-30 13:04:46</td>
+            <td class="headerValue">2022-01-07 20:05:20</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">23</td>
@@ -352,14 +352,14 @@
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include &lt;iostream></pre></td>
+    <td align="left" class="src "><pre>#include "../../include/PWM_API_ESP32.hpp"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "../../include/PWM_API_ESP32.hpp"</pre></td>
+    <td align="left" class="src "><pre>#include &lt;iostream></pre></td>
     </tr>
 
     <tr>
@@ -387,126 +387,126 @@
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>TEST_GROUP(PWM_GRP)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	PWM_API_ESP32 m_api{{16, 10, 10000}, "test"};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	friend_PWM_API m_friend{&amp;m_api};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>TEST_GROUP(PWM_GRP)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>120</pre></td>
+    <td align="left" class="src coveredLine"><pre>	void setup() {}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>120</pre></td>
+    <td align="left" class="src coveredLine"><pre>	void teardown()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    PWM_API_ESP32 m_api{{16,10,10000},"test"};</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    friend_PWM_API m_friend{&amp;m_api};</pre></td>
+    <td align="left" class="src "><pre>		// Uninit stuff</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>	void setup(){</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>120</pre></td>
+    <td align="left" class="src coveredLine"><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>	}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>	void teardown()</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// test init</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	{</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, check_config)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	  // Uninit stuff</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().duty, 10);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>	}</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().frequency, 10000);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>};</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().m_pin, 16);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -518,9 +518,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, check_config)</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_freq)</pre></td>
     </tr>
 
     <tr>
@@ -532,72 +532,72 @@
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_api.setFrequency(100);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().duty,10);</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().frequency, 100);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().frequency,10000);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().m_pin,16);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>// test init</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// test init</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_api.setDutyCycle(15);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_freq)</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().duty, 15);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -609,30 +609,30 @@
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>m_api.setFrequency(100);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// test init</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().frequency,100);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty_incorrect)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_api.setDutyCycle(150);</pre></td>
     </tr>
 
     <tr>
@@ -644,51 +644,51 @@
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().duty, 10);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// test init</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre>// test init</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty_incorrect2)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>m_api.setDutyCycle(15);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().duty,15);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_api.setDutyCycle(-150);</pre></td>
     </tr>
 
     <tr>
@@ -700,155 +700,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>	CHECK_EQUAL(m_friend.getConf().duty, 10);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// test init</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty_incorrect)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>m_api.setDutyCycle(150);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().duty,10);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// test init</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>TEST(PWM_GRP, update_duty_incorrect2)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>m_api.setDutyCycle(-150);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="notTakenBranch" title="Branch 24 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="notTakenBranch" title="Branch 30 not taken">&cross;</span><span class="notTakenBranch" title="Branch 32 not taken">&cross;</span><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><span class="takenBranch" title="Branch 48 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 49 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>CHECK_EQUAL(m_friend.getConf().duty,10);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 

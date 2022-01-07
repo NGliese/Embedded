@@ -121,7 +121,8 @@ uint32_t FreeRTOS::Semaphore::wait(const std::string& owner)
 	return m_value;
 } // wait
 
-FreeRTOS::Semaphore::Semaphore(const std::string& name) :m_name{name},m_owner{"<N/A>"}, m_value{0}, m_usePthreads{false}
+FreeRTOS::Semaphore::Semaphore(const std::string& name)
+	: m_name{name}, m_owner{"<N/A>"}, m_value{0}, m_usePthreads{false}
 {
 #ifdef __ESP32__
 	if(m_usePthreads)
@@ -139,9 +140,6 @@ FreeRTOS::Semaphore::Semaphore(const std::string& name) :m_name{name},m_owner{"<
 		m_semaphore = xSemaphoreCreateBinary();
 	}
 #endif
-
-
-
 }
 
 FreeRTOS::Semaphore::~Semaphore()

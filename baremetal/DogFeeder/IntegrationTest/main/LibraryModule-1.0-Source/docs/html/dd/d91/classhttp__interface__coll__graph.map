@@ -1,7 +1,7 @@
 <map id="http_interface" name="http_interface">
-<area shape="rect" id="node1" title=" " alt="" coords="51,500,201,665"/>
-<area shape="rect" id="node2" href="$dc/d12/class_protocol_base.html" title=" " alt="" coords="5,294,148,430"/>
-<area shape="rect" id="node3" href="$d2/d2b/class_curl___s_a_l.html" title=" " alt="" coords="172,287,291,437"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="188,147,275,224"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="162,5,301,97"/>
+<area shape="rect" id="node1" title=" " alt="" coords="78,500,227,665"/>
+<area shape="rect" id="node2" href="$dc/d12/class_protocol_base.html" title=" " alt="" coords="5,287,148,437"/>
+<area shape="rect" id="node3" title="STL class." alt="" coords="109,147,196,224"/>
+<area shape="rect" id="node5" href="$d2/d2b/class_curl___s_a_l.html" title=" " alt="" coords="172,287,288,437"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="83,5,222,97"/>
 </map>

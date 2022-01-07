@@ -10,25 +10,15 @@
 
 #include "CppUTest/TestHarness.h"
 
+TEST_GROUP(TEMPL_GRP){void setup(){
 
+} void teardown(){
+	// Uninit stuff
 
-
-TEST_GROUP(TEMPL_GRP)
-{
-	void setup(){
-
-	}
-	void teardown()
-	{
-	  // Uninit stuff
-
-	}
-};
+}};
 
 // test init
 IGNORE_TEST(TEMPL_GRP, init)
 {
-
-FAIL("FAIL ME!");
+	FAIL("FAIL ME!");
 }
-

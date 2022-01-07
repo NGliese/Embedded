@@ -25,7 +25,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -46,86 +45,72 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
-
 
 /*----------------- DEFAULT INCLUDE -------------------------------------------*/
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
 
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/imgproc.hpp>
 #include <array>
-
-
-
+#include <opencv2/imgproc.hpp>
+#include <opencv2/opencv.hpp>
 
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
 
-
-
-
-
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class ConnectedComponents {
+class ConnectedComponents
+{
 #ifdef __UNITTEST__
-    friend class friend_ConnectedComponents;
+	friend class friend_ConnectedComponents;
 #endif
-public:
+  public:
+	struct ellipse_data_t
+	{
+		float height;
+		float width;
+		float aspect_ratio;
+		float area;
+	};
 
-    struct ellipse_data_t
-    {
-        float height;
-        float width;
-        float aspect_ratio;
-        float area;
-    };
+	struct container_t
+	{
+		uint32_t maxConnected;
+		size_t amount_of_connections;
+		ellipse_data_t ellipse;
+	};
 
-    struct container_t{
-        uint32_t maxConnected;
-        size_t amount_of_connections;
-        ellipse_data_t ellipse;
+	static general_err_t drawConnectedComponents(const cv::Mat& forground, cv::Mat& drawing);
+	static general_err_t drawConnectedComponentsOpenCV(const cv::Mat& forground, cv::Mat& drawing);
+	static uint32_t maxConnectedComponents(const cv::Mat& forground, int ksize = 2);
+	static container_t statsConnectedComponents(const cv::Mat& forground, int ksize = 2);
 
-    };
-
-    static general_err_t drawConnectedComponents(const cv::Mat& forground, cv::Mat& drawing);
-    static general_err_t drawConnectedComponentsOpenCV(const cv::Mat& forground, cv::Mat& drawing);
-    static uint32_t maxConnectedComponents(const cv::Mat& forground,int ksize = 2);
-    static container_t statsConnectedComponents(const cv::Mat& forground,int ksize = 2);
-private:
-
+  private:
 };
-
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_ConnectedComponents {
-public:
-    friend_ConnectedComponents(ConnectedComponents * ConnectedComponents) : m_sensor{ConnectedComponents} { };
+class friend_ConnectedComponents
+{
+  public:
+	friend_ConnectedComponents(ConnectedComponents* ConnectedComponents)
+		: m_sensor{ConnectedComponents} {};
 
-    ~friend_ConnectedComponents(){};
+	~friend_ConnectedComponents(){};
 
-private:
-    ConnectedComponents * m_sensor;
+  private:
+	ConnectedComponents* m_sensor;
 };
 #endif
-
-
-
-
 
 #endif /* INCLUDE_CONNECTEDCOMPONENTS_HPP_ */

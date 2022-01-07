@@ -148,7 +148,7 @@ Static Private Attributes</h2></td></tr>
 class ADCBase&lt; T &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00074">74</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a45da7ff245042cfd59952b6cfc206368"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45da7ff245042cfd59952b6cfc206368">&#9670;&nbsp;</a></span>ADCBase()</h2>
@@ -186,8 +186,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;: <a class="code" href="../../dc/d23/class_a_d_c_base.html#ae6198e34871b8037c8da01612fe83c12">m_faulthanlder</a>{name}, <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>{samples} {};</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        : <a class="code" href="../../dc/d23/class_a_d_c_base.html#ae6198e34871b8037c8da01612fe83c12">m_faulthanlder</a>{name}, <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>{samples} {};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,8 +216,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{};</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,8 +249,10 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>get the sample number </p><dl class="section return"><dt>Returns</dt><dd>size_t sample_number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,13 +320,13 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                       {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span>( (samples &gt;= <a class="code" href="../../dc/d23/class_a_d_c_base.html#a6c079fa42d7b5b65cfaaa8fac679eb50">minimum_number_of_samples</a>) and (samples &lt;= <a class="code" href="../../dc/d23/class_a_d_c_base.html#adb7ec202ccf7a02d9c8e0a5f47f77c59">maximum_number_of_samples</a>) )</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a> = samples;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span>((samples &gt;= <a class="code" href="../../dc/d23/class_a_d_c_base.html#a6c079fa42d7b5b65cfaaa8fac679eb50">minimum_number_of_samples</a>) and (samples &lt;= <a class="code" href="../../dc/d23/class_a_d_c_base.html#adb7ec202ccf7a02d9c8e0a5f47f77c59">maximum_number_of_samples</a>))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a> = samples;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -351,7 +353,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00115">115</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -377,7 +379,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d23/class_a_d_c_base.html#a5880775a83445cfa006792c20357b8bb">ADCBase&lt; uint32_t &gt;::getSampleNumber()</a>, and <a class="el" href="../../dc/d23/class_a_d_c_base.html#adadc9b482e46bf3352073136f9498249">ADCBase&lt; uint32_t &gt;::setSampleNumber()</a>.</p>
 
@@ -405,7 +407,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00123">123</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00120">120</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d23/class_a_d_c_base.html#adadc9b482e46bf3352073136f9498249">ADCBase&lt; uint32_t &gt;::setSampleNumber()</a>.</p>
 
@@ -433,7 +435,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00122">122</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../d8/da0/_a_d_c_base_8hpp_source.html">ADCBase.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d23/class_a_d_c_base.html#adadc9b482e46bf3352073136f9498249">ADCBase&lt; uint32_t &gt;::setSampleNumber()</a>.</p>
 
@@ -444,10 +446,10 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_a_d_c_base_html_adb7ec202ccf7a02d9c8e0a5f47f77c59"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#adb7ec202ccf7a02d9c8e0a5f47f77c59">ADCBase::maximum_number_of_samples</a></div><div class="ttdeci">static constexpr size_t maximum_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00123">ADCBase.hpp:123</a></div></div>
-<div class="ttc" id="aclass_a_d_c_base_html_a6c079fa42d7b5b65cfaaa8fac679eb50"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a6c079fa42d7b5b65cfaaa8fac679eb50">ADCBase::minimum_number_of_samples</a></div><div class="ttdeci">static constexpr size_t minimum_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00122">ADCBase.hpp:122</a></div></div>
-<div class="ttc" id="aclass_a_d_c_base_html_a328bebdbcc92bb57f877012fa747b1e7"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">ADCBase::m_number_of_samples</a></div><div class="ttdeci">size_t m_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00119">ADCBase.hpp:119</a></div></div>
-<div class="ttc" id="aclass_a_d_c_base_html_ae6198e34871b8037c8da01612fe83c12"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#ae6198e34871b8037c8da01612fe83c12">ADCBase::m_faulthanlder</a></div><div class="ttdeci">Fault_Handler m_faulthanlder</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00118">ADCBase.hpp:118</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_adb7ec202ccf7a02d9c8e0a5f47f77c59"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#adb7ec202ccf7a02d9c8e0a5f47f77c59">ADCBase::maximum_number_of_samples</a></div><div class="ttdeci">static constexpr size_t maximum_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00120">ADCBase.hpp:120</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_a6c079fa42d7b5b65cfaaa8fac679eb50"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a6c079fa42d7b5b65cfaaa8fac679eb50">ADCBase::minimum_number_of_samples</a></div><div class="ttdeci">static constexpr size_t minimum_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00119">ADCBase.hpp:119</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_a328bebdbcc92bb57f877012fa747b1e7"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">ADCBase::m_number_of_samples</a></div><div class="ttdeci">size_t m_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00116">ADCBase.hpp:116</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_ae6198e34871b8037c8da01612fe83c12"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#ae6198e34871b8037c8da01612fe83c12">ADCBase::m_faulthanlder</a></div><div class="ttdeci">Fault_Handler m_faulthanlder</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00115">ADCBase.hpp:115</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

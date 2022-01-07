@@ -279,14 +279,13 @@ general_err_t mqtt_api_v2::getData(std::string* str)
 #ifdef __ESP32__
 esp_err_t mqtt_api_v2::event_handler(mqttevent event)
 {
-	   // #lizard forgives the complexity
+	// #lizard forgives the complexity
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> MQTT_API::event_handler >> ");
 #endif
 	// Executable code:
 
 	esp_mqtt_client_handle_t client = event->client;
-	
 
 	switch(event->event_id)
 	{

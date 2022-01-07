@@ -135,31 +135,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/de1/_objects_2_timeservice_2utest_2test__main_8cpp_source.html#l00008">8</a> of file <a class="el" href="../../df/de1/_objects_2_timeservice_2utest_2test__main_8cpp_source.html">test_main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// @ATTENTION: OpenCV is deallocating the memory after end-of-scope,</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment">// but OpenCV do not own the memory, therfor will there be a deallocation on non memory error.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="comment">// we are therefore ignoring</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#if 0// test different groups</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">char</span> *arg[10];</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    arg[1] = <span class="stringliteral">&quot;-v&quot;</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//arg[2] = &quot;-sg&quot;;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//arg[3] = &quot;CAM_HAL_GRP&quot;;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//arg[3] = &quot;CAM_LEPTON_GRP&quot;;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//arg[3] = &quot;IMAGE_GRP&quot;;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> CommandLineTestRunner::RunAllTests(2, arg);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// it is expected that the creat function makes some static allocation, which is removed after the unit test main functin</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// is done evaluation -&gt; therefor it is false memory leak detections</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> CommandLineTestRunner::RunAllTests(argc, argv);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/de1/_objects_2_timeservice_2utest_2test__main_8cpp_source.html#l00006">6</a> of file <a class="el" href="../../df/de1/_objects_2_timeservice_2utest_2test__main_8cpp_source.html">test_main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// @ATTENTION: OpenCV is deallocating the memory after end-of-scope,</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// but OpenCV do not own the memory, therfor will there be a deallocation on non memory error.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// we are therefore ignoring</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if 0 // test different groups</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">char</span> *arg[10];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    arg[1] = <span class="stringliteral">&quot;-v&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//arg[2] = &quot;-sg&quot;;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//arg[3] = &quot;CAM_HAL_GRP&quot;;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//arg[3] = &quot;CAM_LEPTON_GRP&quot;;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//arg[3] = &quot;IMAGE_GRP&quot;;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> CommandLineTestRunner::RunAllTests(2, arg);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// it is expected that the creat function makes some static allocation, which is removed after</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// the unit test main functin is done evaluation -&gt; therefor it is false memory leak detections</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> CommandLineTestRunner::RunAllTests(argc, argv);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

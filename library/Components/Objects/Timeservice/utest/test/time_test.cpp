@@ -12,23 +12,15 @@
 
 #include "../../include/Timeservice.hpp"
 
+TEST_GROUP(TIME_GRP){void setup(){
 
-TEST_GROUP(TIME_GRP)
-{
-	void setup(){
+} void teardown(){
+	// Uninit stuff
 
-	}
-	void teardown()
-	{
-	  // Uninit stuff
-
-	}
-};
+}};
 
 // test init
 TEST(TIME_GRP, init)
 {
-
-std::cout << " current date is : "<< Timeservice::getCurrentDate()<<"\n";
+	std::cout << " current date is : " << Timeservice::getCurrentDate() << "\n";
 }
-

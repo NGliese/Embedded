@@ -65,7 +65,7 @@ general_err_t WiFi_API::connect()
 
 	if(!m_wifi.isConnectedToAP())
 	{
-	//	LOG_PRINT_ERROR("WiFi_API", "** WiFi_API:: NOT CONNECTED TO WIFI ** ");
+		//	LOG_PRINT_ERROR("WiFi_API", "** WiFi_API:: NOT CONNECTED TO WIFI ** ");
 		return GE_FAIL;
 	}
 #endif

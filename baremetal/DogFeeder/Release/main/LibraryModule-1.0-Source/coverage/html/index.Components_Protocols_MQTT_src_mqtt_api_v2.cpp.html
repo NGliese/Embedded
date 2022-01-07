@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-30 13:04:46</td>
+            <td class="headerValue">2022-01-07 19:56:21</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">28</td>
@@ -624,7 +624,7 @@
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>216</pre></td>
     <td align="left" class="src coveredLine"><pre>mqtt_api_v2::mqtt_api_v2(const std::string&amp; uri) : m_uri{uri}</pre></td>
     </tr>
 
@@ -637,8 +637,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span><span class="takenBranch" title="Branch 2 taken 42 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 90 times">&check;</span><span class="takenBranch" title="Branch 2 taken 126 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>216</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_initialized)</pre></td>
     </tr>
 
@@ -652,7 +652,7 @@
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>		m_initialized = true;</pre></td>
     </tr>
 
@@ -665,15 +665,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 90 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>		auto err = connect();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 5 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="takenBranch" title="Branch 15 taken 30 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>60</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 5 taken 90 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 90 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="takenBranch" title="Branch 15 taken 90 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>180</pre></td>
     <td align="left" class="src coveredLine"><pre>		if(!General_Error::check_error(err, "Cant initialize mqtt"))</pre></td>
     </tr>
 
@@ -700,15 +700,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 90 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>		m_semaphore_subscribe.give();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 90 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>		m_semaphore.give();</pre></td>
     </tr>
 
@@ -722,7 +722,7 @@
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>216</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -736,7 +736,7 @@
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>216</pre></td>
     <td align="left" class="src coveredLine"><pre>mqtt_api_v2::~mqtt_api_v2() {}</pre></td>
     </tr>
 
@@ -750,7 +750,7 @@
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t mqtt_api_v2::connect(void)</pre></td>
     </tr>
 
@@ -967,7 +967,7 @@
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_connected = true;</pre></td>
     </tr>
 
@@ -1016,7 +1016,7 @@
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -1135,7 +1135,7 @@
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>126</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t mqtt_api_v2::publish(const std::string&amp; topic, const std::string&amp; payload)</pre></td>
     </tr>
 
@@ -1176,8 +1176,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 42 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 126 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>126</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_connected)</pre></td>
     </tr>
 
@@ -1211,8 +1211,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 42 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 42 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="takenBranch" title="Branch 14 taken 42 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 126 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 126 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="takenBranch" title="Branch 14 taken 126 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>126</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_semaphore.take(500, "publish"))</pre></td>
     </tr>
 
@@ -1275,7 +1275,7 @@
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>126</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_semaphore.give();</pre></td>
     </tr>
 
@@ -1317,7 +1317,7 @@
     <tr>
     <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>126</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -1646,7 +1646,7 @@
     <tr>
     <td align="right" class="lineno"><pre>193</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t mqtt_api_v2::subscribe(const std::string&amp; topic,</pre></td>
     </tr>
 
@@ -1751,21 +1751,21 @@
     <tr>
     <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	mqtt_subscriber_pointer_map.insert(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
     <td align="left" class="src coveredLine"><pre>		std::pair&lt;const std::string, general_err_t (*)(const char* data, const size_t data_length)>(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>			topic, callbackfunction));</pre></td>
     </tr>
 
@@ -1807,7 +1807,7 @@
     <tr>
     <td align="right" class="lineno"><pre>216</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -1828,7 +1828,7 @@
     <tr>
     <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t mqtt_api_v2::handle_event(const char* topic, const size_t topic_length,</pre></td>
     </tr>
 
@@ -1876,15 +1876,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>226</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>108</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::string topic_string{topic, topic_length};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>227</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::cout &lt;&lt; " recieved topic is : " &lt;&lt; topic_string &lt;&lt; "\n";</pre></td>
     </tr>
 
@@ -1904,8 +1904,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>230</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 6 times">&check;</span><span class="takenBranch" title="Branch 10 taken 6 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 18 times">&check;</span><span class="takenBranch" title="Branch 10 taken 18 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(mqtt_subscriber_pointer_map.end() == mqtt_subscriber_pointer_map.find(topic_string))</pre></td>
     </tr>
 
@@ -1925,15 +1925,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>233</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>		std::cout &lt;&lt; " topic not found : " &lt;&lt; topic_string &lt;&lt; "\n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>234</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>		return GE_FAIL;</pre></td>
     </tr>
 
@@ -1953,15 +1953,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>237</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	auto err = mqtt_subscriber_pointer_map.at(topic_string)(data, data_length);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>238</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 18 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(err != GE_OK)</pre></td>
     </tr>
 
@@ -2024,7 +2024,7 @@
     <tr>
     <td align="right" class="lineno"><pre>247</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -2038,7 +2038,7 @@
     <tr>
     <td align="right" class="lineno"><pre>249</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t mqtt_api_v2::getData(std::string* str)</pre></td>
     </tr>
 
@@ -2079,8 +2079,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>255</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 18 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_connected)</pre></td>
     </tr>
 
@@ -2114,8 +2114,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>260</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_isSubscribed)</pre></td>
     </tr>
 
@@ -2129,7 +2129,7 @@
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>		return GE_FAIL;</pre></td>
     </tr>
 
@@ -2270,7 +2270,7 @@
     <td align="right" class="lineno"><pre>282</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	   // #lizard forgives the complexity</pre></td>
+    <td align="left" class="src "><pre>	// #lizard forgives the complexity</pre></td>
     </tr>
 
     <tr>
@@ -2326,550 +2326,543 @@
     <td align="right" class="lineno"><pre>290</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	switch(event->event_id)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>291</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	switch(event->event_id)</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>292</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	{</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_CONNECTED:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>293</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_CONNECTED:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>294</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT CONNECTED ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>295</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT CONNECTED ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>296</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>297</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			m_connected = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>298</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			m_connected = true;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>299</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>300</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_DISCONNECTED:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>301</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_DISCONNECTED:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>302</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT DISCONNECTED ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>303</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT DISCONNECTED ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>304</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>			m_connected = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>305</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			m_connected = false;</pre></td>
+    <td align="left" class="src "><pre>			// esp_mqtt_client_start(client);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>306</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			// esp_mqtt_client_start(client);</pre></td>
+    <td align="left" class="src "><pre>			sleep(10); // wait 10 sec, and then just exit program</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>307</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			sleep(10); // wait 10 sec, and then just exit program</pre></td>
+    <td align="left" class="src "><pre>			exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>308</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			exit(-1);</pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>309</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_SUBSCRIBED:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>310</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_SUBSCRIBED:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>311</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT SUBSCRIBED ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>312</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT SUBSCRIBED ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>313</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>			// we are now subscribed</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>314</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			// we are now subscribed</pre></td>
+    <td align="left" class="src "><pre>			m_isSubscribed = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			m_isSubscribed = true;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>316</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>317</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_UNSUBSCRIBED:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>318</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_UNSUBSCRIBED:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>319</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT UNSUBSCRIBED ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>320</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT UNSUBSCRIBED ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>321</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>			// we are now subscribed</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>322</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			// we are now subscribed</pre></td>
+    <td align="left" class="src "><pre>			m_isSubscribed = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>323</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			m_isSubscribed = false;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>324</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>325</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_PUBLISHED:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>326</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_PUBLISHED:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>327</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT PUBLISHED ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>328</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT PUBLISHED ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>329</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>330</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>331</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_DATA:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>332</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_DATA:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>333</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT DATA ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>334</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT DATA ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>335</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>336</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			OTA::update(event->data, event->data_len);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>337</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			OTA::update(event->data, event->data_len);</pre></td>
+    <td align="left" class="src "><pre>			// mqtt_api_v2::handle_event(event->topic,event->topic_len,event->data,event->data_len);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>338</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			// mqtt_api_v2::handle_event(event->topic,event->topic_len,event->data,event->data_len);</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>339</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>340</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		case MQTT_EVENT_ERROR:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>341</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		case MQTT_EVENT_ERROR:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>342</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT ERROR ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>343</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " MQTT EVENT ERROR ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>344</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>345</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>346</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>		default:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>347</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		default:</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>348</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " UNKNOWN EVENT ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>349</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			LOG_PRINT_INFO(LOG_TAG, " UNKNOWN EVENT ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>350</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>351</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>			break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>352</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			break;</pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>353</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	}</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>354</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>355</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; MQTT_API::event_handler &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>356</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; MQTT_API::event_handler &lt;&lt; ");</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>357</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>	return ESP_OK;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>358</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	return ESP_OK;</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>359</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>360</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>361</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
+    <td align="left" class="src "><pre>void mqtt_api_v2::mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>362</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>void mqtt_api_v2::mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id,</pre></td>
+    <td align="left" class="src "><pre>									 void* event_data)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>363</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>									 void* event_data)</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>364</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre>	event_handler((mqttevent)event_data);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>365</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	event_handler((mqttevent)event_data);</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>366</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>367</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>368</pre></td>
+    <td align="right" class="lineno"><pre>367</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>

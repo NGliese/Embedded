@@ -12,22 +12,15 @@
 
 #include "../../include/Timebased_rules.hpp"
 
+TEST_GROUP(TEMPL_GRP){void setup(){
 
-TEST_GROUP(TEMPL_GRP)
-{
-	void setup(){
+} void teardown(){
+	// Uninit stuff
 
-	}
-	void teardown()
-	{
-	  // Uninit stuff
-
-	}
-};
+}};
 
 // test init
 TEST(TEMPL_GRP, isItNight)
 {
-CHECK_EQUAL(false,Timebased_rules::isItNight());
+	CHECK_EQUAL(true, Timebased_rules::isItNight());
 }
-

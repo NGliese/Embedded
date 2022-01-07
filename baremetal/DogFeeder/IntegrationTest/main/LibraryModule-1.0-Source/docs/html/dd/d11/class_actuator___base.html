@@ -154,7 +154,7 @@ Protected Attributes</h2></td></tr>
 class Actuator_Base&lt; T, U &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00074">74</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1c1c346acf0476261d75abd8a2ca6c4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c1c346acf0476261d75abd8a2ca6c4d">&#9670;&nbsp;</a></span>Actuator_Base()</h2>
@@ -182,8 +182,8 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;:<a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a>{0}, <a class="code" href="../../dd/d11/class_actuator___base.html#a8dce853b386840dece4814c5932d0974">m_conf</a>{conf},<a class="code" href="../../dd/d11/class_actuator___base.html#a84473bdc6cdf738dd44e8cabc01db234">m_faulthanlder</a>{<span class="stringliteral">&quot;actuator_base&quot;</span>}{};</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;: <a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a>{0}, <a class="code" href="../../dd/d11/class_actuator___base.html#a8dce853b386840dece4814c5932d0974">m_conf</a>{conf}, <a class="code" href="../../dd/d11/class_actuator___base.html#a84473bdc6cdf738dd44e8cabc01db234">m_faulthanlder</a>{<span class="stringliteral">&quot;actuator_base&quot;</span>} {};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,8 +212,8 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{};</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,11 +278,11 @@ template&lt;typename T , typename U &gt; </div>
 </div><div class="memdoc">
 <p>function to apply the setpoint value to the actuator and to call the <a class="el" href="../../dd/d11/class_actuator___base.html#a95da467522ee717e35c69ce2fc3099a2">actuate()</a> function, if the setpoint is valid. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                 {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">auto</span> err = <a class="code" href="../../dd/d11/class_actuator___base.html#aff719716de48224415f9e26e5944e07d">setPoint</a>(value);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> (err == <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>) ?  <a class="code" href="../../dd/d11/class_actuator___base.html#a95da467522ee717e35c69ce2fc3099a2">actuate</a>() :  err;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">auto</span> err = <a class="code" href="../../dd/d11/class_actuator___base.html#aff719716de48224415f9e26e5944e07d">setPoint</a>(value);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> (err == <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>) ? <a class="code" href="../../dd/d11/class_actuator___base.html#a95da467522ee717e35c69ce2fc3099a2">actuate</a>() : err;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,8 +313,10 @@ template&lt;typename T , typename U &gt; </div>
 </div><div class="memdoc">
 <p>function to return the current value of the actuator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{  <span class="keywordflow">return</span> <a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a>;  } ;</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -347,8 +349,11 @@ template&lt;typename T , typename U &gt; </div>
 
 <p>Reimplemented in <a class="el" href="../../d9/d1c/class_m_g996_r.html#a5e7ae386db4a86245b6879d9bed645b9">MG996R</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00117">117</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{ <a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a> = value; <span class="keywordflow">return</span> <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>; };</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html#l00113">113</a> of file <a class="el" href="../../d7/daf/_actuator___base_8hpp_source.html">Actuator_Base.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">m_value</a> = value;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    };</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../dd/d11/class_actuator___base.html#a636f2c55e17f21f8faa809c64c77c8bd">Actuator_Base&lt; mg996r_conf_t, float &gt;::execute()</a>.</p>
 
@@ -507,8 +512,8 @@ template&lt;typename T , typename U &gt; </div>
 <div class="ttc" id="aclass_actuator___base_html_a84473bdc6cdf738dd44e8cabc01db234"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#a84473bdc6cdf738dd44e8cabc01db234">Actuator_Base::m_faulthanlder</a></div><div class="ttdeci">Fault_Handler m_faulthanlder</div><div class="ttdoc">internal faulthandler</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/daf/_actuator___base_8hpp_source.html#l00125">Actuator_Base.hpp:125</a></div></div>
 <div class="ttc" id="aclass_actuator___base_html_a8dce853b386840dece4814c5932d0974"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#a8dce853b386840dece4814c5932d0974">Actuator_Base::m_conf</a></div><div class="ttdeci">T m_conf</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/daf/_actuator___base_8hpp_source.html#l00124">Actuator_Base.hpp:124</a></div></div>
 <div class="ttc" id="aclass_actuator___base_html_ae5948116e761e0bd79b0d736474764a8"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#ae5948116e761e0bd79b0d736474764a8">Actuator_Base::m_value</a></div><div class="ttdeci">U m_value</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/daf/_actuator___base_8hpp_source.html#l00123">Actuator_Base.hpp:123</a></div></div>
-<div class="ttc" id="a_general___error_8hpp_html_aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d"><div class="ttname"><a href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a></div><div class="ttdeci">@ GE_OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/deb/_general___error_8hpp_source.html#l00071">General_Error.hpp:71</a></div></div>
-<div class="ttc" id="aclass_actuator___base_html_aff719716de48224415f9e26e5944e07d"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#aff719716de48224415f9e26e5944e07d">Actuator_Base::setPoint</a></div><div class="ttdeci">virtual general_err_t setPoint(const U &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/daf/_actuator___base_8hpp_source.html#l00117">Actuator_Base.hpp:117</a></div></div>
+<div class="ttc" id="a_general___error_8hpp_html_aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d"><div class="ttname"><a href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a></div><div class="ttdeci">@ GE_OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/deb/_general___error_8hpp_source.html#l00068">General_Error.hpp:68</a></div></div>
+<div class="ttc" id="aclass_actuator___base_html_aff719716de48224415f9e26e5944e07d"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#aff719716de48224415f9e26e5944e07d">Actuator_Base::setPoint</a></div><div class="ttdeci">virtual general_err_t setPoint(const U &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/daf/_actuator___base_8hpp_source.html#l00113">Actuator_Base.hpp:113</a></div></div>
 <div class="ttc" id="aclass_actuator___base_html_a95da467522ee717e35c69ce2fc3099a2"><div class="ttname"><a href="../../dd/d11/class_actuator___base.html#a95da467522ee717e35c69ce2fc3099a2">Actuator_Base::actuate</a></div><div class="ttdeci">virtual general_err_t actuate(void)=0</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

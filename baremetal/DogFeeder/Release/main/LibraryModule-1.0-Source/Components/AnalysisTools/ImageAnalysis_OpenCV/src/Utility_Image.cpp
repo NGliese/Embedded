@@ -20,67 +20,68 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/Utility_Image.hpp"
-
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "Load_Image";
+static const char* LOG_TAG = "Load_Image";
 #endif
 
-cv::Mat Utility_Image::load_image(const std::string& path,const loader_conf& conf) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Load_Image::load_image >> ");
-    #endif
-    // Executable code:
-    if(conf == loader_conf::gray)   return cv::imread(path,cv::IMREAD_GRAYSCALE);
+cv::Mat Utility_Image::load_image(const std::string& path, const loader_conf& conf)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Load_Image::load_image >> ");
+#endif
+	// Executable code:
+	if(conf == loader_conf::gray)
+		return cv::imread(path, cv::IMREAD_GRAYSCALE);
 
-    // return color img
-    return  cv::imread(path);
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Load_Image::load_image << ");
-    #endif
-
-
+	// return color img
+	return cv::imread(path);
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Load_Image::load_image << ");
+#endif
 }
 
-void Utility_Image::view_image(const cv::Mat& m, const std::string& name) {
-    namedWindow(name, cv::WINDOW_NORMAL );
-    cv::imshow(name,m);
+void Utility_Image::view_image(const cv::Mat& m, const std::string& name)
+{
+	namedWindow(name, cv::WINDOW_NORMAL);
+	cv::imshow(name, m);
 }
 
-cv::Mat Utility_Image::zoom(const cv::Mat& img, double scale) {
-    cv::Mat m;
-    cv::resize(img,m,cv::Size(),scale,scale,cv::INTER_NEAREST);
-    return m;
+cv::Mat Utility_Image::zoom(const cv::Mat& img, double scale)
+{
+	cv::Mat m;
+	cv::resize(img, m, cv::Size(), scale, scale, cv::INTER_NEAREST);
+	return m;
 }
 
-cv::Mat Utility_Image::draw_ellipse(const cv::Mat& img,
-        const std::vector<cv::RotatedRect>& vec) {
-
-    auto m = img.clone();
-    cv::Scalar color = cv::Scalar( 0,255,0  );
-    for(auto ele : vec){
-    cv::ellipse(m,ele,color);
-    }
-    return m;
-
+cv::Mat Utility_Image::draw_ellipse(const cv::Mat& img, const std::vector<cv::RotatedRect>& vec)
+{
+	auto m = img.clone();
+	cv::Scalar color = cv::Scalar(0, 255, 0);
+	for(auto ele : vec)
+	{
+		cv::ellipse(m, ele, color);
+	}
+	return m;
 }
 
-void Utility_Image::wait(uint16_t time_ms) {
-    cv::waitKey(time_ms);
+void Utility_Image::wait(uint16_t time_ms)
+{
+	cv::waitKey(time_ms);
 }
 
-void Utility_Image::saveImage(const timeval& time, const cv::Mat& m,
-        const std::string& name, const std::string& path) {
-        std::string full_path;
-        full_path =  path + std::to_string(time.tv_sec)+"_"+std::to_string(time.tv_usec)+name+".png";
-        std::cout << "writing to path : " << full_path << "\n";
-        imwrite(full_path.c_str(),m);
+void Utility_Image::saveImage(const timeval& time, const cv::Mat& m, const std::string& name,
+							  const std::string& path)
+{
+	std::string full_path;
+	full_path =
+		path + std::to_string(time.tv_sec) + "_" + std::to_string(time.tv_usec) + name + ".png";
+	std::cout << "writing to path : " << full_path << "\n";
+	imwrite(full_path.c_str(), m);
 }
-
 
 /**
  * @brief  simple function to place a date at the top left corner of the image
@@ -97,9 +98,10 @@ void Utility_Image::saveImage(const timeval& time, const cv::Mat& m,
  *    -
  *    -
  */
-general_err_t Utility_Image::putDate(cv::Mat &img) {
-     cv::putText(img, Timeservice::getCurrentDate(), {30,30}, 1  , 2, {255,255,0},3);
-     return GE_OK;
+general_err_t Utility_Image::putDate(cv::Mat& img)
+{
+	cv::putText(img, Timeservice::getCurrentDate(), {30, 30}, 1, 2, {255, 255, 0}, 3);
+	return GE_OK;
 }
 
 /**
@@ -118,18 +120,19 @@ general_err_t Utility_Image::putDate(cv::Mat &img) {
  *    -
  *    -
  */
-general_err_t Utility_Image::putFPS(cv::Mat &img, const uint16_t fps) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::putFPS >> ");
-    #endif
-    // Executable code:
-    cv::putText(img, std::to_string(fps), {img.cols-100,30}, 1  , 2, {255,255,0},3);
+general_err_t Utility_Image::putFPS(cv::Mat& img, const uint16_t fps)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::putFPS >> ");
+#endif
+	// Executable code:
+	cv::putText(img, std::to_string(fps), {img.cols - 100, 30}, 1, 2, {255, 255, 0}, 3);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::putFPS << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::putFPS << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 
 /**
@@ -150,20 +153,21 @@ general_err_t Utility_Image::putFPS(cv::Mat &img, const uint16_t fps) {
  *    -
  *    -
  */
-general_err_t Utility_Image::putMask(const cv::Mat &src, cv::Mat &dist,
-        const cv::Point& start, const cv::Point& end) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> putMask >> ");
-    #endif
-    // Executable code:
-    src.copyTo(dist);
-    cv::rectangle(dist, start,end, cv::Scalar(0,255,0), -1, cv::LINE_8);
+general_err_t Utility_Image::putMask(const cv::Mat& src, cv::Mat& dist, const cv::Point& start,
+									 const cv::Point& end)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> putMask >> ");
+#endif
+	// Executable code:
+	src.copyTo(dist);
+	cv::rectangle(dist, start, end, cv::Scalar(0, 255, 0), -1, cv::LINE_8);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< putMask << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< putMask << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 
 /**
@@ -183,19 +187,19 @@ general_err_t Utility_Image::putMask(const cv::Mat &src, cv::Mat &dist,
  *    -
  *    -
  */
-general_err_t Utility_Image::getROI(const cv::Mat &src, const cv::Rect ROI,
-        cv::Mat &dist) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
-    #endif
-    // Executable code:
-    dist = cv::Mat(src,ROI);
+general_err_t Utility_Image::getROI(const cv::Mat& src, const cv::Rect ROI, cv::Mat& dist)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
+#endif
+	// Executable code:
+	dist = cv::Mat(src, ROI);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 
 /**
@@ -213,22 +217,23 @@ general_err_t Utility_Image::getROI(const cv::Mat &src, const cv::Rect ROI,
  *    -
  *    -
  */
-general_err_t Utility_Image::rotateImage(cv::Mat &src,const double newAngle) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::rotateImage >> ");
-    #endif
-    // Executable code:
-    cv::Point2f pt(src.cols/2., src.rows/2.);          //point from where to rotate
-    cv::Mat r = cv::getRotationMatrix2D(pt, newAngle, 1.0);      //Mat object for storing after rotation
-    cv::warpAffine(src, src, r, cv::Size(src.cols, src.rows));  ///applie an affine transforation to image.
+general_err_t Utility_Image::rotateImage(cv::Mat& src, const double newAngle)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::rotateImage >> ");
+#endif
+	// Executable code:
+	cv::Point2f pt(src.cols / 2., src.rows / 2.); // point from where to rotate
+	cv::Mat r = cv::getRotationMatrix2D(pt, newAngle, 1.0); // Mat object for storing after rotation
+	cv::warpAffine(src, src, r,
+				   cv::Size(src.cols, src.rows)); /// applie an affine transforation to image.
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::rotateImage << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::rotateImage << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
-
 
 /**
  * @brief Normalize/equalize the brighness in the image to reduce impact of
@@ -248,30 +253,28 @@ general_err_t Utility_Image::rotateImage(cv::Mat &src,const double newAngle) {
  *    -
  *    -
  */
-general_err_t Utility_Image::equalizeIllumination(const cv::Mat &src,
-        cv::Mat &dist) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::equalizeIllumination >> ");
-    #endif
-    // Executable code:
+general_err_t Utility_Image::equalizeIllumination(const cv::Mat& src, cv::Mat& dist)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Utility_Image::equalizeIllumination >> ");
+#endif
+	// Executable code:
 
-    // we are not going to redeclare this vector on every single image
-    static std::vector<cv::Mat> equalizer_subset{3};
+	// we are not going to redeclare this vector on every single image
+	static std::vector<cv::Mat> equalizer_subset{3};
 
+	cv::cvtColor(src, dist, cv::COLOR_RGB2Lab);
+	cv::split(dist, equalizer_subset);
 
-    cv::cvtColor(src, dist, cv::COLOR_RGB2Lab);
-    cv::split(dist,equalizer_subset);
+	cv::equalizeHist(equalizer_subset.at(0), equalizer_subset.at(0));
 
-    cv::equalizeHist(equalizer_subset.at(0), equalizer_subset.at(0));
+	cv::merge(equalizer_subset, dist);
 
-    cv::merge(equalizer_subset,dist);
+	cv::cvtColor(dist, dist, cv::COLOR_Lab2RGB);
 
-    cv::cvtColor(dist, dist, cv::COLOR_Lab2RGB);
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::equalizeIllumination << ");
+#endif
 
-
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Utility_Image::equalizeIllumination << ");
-    #endif
-
-    return GE_OK;
+	return GE_OK;
 }

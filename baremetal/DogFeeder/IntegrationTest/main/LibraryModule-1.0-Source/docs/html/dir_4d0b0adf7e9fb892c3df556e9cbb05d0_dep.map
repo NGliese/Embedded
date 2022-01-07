@@ -1,9 +1,9 @@
 <map id="Components/Protocols" name="Components/Protocols">
 <area shape="rect" id="node2" href="dir_3b94f0ed496e237084c8464174d64f13.html" title="HTTP" alt="" coords="208,63,280,111"/>
 <area shape="rect" id="node4" href="dir_a4226c5615a06a31e6344f5f3fd917e1.html" title="Objects" alt="" coords="185,159,257,207"/>
-<area shape="rect" id="edge12-headlabel" href="dir_000058_000015.html" title="3" alt="" coords="234,136,244,150"/>
+<area shape="rect" id="edge12-headlabel" href="dir_000058_000015.html" title="5" alt="" coords="234,136,244,150"/>
 <area shape="rect" id="node6" href="dir_1a5504e72c2ab618c124e6472b08d26c.html" title="Global_Include" alt="" coords="139,351,258,399"/>
-<area shape="rect" id="edge13-headlabel" href="dir_000058_000087.html" title="3" alt="" coords="273,363,282,378"/>
+<area shape="rect" id="edge13-headlabel" href="dir_000058_000087.html" title="4" alt="" coords="273,363,282,378"/>
 <area shape="rect" id="node7" href="dir_e185953657720ba3a67126696ef566c7.html" title="Interfaces" alt="" coords="274,255,360,303"/>
 <area shape="rect" id="edge14-headlabel" href="dir_000058_000088.html" title="3" alt="" coords="305,227,314,242"/>
 <area shape="rect" id="node3" href="dir_35a184c389584e1c62c684744f705848.html" title="MQTT" alt="" coords="112,63,184,111"/>

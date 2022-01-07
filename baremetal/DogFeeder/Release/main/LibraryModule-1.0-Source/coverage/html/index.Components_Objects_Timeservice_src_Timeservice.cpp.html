@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-30 13:04:46</td>
+            <td class="headerValue">2022-01-07 19:56:21</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">2</td>
@@ -540,7 +540,7 @@
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t Timeservice::initialize_sntp()</pre></td>
     </tr>
 
@@ -582,7 +582,7 @@
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	return RTC_HAL::sntp_update();</pre></td>
     </tr>
 
@@ -764,7 +764,7 @@
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t Timeservice::wait_ms(size_t ms_to_wait)</pre></td>
     </tr>
 
@@ -826,8 +826,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 72 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::this_thread::sleep_for(std::chrono::milliseconds(ms_to_wait));</pre></td>
     </tr>
 
@@ -876,7 +876,7 @@
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -960,7 +960,7 @@
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>156</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>468</pre></td>
     <td align="left" class="src coveredLine"><pre>uint64_t Timeservice::getTimeNow() noexcept</pre></td>
     </tr>
 
@@ -974,21 +974,21 @@
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>156</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>468</pre></td>
     <td align="left" class="src coveredLine"><pre>	return std::chrono::duration_cast&lt;std::chrono::milliseconds>(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>312</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>936</pre></td>
     <td align="left" class="src coveredLine"><pre>			   std::chrono::system_clock::now().time_since_epoch())</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>312</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>936</pre></td>
     <td align="left" class="src coveredLine"><pre>		.count();</pre></td>
     </tr>
 
@@ -1366,7 +1366,7 @@
     <tr>
     <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>std::string Timeservice::getCurrentDate() noexcept</pre></td>
     </tr>
 
@@ -1380,14 +1380,14 @@
     <tr>
     <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	time_t now = time(nullptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	struct tm tstruct</pre></td>
     </tr>
 
@@ -1408,21 +1408,21 @@
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	char buf[80];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	tstruct = *localtime(&amp;now);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>161</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	strftime(buf, sizeof(buf), "%Y%m%d_%H%M_%S", &amp;tstruct);</pre></td>
     </tr>
 
@@ -1436,28 +1436,28 @@
     <tr>
     <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	const auto ms = Timeservice::getTimeNow() % 1000;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>164</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::string str = buf;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>165</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	str.append("_");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	str.append(std::to_string(ms));</pre></td>
     </tr>
 
@@ -1471,7 +1471,7 @@
     <tr>
     <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	return str;</pre></td>
     </tr>
 
@@ -1492,7 +1492,7 @@
     <tr>
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>std::string Timeservice::getCurrentDate(const timeval&amp; time) noexcept</pre></td>
     </tr>
 
@@ -1506,14 +1506,14 @@
     <tr>
     <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	time_t now = time.tv_sec;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	struct tm tstruct</pre></td>
     </tr>
 
@@ -1534,21 +1534,21 @@
     <tr>
     <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	char buf[80];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	tstruct = *localtime(&amp;now);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	strftime(buf, sizeof(buf), "%Y%m%d_%H%M_%S", &amp;tstruct);</pre></td>
     </tr>
 
@@ -1562,28 +1562,28 @@
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	const auto ms = Timeservice::getTimeNow() % 1000;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::string str = buf;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	str.append("_");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>184</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	str.append(std::to_string(ms));</pre></td>
     </tr>
 
@@ -1597,7 +1597,7 @@
     <tr>
     <td align="right" class="lineno"><pre>186</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	return str;</pre></td>
     </tr>
 
@@ -1618,7 +1618,7 @@
     <tr>
     <td align="right" class="lineno"><pre>189</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>uint64_t Timeservice::convertTimevalToTime(const timeval&amp; time) noexcept</pre></td>
     </tr>
 
@@ -1631,8 +1631,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>191</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 12 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 36 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(time.tv_usec > 1000)</pre></td>
     </tr>
 
@@ -1653,7 +1653,7 @@
     <tr>
     <td align="right" class="lineno"><pre>194</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>		return (time.tv_sec * 1000) + (time.tv_usec / 1000);</pre></td>
     </tr>
 
@@ -1688,7 +1688,7 @@
     <tr>
     <td align="right" class="lineno"><pre>199</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>std::string Timeservice::getYearMonthDay() noexcept</pre></td>
     </tr>
 
@@ -1702,14 +1702,14 @@
     <tr>
     <td align="right" class="lineno"><pre>201</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	time_t now = time(nullptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>202</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	struct tm tstruct</pre></td>
     </tr>
 
@@ -1730,35 +1730,35 @@
     <tr>
     <td align="right" class="lineno"><pre>205</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	char buf[80];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	tstruct = *localtime(&amp;now);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>207</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	strftime(buf, sizeof(buf), "%Y%m%d", &amp;tstruct);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>	std::string str = buf;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>	return str;</pre></td>
     </tr>
 

@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -64,37 +61,38 @@
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
 
-
-
-
 #include "Message_Protocol.hpp"
 #include <iostream>
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
+class Message_Handler
+{
+  public:
+	static general_err_t to_Postgres_Format(const Message_Protocol& msg, std::string* str);
+	static const std::string to_Postgres_Form(const Message_Protocol& msg);
 
+	static inline std::string postgres_start(void)
+	{
+		return "INSERT INTO MEASUREMENTS (tstz,sensor_id,value) VALUES ";
+	};
 
-class Message_Handler {
-public:
-        static general_err_t to_Postgres_Format(const Message_Protocol & msg, std::string * str);
-        static const std::string to_Postgres_Form(const Message_Protocol & msg);
+	static const std::string to_Postgres_Subject(const Message_Protocol& msg);
+	static inline std::string postgres_append(void)
+	{
+		return ",";
+	};
+	static inline std::string postgres_end(void)
+	{
+		return ";";
+	};
 
-
-        static inline std::string postgres_start(void) { return "INSERT INTO MEASUREMENTS (tstz,sensor_id,value) VALUES ";};
-
-        static const std::string to_Postgres_Subject(const Message_Protocol & msg);
-        static inline std::string postgres_append(void) { return ",";};
-        static inline std::string postgres_end(void) { return ";";};
-private:
+  private:
 };
-
-
 
 #endif /* COMPONENTS_DATA_PACKAGE_INCLUDE_MESSAGE_HANDLER_HPP_ */

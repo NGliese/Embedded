@@ -147,9 +147,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                          {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>( data &amp; (uint16_t)0x00ff);</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(data &amp; (uint16_t)0x00ff);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -170,10 +170,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                      {</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// evaluate if this even or odd</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> ( expr  &amp; 0x01 ) ? false : <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> (expr &amp; 0x01) ? false : <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -204,10 +204,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00157">157</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                          {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(  (data &amp; 0xff00 ) + exchange );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00156">156</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>((data &amp; 0xff00) + exchange);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,16 +237,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00192">192</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                        {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a>)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        srand(time(NULL));</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> min + rand() % ((max +1 ) - min);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a>)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        srand(time(NULL));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> min + rand() % ((max + 1) - min);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a>.</p>
@@ -298,23 +296,23 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                               {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    #ifdef DEBUG</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a>(<a class="code" href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a>, <span class="stringliteral">&quot;&gt;&gt; enclosing_method &gt;&gt; &quot;</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// Executable code:</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    b1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>( b32 &gt;&gt; 24 );</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    b2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>( b32 &gt;&gt; 16 );</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    b3 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>( b32 &gt;&gt; 8 );</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    b4 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>( b32 );</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">    #ifdef DEBUG</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a>(<a class="code" href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a>, <span class="stringliteral">&quot;&lt;&lt; enclosing_method &lt;&lt; &quot;</span>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a>(<a class="code" href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a>, <span class="stringliteral">&quot;&gt;&gt; enclosing_method &gt;&gt; &quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// Executable code:</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    b1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b32 &gt;&gt; 24);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    b2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b32 &gt;&gt; 16);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    b3 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b32 &gt;&gt; 8);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    b4 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b32);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a>(<a class="code" href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a>, <span class="stringliteral">&quot;&lt;&lt; enclosing_method &lt;&lt; &quot;</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a>, <a class="el" href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a>, and <a class="el" href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a>.</p>
 
@@ -360,9 +358,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                              {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span>  (b1 &lt;&lt; 24 | b2 &lt;&lt; 16 | b3 &lt;&lt; 8 | b4);</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00166">166</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> (b1 &lt;&lt; 24 | b2 &lt;&lt; 16 | b3 &lt;&lt; 8 | b4);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d5/d38/utils__test_8cpp.html#ab4551417ca1dd62287007c0a3ff0c1cf">TEST()</a>.</p>
@@ -401,22 +399,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span>(s.size()==0){</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span>(s.size() == 0)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> pos = s.find(delim);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">while</span> (pos != std::string::npos) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      v.push_back(s.substr(i, pos-i));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      i = ++pos;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      pos = s.find(delim, pos);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordflow">if</span> (pos == std::string::npos)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         v.push_back(s.substr(i, s.length()));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">while</span>(pos != std::string::npos)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        v.push_back(s.substr(i, pos - i));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        i = ++pos;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        pos = s.find(delim, pos);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span>(pos == std::string::npos)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            v.push_back(s.substr(i, s.length()));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d5/d81/class_m_q_t_t___message.html#a5ef2994d04af6d7ba6d31584ce0bfa5d">MQTT_Message::construct()</a>, <a class="el" href="../../db/dc9/class_utility___image.html#ab06d07e5109c7dfe72b4f7c314a3e5c6">Utility_Image::equalizeIllumination()</a>, and <a class="el" href="../../d5/d38/utils__test_8cpp.html#a22b752e4ed1bcc64e30983ece8b685ac">TEST()</a>.</p>
 
@@ -448,33 +448,34 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                 {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;std::string&gt; vec;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(s.size()==0){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> vec;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">auto</span> pos = s.find(delim);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">while</span> (pos != std::string::npos) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        vec.push_back(s.substr(i, pos-i));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      i = ++pos;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      pos = s.find(delim, pos);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">if</span> (pos == std::string::npos)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          vec.push_back(s.substr(i, s.length()));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> vec;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d06/utils_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../de/d06/utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector&lt;std::string&gt; vec;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(s.size() == 0)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> vec;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">auto</span> pos = s.find(delim);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">while</span>(pos != std::string::npos)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        vec.push_back(s.substr(i, pos - i));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        i = ++pos;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        pos = s.find(delim, pos);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span>(pos == std::string::npos)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            vec.push_back(s.substr(i, s.length()));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> vec;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="autils_8cpp_html_a678b86c81cb2e2f61b40b8a0bd75af3f"><div class="ttname"><a href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a></div><div class="ttdeci">static bool random_first</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d06/utils_8cpp_source.html#l00190">utils.cpp:190</a></div></div>
-<div class="ttc" id="a_general___error_8cpp_html_a328e9da88a07f3a0bf81b40d25469ff9"><div class="ttname"><a href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a></div><div class="ttdeci">static const char * LOG_TAG</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de3/_general___error_8cpp_source.html#l00027">General_Error.cpp:27</a></div></div>
-<div class="ttc" id="a_general___error_8hpp_html_aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d"><div class="ttname"><a href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a></div><div class="ttdeci">@ GE_OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/deb/_general___error_8hpp_source.html#l00071">General_Error.hpp:71</a></div></div>
+<div class="ttc" id="autils_8cpp_html_a678b86c81cb2e2f61b40b8a0bd75af3f"><div class="ttname"><a href="../../de/d06/utils_8cpp.html#a678b86c81cb2e2f61b40b8a0bd75af3f">random_first</a></div><div class="ttdeci">static bool random_first</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d06/utils_8cpp_source.html#l00191">utils.cpp:191</a></div></div>
+<div class="ttc" id="a_general___error_8cpp_html_a328e9da88a07f3a0bf81b40d25469ff9"><div class="ttname"><a href="../../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9">LOG_TAG</a></div><div class="ttdeci">static const char * LOG_TAG</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de3/_general___error_8cpp_source.html#l00026">General_Error.cpp:26</a></div></div>
+<div class="ttc" id="a_general___error_8hpp_html_aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d"><div class="ttname"><a href="../../d3/deb/_general___error_8hpp.html#aa30ae256edb3b3f61c026647995b533eaed20cebb6dedba82cb6aadb0ddd3d84d">GE_OK</a></div><div class="ttdeci">@ GE_OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/deb/_general___error_8hpp_source.html#l00068">General_Error.hpp:68</a></div></div>
 <div class="ttc" id="a_b_a_s_i_c_8hpp_html_a069dd5e6ddfd552dc1c6f70d7c3b93c5"><div class="ttname"><a href="../../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5">LOG_PRINT_INFO</a></div><div class="ttdeci">#define LOG_PRINT_INFO(LOG_TAG, str)</div><div class="ttdoc">header file to interchange between UnitTestMode, ESP32 and RPI. Macro definition decides what state t...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5f/_b_a_s_i_c_8hpp_source.html#l00026">BASIC.hpp:26</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

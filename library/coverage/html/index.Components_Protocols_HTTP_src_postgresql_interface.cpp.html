@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-30 13:04:46</td>
+            <td class="headerValue">2022-01-07 20:05:20</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -520,7 +520,7 @@
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> static pqxx::connection m_connect("dbname = sensordb user = write2db password = 1234 \</pre></td>
+    <td align="left" class="src "><pre>static pqxx::connection m_connect("dbname = sensordb user = write2db password = 1234 \</pre></td>
     </tr>
 
     <tr>
@@ -597,210 +597,210 @@
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>postgresql_interface::~postgresql_interface()</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>postgresql_interface::~postgresql_interface() {}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>general_err_t postgresql_interface::open(void)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> postgresql_interface::open >> ");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __RPI__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __WITH_DATABASE__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	try</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	    m_connect = pqxx::connection("dbname = sensordb user = write2db password = 1234 \</pre></td>
+    <td align="left" class="src "><pre>		m_connect = pqxx::connection("dbname = sensordb user = write2db password = 1234 \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>            hostaddr = 192.168.1.157 port = 5432");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	catch(const std::exception&amp; e)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		return GE_FAIL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>	m_open = true;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; postgresql_interface::open &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -814,294 +814,294 @@
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>general_err_t postgresql_interface::post(const std::string&amp; str)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>general_err_t postgresql_interface::post(const std::string&amp; str)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> postgresql_interface::close >> ");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>	std::cout &lt;&lt; " sql querey : " &lt;&lt; str &lt;&lt; "\n";</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __RPI__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __WITH_DATABASE__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	try</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		if(!m_connect.is_open())</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			std::cout &lt;&lt; "Can't open database" &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			// firstly lets close it correctly:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			close();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			// we will try to open the database, and see if we are ready next time</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			open();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>			return GE_NOT_CONNECTED;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		/* Create a transactional object. */</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		pqxx::work W(m_connect);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		/* Execute SQL query */</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		W.exec(str.c_str());</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		W.commit();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	catch(const std::exception&amp; e)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		return GE_FAIL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>109</pre></td>
+    <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; postgresql_interface::close &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -1115,154 +1115,154 @@
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>general_err_t postgresql_interface::close(void)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>general_err_t postgresql_interface::close(void)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> postgresql_interface::close >> ");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>	m_open = false;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __RPI__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __WITH_DATABASE__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	try</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		m_connect.close();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="lineno"><pre>129</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	catch(const std::exception&amp; e)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="lineno"><pre>132</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>		return GE_FAIL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; postgresql_interface::close &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
@@ -1276,39 +1276,18 @@
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>141</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; postgresql_interface::close &lt;&lt; ");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>142</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>143</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>

@@ -26,5 +26,5 @@ TEST_GROUP(TEMP_GRP){
 // test init
 TEST(TEMP_GRP, init)
 {
-CHECK(true);
+	CHECK(true);
 }

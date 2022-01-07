@@ -5,9 +5,6 @@
  *      Author: nikolaj
  */
 
-
-
-
 /***********************************************************************************************+
  *  \brief       -- XX -- Library - CPP Source file
  *  \par
@@ -28,49 +25,46 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/ADC_API_ESP32.hpp"
-
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "ADC_API_ESP32";
+static const char* LOG_TAG = "ADC_API_ESP32";
 #endif
 
-ADC_API_ESP32::ADC_API_ESP32(const config& conf) : ADCBase(conf.name,conf.samples) , m_conf{conf}{
-
+ADC_API_ESP32::ADC_API_ESP32(const config& conf) : ADCBase(conf.name, conf.samples), m_conf{conf}
+{
 #ifdef __ESP32__
-    // set the adc width
-    adc1_config_width(m_width);
-    // set the channel and attenuation
-    adc1_config_channel_atten(m_conf.channel, m_atten);
-    // set the calc value
-    esp_adc_cal_value_t val_type = esp_adc_cal_characterize(m_unit, m_atten, m_width, m_conf.vRef, &m_adc_chars);
+	// set the adc width
+	adc1_config_width(m_width);
+	// set the channel and attenuation
+	adc1_config_channel_atten(m_conf.channel, m_atten);
+	// set the calc value
+	esp_adc_cal_value_t val_type =
+		esp_adc_cal_characterize(m_unit, m_atten, m_width, m_conf.vRef, &m_adc_chars);
 #endif
 }
 
-ADC_API_ESP32::~ADC_API_ESP32() {
-}
+ADC_API_ESP32::~ADC_API_ESP32() {}
 /*
  * @brief measure the adc value over an average of  m_number_of_samples
  * return result
  */
-uint32_t ADC_API_ESP32::measureValue(void) {
-
-    uint64_t adc_reading = 0;
-    for(size_t i = 0; i < m_number_of_samples ; ++i)
-    {
-    #ifdef __ESP32__
-      adc_reading += adc1_get_raw(m_conf.channel);
-    #endif
-    }
-    // check that we do not divide by zero
-    auto val =   adc_reading > 0 ? static_cast<uint32_t>(adc_reading /= m_number_of_samples) : 0 ;
+uint32_t ADC_API_ESP32::measureValue(void)
+{
+	uint64_t adc_reading = 0;
+	for(size_t i = 0; i < m_number_of_samples; ++i)
+	{
 #ifdef __ESP32__
-    return esp_adc_cal_raw_to_voltage(val, &m_adc_chars);
-#else
-    return val;
+		adc_reading += adc1_get_raw(m_conf.channel);
 #endif
-
+	}
+	// check that we do not divide by zero
+	auto val = adc_reading > 0 ? static_cast<uint32_t>(adc_reading /= m_number_of_samples) : 0;
+#ifdef __ESP32__
+	return esp_adc_cal_raw_to_voltage(val, &m_adc_chars);
+#else
+	return val;
+#endif
 }

@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -64,58 +61,49 @@
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
 
-
-
-
-
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
-
-
-
-
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class ProtocolBase {
+class ProtocolBase
+{
 #ifdef __UNITTEST__
-    friend class friend_ProtocolBase;
+	friend class friend_ProtocolBase;
 #endif
-public:
-    ProtocolBase() {};
-    virtual ~ProtocolBase() {};
-    virtual general_err_t open(void) = 0;
-    virtual general_err_t post(const std::string & str) = 0;
-    virtual general_err_t close(void) = 0;
-private:
+  public:
+	ProtocolBase(){};
+	virtual ~ProtocolBase(){};
+	virtual general_err_t open(void) = 0;
+	virtual general_err_t post(const std::string& str) = 0;
+	virtual general_err_t close(void) = 0;
+	auto& getResponse()
+	{
+		return response;
+	}
 
+  private:
+	std::string response;
 };
-
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_ProtocolBase {
-public:
+class friend_ProtocolBase
+{
+  public:
+	explicit friend_ProtocolBase(ProtocolBase* ProtocolBase) : m_sensor{ProtocolBase} {};
 
-    explicit friend_ProtocolBase(ProtocolBase * ProtocolBase) : m_sensor{ProtocolBase} { };
+	~friend_ProtocolBase(){};
 
-    ~friend_ProtocolBase(){};
-
-private:
-    ProtocolBase * m_sensor;
+  private:
+	ProtocolBase* m_sensor;
 };
 #endif
-
-
-
-
-
 
 #endif /* INCLUDE_PROTOCOLBASE_HPP_ */

@@ -151,6 +151,7 @@ var menudata={children:[
 {text:"p",url:"globals_vars.html#index_p"},
 {text:"r",url:"globals_vars.html#index_r"},
 {text:"v",url:"globals_vars.html#index_v"}]},
+{text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

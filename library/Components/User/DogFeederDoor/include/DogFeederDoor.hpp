@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,12 +52,9 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
-
 
 /*----------------- DEFAULT INCLUDE -------------------------------------------*/
 #include "../../../Global_Include/BASIC.hpp"
@@ -66,9 +62,7 @@
 /*-----------------------------------------------------------------------------*/
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 
-
 #include "../../../Actuator/ServoMotor/include/MG996R.hpp"
-
 
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
@@ -85,45 +79,40 @@
  *
  */
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class DogFeederDoor {
+class DogFeederDoor
+{
 #ifdef __UNITTEST__
-    friend class friend_DogFeederDoor;
+	friend class friend_DogFeederDoor;
 #endif
-public:
-    explicit DogFeederDoor(const mg996r_conf_t& conf) ;
-    ~DogFeederDoor();
-    general_err_t open();
-    general_err_t close();
-private:
-    MG996R m_motor;
-};
+  public:
+	explicit DogFeederDoor(const mg996r_conf_t& conf);
+	~DogFeederDoor();
+	general_err_t open();
+	general_err_t close();
 
+  private:
+	MG996R m_motor;
+};
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_DogFeederDoor {
-public:
-    
-    explicit friend_DogFeederDoor(DogFeederDoor * DogFeederDoor) : m_sensor{DogFeederDoor} { };
+class friend_DogFeederDoor
+{
+  public:
+	explicit friend_DogFeederDoor(DogFeederDoor* DogFeederDoor) : m_sensor{DogFeederDoor} {};
 
-    ~friend_DogFeederDoor(){};
+	~friend_DogFeederDoor(){};
 
-private:
-    DogFeederDoor * m_sensor;
+  private:
+	DogFeederDoor* m_sensor;
 };
 #endif
-
-
-
-
 
 #endif /* INCLUDE_DOGFEEDERDOOR_HPP_ */

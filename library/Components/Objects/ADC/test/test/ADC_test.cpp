@@ -12,54 +12,47 @@
 
 #include "CppUTest/TestHarness.h"
 
-
-
-
 TEST_GROUP(ADC_GRP)
 {
-    ADC_API_ESP32 m_adc{{"adc",64}};
-	void setup(){
-
-	}
+	ADC_API_ESP32 m_adc{{"adc", 64}};
+	void setup() {}
 	void teardown()
 	{
-	  // Uninit stuff
-
+		// Uninit stuff
 	}
 };
 
 // test init
 TEST(ADC_GRP, simple_test)
 {
-
-LONGS_EQUAL(0,m_adc.measureValue());
+	LONGS_EQUAL(0, m_adc.measureValue());
 }
 
 // test init
 TEST(ADC_GRP, check_samples)
 {
-LONGS_EQUAL(64,m_adc.getSampleNumber());
+	LONGS_EQUAL(64, m_adc.getSampleNumber());
 }
 
 // test init
 TEST(ADC_GRP, check_samples_minus)
 {
-    m_adc.setSampleNumber(-1);
+	m_adc.setSampleNumber(-1);
 
-LONGS_EQUAL(64,m_adc.getSampleNumber());
+	LONGS_EQUAL(64, m_adc.getSampleNumber());
 }
 
 // test init
 TEST(ADC_GRP, check_samples_min)
 {
-    m_adc.setSampleNumber(1);
+	m_adc.setSampleNumber(1);
 
-LONGS_EQUAL(1,m_adc.getSampleNumber());
+	LONGS_EQUAL(1, m_adc.getSampleNumber());
 }
 // test init
 TEST(ADC_GRP, check_samples_max)
 {
-    m_adc.setSampleNumber(5000);
+	m_adc.setSampleNumber(5000);
 
-LONGS_EQUAL(5000,m_adc.getSampleNumber());
+	LONGS_EQUAL(5000, m_adc.getSampleNumber());
 }

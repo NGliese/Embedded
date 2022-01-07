@@ -109,7 +109,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d0/dd4/_timebased__rules_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../d0/dd4/_timebased__rules_8hpp_source.html">Timebased_rules.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/dd4/_timebased__rules_8hpp_source.html#l00073">73</a> of file <a class="el" href="../../d0/dd4/_timebased__rules_8hpp_source.html">Timebased_rules.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0d508586a170551f2e4f9bb28dda2e63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d508586a170551f2e4f9bb28dda2e63">&#9670;&nbsp;</a></span>isItNight()</h2>
@@ -136,21 +136,19 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Function to decide if it is night or not Nighttime is defined as 20:00 to 05:00 </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html#l00045">45</a> of file <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html">Timebased_rules.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                    {</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html">Timebased_rules.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    time_t now = time(0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">struct </span>tm tstruct;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    tstruct = *localtime(&amp;now);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    time_t now = time(0);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">struct </span>tm tstruct;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    tstruct =*localtime(&amp;now);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(tstruct.tm_hour &gt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35">NIGHT_TIME_START</a> or tstruct.tm_hour &lt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21">NIGHT_TIME_END</a>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span>(tstruct.tm_hour &gt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35">NIGHT_TIME_START</a> or tstruct.tm_hour &lt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21">NIGHT_TIME_END</a>)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21">NIGHT_TIME_END</a>, and <a class="el" href="../../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35">NIGHT_TIME_START</a>.</p>
 
@@ -183,21 +181,20 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Function to decide if it is vacation or not Vacation is between xx and yy </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html#l00060">60</a> of file <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html">Timebased_rules.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                       {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    time_t now = time(0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">struct </span>tm tstruct;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    tstruct =*localtime(&amp;now);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot; current day is : &quot;</span> &lt;&lt; (int)tstruct.tm_mday &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(tstruct.tm_mday &gt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854">VACATION_START</a> and tstruct.tm_mday &lt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7">VACATION_END</a>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html#l00055">55</a> of file <a class="el" href="../../d8/d61/_timebased__rules_8cpp_source.html">Timebased_rules.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    time_t now = time(0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">struct </span>tm tstruct;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    tstruct = *localtime(&amp;now);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot; current day is : &quot;</span> &lt;&lt; (int)tstruct.tm_mday &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(tstruct.tm_mday &gt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854">VACATION_START</a> and tstruct.tm_mday &lt;= <a class="code" href="../../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7">VACATION_END</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7">VACATION_END</a>, and <a class="el" href="../../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854">VACATION_START</a>.</p>
 
@@ -209,10 +206,10 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_timebased__rules_8cpp_html_a0a65116ddb59c8fb1dbd152da5eabe21"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21">NIGHT_TIME_END</a></div><div class="ttdeci">constexpr int NIGHT_TIME_END</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00041">Timebased_rules.cpp:41</a></div></div>
-<div class="ttc" id="a_timebased__rules_8cpp_html_a419c592cf86bdb9a99e8cebb4b764f35"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35">NIGHT_TIME_START</a></div><div class="ttdeci">constexpr int NIGHT_TIME_START</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00040">Timebased_rules.cpp:40</a></div></div>
-<div class="ttc" id="a_timebased__rules_8cpp_html_ada42ebf320b252870caf7f409c857854"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854">VACATION_START</a></div><div class="ttdeci">constexpr int VACATION_START</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00043">Timebased_rules.cpp:43</a></div></div>
-<div class="ttc" id="a_timebased__rules_8cpp_html_a958d06eadb3c3cc76bcef3bd5aac58b7"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7">VACATION_END</a></div><div class="ttdeci">constexpr int VACATION_END</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00044">Timebased_rules.cpp:44</a></div></div>
+<div class="ttc" id="a_timebased__rules_8cpp_html_a0a65116ddb59c8fb1dbd152da5eabe21"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21">NIGHT_TIME_END</a></div><div class="ttdeci">constexpr int NIGHT_TIME_END</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00037">Timebased_rules.cpp:37</a></div></div>
+<div class="ttc" id="a_timebased__rules_8cpp_html_a419c592cf86bdb9a99e8cebb4b764f35"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35">NIGHT_TIME_START</a></div><div class="ttdeci">constexpr int NIGHT_TIME_START</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00036">Timebased_rules.cpp:36</a></div></div>
+<div class="ttc" id="a_timebased__rules_8cpp_html_ada42ebf320b252870caf7f409c857854"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854">VACATION_START</a></div><div class="ttdeci">constexpr int VACATION_START</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00039">Timebased_rules.cpp:39</a></div></div>
+<div class="ttc" id="a_timebased__rules_8cpp_html_a958d06eadb3c3cc76bcef3bd5aac58b7"><div class="ttname"><a href="../../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7">VACATION_END</a></div><div class="ttdeci">constexpr int VACATION_END</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/_timebased__rules_8cpp_source.html#l00040">Timebased_rules.cpp:40</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

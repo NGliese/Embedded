@@ -269,13 +269,13 @@
             <td class="headerValue">Components/Objects/PWM/src/HAL.cpp</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">12</td>
-            <td class="headerTableEntry">17</td>
-            <td class="headerTableEntry" style="background-color:LightPink">70.6 %</td>
+            <td class="headerTableEntry">11</td>
+            <td class="headerTableEntry">16</td>
+            <td class="headerTableEntry" style="background-color:LightPink">68.8 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-30 13:04:46</td>
+            <td class="headerValue">2022-01-07 20:05:20</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -513,21 +513,21 @@
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "../include/HAL.hpp"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "../include/HAL.hpp"</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>//#define DEBUG // default uncommeted</pre></td>
     </tr>
 
     <tr>
@@ -541,35 +541,35 @@
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//#define DEBUG // default uncommeted</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>static const char* LOG_TAG = "HAL";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const char *LOG_TAG = "HAL";</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>#endif /* SRC_HAL_CPP_ */</pre></td>
     </tr>
 
     <tr>
@@ -582,22 +582,22 @@
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="left" class="src coveredLine"><pre>HAL_ESP32::HAL_ESP32(const config&amp; conf) : m_conf{conf}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
     </tr>
 
     <tr>
@@ -611,91 +611,91 @@
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif /* SRC_HAL_CPP_ */</pre></td>
+    <td align="left" class="src "><pre>	ledc_timer_config_t timer_conf;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	timer_conf.speed_mode = conf.mode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>HAL_ESP32::HAL_ESP32(const config&amp; conf) : m_conf{conf}{</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	timer_conf.duty_resolution = LEDC_TIMER_10_BIT; // 8bit = 0 -> 1024 resolution</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
+    <td align="left" class="src "><pre>	timer_conf.timer_num = LEDC_TIMER_1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	timer_conf.freq_hz = conf.frequency;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	timer_conf.clk_cfg = LEDC_AUTO_CLK; // deicde for yourself</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    ledc_timer_config_t timer_conf;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    timer_conf.speed_mode = conf.mode;</pre></td>
+    <td align="left" class="src "><pre>	auto err = ledc_timer_config(&amp;timer_conf);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    timer_conf.duty_resolution = LEDC_TIMER_10_BIT; // 8bit = 0 -> 1024 resolution</pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    timer_conf.timer_num = LEDC_TIMER_1;</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    timer_conf.freq_hz = conf.frequency;</pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not initialize ledc_timer_config  ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    timer_conf.clk_cfg = LEDC_AUTO_CLK; // deicde for yourself</pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
@@ -709,56 +709,56 @@
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	ledc_channel_config_t led_conf;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto err = ledc_timer_config(&amp;timer_conf);</pre></td>
+    <td align="left" class="src "><pre>	led_conf.gpio_num = conf.m_pin;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre>	led_conf.speed_mode = conf.mode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="left" class="src "><pre>	led_conf.channel = conf.channel;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        std::cout &lt;&lt; " could not initialize ledc_timer_config  ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre>	led_conf.intr_type = LEDC_INTR_DISABLE; // we do not use interrupts</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        exit(-1);</pre></td>
+    <td align="left" class="src "><pre>	led_conf.timer_sel = LEDC_TIMER_1; // should not be needed to select timers</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>	led_conf.duty = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	led_conf.hpoint = 0;</pre></td>
     </tr>
 
     <tr>
@@ -772,63 +772,63 @@
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	err = ledc_channel_config(&amp;led_conf);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    ledc_channel_config_t led_conf;</pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.gpio_num = conf.m_pin;</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.speed_mode = conf.mode;</pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not initialize ledc_channel_config ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.channel = conf.channel;</pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.intr_type = LEDC_INTR_DISABLE; // we do not use interrupts</pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.timer_sel = LEDC_TIMER_1; // should not be needed to select timers</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.duty = 0;</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    led_conf.hpoint = 0;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -841,589 +841,589 @@
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    err =  ledc_channel_config(&amp;led_conf);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="left" class="src coveredLine"><pre>HAL_ESP32::~HAL_ESP32() {}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::setDutyCycle(const float&amp; duty)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        std::cout &lt;&lt; " could not initialize ledc_channel_config ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        exit(-1);</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setDutyCycle >> ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	auto err =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		ledc_set_duty(m_conf.mode, m_conf.channel, calculateDutyCycleBasedOnResolution(duty));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>HAL_ESP32::~HAL_ESP32() {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not  call ledc_set_duty ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
-    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::setDutyCycle(const float &amp;duty) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	err = ledc_update_duty(m_conf.mode, m_conf.channel);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setDutyCycle >> ");</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not  call ledc_update_duty ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // Executable code:</pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto err =  ledc_set_duty(m_conf.mode, m_conf.channel, calculateDutyCycleBasedOnResolution(duty));</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre>	// update duty cycle parameter</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_conf.duty = duty;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        std::cout &lt;&lt; " could not  call ledc_set_duty ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        exit(-1);</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::setDutyCycle &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    err =  ledc_update_duty(m_conf.mode, m_conf.channel );</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        std::cout &lt;&lt; " could not  call ledc_update_duty ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        exit(-1);</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::setFrequency(const uint32_t&amp; frequency)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // update duty cycle parameter</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
-    <td align="left" class="src coveredLine"><pre>    m_conf.duty = duty;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setFrequency >> ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::setDutyCycle &lt;&lt; ");</pre></td>
+    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre>	auto err = ledc_set_freq(m_conf.mode, LEDC_TIMER_0, frequency);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return GE_OK;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not  call ledc_set_freq ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::setFrequency(const uint32_t &amp;frequency) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::setFrequency >> ");</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::setFrequency &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // Executable code:</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
+    <td align="left" class="src "><pre>	// update frequency parameter</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>129</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto err =   ledc_set_freq(m_conf.mode,  LEDC_TIMER_0, frequency);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="left" class="src coveredLine"><pre>	m_conf.frequency = frequency;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        std::cout &lt;&lt; " could not  call ledc_set_freq ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        exit(-1);</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::stop(void)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>136</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::setFrequency &lt;&lt; ");</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::stop >> ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // update frequency parameter</pre></td>
+    <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    m_conf.frequency = frequency;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>141</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>142</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return GE_OK;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>143</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>general_err_t HAL_ESP32::stop(void) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::stop >> ");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // Executable code:</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#ifdef __ESP32__</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto err =  ledc_stop(m_conf.mode, m_conf.channel, 0);</pre></td>
+    <td align="left" class="src "><pre>	auto err = ledc_stop(m_conf.mode, m_conf.channel, 0);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if(err != ESP_OK)</pre></td>
+    <td align="left" class="src "><pre>	if(err != ESP_OK)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     {</pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="lineno"><pre>144</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>         std::cout &lt;&lt; " could not  call ledc_stop ... restarting ! \n";</pre></td>
+    <td align="left" class="src "><pre>		std::cout &lt;&lt; " could not  call ledc_stop ... restarting ! \n";</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>         exit(-1);</pre></td>
+    <td align="left" class="src "><pre>		exit(-1);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     }</pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::stop &lt;&lt; ");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>general_err_t HAL_ESP32::destroy(void)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::destroy >> ");</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::stop &lt;&lt; ");</pre></td>
+    <td align="left" class="src "><pre>	// Executable code:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>161</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	stop();</pre></td>
     </tr>
 
     <tr>
@@ -1436,243 +1436,173 @@
     <tr>
     <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return GE_OK;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef DEBUG</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>164</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>	LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::destroy &lt;&lt; ");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>165</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>general_err_t HAL_ESP32::destroy(void) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, ">> HAL_ESP32::destroy >> ");</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre>/**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // Executable code:</pre></td>
+    <td align="left" class="src "><pre> * @brief a converter function to convert the duty cycle in [%] to resolution based</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    stop();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre> * @attention we are loosing some performance in the sense of math with floats, but</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #ifdef DEBUG</pre></td>
+    <td align="left" class="src "><pre> *            this is not a time critical called function so we are willingly letting go.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    LOG_PRINT_INFO(LOG_TAG, "&lt;&lt; HAL_ESP32::destroy &lt;&lt; ");</pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    #endif</pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>177</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return GE_OK;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>178</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>179</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/**</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>180</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @brief a converter function to convert the duty cycle in [%] to resolution based</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>181</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> *</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>182</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @attention we are loosing some performance in the sense of math with floats, but</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>183</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> *            this is not a time critical called function so we are willingly letting go.</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>184</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> *</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>185</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> *</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>186</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> * @param[in] const float &amp;duty</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> * @param[out] duty in resolution domain</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> *</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> * @return</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> *    - GE_OK</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> *    -</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> *    -</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre> */</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="lineno"><pre>184</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>uint32_t HAL_ESP32::calculateDutyCycleBasedOnResolution(const float &amp;duty) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>uint32_t HAL_ESP32::calculateDutyCycleBasedOnResolution(const float&amp; duty)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>195</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return (duty/100)*1024 ;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	return (duty / 100) * 1024;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>187</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>

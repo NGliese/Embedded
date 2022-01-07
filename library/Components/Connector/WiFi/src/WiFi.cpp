@@ -178,7 +178,8 @@ uint8_t WiFi::connectAP(const std::string& ssid, const std::string& password,
 	esp_err_t errRc = ::esp_wifi_set_mode(mode);
 	if(errRc != ESP_OK)
 	{
-		//ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		// ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc,
+		// GeneralUtils::errorToString(errRc));
 		abort();
 	}
 	wifi_config_t sta_config;
@@ -189,14 +190,15 @@ uint8_t WiFi::connectAP(const std::string& ssid, const std::string& password,
 	errRc = ::esp_wifi_set_config(WIFI_IF_STA, &sta_config);
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "esp_wifi_set_config: rc=%d %s", errRc,
-	//			 GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "esp_wifi_set_config: rc=%d %s", errRc,
+		//			 GeneralUtils::errorToString(errRc));
 		abort();
 	}
 	errRc = ::esp_wifi_start();
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc,
+		// GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
@@ -207,8 +209,8 @@ uint8_t WiFi::connectAP(const std::string& ssid, const std::string& password,
 		errRc = ::esp_wifi_connect();
 		if(errRc != ESP_OK)
 		{
-		//	ESP_LOGE(LOG_TAG, "esp_wifi_connect: rc=%d %s", errRc,
-		//			 GeneralUtils::errorToString(errRc));
+			//	ESP_LOGE(LOG_TAG, "esp_wifi_connect: rc=%d %s", errRc,
+			//			 GeneralUtils::errorToString(errRc));
 			abort();
 		}
 	} while(!m_connectFinished.take(5000, "connectAP")); // retry if not connected within 5s
@@ -500,8 +502,8 @@ std::string WiFi::getStaSSID()
 			::esp_event_loop_init(WiFi::eventHandler, this); // Initialze the event handler.
 		if(errRc != ESP_OK)
 		{
-		//	ESP_LOGE(LOG_TAG, "esp_event_loop_init: rc=%d %s", errRc,
-		//			 GeneralUtils::errorToString(errRc));
+			//	ESP_LOGE(LOG_TAG, "esp_event_loop_init: rc=%d %s", errRc,
+			//			 GeneralUtils::errorToString(errRc));
 			abort();
 		}
 		m_eventLoopStarted = true;
@@ -517,15 +519,16 @@ std::string WiFi::getStaSSID()
 		esp_err_t errRc = ::esp_wifi_init(&cfg);
 		if(errRc != ESP_OK)
 		{
-		//	ESP_LOGE(LOG_TAG, "esp_wifi_init: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+			//	ESP_LOGE(LOG_TAG, "esp_wifi_init: rc=%d %s", errRc,
+			// GeneralUtils::errorToString(errRc));
 			abort();
 		}
 
 		errRc = ::esp_wifi_set_storage(WIFI_STORAGE_RAM);
 		if(errRc != ESP_OK)
 		{
-		//	ESP_LOGE(LOG_TAG, "esp_wifi_set_storage: rc=%d %s", errRc,
-	//				 GeneralUtils::errorToString(errRc));
+			//	ESP_LOGE(LOG_TAG, "esp_wifi_set_storage: rc=%d %s", errRc,
+			//				 GeneralUtils::errorToString(errRc));
 			abort();
 		}
 	}
@@ -544,6 +547,7 @@ std::string WiFi::getStaSSID()
  */
 std::vector<WiFiAPRecord> WiFi::scan()
 {
+	// #lizard forgives the complexity
 	ESP_LOGD(LOG_TAG, ">> scan");
 	std::vector<WiFiAPRecord> apRecords;
 
@@ -552,14 +556,16 @@ std::vector<WiFiAPRecord> WiFi::scan()
 	esp_err_t errRc = ::esp_wifi_set_mode(WIFI_MODE_STA);
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc,
+		// GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
 	errRc = ::esp_wifi_start();
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc,
+		// GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
@@ -596,8 +602,8 @@ std::vector<WiFiAPRecord> WiFi::scan()
 	errRc = ::esp_wifi_scan_get_ap_records(&apCount, list);
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "esp_wifi_scan_get_ap_records: rc=%d %s", errRc,
-	//			 GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "esp_wifi_scan_get_ap_records: rc=%d %s", errRc,
+		//			 GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
@@ -663,7 +669,8 @@ void WiFi::startAP(const std::string& ssid, const std::string& password, wifi_au
 	esp_err_t errRc = ::esp_wifi_set_mode(WIFI_MODE_AP);
 	if(errRc != ESP_OK)
 	{
-		//ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		// ESP_LOGE(LOG_TAG, "esp_wifi_set_mode: rc=%d %s", errRc,
+		// GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
@@ -682,7 +689,7 @@ void WiFi::startAP(const std::string& ssid, const std::string& password, wifi_au
 	errRc = ::esp_wifi_set_config(WIFI_IF_AP, &apConfig);
 	if(errRc != ESP_OK)
 	{
-		//ESP_LOGE(LOG_TAG, "esp_wifi_set_config: rc=%d %s", errRc,
+		// ESP_LOGE(LOG_TAG, "esp_wifi_set_config: rc=%d %s", errRc,
 		//		 GeneralUtils::errorToString(errRc));
 		abort();
 	}
@@ -690,15 +697,15 @@ void WiFi::startAP(const std::string& ssid, const std::string& password, wifi_au
 	errRc = ::esp_wifi_start();
 	if(errRc != ESP_OK)
 	{
-		//ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
+		// ESP_LOGE(LOG_TAG, "esp_wifi_start: rc=%d %s", errRc, GeneralUtils::errorToString(errRc));
 		abort();
 	}
 
 	errRc = tcpip_adapter_dhcps_start(TCPIP_ADAPTER_IF_AP);
 	if(errRc != ESP_OK)
 	{
-	//	ESP_LOGE(LOG_TAG, "tcpip_adapter_dhcps_start: rc=%d %s", errRc,
-	//			 GeneralUtils::errorToString(errRc));
+		//	ESP_LOGE(LOG_TAG, "tcpip_adapter_dhcps_start: rc=%d %s", errRc,
+		//			 GeneralUtils::errorToString(errRc));
 	}
 
 	ESP_LOGD(LOG_TAG, "<< startAP");

@@ -19,7 +19,7 @@
 #include <array>
 #include <DogFeederDoor.hpp>
 #include <Maintainer.hpp>
-
+#include <esp32_sal.hpp>
 void test_mqtt()
 {
 	   /* -------------- INIT WIFI --------------------- */
@@ -254,6 +254,17 @@ void test_door()
 
 }
 
+void test_get_door_status(){
+
+esp32_sal m_http{"192.168.1.157:1880"};
+for(;;)
+{
+    std::cout << " ... Getting request ... \n";
+    Timeservice::wait_sec(5);
+    m_http.get("/getDogFeederFlag");
+}
+}
+
 const wifi_conf_t wifi_conf{
    .ssid=WIFI_SSID_LOCAL,
    .password=WIFI_PWD_LOCAL
@@ -273,8 +284,8 @@ void app_main(void)
 
 Maintainer m_maintain{wifi_conf};
 m_maintain.start();
-test_door();
-
+//test_door();
+test_get_door_status();
 for(;;)
 {
    std::cout << "Running a test ! \n ";

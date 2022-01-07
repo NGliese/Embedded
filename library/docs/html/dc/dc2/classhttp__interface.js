@@ -8,5 +8,5 @@ var classhttp__interface =
     [ "post", "dc/dc2/classhttp__interface.html#a0b46987000866f8fe9cef287e2ce2edc", null ],
     [ "m_initialized", "dc/dc2/classhttp__interface.html#add77876f573b6b73b4ab66ae0141e0aa", null ],
     [ "m_open", "dc/dc2/classhttp__interface.html#a0299e5e6e6393f7af77e621c0c3691c1", null ],
-    [ "m_sal", "dc/dc2/classhttp__interface.html#a413c05976d478e5cc3a1015468bee5eb", null ]
+    [ "m_sal", "dc/dc2/classhttp__interface.html#a7c1f7e97af2c225937c48fcb3b05cc35", null ]
 ];

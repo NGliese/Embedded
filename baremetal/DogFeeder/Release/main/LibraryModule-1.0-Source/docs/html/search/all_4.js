@@ -7,7 +7,7 @@ var searchData=
   ['db_5fconnection_5ftimeout_87',['DB_CONNECTION_TIMEOUT',['../d1/de8/_curl___s_a_l_8cpp.html#afd166b5ed07b3cb02ee1646bb3597ded',1,'Curl_SAL.cpp']]],
   ['db_5fid_88',['db_id',['../d5/d40/_database___i_d___base_8hpp.html#ad2476414527a024c2bb661f45d8876e0',1,'Database_ID_Base.hpp']]],
   ['db_5fsend_5ftimeout_89',['DB_SEND_TIMEOUT',['../d1/de8/_curl___s_a_l_8cpp.html#a34db8c43c3ca6535590b428601ad768b',1,'Curl_SAL.cpp']]],
-  ['debug_90',['DEBUG',['../d0/de3/_general___error_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'General_Error.cpp']]],
+  ['debug_90',['DEBUG',['../d0/de3/_general___error_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;General_Error.cpp'],['../df/dc9/esp32__sal_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;esp32_sal.cpp']]],
   ['debug_5fid1_91',['DEBUG_ID1',['../d5/d40/_database___i_d___base_8hpp.html#ad2476414527a024c2bb661f45d8876e0ad0d5ecb4517945d57a02814d4df46156',1,'Database_ID_Base.hpp']]],
   ['debug_5fid2_92',['DEBUG_ID2',['../d5/d40/_database___i_d___base_8hpp.html#ad2476414527a024c2bb661f45d8876e0af897ea32d6af85571f7dfd45c1d89ebf',1,'Database_ID_Base.hpp']]],
   ['debug_5fid3_93',['DEBUG_ID3',['../d5/d40/_database___i_d___base_8hpp.html#ad2476414527a024c2bb661f45d8876e0a76e56b64b85637bd11233ef203a5e439',1,'Database_ID_Base.hpp']]],

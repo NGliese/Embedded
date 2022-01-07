@@ -5,9 +5,6 @@
  *      Author: espenv
  */
 
-
-
-
 /***********************************************************************************************+
  *  \brief       -- XX -- Library - CPP Source file
  *  \par
@@ -28,14 +25,12 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/Watchdog_Base.hpp"
-
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "Watchdog_Base";
+static const char* LOG_TAG = "Watchdog_Base";
 #endif
 #if 0
 template<typename T>

@@ -157,7 +157,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00075">75</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
 </div><hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="d0/d55/struct_a_d_c___a_p_i___e_s_p32_1_1config" id="d0/d55/struct_a_d_c___a_p_i___e_s_p32_1_1config"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#d0/d55/struct_a_d_c___a_p_i___e_s_p32_1_1config">&#9670;&nbsp;</a></span>ADC_API_ESP32::config</h2>
@@ -171,7 +171,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
 </div><div class="dynheader">
 Collaboration diagram for ADC_API_ESP32::config:</div>
 <div class="dyncontent">
@@ -207,7 +207,8 @@ amount of samples to average </td></tr>
 <td class="fieldname">
 vRef</td>
 <td class="fielddoc">
-calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.py &ndash;port /dev/ttyUSB0 adc_info </td></tr>
+<p>calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.py &ndash;port /dev/ttyUSB0 adc_info </p>
+</td></tr>
 </table>
 
 </div>
@@ -237,18 +238,19 @@ calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                               : <a class="code" href="../../dc/d23/class_a_d_c_base.html#a45da7ff245042cfd59952b6cfc206368">ADCBase</a>(conf.name,conf.samples) , <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>{conf}{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef __ESP32__</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// set the adc width</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    adc1_config_width(m_width);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// set the channel and attenuation</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    adc1_config_channel_atten(<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">channel</a>, m_atten);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// set the calc value</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    esp_adc_cal_value_t val_type = esp_adc_cal_characterize(m_unit, m_atten, m_width, <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a3b206a329b232f9d7c39bf603c34dead">vRef</a>, &amp;m_adc_chars);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                               : <a class="code" href="../../dc/d23/class_a_d_c_base.html#a45da7ff245042cfd59952b6cfc206368">ADCBase</a>(conf.name, conf.samples), <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>{conf}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef __ESP32__</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// set the adc width</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    adc1_config_width(m_width);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// set the channel and attenuation</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    adc1_config_channel_atten(<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">channel</a>, m_atten);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// set the calc value</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    esp_adc_cal_value_t val_type =</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        esp_adc_cal_characterize(m_unit, m_atten, m_width, <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a3b206a329b232f9d7c39bf603c34dead">vRef</a>, &amp;m_adc_chars);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -267,9 +269,8 @@ calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                              {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00049">49</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,25 +302,23 @@ calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.
 
 <p>Implements <a class="el" href="../../dc/d23/class_a_d_c_base.html#a01ac4ba9d216c65054e2b039e62b8e67">ADCBase&lt; uint32_t &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                         {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint64_t adc_reading = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a> ; ++i)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    #ifdef __ESP32__</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      adc_reading += adc1_get_raw(<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">channel</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// check that we do not divide by zero</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">auto</span> val =   adc_reading &gt; 0 ? <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(adc_reading /= <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>) : 0 ;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef __ESP32__</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> esp_adc_cal_raw_to_voltage(val, &amp;m_adc_chars);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> val;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../d2/d4e/_a_d_c___a_p_i___e_s_p32_8cpp_source.html">ADC_API_ESP32.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    uint64_t adc_reading = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>; ++i)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifdef __ESP32__</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        adc_reading += adc1_get_raw(<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>.<a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">channel</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// check that we do not divide by zero</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">auto</span> val = adc_reading &gt; 0 ? <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(adc_reading /= <a class="code" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">m_number_of_samples</a>) : 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifdef __ESP32__</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> esp_adc_cal_raw_to_voltage(val, &amp;m_adc_chars);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> val;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">ADC_API_ESP32::config::channel</a>, <a class="el" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">m_conf</a>, and <a class="el" href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">ADCBase&lt; uint32_t &gt;::m_number_of_samples</a>.</p>
 
@@ -346,7 +345,7 @@ calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html">ADC_API_ESP32.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a0c9c4c65a7dc8ee9f69ad22f2a8e1edf">measureValue()</a>.</p>
 
@@ -358,11 +357,11 @@ calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_a_d_c_base_html_a45da7ff245042cfd59952b6cfc206368"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a45da7ff245042cfd59952b6cfc206368">ADCBase&lt; uint32_t &gt;::ADCBase</a></div><div class="ttdeci">ADCBase(const std::string &amp;name, const size_t samples)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00090">ADCBase.hpp:90</a></div></div>
-<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a3b206a329b232f9d7c39bf603c34dead"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a3b206a329b232f9d7c39bf603c34dead">ADC_API_ESP32::config::vRef</a></div><div class="ttdeci">uint32_t vRef</div><div class="ttdoc">calibration refereance, lookup $IDF_PATH/components/esptool_py/esptool/espefuse.py –port /dev/ttyUSB0...</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00087">ADC_API_ESP32.hpp:87</a></div></div>
-<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a95e8bf7cfc498470a1e43c28ba676ab6"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">ADC_API_ESP32::config::channel</a></div><div class="ttdeci">adc1_channel_t channel</div><div class="ttdoc">the channel / gpio pin</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00086">ADC_API_ESP32.hpp:86</a></div></div>
-<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a9da77d33bafc8cc80a2f32e4696fae41"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">ADC_API_ESP32::m_conf</a></div><div class="ttdeci">config m_conf</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00094">ADC_API_ESP32.hpp:94</a></div></div>
-<div class="ttc" id="aclass_a_d_c_base_html_a328bebdbcc92bb57f877012fa747b1e7"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">ADCBase&lt; uint32_t &gt;::m_number_of_samples</a></div><div class="ttdeci">size_t m_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00119">ADCBase.hpp:119</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_a45da7ff245042cfd59952b6cfc206368"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a45da7ff245042cfd59952b6cfc206368">ADCBase&lt; uint32_t &gt;::ADCBase</a></div><div class="ttdeci">ADCBase(const std::string &amp;name, const size_t samples)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00081">ADCBase.hpp:81</a></div></div>
+<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a3b206a329b232f9d7c39bf603c34dead"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a3b206a329b232f9d7c39bf603c34dead">ADC_API_ESP32::config::vRef</a></div><div class="ttdeci">uint32_t vRef</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00086">ADC_API_ESP32.hpp:86</a></div></div>
+<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a95e8bf7cfc498470a1e43c28ba676ab6"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a95e8bf7cfc498470a1e43c28ba676ab6">ADC_API_ESP32::config::channel</a></div><div class="ttdeci">adc1_channel_t channel</div><div class="ttdoc">the channel / gpio pin</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00085">ADC_API_ESP32.hpp:85</a></div></div>
+<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html_a9da77d33bafc8cc80a2f32e4696fae41"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9da77d33bafc8cc80a2f32e4696fae41">ADC_API_ESP32::m_conf</a></div><div class="ttdeci">config m_conf</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00095">ADC_API_ESP32.hpp:95</a></div></div>
+<div class="ttc" id="aclass_a_d_c_base_html_a328bebdbcc92bb57f877012fa747b1e7"><div class="ttname"><a href="../../dc/d23/class_a_d_c_base.html#a328bebdbcc92bb57f877012fa747b1e7">ADCBase&lt; uint32_t &gt;::m_number_of_samples</a></div><div class="ttdeci">size_t m_number_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da0/_a_d_c_base_8hpp_source.html#l00116">ADCBase.hpp:116</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

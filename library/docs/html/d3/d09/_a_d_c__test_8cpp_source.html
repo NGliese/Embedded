@@ -100,62 +100,55 @@ $(document).ready(function(){initNavTree('d3/d09/_a_d_c__test_8cpp_source.html',
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;CppUTest/TestHarness.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">   18</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">TEST_GROUP</a>(ADC_GRP)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html">ADC_API_ESP32</a> m_adc{{<span class="stringliteral">&quot;adc&quot;</span>,64}};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setup(){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> teardown()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="comment">// Uninit stuff</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">   15</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">TEST_GROUP</a>(ADC_GRP)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html">ADC_API_ESP32</a> m_adc{{<span class="stringliteral">&quot;adc&quot;</span>, 64}};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> setup() {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> teardown()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// Uninit stuff</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// test init</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">   26</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, simple_test)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    LONGS_EQUAL(0, m_adc.measureValue());</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">   32</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, simple_test)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a32c8e04d112a2db91f6d4df8fd971c1b">   32</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;LONGS_EQUAL(0,m_adc.measureValue());</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a32c8e04d112a2db91f6d4df8fd971c1b">   39</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;LONGS_EQUAL(64,m_adc.getSampleNumber());</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#afd9d454c21f368a22facedd12ce807b6">   45</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_minus)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_adc.setSampleNumber(-1);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;LONGS_EQUAL(64,m_adc.getSampleNumber());</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    LONGS_EQUAL(64, m_adc.getSampleNumber());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// test init</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#afd9d454c21f368a22facedd12ce807b6">   38</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_minus)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    m_adc.setSampleNumber(-1);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    LONGS_EQUAL(64, m_adc.getSampleNumber());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// test init</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a8e3ff12a35cde338e9fc940e5bc4750d">   46</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_min)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_adc.setSampleNumber(1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    LONGS_EQUAL(1, m_adc.getSampleNumber());</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a8e3ff12a35cde338e9fc940e5bc4750d">   53</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_min)</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a5a392f89036ee4f2e6506c3a06f4ee7c">   53</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_max)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_adc.setSampleNumber(1);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_adc.setSampleNumber(5000);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;LONGS_EQUAL(1,m_adc.getSampleNumber());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    LONGS_EQUAL(5000, m_adc.getSampleNumber());</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// test init</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d3/d09/_a_d_c__test_8cpp.html#a5a392f89036ee4f2e6506c3a06f4ee7c">   60</a></span>&#160;<a class="code" href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a>(ADC_GRP, check_samples_max)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_adc.setSampleNumber(5000);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;LONGS_EQUAL(5000,m_adc.getSampleNumber());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html">ADC_API_ESP32</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00078">ADC_API_ESP32.hpp:78</a></div></div>
-<div class="ttc" id="a_a_d_c__test_8cpp_html_a8f3da4c69ccefacb3cb6bb9bfa580c48"><div class="ttname"><a href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a></div><div class="ttdeci">TEST(ADC_GRP, simple_test)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d09/_a_d_c__test_8cpp_source.html#l00032">ADC_test.cpp:32</a></div></div>
-<div class="ttc" id="a_a_d_c__test_8cpp_html_a4be9be285f84ee53fb7ce1877a9a2cb9"><div class="ttname"><a href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">TEST_GROUP</a></div><div class="ttdeci">TEST_GROUP(ADC_GRP)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d09/_a_d_c__test_8cpp_source.html#l00018">ADC_test.cpp:18</a></div></div>
+<div class="ttc" id="aclass_a_d_c___a_p_i___e_s_p32_html"><div class="ttname"><a href="../../d4/d70/class_a_d_c___a_p_i___e_s_p32.html">ADC_API_ESP32</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd5/_a_d_c___a_p_i___e_s_p32_8hpp_source.html#l00075">ADC_API_ESP32.hpp:75</a></div></div>
+<div class="ttc" id="a_a_d_c__test_8cpp_html_a8f3da4c69ccefacb3cb6bb9bfa580c48"><div class="ttname"><a href="../../d3/d09/_a_d_c__test_8cpp.html#a8f3da4c69ccefacb3cb6bb9bfa580c48">TEST</a></div><div class="ttdeci">TEST(ADC_GRP, simple_test)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d09/_a_d_c__test_8cpp_source.html#l00026">ADC_test.cpp:26</a></div></div>
+<div class="ttc" id="a_a_d_c__test_8cpp_html_a4be9be285f84ee53fb7ce1877a9a2cb9"><div class="ttname"><a href="../../d3/d09/_a_d_c__test_8cpp.html#a4be9be285f84ee53fb7ce1877a9a2cb9">TEST_GROUP</a></div><div class="ttdeci">TEST_GROUP(ADC_GRP)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d09/_a_d_c__test_8cpp_source.html#l00015">ADC_test.cpp:15</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

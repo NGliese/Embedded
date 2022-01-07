@@ -8,7 +8,6 @@
 #ifndef INCLUDE_MG996R_HPP_
 #define INCLUDE_MG996R_HPP_
 
-
 /*------------------------------------------------------------------------------+
  |   		 	C L A S S   I N F O R M A T I O N                               |
  +------------------------------------------------------------------------------+
@@ -33,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -54,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -69,18 +65,15 @@
 #include "../../../Objects/PWM/include/PWM_API_ESP32.hpp"
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
 
-
-struct mg996r_conf_t{
-        std::string name;
-        HAL_ESP32::config conf;
+struct mg996r_conf_t
+{
+	std::string name;
+	HAL_ESP32::config conf;
 };
-
-
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
@@ -105,45 +98,51 @@ struct mg996r_conf_t{
  *
  * @endcode
  */
-class MG996R final : public Actuator_Base<mg996r_conf_t,float> {
+class MG996R final : public Actuator_Base<mg996r_conf_t, float>
+{
 #ifdef __UNITTEST__
-    friend class friend_MG996R;
+	friend class friend_MG996R;
 #endif
-public:
-    MG996R(const mg996r_conf_t& conf) ;
-    ~MG996R();
-    general_err_t setToMaximum(void) override;
-    general_err_t setToMinimum(void) override;
+  public:
+	MG996R(const mg996r_conf_t& conf);
+	~MG996R();
+	general_err_t setToMaximum(void) override;
+	general_err_t setToMinimum(void) override;
 
-private:
-    general_err_t setPoint(const float& value)  override;
-    general_err_t actuate(void) override;
-    PWM_API_ESP32 m_pwm;
-    float m_setPointValue;
+  private:
+	general_err_t setPoint(const float& value) override;
+	general_err_t actuate(void) override;
+	PWM_API_ESP32 m_pwm;
+	float m_setPointValue;
 };
-
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_MG996R {
-public:
+class friend_MG996R
+{
+  public:
+	friend_MG996R(MG996R* MG996R) : m_sensor{MG996R} {};
 
-    friend_MG996R(MG996R * MG996R) : m_sensor{MG996R} { };
+	~friend_MG996R(){};
+	auto setPoint(const float& value)
+	{
+		return m_sensor->setPoint(value);
+	}
+	auto actuate(void)
+	{
+		return m_sensor->actuate();
+	}
+	auto getSetPoint(void)
+	{
+		return m_sensor->m_setPointValue;
+	}
 
-    ~friend_MG996R(){};
-    auto setPoint(const float& value) { return m_sensor->setPoint(value);}
-    auto actuate(void) { return m_sensor->actuate(); }
-    auto getSetPoint(void) { return m_sensor->m_setPointValue;}
-
-private:
-    MG996R * m_sensor;
+  private:
+	MG996R* m_sensor;
 };
 #endif
-
-
-
 
 #endif /* INCLUDE_MG996R_HPP_ */
