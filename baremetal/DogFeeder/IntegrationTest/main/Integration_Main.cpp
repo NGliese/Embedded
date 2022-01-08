@@ -256,12 +256,34 @@ void test_door()
 
 void test_get_door_status(){
 
-esp32_sal m_http{"192.168.1.157:1880"};
+esp32_sal m_http{"192.168.1.157",1880};
 for(;;)
 {
     std::cout << " ... Getting request ... \n";
     Timeservice::wait_sec(5);
     m_http.get("/getDogFeederFlag");
+}
+}
+
+
+
+void test_get_door_status_http_semaphore_test(){
+
+esp32_sal m_http1{"192.168.1.157",1880}; // OK
+esp32_sal m_http2{"192.168.1.157",188}; // bad
+esp32_sal m_http3{"192.168.1.15",1880}; // bad
+esp32_sal m_http4{"192.168.1.15",188}; // bad
+esp32_sal m_http5{"",1880}; // bad
+
+for(;;)
+{
+    std::cout << " ... Getting request ... \n";
+    Timeservice::wait_sec(5);
+    m_http1.get("/getDogFeederFlag");
+    m_http2.get("/getDogFeederFlag");
+    m_http3.get("/getDogFeederFlag");
+    m_http4.get("/getDogFeederFlag");
+    m_http5.get("/getDogFeederFlag");
 }
 }
 
@@ -285,7 +307,8 @@ void app_main(void)
 Maintainer m_maintain{wifi_conf};
 m_maintain.start();
 //test_door();
-test_get_door_status();
+//test_get_door_status();
+test_get_door_status_http_semaphore_test();
 for(;;)
 {
    std::cout << "Running a test ! \n ";

@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2022-01-07 20:05:20</td>
+            <td class="headerValue">2022-01-08 13:56:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">4</td>
@@ -854,15 +854,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 5 taken 168 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 168 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>168</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 5 taken 952 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 952 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>952</pre></td>
     <td align="left" class="src coveredLine"><pre>	Actuator_Base(const T&amp; conf) : m_value{0}, m_conf{conf}, m_faulthanlder{"actuator_base"} {};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>336</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1904</pre></td>
     <td align="left" class="src coveredLine"><pre>	virtual ~Actuator_Base(){};</pre></td>
     </tr>
 
@@ -897,7 +897,7 @@
     <tr>
     <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>408</pre></td>
     <td align="left" class="src coveredLine"><pre>	inline general_err_t execute(const U&amp; value)</pre></td>
     </tr>
 
@@ -911,14 +911,14 @@
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>408</pre></td>
     <td align="left" class="src coveredLine"><pre>		auto err = setPoint(value);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 48 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 272 times">&check;</span><span class="takenBranch" title="Branch 1 taken 136 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>408</pre></td>
     <td align="left" class="src coveredLine"><pre>		return (err == GE_OK) ? actuate() : err;</pre></td>
     </tr>
 
@@ -953,7 +953,7 @@
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>408</pre></td>
     <td align="left" class="src coveredLine"><pre>	inline const U&amp; getValue(void) const</pre></td>
     </tr>
 
@@ -967,7 +967,7 @@
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>408</pre></td>
     <td align="left" class="src coveredLine"><pre>		return m_value;</pre></td>
     </tr>
 

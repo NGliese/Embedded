@@ -1,8 +1,9 @@
 <map id="Components/Protocols/HTTP/include/esp32_sal.hpp" name="Components/Protocols/HTTP/include/esp32_sal.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="244,5,452,47"/>
-<area shape="rect" id="node2" href="$da/d5f/_b_a_s_i_c_8hpp.html" title=" " alt="" coords="5,95,160,136"/>
-<area shape="rect" id="node3" href="$d3/deb/_general___error_8hpp.html" title=" " alt="" coords="184,95,379,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="355,184,435,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="453,102,509,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="252,184,311,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,404,47"/>
+<area shape="rect" id="node2" href="$da/d5f/_b_a_s_i_c_8hpp.html" title=" " alt="" coords="5,184,160,225"/>
+<area shape="rect" id="node3" href="$d3/deb/_general___error_8hpp.html" title=" " alt="" coords="337,184,532,225"/>
+<area shape="rect" id="node5" title=" " alt="" coords="260,273,340,300"/>
+<area shape="rect" id="node6" href="$d3/d1c/_free_r_t_o_s_8h.html" title=" " alt="" coords="103,95,263,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="388,102,444,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="405,273,464,300"/>
 </map>

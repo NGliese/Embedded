@@ -163,6 +163,8 @@ var NAVTREEINDEX2 =
 "d6/da5/rpicamv2__test_8cpp_source.html":[4,0,0,8,0,2,0,1],
 "d6/df4/_watch___clock_8hpp.html":[4,0,0,5,12,0,0],
 "d6/df4/_watch___clock_8hpp_source.html":[4,0,0,5,12,0,0],
+"d7/d1d/esp32__http__settings_8hpp.html":[4,0,0,6,0,0,1],
+"d7/d1d/esp32__http__settings_8hpp_source.html":[4,0,0,6,0,0,1],
 "d7/d2c/_connected_components_8cpp.html":[4,0,0,1,0,1,1],
 "d7/d2c/_connected_components_8cpp_source.html":[4,0,0,1,0,1,1],
 "d7/d2f/_wi_fi_8h.html":[4,0,0,2,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "d8/d50/test_2src_2time__test_8cpp.html#a109b2eb6676a17de7b1a98c13bd7bdec":[4,0,0,5,11,2,0,0,6],
 "d8/d50/test_2src_2time__test_8cpp.html#a169943666e5d10d75a8e1aa120dcfca9":[4,0,0,5,11,2,0,0,5],
 "d8/d50/test_2src_2time__test_8cpp.html#a23c5938cd7005bb6697dda75bf46fe5e":[4,0,0,5,11,2,0,0,3],
-"d8/d50/test_2src_2time__test_8cpp.html#a3abeec1499646c7e405422056b1c4e8d":[4,0,0,5,11,2,0,0,2],
-"d8/d50/test_2src_2time__test_8cpp.html#a5297c72719550373a9cd15d23aeec1c0":[4,0,0,5,11,2,0,0,4],
-"d8/d50/test_2src_2time__test_8cpp.html#a67baf43c8da95f3e9e8036e9720ec55d":[4,0,0,5,11,2,0,0,0]
+"d8/d50/test_2src_2time__test_8cpp.html#a3abeec1499646c7e405422056b1c4e8d":[4,0,0,5,11,2,0,0,2]
 };

@@ -33,7 +33,7 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-
+#include "../../../RTOS/FreeRTOS/include/FreeRTOS.h" // semaphore
 #include <array>
 #include <iostream>
 #ifdef __ESP32__
@@ -54,7 +54,7 @@ class esp32_sal
 	friend class friend_esp32_sal;
 #endif
   public:
-	explicit esp32_sal(const std::string& server);
+	explicit esp32_sal(const std::string& server, const int& port = 80);
 	~esp32_sal();
 	/**
 	 * @brief Call a basic GET function to the specified server
@@ -73,10 +73,13 @@ class esp32_sal
 	general_err_t post(const std::string& api_call, const std::string& content);
 
   private:
-	const std::string m_server;
-	std::array<char, 100> local_user_data;
+	std::string m_server;
+	int m_port;
+
 #ifdef __ESP32__
 	esp_http_client_handle_t client;
+	static esp_err_t _http_event_handle(esp_http_client_event_t* evt);
+
 #endif
 };
 

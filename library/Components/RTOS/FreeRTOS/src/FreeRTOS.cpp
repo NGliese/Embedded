@@ -138,6 +138,9 @@ FreeRTOS::Semaphore::Semaphore(const std::string& name)
 		 * 190813-bug, can binary work? :: https://github.com/espressif/arduino-esp32/issues/2723
 		 */
 		m_semaphore = xSemaphoreCreateBinary();
+		// it looks like, whenever a semaphore is created
+		// we have to release it ?? @gliese
+		give();
 	}
 #endif
 }

@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2022-01-07 20:05:20</td>
+            <td class="headerValue">2022-01-08 13:56:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">6</td>
@@ -540,7 +540,7 @@
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>Watch_Clock::Watch_Clock(const size_t&amp; parameter)</pre></td>
     </tr>
 
@@ -554,28 +554,28 @@
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_watch = parameter;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_last_time = Timeservice::getTimeNow();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_initialized = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -589,14 +589,14 @@
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>288</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1608</pre></td>
     <td align="left" class="src coveredLine"><pre>Watch_Clock::Watch_Clock() {}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>624</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3484</pre></td>
     <td align="left" class="src coveredLine"><pre>Watch_Clock::~Watch_Clock() {}</pre></td>
     </tr>
 
@@ -680,7 +680,7 @@
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1474</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t Watch_Clock::initialize(uint32_t parameter)</pre></td>
     </tr>
 
@@ -736,7 +736,7 @@
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1474</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_watch = parameter;</pre></td>
     </tr>
 
@@ -785,7 +785,7 @@
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1474</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_last_time = fake_start_time;</pre></td>
     </tr>
 
@@ -806,7 +806,7 @@
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1474</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_initialized = true;</pre></td>
     </tr>
 
@@ -848,7 +848,7 @@
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1474</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
@@ -939,7 +939,7 @@
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1248</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6968</pre></td>
     <td align="left" class="src coveredLine"><pre>watchdog_event_t Watch_Clock::watch()</pre></td>
     </tr>
 
@@ -980,8 +980,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 24 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1224 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1248</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 134 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6834 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6968</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(!m_initialized)</pre></td>
     </tr>
 
@@ -995,7 +995,7 @@
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>		return watchdog_event_t::FAIL_EVENT;</pre></td>
     </tr>
 
@@ -1058,7 +1058,7 @@
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1224</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6834</pre></td>
     <td align="left" class="src coveredLine"><pre>	uint32_t current_time = fake_end_time;</pre></td>
     </tr>
 
@@ -1078,8 +1078,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 24 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1200 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1224</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 134 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6700 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6834</pre></td>
     <td align="left" class="src coveredLine"><pre>	if(current_time &lt; m_last_time)</pre></td>
     </tr>
 
@@ -1093,7 +1093,7 @@
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>134</pre></td>
     <td align="left" class="src coveredLine"><pre>		return watchdog_event_t::FAIL_EVENT;</pre></td>
     </tr>
 
@@ -1113,8 +1113,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 528 times">&check;</span><span class="takenBranch" title="Branch 1 taken 672 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1200</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2948 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3752 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6700</pre></td>
     <td align="left" class="src coveredLine"><pre>	if((current_time - m_last_time) > m_watch)</pre></td>
     </tr>
 
@@ -1135,14 +1135,14 @@
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>528</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2948</pre></td>
     <td align="left" class="src coveredLine"><pre>		m_last_time = current_time;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>528</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2948</pre></td>
     <td align="left" class="src coveredLine"><pre>		return watchdog_event_t::SEND_EVENT;</pre></td>
     </tr>
 
@@ -1191,7 +1191,7 @@
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>672</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3752</pre></td>
     <td align="left" class="src coveredLine"><pre>	return watchdog_event_t::NO_EVENT;</pre></td>
     </tr>
 
@@ -1282,7 +1282,7 @@
     <tr>
     <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>480</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2680</pre></td>
     <td align="left" class="src coveredLine"><pre>general_err_t Watch_Clock::reset()</pre></td>
     </tr>
 
@@ -1366,7 +1366,7 @@
     <tr>
     <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>480</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2680</pre></td>
     <td align="left" class="src coveredLine"><pre>	uint32_t current_time = fake_end_time;</pre></td>
     </tr>
 
@@ -1387,7 +1387,7 @@
     <tr>
     <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>480</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2680</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_last_time = current_time;</pre></td>
     </tr>
 
@@ -1429,7 +1429,7 @@
     <tr>
     <td align="right" class="lineno"><pre>162</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>480</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2680</pre></td>
     <td align="left" class="src coveredLine"><pre>	return GE_OK;</pre></td>
     </tr>
 
