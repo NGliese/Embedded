@@ -19,7 +19,7 @@
 #include <array>
 #include <DogFeederDoor.hpp>
 #include <Maintainer.hpp>
-#include <esp32_sal.hpp>
+#include <esp32_http_sal.hpp>
 void test_mqtt()
 {
 	   /* -------------- INIT WIFI --------------------- */
@@ -256,12 +256,16 @@ void test_door()
 
 void test_get_door_status(){
 
-esp32_sal m_http{"192.168.1.157",1880};
+esp32_http_sal m_http{"192.168.1.157",1880};
 for(;;)
 {
     std::cout << " ... Getting request ... \n";
     Timeservice::wait_sec(5);
-    m_http.get("/getDogFeederFlag");
+    std::string out;
+    if(m_http.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
 }
 }
 
@@ -269,21 +273,37 @@ for(;;)
 
 void test_get_door_status_http_semaphore_test(){
 
-esp32_sal m_http1{"192.168.1.157",1880}; // OK
-esp32_sal m_http2{"192.168.1.157",188}; // bad
-esp32_sal m_http3{"192.168.1.15",1880}; // bad
-esp32_sal m_http4{"192.168.1.15",188}; // bad
-esp32_sal m_http5{"",1880}; // bad
+esp32_http_sal m_http1{"192.168.1.157",1880}; // OK
+esp32_http_sal m_http2{"192.168.1.157",188}; // bad
+esp32_http_sal m_http3{"192.168.1.15",1880}; // bad
+ esp32_http_sal m_http4{"192.168.1.15",188}; // bad
+esp32_http_sal m_http5{"",1880}; // bad
 
 for(;;)
 {
     std::cout << " ... Getting request ... \n";
     Timeservice::wait_sec(5);
-    m_http1.get("/getDogFeederFlag");
-    m_http2.get("/getDogFeederFlag");
-    m_http3.get("/getDogFeederFlag");
-    m_http4.get("/getDogFeederFlag");
-    m_http5.get("/getDogFeederFlag");
+    std::string out;
+    if(m_http1.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
+    if(m_http2.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
+        if(m_http3.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
+        if(m_http4.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
+        if(m_http5.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is : <" << out << ">\n";
+    }
 }
 }
 

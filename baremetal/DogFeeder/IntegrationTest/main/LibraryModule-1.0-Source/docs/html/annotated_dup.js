@@ -11,7 +11,7 @@ var annotated_dup =
     [ "ConnectedComponents", "d5/d8a/class_connected_components.html", "d5/d8a/class_connected_components" ],
     [ "Curl_SAL", "d2/d2b/class_curl___s_a_l.html", "d2/d2b/class_curl___s_a_l" ],
     [ "DogFeederDoor", "d2/db0/class_dog_feeder_door.html", "d2/db0/class_dog_feeder_door" ],
-    [ "esp32_sal", "da/d24/classesp32__sal.html", "da/d24/classesp32__sal" ],
+    [ "esp32_http_sal", "d5/d62/classesp32__http__sal.html", "d5/d62/classesp32__http__sal" ],
     [ "Fault_Handler", "dd/d84/class_fault___handler.html", "dd/d84/class_fault___handler" ],
     [ "FreeRTOS", "db/df4/class_free_r_t_o_s.html", "db/df4/class_free_r_t_o_s" ],
     [ "General_Error", "d2/d3f/class_general___error.html", "d2/d3f/class_general___error" ],

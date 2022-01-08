@@ -9,7 +9,7 @@ var searchData=
   ['loader_5fconf_269',['loader_conf',['../db/dc9/class_utility___image.html#a45df57a5209dfcc7616b637078dc2b0f',1,'Utility_Image']]],
   ['log_5fprint_5ferror_270',['LOG_PRINT_ERROR',['../da/d5f/_b_a_s_i_c_8hpp.html#a1e348c8264ea4b9a66f200ef9a6ab41f',1,'BASIC.hpp']]],
   ['log_5fprint_5finfo_271',['LOG_PRINT_INFO',['../da/d5f/_b_a_s_i_c_8hpp.html#a069dd5e6ddfd552dc1c6f70d7c3b93c5',1,'BASIC.hpp']]],
-  ['log_5ftag_272',['LOG_TAG',['../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;General_Error.cpp'],['../d9/d42/_o_t_a_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;OTA.cpp'],['../df/dc9/esp32__sal_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;esp32_sal.cpp'],['../da/d25/_free_r_t_o_s_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;FreeRTOS.cpp']]],
+  ['log_5ftag_272',['LOG_TAG',['../d0/de3/_general___error_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;General_Error.cpp'],['../d9/d42/_o_t_a_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;OTA.cpp'],['../de/d8f/esp32__http__sal_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;esp32_http_sal.cpp'],['../da/d25/_free_r_t_o_s_8cpp.html#a328e9da88a07f3a0bf81b40d25469ff9',1,'LOG_TAG():&#160;FreeRTOS.cpp']]],
   ['log_5ftest_2ecpp_273',['log_test.cpp',['../de/d5e/log__test_8cpp.html',1,'']]],
   ['logger_274',['Logger',['../d3/d42/class_logger.html',1,'']]],
   ['logger_2ecpp_275',['Logger.cpp',['../de/d27/_logger_8cpp.html',1,'']]],

@@ -23,7 +23,7 @@ var hierarchy =
     [ "Curl_SAL", "d2/d2b/class_curl___s_a_l.html", null ],
     [ "DogFeederDoor", "d2/db0/class_dog_feeder_door.html", null ],
     [ "ConnectedComponents::ellipse_data_t", "d5/d8a/class_connected_components.html#d2/d33/struct_connected_components_1_1ellipse__data__t", null ],
-    [ "esp32_sal", "da/d24/classesp32__sal.html", null ],
+    [ "esp32_http_sal", "d5/d62/classesp32__http__sal.html", null ],
     [ "Fault_Handler", "dd/d84/class_fault___handler.html", null ],
     [ "FreeRTOS", "db/df4/class_free_r_t_o_s.html", null ],
     [ "General_Error", "d2/d3f/class_general___error.html", null ],

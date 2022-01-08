@@ -80,7 +80,7 @@ function onClose()
 
     return (
        <div className={styles.card} >
-       <p> {doorStatus === DoorIsUnknown ? "Waiting for server ..." : doorStatus > DoorIsOpen ? "The door is Closed" : "The door is Open"} </p>         
+       <p> {doorStatus === DoorIsUnknown ? "Waiting for server ..." : doorStatus > DoorIsOpen ?  "The door is Open" : "The door is Closed" } </p>         
        <Button isDisabled={ doorStatus === DoorIsUnknown ? true : false } onClickFunction={ doorStatus > DoorIsOpen ? onClose : onOpen} button_name={ doorStatus > DoorIsOpen ? "Close" : "Open"} />
        <li><Link to="/"> Go Back</Link></li>     
       </div>
