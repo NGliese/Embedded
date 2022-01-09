@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_668',['Logger',['../d3/d42/class_logger.html',1,'']]]
+  ['json_5fobject_674',['json_object',['../d2/db6/classjson__object.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lcd_5fchannel_1191',['lcd_channel',['../d4/dc1/class_h_a_l___e_s_p32.html#a8d14cbeb8db3bc584daad862044fbd8e',1,'HAL_ESP32']]]
+  ['json_1203',['json',['../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json_object.hpp']]]
 ];

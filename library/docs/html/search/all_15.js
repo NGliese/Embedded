@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['vacation_5fend_558',['VACATION_END',['../d8/d61/_timebased__rules_8cpp.html#a958d06eadb3c3cc76bcef3bd5aac58b7',1,'Timebased_rules.cpp']]],
-  ['vacation_5fstart_559',['VACATION_START',['../d8/d61/_timebased__rules_8cpp.html#ada42ebf320b252870caf7f409c857854',1,'Timebased_rules.cpp']]],
-  ['very_5fhigh_560',['very_high',['../d1/d27/namespace_fault_handler__n.html#a32023c0fed23a14c07f7f743985cdb40aaa4cea18ae7516f9a3c28d597055082f',1,'FaultHandler_n']]],
-  ['very_5flow_561',['very_low',['../d1/d27/namespace_fault_handler__n.html#a32023c0fed23a14c07f7f743985cdb40ab7619bc8e14fe34d78820f979605ee8b',1,'FaultHandler_n']]],
-  ['view_562',['view',['../db/d4d/class_background___extractor.html#aa6c3aa330f1eb59264d8e4d12d372863',1,'Background_Extractor']]],
-  ['view_5fimage_563',['view_image',['../db/dc9/class_utility___image.html#a73fc0b36f187d5dd1fd902a9614c0ca6',1,'Utility_Image']]],
-  ['vref_564',['vRef',['../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a3b206a329b232f9d7c39bf603c34dead',1,'ADC_API_ESP32::config']]]
+  ['uint8tostring_551',['uint8ToString',['../d5/d60/utils_8h.html#a1b8b5d9bc999c34232849c478feae309',1,'uint8ToString(uint8_t number):&#160;utils.cpp'],['../de/d06/utils_8cpp.html#a1b8b5d9bc999c34232849c478feae309',1,'uint8ToString(uint8_t number):&#160;utils.cpp']]],
+  ['uinttostring_552',['uintToString',['../d5/d60/utils_8h.html#aac5de005a51d57d06f15a09ced3521b9',1,'uintToString(uint8_t number):&#160;utils.cpp'],['../de/d06/utils_8cpp.html#aac5de005a51d57d06f15a09ced3521b9',1,'uintToString(uint8_t number):&#160;utils.cpp']]],
+  ['update_553',['update',['../d3/d40/class_o_t_a.html#abc259c2e063ef11bb5fb6bd41b7ea0e2',1,'OTA']]],
+  ['update_5fprocess_554',['update_process',['../d3/d40/class_o_t_a.html#a30f91319ad92131667c7d5ba98068d6b',1,'OTA']]],
+  ['utest_5fsal_555',['utest_sal',['../d0/dde/classutest__sal.html',1,'utest_sal'],['../d0/dde/classutest__sal.html#aad138dd95390e98cc3eb12b2e7c1252b',1,'utest_sal::utest_sal()']]],
+  ['utest_5fsal_2ehpp_556',['utest_sal.hpp',['../d9/dd7/utest__sal_8hpp.html',1,'']]],
+  ['utility_5fimage_557',['Utility_Image',['../db/dc9/class_utility___image.html',1,'']]],
+  ['utility_5fimage_2ecpp_558',['Utility_Image.cpp',['../d8/d12/_utility___image_8cpp.html',1,'']]],
+  ['utility_5fimage_2ehpp_559',['Utility_Image.hpp',['../df/d30/_utility___image_8hpp.html',1,'']]],
+  ['utils_2ecpp_560',['utils.cpp',['../de/d06/utils_8cpp.html',1,'']]],
+  ['utils_2eh_561',['utils.h',['../d5/d60/utils_8h.html',1,'']]],
+  ['utils_5ftest_2ecpp_562',['utils_test.cpp',['../d5/d38/utils__test_8cpp.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['semaphore_699',['Semaphore',['../d6/d90/class_free_r_t_o_s_1_1_semaphore.html',1,'FreeRTOS']]],
-  ['sensor_5fbase_700',['Sensor_Base',['../d1/da4/class_sensor___base.html',1,'']]],
-  ['sensor_5fconf_5ft_701',['sensor_conf_t',['../d3/dd3/_sensor___base_8hpp.html#d3/dcd/structsensor__conf__t',1,'']]]
+  ['rpicamv2_704',['RPICamV2',['../d4/de7/class_r_p_i_cam_v2.html',1,'']]],
+  ['rtc_5fhal_705',['RTC_HAL',['../d9/de1/class_r_t_c___h_a_l.html',1,'']]]
 ];

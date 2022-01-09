@@ -8,7 +8,7 @@
  |  @file  utest_sal.hpp
  |
  |  @author        :  Nikolaj Gliese Pedersen
- |  @email         :  <nikolaj.gliese.pedersen@dansac.com>
+ |  @email         :  <nikolajgliese@tutanota.com>
  |  @date		   : 2022-01-07
  |
  |  @brief  	   :  This class, utest_sal.hpp, is designed as:

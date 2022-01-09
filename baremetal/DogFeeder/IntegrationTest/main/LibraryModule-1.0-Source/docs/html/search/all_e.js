@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['object_5fcolor_389',['object_color',['../db/dc9/class_utility___image.html#aed5c3c45e70c5f7936bc71f990efaab8',1,'Utility_Image']]],
-  ['ok_5fevent_390',['OK_EVENT',['../de/d1e/_watchdog___base_8hpp.html#ac447ab9510a77de4b1a8d94d688aac79ab8c71c534f9bc7f5dfce53be49e99c5f',1,'Watchdog_Base.hpp']]],
-  ['open_391',['open',['../dc/d12/class_protocol_base.html#a705a9b44cf134efa772bf79c5ea63aa7',1,'ProtocolBase::open()'],['../d2/d2b/class_curl___s_a_l.html#ab7d6f32b42a1d046bbe8647eb7c4b86e',1,'Curl_SAL::open()'],['../dc/dc2/classhttp__interface.html#af0ca41370b8bd9a4018798d175e1b03a',1,'http_interface::open()'],['../d2/d19/classpostgresql__interface.html#a7e76f04290e2fdd74a9089544fc9f62e',1,'postgresql_interface::open()'],['../d0/dde/classutest__sal.html#ab05eb7ab73e1fb5d9631d9401591e5b3',1,'utest_sal::open()'],['../d2/db0/class_dog_feeder_door.html#aa57ed6d21e89134c34302be7fbed3e27',1,'DogFeederDoor::open()']]],
-  ['ota_392',['OTA',['../d3/d40/class_o_t_a.html',1,'OTA'],['../d3/d40/class_o_t_a.html#a39a5ca06292df9b95f31ad13a8d8e8f4',1,'OTA::OTA()']]],
-  ['ota_2ecpp_393',['OTA.cpp',['../d9/d42/_o_t_a_8cpp.html',1,'']]],
-  ['ota_2ehpp_394',['OTA.hpp',['../de/dd1/_o_t_a_8hpp.html',1,'']]],
-  ['ota_5ftest_2ecpp_395',['OTA_test.cpp',['../d8/d80/_o_t_a__test_8cpp.html',1,'']]],
-  ['output_396',['OUTPUT',['../d4/d57/class_g_p_i_o___h_a_l.html#a913ff566ac54dd335c35d3a7e90adcdfad64bd1b2906a4e4df7f2258c09650f5a',1,'GPIO_HAL']]]
+  ['name_389',['name',['../dc/d07/_m_g996_r_8hpp.html#a043f9d09607977adb62f36a9e3e6ea6b',1,'mg996r_conf_t::name()'],['../db/d4d/class_background___extractor.html#a17c25332dba2b66a2381392a209a9fd8',1,'Background_Extractor::name()'],['../d4/d70/class_a_d_c___a_p_i___e_s_p32.html#a9ec22bd5ec598516477160bead88c1e2',1,'ADC_API_ESP32::config::name()']]],
+  ['network_5fmaintainer_5fstatus_390',['NETWORK_MAINTAINER_STATUS',['../d5/d40/_database___i_d___base_8hpp.html#ad2476414527a024c2bb661f45d8876e0ae84d8cc097ca126149c1d95b78ea304f',1,'Database_ID_Base.hpp']]],
+  ['night_5ftime_5fend_391',['NIGHT_TIME_END',['../d8/d61/_timebased__rules_8cpp.html#a0a65116ddb59c8fb1dbd152da5eabe21',1,'Timebased_rules.cpp']]],
+  ['night_5ftime_5fstart_392',['NIGHT_TIME_START',['../d8/d61/_timebased__rules_8cpp.html#a419c592cf86bdb9a99e8cebb4b764f35',1,'Timebased_rules.cpp']]],
+  ['no_5fevent_393',['NO_EVENT',['../de/d1e/_watchdog___base_8hpp.html#ac447ab9510a77de4b1a8d94d688aac79a5856f037cd70ecf6fca11999c11a4a0d',1,'Watchdog_Base.hpp']]]
 ];

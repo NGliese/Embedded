@@ -10,7 +10,7 @@
  *  @note       ANY RELEVANT NOTES
  *
  *  @file       esp32_sal.cpp
- *  @author     N.G Pedersen <nikolaj.gliese.pedersen@dansac.com>
+ *  @author     N.G Pedersen <nikolajgliese@tutanota.com>
  *  @version    1.0
  *  @date       2022-01-07
  *  @copyright  --
