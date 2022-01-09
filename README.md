@@ -1,7 +1,7 @@
 
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ngliese.github.io/docs/html/index.html)
 [![CodeCoverage](https://img.shields.io/badge/CodeCoverage-gcov-brightgreen)](https://ngliese.github.io/coverage/html/index.html)
-
+[![Complexity](https://img.shields.io/badge/Complexity-lizard-red)](https://ngliese.github.io/complexity/complexity.html)
 # Embedded Repo
 This repository is a collection of hobby projects by Nikolaj Gliese Pedersen.
 
