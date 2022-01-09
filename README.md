@@ -1,5 +1,6 @@
 
-[![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://github.com/NGliese/Embedded/tree/master/library/docs/html/index.html)
+[![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ngliese.github.io/docs/html/index.html)
+[![CodeCoverage](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ngliese.github.io/coverage/html/index.html)
 
 # Embedded Repo
 This repository is a collection of hobby projects by Nikolaj Gliese Pedersen.
