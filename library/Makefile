@@ -22,7 +22,7 @@ endif
 
 # make all : format the code using clang-tiny, document by doxygen, apply unittest coverage and zip everythin up
 
-all: format document complexity cppcheck coverage package
+all: format document complexity complexity-html cppcheck coverage package
 
 test: format default cppUTest
 
@@ -45,7 +45,10 @@ cppcheck: | $(BUILDRESULTS)/build.ninja
 .PHONY: complexity
 complexity: | $(BUILDRESULTS)/build.ninja
 	$(Q)ninja -C $(BUILDRESULTS) complexity
-
+# default build target
+.PHONY: complexity-html
+complexity-html: | $(BUILDRESULTS)/build.ninja
+	$(Q)ninja -C $(BUILDRESULTS) complexity-html
 # default build target
 .PHONY: complexity-specific
 complexity-specific: | $(BUILDRESULTS)/build.ninja

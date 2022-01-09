@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2022-01-09 11:20:20</td>
+            <td class="headerValue">2022-01-09 12:19:01</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">2</td>
@@ -1163,14 +1163,14 @@
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>FreeRTOS::Semaphore::Semaphore(const std::string&amp; name)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 112 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 224 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>	: m_name{name}, m_owner{"&lt;N/A>"}, m_value{0}, m_usePthreads{false}</pre></td>
     </tr>
 
@@ -1317,7 +1317,7 @@
     <tr>
     <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1331,7 +1331,7 @@
     <tr>
     <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>FreeRTOS::Semaphore::~Semaphore()</pre></td>
     </tr>
 
@@ -1415,7 +1415,7 @@
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1457,7 +1457,7 @@
     <tr>
     <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>272</pre></td>
     <td align="left" class="src coveredLine"><pre>void FreeRTOS::Semaphore::give()</pre></td>
     </tr>
 
@@ -1554,15 +1554,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 136 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 272 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>272</pre></td>
     <td align="left" class="src coveredLine"><pre>	m_owner = std::string("&lt;N/A>");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>272</pre></td>
     <td align="left" class="src coveredLine"><pre>} // Semaphore::give</pre></td>
     </tr>
 
@@ -2066,7 +2066,7 @@
     <tr>
     <td align="right" class="lineno"><pre>253</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>56</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>bool FreeRTOS::Semaphore::take(uint32_t timeoutMs, const std::string&amp; owner)</pre></td>
     </tr>
 
@@ -2255,7 +2255,7 @@
     <tr>
     <td align="right" class="lineno"><pre>280</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>56</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>	return true;</pre></td>
     </tr>
 

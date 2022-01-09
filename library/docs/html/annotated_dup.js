@@ -22,7 +22,6 @@ var annotated_dup =
     [ "hal_stdout", "d3/d9d/classhal__stdout.html", "d3/d9d/classhal__stdout" ],
     [ "http_interface", "dc/dc2/classhttp__interface.html", "dc/dc2/classhttp__interface" ],
     [ "interface", "d0/deb/namespace_3global_scope_4.html#da/d35/classinterface", null ],
-    [ "json_object", "d2/db6/classjson__object.html", "d2/db6/classjson__object" ],
     [ "Logger", "d3/d42/class_logger.html", "d3/d42/class_logger" ],
     [ "Maintainer", "d6/d9b/class_maintainer.html", "d6/d9b/class_maintainer" ],
     [ "Message_Handler", "d9/d8e/class_message___handler.html", "d9/d8e/class_message___handler" ],

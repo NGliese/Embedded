@@ -117,61 +117,14 @@ $(document).ready(function(){initNavTree('d2/d57/json__object_8hpp_source.html',
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> |                              Includes                                        |</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> +------------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/*----------------- DEFAULT INCLUDE -------------------------------------------*/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;../../../Global_Include/BASIC.hpp&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../../Objects/ErrorHandler/include/General_Error.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// for convenience</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">   40</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a> = <a class="code" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">nlohmann::json</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*------------------------------------------------------------------------------+</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> |                               Typedef                                        |</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> +------------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/*------------------------------------------------------------------------------+</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> |                               Class                                          |</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> +------------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d2/db6/classjson__object.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/db6/classjson__object.html">json_object</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifdef __UNITTEST__</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span>friend_json_object;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d2/db6/classjson__object.html#a6a755b914f47dd9439c122a682f4c8cc">json_object</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d2/db6/classjson__object.html#a128faae798746c27af73f1578d6b5c3b">~json_object</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/*------------------------------------------------------------------------------+</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> |                           Unit Test Class                                    |</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> +------------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifdef __UNITTEST__</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">class </span>friend_json_object</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">explicit</span> friend_json_object(<a class="code" href="../../d2/db6/classjson__object.html">json_object</a>* sensor) : m_sensor{sensor} {};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ~friend_json_object();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d2/db6/classjson__object.html">json_object</a>* m_sensor;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif //_COMPONENTS_OBJECTS_JSON_INCLUDE_JSON_OBJECT_HPP_</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// for convenience</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">   34</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a> = <a class="code" href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">nlohmann::json</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif //_COMPONENTS_OBJECTS_JSON_INCLUDE_JSON_OBJECT_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassjson__object_html"><div class="ttname"><a href="../../d2/db6/classjson__object.html">json_object</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d57/json__object_8hpp_source.html#l00052">json_object.hpp:52</a></div></div>
-<div class="ttc" id="aclassjson__object_html_a128faae798746c27af73f1578d6b5c3b"><div class="ttname"><a href="../../d2/db6/classjson__object.html#a128faae798746c27af73f1578d6b5c3b">json_object::~json_object</a></div><div class="ttdeci">~json_object()</div></div>
-<div class="ttc" id="aclassjson__object_html_a6a755b914f47dd9439c122a682f4c8cc"><div class="ttname"><a href="../../d2/db6/classjson__object.html#a6a755b914f47dd9439c122a682f4c8cc">json_object::json_object</a></div><div class="ttdeci">json_object()</div></div>
-<div class="ttc" id="ajson__object_8hpp_html_ab701e3ac61a85b337ec5c1abaad6742d"><div class="ttname"><a href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d57/json__object_8hpp_source.html#l00040">json_object.hpp:40</a></div></div>
+<div class="ttc" id="ajson__object_8hpp_html_ab701e3ac61a85b337ec5c1abaad6742d"><div class="ttname"><a href="../../d2/d57/json__object_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d57/json__object_8hpp_source.html#l00034">json_object.hpp:34</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

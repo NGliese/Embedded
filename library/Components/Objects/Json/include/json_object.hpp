@@ -29,10 +29,8 @@
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
 
-
 #include <nlohmann/json.hpp>
 // for convenience
 using json = nlohmann::json;
-
 
 #endif //_COMPONENTS_OBJECTS_JSON_INCLUDE_JSON_OBJECT_HPP_

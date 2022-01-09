@@ -33,7 +33,6 @@ var hierarchy =
     [ "hal_mqtt_log", "d8/da0/classhal__mqtt__log.html", null ],
     [ "hal_stdout", "d3/d9d/classhal__stdout.html", null ],
     [ "interface", "d0/deb/namespace_3global_scope_4.html#da/d35/classinterface", null ],
-    [ "json_object", "d2/db6/classjson__object.html", null ],
     [ "Logger", "d3/d42/class_logger.html", null ],
     [ "Message_Handler", "d9/d8e/class_message___handler.html", null ],
     [ "Message_Protocol", "da/dd6/class_message___protocol.html", null ],
