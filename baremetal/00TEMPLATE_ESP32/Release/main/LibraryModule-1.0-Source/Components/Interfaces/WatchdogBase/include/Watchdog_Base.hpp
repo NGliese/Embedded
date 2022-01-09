@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -64,36 +61,33 @@
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
 
-
-
-
-
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
 
-enum watchdog_event_t{
-    OK_EVENT=0,SEND_EVENT,NO_EVENT,FAIL_EVENT
+enum watchdog_event_t
+{
+	OK_EVENT = 0,
+	SEND_EVENT,
+	NO_EVENT,
+	FAIL_EVENT
 };
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-
 template<typename T>
-class Watchdog_Base {
-public:
-        Watchdog_Base(){};
-        virtual ~Watchdog_Base(){};
-        virtual general_err_t initialize(T parameter_to_watch)=0;
-        virtual watchdog_event_t watch()=0;//{return watchdog_event_t::NO_EVENT; };
-protected:
-        T m_watch;
-        bool m_initialized = false;
+class Watchdog_Base
+{
+  public:
+	Watchdog_Base(){};
+	virtual ~Watchdog_Base(){};
+	virtual general_err_t initialize(T parameter_to_watch) = 0;
+	virtual watchdog_event_t watch() = 0; //{return watchdog_event_t::NO_EVENT; };
+  protected:
+	T m_watch;
+	bool m_initialized = false;
 };
-
-
 
 #endif /* MAIN_COMPONENTS_WATCHDOG_INCLUDE_WATCHDOG_BASE_HPP_ */

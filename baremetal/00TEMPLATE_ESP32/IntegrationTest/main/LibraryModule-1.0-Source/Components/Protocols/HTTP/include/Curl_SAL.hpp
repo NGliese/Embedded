@@ -82,15 +82,15 @@ class Curl_SAL
 	explicit Curl_SAL(const std::string& server);
 	~Curl_SAL();
 	general_err_t initialize(void);
-	general_err_t rpi_open(void);
-	general_err_t rpi_close(void);
-	general_err_t rpi_publish(const std::string& str);
+	general_err_t open(void);
+	general_err_t close(void);
+	general_err_t post(const std::string& str);
 
   private:
 #ifdef __WITH_DATABASE__
 	CURL* m_curl;
 #endif
-	const std::string m_server; 
+	const std::string m_server;
 };
 
 #endif /* COMPONENTS_DATA_PROTOCOL_INCLUDE_CURL_SAL_HPP_ */

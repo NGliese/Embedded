@@ -84,7 +84,7 @@ general_err_t http_interface::open(void)
 	{
 		return GE_NOT_INITIALIZED;
 	}
-	if(m_sal.rpi_open() != GE_OK)
+	if(m_sal.open() != GE_OK)
 	{
 		return GE_FAIL;
 	}
@@ -117,7 +117,7 @@ general_err_t http_interface::close(void)
 		return GE_NOT_INITIALIZED;
 	}
 
-	if(m_sal.rpi_close() != GE_OK)
+	if(m_sal.close() != GE_OK)
 	{
 		return GE_FAIL;
 	}
@@ -155,5 +155,5 @@ general_err_t http_interface::post(const std::string& str)
 	LOG_PRINT_INFO(LOG_TAG, "<< http_interface::publish << ");
 #endif
 
-	return m_sal.rpi_publish(str);
+	return m_sal.post(str);
 }

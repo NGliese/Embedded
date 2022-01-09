@@ -62,7 +62,25 @@
 /*-----------------------------------------------------------------------------*/
 #include "../../../Interfaces/ProtocolBase/include/ProtocolBase.hpp"
 
+// TODO fix portability
+#if 0
+#ifdef __RPI__
 #include "Curl_SAL.hpp"
+using SAL = Curl_SAL;
+#elif __UNITTEST__
+#include "../test/mock/utest_sal.hpp"
+using SAL = utest_sal;
+#elif __ESP32__
+// include esp32Hal
+using SAL = ESP32_HTTP_SAL
+#else
+#include "../test/mock/utest_sal.hpp"
+using SAL = utest_sal;
+#endif
+#endif
+
+#include "Curl_SAL.hpp"
+using SAL = Curl_SAL;
 
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
@@ -85,7 +103,7 @@ class http_interface final : public ProtocolBase
   private:
 	bool m_initialized = false;
 	bool m_open = false;
-	Curl_SAL m_sal;
+	SAL m_sal;
 };
 
 #endif /* COMPONENTS_DATA_PROTOCOL_INCLUDE_HTTP_INTERFACE_HPP_ */

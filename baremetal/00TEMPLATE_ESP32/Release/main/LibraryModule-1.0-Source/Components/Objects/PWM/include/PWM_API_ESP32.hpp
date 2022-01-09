@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -67,63 +64,57 @@
 #include "../../../Interfaces/PWMBase/include/PWMBase.hpp"
 #include "HAL.hpp"
 
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
-
-
-
-
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 // if every needed a pwm driver for another mcu, we should abstract this call
 // and create a baseclass with these function and a template conf parameter for each mcu
-class PWM_API_ESP32 final : public PWMBase<HAL_ESP32::config, HAL_ESP32>{
+class PWM_API_ESP32 final : public PWMBase<HAL_ESP32::config, HAL_ESP32>
+{
 #ifdef __UNITTEST__
-    friend class friend_PWM_API;
+	friend class friend_PWM_API;
 #endif
-public:
+  public:
+	/**
+	 * @brief following RAII @instantiation we activate and start PWM
+	 */
+	PWM_API_ESP32(const HAL_ESP32::config& conf, const std::string& name);
+	~PWM_API_ESP32();
+	/**
+	 * @see PWMBase::setDutyCycle(const float& duty)
+	 */
+	general_err_t setDutyCycle(const float& duty);
+	/**
+	 * @see PWMBase::setFrequency(const uint32_t& frequency)
+	 */
+	general_err_t setFrequency(const uint32_t& frequency);
 
-    /**
-     * @brief following RAII @instantiation we activate and start PWM
-     */
-    PWM_API_ESP32(const HAL_ESP32::config& conf,const std::string & name) ;
-    ~PWM_API_ESP32();
-    /**
-     * @see PWMBase::setDutyCycle(const float& duty)
-     */
-    general_err_t setDutyCycle(const float& duty);
-    /**
-     * @see PWMBase::setFrequency(const uint32_t& frequency)
-     */
-    general_err_t setFrequency(const uint32_t& frequency);
-
-
-private:
-    general_err_t stop(void);
+  private:
+	general_err_t stop(void);
 };
-
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_PWM_API {
-public:
-    friend_PWM_API(PWM_API_ESP32 * PWM_API) : m_sensor{PWM_API} { };
-    ~friend_PWM_API(){};
-    auto getConf(void) {return m_sensor->m_hal.getConfig(); }
-private:
-    PWM_API_ESP32 * m_sensor;
+class friend_PWM_API
+{
+  public:
+	friend_PWM_API(PWM_API_ESP32* PWM_API) : m_sensor{PWM_API} {};
+	~friend_PWM_API(){};
+	auto getConf(void)
+	{
+		return m_sensor->m_hal.getConfig();
+	}
+
+  private:
+	PWM_API_ESP32* m_sensor;
 };
 #endif
-
-
-
-
 
 #endif /* INCLUDE_PWM_API_ESP32_HPP_ */

@@ -26,8 +26,7 @@ static const char* LOG_TAG = "WiFiEventHandler";
  */
 esp_err_t WiFiEventHandler::eventHandler(void* ctx, system_event_t* event)
 {
-
-    // #lizard forgives the complexity
+	// #lizard forgives the complexity
 	ESP_LOGD(LOG_TAG, ">> eventHandler called: ctx=0x%x, event=0x%x", (uint32_t)ctx,
 			 (uint32_t)event);
 	WiFiEventHandler* pWiFiEventHandler = (WiFiEventHandler*)ctx;

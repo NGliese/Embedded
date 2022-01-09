@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -65,61 +62,50 @@
 /*-----------------------------------------------------------------------------*/
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 
-
-
-
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
-
-
-
-
 
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class Timebased_rules {
+class Timebased_rules
+{
 #ifdef __UNITTEST__
-    friend class friend_Timebased_rules;
+	friend class friend_Timebased_rules;
 #endif
-public:
-    /**
-     * Function to decide if it is night or not
-     * Nighttime is defined as 20:00 to 05:00
-     */
-    static bool isItNight(void);
-    /**
-     * Function to decide if it is vacation or not
-     * Vacation is between xx and yy
-     */
-    static bool isItVacation(void);
-private:
+  public:
+	/**
+	 * Function to decide if it is night or not
+	 * Nighttime is defined as 20:00 to 05:00
+	 */
+	static bool isItNight(void);
+	/**
+	 * Function to decide if it is vacation or not
+	 * Vacation is between xx and yy
+	 */
+	static bool isItVacation(void);
 
+  private:
 };
-
 
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_Timebased_rules {
-public:
-    
-    explicit friend_Timebased_rules(Timebased_rules * Timebased_rules) : m_sensor{Timebased_rules} { };
+class friend_Timebased_rules
+{
+  public:
+	explicit friend_Timebased_rules(Timebased_rules* Timebased_rules)
+		: m_sensor{Timebased_rules} {};
 
-    ~friend_Timebased_rules(){};
+	~friend_Timebased_rules(){};
 
-private:
-    Timebased_rules * m_sensor;
+  private:
+	Timebased_rules* m_sensor;
 };
 #endif
-
-
-
-
 
 #endif /* INCLUDE_TIMEBASED_RULES_HPP_ */

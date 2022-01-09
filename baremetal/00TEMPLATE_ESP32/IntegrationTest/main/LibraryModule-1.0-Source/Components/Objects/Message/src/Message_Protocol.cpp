@@ -5,7 +5,6 @@
  *      Author: nikolaj
  */
 
-
 /***********************************************************************************************+
  *  \brief       -- XX -- Library - CPP Source file
  *  \par
@@ -26,29 +25,23 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/Message_Protocol.hpp"
-
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "Message_Protocol";
+static const char* LOG_TAG = "Message_Protocol";
 #endif
 
+Message_Protocol::Message_Protocol() {}
 
-
-Message_Protocol::Message_Protocol() {
+Message_Protocol::Message_Protocol(const msg_control_t& cnt, const msg_data_t& data)
+	: m_control{cnt}, m_initialized{true}
+{
+	m_buffer.push_back(data);
 }
 
-
-Message_Protocol::Message_Protocol(const msg_control_t& cnt,
-        const msg_data_t& data) : m_control{cnt} , m_initialized{true}{
-            m_buffer.push_back(data);
-}
-
-Message_Protocol::~Message_Protocol() {
-}
+Message_Protocol::~Message_Protocol() {}
 
 /**
  * @brief   set the control parameters
@@ -61,21 +54,22 @@ Message_Protocol::~Message_Protocol() {
  *    -
  *    -
  */
-general_err_t Message_Protocol::setControl(const msg_control_t& cnt) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
-    #endif
-    // Executable code:
+general_err_t Message_Protocol::setControl(const msg_control_t& cnt)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
+#endif
+	// Executable code:
 
-    m_control = cnt;
-    // we are now initialized
-    m_initialized = true;
+	m_control = cnt;
+	// we are now initialized
+	m_initialized = true;
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 /**
  * @brief      add data to the buffer
@@ -88,22 +82,23 @@ general_err_t Message_Protocol::setControl(const msg_control_t& cnt) {
  *    -
  */
 
-general_err_t Message_Protocol::addData(const msg_data_t& data) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
-    #endif
-    // Executable code:
-    if(!m_initialized)
-    {
-        return GE_NOT_INITIALIZED;
-    }
-    m_buffer.push_back(data);
+general_err_t Message_Protocol::addData(const msg_data_t& data)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> enclosing_method >> ");
+#endif
+	// Executable code:
+	if(!m_initialized)
+	{
+		return GE_NOT_INITIALIZED;
+	}
+	m_buffer.push_back(data);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< enclosing_method << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 /**
  * @brief  get the buffer
@@ -114,8 +109,9 @@ general_err_t Message_Protocol::addData(const msg_data_t& data) {
  *    -
  *    -
  */
-const std::vector<msg_data_t>  & Message_Protocol::getBuffer(void) const {
-    return m_buffer;
+const std::vector<msg_data_t>& Message_Protocol::getBuffer(void) const
+{
+	return m_buffer;
 }
 
 /**
@@ -127,8 +123,9 @@ const std::vector<msg_data_t>  & Message_Protocol::getBuffer(void) const {
  *    -
  *    -
  */
-const msg_control_t& Message_Protocol::getControl(void) const {
-    return m_control;
+const msg_control_t& Message_Protocol::getControl(void) const
+{
+	return m_control;
 }
 /**
  * @brief  clear the buffer and uninitialize the package
@@ -140,20 +137,21 @@ const msg_control_t& Message_Protocol::getControl(void) const {
  *    -
  *    -
  */
-general_err_t Message_Protocol::clear(void) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Message_Protocol::clear >> ");
-    #endif
-    // Executable code:
-    m_initialized = false;
-    m_control ={0,0};
-    m_buffer.clear();
+general_err_t Message_Protocol::clear(void)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Message_Protocol::clear >> ");
+#endif
+	// Executable code:
+	m_initialized = false;
+	m_control = {0, 0};
+	m_buffer.clear();
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Message_Protocol::clear << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Message_Protocol::clear << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 /**
  * @brief
@@ -173,32 +171,33 @@ general_err_t Message_Protocol::clear(void) {
  *    -
  *    -
  */
-general_err_t Message_Protocol::toString(std::string* str) const {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Message_Protocol::toString >> ");
-    #endif
-    // clear the input parameter
-    str->clear();
-    // Executable code:
-    str->append(std::to_string( m_control.id ) );
-    str->append(",");
-    str->append(std::to_string( m_control.flag ) );
+general_err_t Message_Protocol::toString(std::string* str) const
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Message_Protocol::toString >> ");
+#endif
+	// clear the input parameter
+	str->clear();
+	// Executable code:
+	str->append(std::to_string(m_control.id));
+	str->append(",");
+	str->append(std::to_string(m_control.flag));
 
-    for(auto const &ele : m_buffer)
-    {
-        str->append(",");
-        str->append( std::to_string(ele.time_stamp.tv_sec) );
-        str->append(",");
-        str->append( std::to_string(ele.time_stamp.tv_usec) );
-        str->append(",");
-        str->append( std::to_string(ele.data) );
-    }
+	for(auto const& ele : m_buffer)
+	{
+		str->append(",");
+		str->append(std::to_string(ele.time_stamp.tv_sec));
+		str->append(",");
+		str->append(std::to_string(ele.time_stamp.tv_usec));
+		str->append(",");
+		str->append(std::to_string(ele.data));
+	}
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Message_Protocol::toString << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Message_Protocol::toString << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 /**
  * @brief    check if the protocol is valid
@@ -209,7 +208,7 @@ general_err_t Message_Protocol::toString(std::string* str) const {
  *    -
  *    -
  */
-bool Message_Protocol::isValid(void) const {
-    return ((m_buffer.size() == 0) or !m_initialized) ? false : true;
+bool Message_Protocol::isValid(void) const
+{
+	return ((m_buffer.size() == 0) or !m_initialized) ? false : true;
 }
-
