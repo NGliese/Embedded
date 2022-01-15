@@ -33,6 +33,8 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
+#include "../../../Objects/Json/include/json_object.hpp"
+#include "../../../Objects/Logger/include/Logger.hpp"
 #include "../../../RTOS/FreeRTOS/include/FreeRTOS.h" // semaphore
 #include <array>
 #include <iostream>
@@ -59,11 +61,19 @@ class esp32_http_sal
 	/**
 	 * @brief Call a basic GET function to the specified server
 	 *
-	 * @param api_call : specifed remote function, example "/get_status_of_something"
+	 * @param [in] api_call : specifed remote function, example "/get_status_of_something"
 	 * @param [out] output : buffer for the recieved content payload
 	 * @return general_err_t
 	 */
 	general_err_t get(const std::string& api_call, std::string& output);
+	/**
+	 * @brief call a http get command and return a Json object
+	 *
+	 * @param [in] api_call
+	 * @param [out] output
+	 * @return general_err_t
+	 */
+	general_err_t get(const std::string& api_call, json& output);
 	/**
 	 * @brief
 	 *

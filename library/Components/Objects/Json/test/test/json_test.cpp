@@ -33,3 +33,10 @@ TEST(JSON_GRP, init)
 	STRCMP_EQUAL("\"104\"", j["sensor_id"].dump().c_str());
 	STRCMP_EQUAL("\"100\"", j["value"].dump().c_str());
 }
+
+// test init
+TEST(JSON_GRP, bad_pare)
+{
+	json j = json::parse("empty", nullptr, false);
+	CHECK(j.is_discarded());
+}

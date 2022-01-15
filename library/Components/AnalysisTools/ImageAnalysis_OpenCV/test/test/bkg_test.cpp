@@ -23,7 +23,9 @@ TEST_GROUP(BACKGROUND_GRP)
 };
 
 // test init
-IGNORE_TEST(BACKGROUND_GRP, init)
+TEST(BACKGROUND_GRP, init)
 {
-	FAIL("FAIL ME!");
+	cv::Mat m;
+	auto count = m_background.countConnectedComponents(m);
+	LONGS_EQUAL(0, count);
 }

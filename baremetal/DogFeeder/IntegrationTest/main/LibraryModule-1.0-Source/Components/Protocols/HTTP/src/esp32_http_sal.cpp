@@ -136,7 +136,34 @@ general_err_t esp32_http_sal::get(const std::string& api_call, std::string& outp
 
 	return ge_err;
 }
+general_err_t esp32_http_sal::get(const std::string& api_call, json& output)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> esp32_http_sal::getJSON >> ");
+#endif
+	// Executable code:
+	std::string str;
+	auto err = get(api_call, str);
+	if(err != GE_OK)
+	{
+		Logger::write({err, GR_NO_RESPONSE, "Not able to call get command <" + api_call + ">"});
+		return err;
+	}
 
+	output = json::parse(str, nullptr, false);
+	if(output.is_discarded())
+	{
+		Logger::write({GE_NO_DATA, GR_NO_RESPONSE,
+					   "Not able to convert string to json: str<" + str + "> : json <" +
+						   output.dump() + ">"});
+		return GE_NO_DATA;
+	}
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<<  esp32_http_sal::getJSON << ");
+#endif
+
+	return GE_OK;
+}
 general_err_t esp32_http_sal::post(const std::string& api_call, const std::string& content)
 {
 #ifdef DEBUG

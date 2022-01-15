@@ -49,6 +49,13 @@ LOGGER_MQTT=1
 PROJECT_NAME="TEMPLATE"
 __WITH_OTA__=1
 )
+###############################################################################################################
+#							INSTALL Local Dependencies
+###############################################################################################################
+include(../../cmake/installDependencies.cmake)
+installESP32LocalLibraries()
+target_link_libraries(${COMPONENT_LIB} PRIVATE ${COSTUM_LIBRARIES})
+
 
 ###############################################################################################################
 #						INSTALL SECRETS

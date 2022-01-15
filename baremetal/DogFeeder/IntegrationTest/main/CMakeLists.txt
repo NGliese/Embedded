@@ -39,6 +39,7 @@ idf_component_register(SRC_DIRS "."
              INCLUDE_DIRS "${ADD_HEADER_LIST}"
              )
 
+             
 ###############################################################################################################
 #						ADDON FOR ESP32 SPECIFIC SiP DEFINITIONS
 ###############################################################################################################
@@ -49,6 +50,13 @@ LOGGER_MQTT=1 #define logger interface LOGGER_STDOUT | LOGGER_MQTT
 __WITH_OTA__=1
 PROJECT_NAME="TEMPLATE"
 )
+
+###############################################################################################################
+#							INSTALL Local Dependencies
+###############################################################################################################
+include(../../cmake/installDependencies.cmake)
+installESP32LocalLibraries()
+target_link_libraries(${COMPONENT_LIB} PRIVATE ${COSTUM_LIBRARIES})
 
 ###############################################################################################################
 #						INSTALL SECRETS

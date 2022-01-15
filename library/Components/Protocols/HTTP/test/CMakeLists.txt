@@ -7,12 +7,14 @@ cmake_minimum_required(VERSION 3.18.4)
 
 add_executable(${LIBNAME}_tests )
 
+
+
 set(COSTUM_TEST_FILES ${COSTUM_TEST_FILES} "${LIBNAME}_tests;" CACHE STRING "avaliable build tests" FORCE)
 
 
 
 target_include_directories(${LIBNAME}_tests PRIVATE mock test )
-target_link_libraries(${LIBNAME}_tests PRIVATE  CppUTest CppUTestExt LibraryModule ${COSTUM_LIBRARIES})
+target_link_libraries(${LIBNAME}_tests PRIVATE  CppUTest CppUTestExt LibraryModule ${COSTUM_LIBRARIES} nlohmann_json::nlohmann_json)
 
 
 ###############################################################
@@ -29,6 +31,7 @@ target_link_libraries(${LIBNAME}_tests PRIVATE  CppUTest CppUTestExt LibraryModu
 ###############################################################
 target_sources(${LIBNAME}_tests PRIVATE test_main.cpp
 test/http_test.cpp
+test/esp32_http_sal_test.cpp
 )
 ###############################################################
 #															  #

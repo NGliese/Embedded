@@ -307,6 +307,20 @@ for(;;)
 }
 }
 
+void test_get_json(){
+esp32_http_sal m_http{"192.168.1.157",1880};
+for(;;)
+{
+    std::cout << " ... Getting request ... \n";
+    Timeservice::wait_sec(5);
+    json out;
+    if(m_http.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << " recieved output is222 : <" << out<< ">\n";
+    }
+}
+}
+
 const wifi_conf_t wifi_conf{
    .ssid=WIFI_SSID_LOCAL,
    .password=WIFI_PWD_LOCAL
@@ -328,7 +342,8 @@ Maintainer m_maintain{wifi_conf};
 m_maintain.start();
 //test_door();
 //test_get_door_status();
-test_get_door_status_http_semaphore_test();
+//test_get_door_status_http_semaphore_test();
+test_get_json();
 for(;;)
 {
    std::cout << "Running a test ! \n ";

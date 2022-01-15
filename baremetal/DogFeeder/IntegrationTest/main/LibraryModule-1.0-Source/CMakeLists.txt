@@ -94,7 +94,7 @@ add_subdirectory(Components)
 
 target_sources(LibraryModule PRIVATE ${COSTUM_SRC_FILES} )
 
-target_include_directories(LibraryModule PRIVATE  ${COSTUM_INC_FILES})
+target_include_directories(LibraryModule PRIVATE  ${COSTUM_INC_FILES} )
 
 
 ####################################################################################

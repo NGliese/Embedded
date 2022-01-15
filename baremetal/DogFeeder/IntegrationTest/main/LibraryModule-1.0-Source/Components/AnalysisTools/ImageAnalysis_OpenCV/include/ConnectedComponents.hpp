@@ -88,7 +88,6 @@ class ConnectedComponents
 	};
 
 	static general_err_t drawConnectedComponents(const cv::Mat& forground, cv::Mat& drawing);
-	static general_err_t drawConnectedComponentsOpenCV(const cv::Mat& forground, cv::Mat& drawing);
 	static uint32_t maxConnectedComponents(const cv::Mat& forground, int ksize = 2);
 	static container_t statsConnectedComponents(const cv::Mat& forground, int ksize = 2);
 

@@ -29,6 +29,7 @@ target_link_libraries(${LIBNAME}_tests PRIVATE  CppUTest CppUTestExt LibraryModu
 ###############################################################
 target_sources(${LIBNAME}_tests PRIVATE test_main.cpp
 test/bkg_test.cpp
+test/cc_test.cpp
 )
 ###############################################################
 #															  #

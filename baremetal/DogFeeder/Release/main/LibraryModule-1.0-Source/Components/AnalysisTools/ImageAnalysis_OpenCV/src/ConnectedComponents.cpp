@@ -35,6 +35,11 @@ general_err_t ConnectedComponents::drawConnectedComponents(const cv::Mat& forgro
 #endif
 	// Executable code:
 
+	if(forground.empty())
+	{
+		return GE_EMPTY;
+	}
+
 	int ksize = 2;
 	cv::morphologyEx(forground, forground, cv::MORPH_OPEN,
 					 cv::getStructuringElement(cv::MORPH_RECT, cv::Size_<int>{ksize, ksize}));
@@ -73,24 +78,13 @@ general_err_t ConnectedComponents::drawConnectedComponents(const cv::Mat& forgro
 	return cont_found == true ? GE_OK : GE_NO_DATA;
 }
 
-general_err_t ConnectedComponents::drawConnectedComponentsOpenCV(const cv::Mat& forground,
-																 cv::Mat& drawing)
-{
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, ">> ConnectedComponents::drawConnectedComponents >> ");
-#endif
-	// Executable code:
-
-	cv::connectedComponents(forground, drawing);
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, "<< ConnectedComponents::drawConnectedComponents << ");
-#endif
-
-	return GE_NO_DATA;
-}
-
 uint32_t ConnectedComponents::maxConnectedComponents(const cv::Mat& forground, int ksize)
 {
+	if(forground.empty())
+	{
+		return 0;
+	}
+
 	cv::morphologyEx(forground, forground, cv::MORPH_OPEN,
 					 cv::getStructuringElement(cv::MORPH_RECT, cv::Size_<int>{ksize, ksize}));
 	cv::morphologyEx(forground, forground, cv::MORPH_CLOSE,
@@ -114,6 +108,11 @@ uint32_t ConnectedComponents::maxConnectedComponents(const cv::Mat& forground, i
 ConnectedComponents::container_t
 	ConnectedComponents::statsConnectedComponents(const cv::Mat& forground, int ksize)
 {
+	container_t data{0};
+	if(forground.empty())
+	{
+		return data;
+	}
 	cv::morphologyEx(forground, forground, cv::MORPH_OPEN,
 					 cv::getStructuringElement(cv::MORPH_RECT, cv::Size_<int>{ksize, ksize}));
 	cv::morphologyEx(forground, forground, cv::MORPH_CLOSE,
@@ -121,8 +120,6 @@ ConnectedComponents::container_t
 
 	std::vector<std::vector<cv::Point>> cont;
 	findContours(forground, cont, cv::CHAIN_APPROX_SIMPLE, cv::RETR_TREE, cv::Point(0, 0));
-
-	container_t data;
 
 	data.maxConnected = 0;
 	data.amount_of_connections = cont.size();

@@ -120,7 +120,6 @@ class Background_Extractor
 class friend_Background_Extractor
 {
   public:
-	friend_Background_Extractor(){};
 	friend_Background_Extractor(Background_Extractor* Background_Extractor)
 		: m_sensor{Background_Extractor} {};
 
