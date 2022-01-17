@@ -313,7 +313,7 @@ for(;;)
 {
     std::cout << " ... Getting request ... \n";
     Timeservice::wait_sec(5);
-    json out;
+    static json out;
     if(m_http.get("/getDogFeederFlag",out) == GE_OK)
     {
         std::cout << " recieved output is222 : <" << out<< ">\n";
@@ -338,7 +338,7 @@ void app_main(void);
 void app_main(void)
 {
 
-Maintainer m_maintain{wifi_conf};
+static Maintainer m_maintain{wifi_conf};
 m_maintain.start();
 //test_door();
 //test_get_door_status();

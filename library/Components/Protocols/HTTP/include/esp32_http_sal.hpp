@@ -33,7 +33,6 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-#include "../../../Objects/Json/include/json_object.hpp"
 #include "../../../Objects/Logger/include/Logger.hpp"
 #include "../../../RTOS/FreeRTOS/include/FreeRTOS.h" // semaphore
 #include <array>
@@ -73,7 +72,7 @@ class esp32_http_sal
 	 * @param [out] output
 	 * @return general_err_t
 	 */
-	general_err_t get(const std::string& api_call, json& output);
+	// general_err_t get(const std::string& api_call, json& output);
 	/**
 	 * @brief
 	 *

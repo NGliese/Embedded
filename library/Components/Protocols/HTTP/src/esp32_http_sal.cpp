@@ -20,7 +20,7 @@
 
 #include "../include/esp32_http_sal.hpp"
 #include "../include/esp32_http_settings.hpp"
-//#define DEBUG // default uncommeted
+#define DEBUG // default uncommeted
 
 //#ifdef DEBUG
 static const char* LOG_TAG = "esp32_sal";
@@ -44,14 +44,14 @@ esp_err_t esp32_http_sal::_http_event_handle(esp_http_client_event_t* evt)
 			break;
 		case HTTP_EVENT_ON_HEADER:
 			LOG_PRINT_INFO(LOG_TAG, "HTTP_EVENT_ON_HEADER");
-			printf("%.*s", evt->data_len, (char*)evt->data);
+			//	printf("%.*s", evt->data_len, (char*)evt->data);
 			break;
 		case HTTP_EVENT_ON_DATA:
 			LOG_PRINT_INFO(LOG_TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
 			if(!esp_http_client_is_chunked_response(evt->client))
 			{
-				std::string str((char*)evt->data, (size_t)evt->data_len);
-				m_recieved_content = str;
+				//	std::string str((char*)evt->data, (size_t)evt->data_len);
+				m_recieved_content = std::string((char*)evt->data, (size_t)evt->data_len);
 #ifdef DEBUG
 				std::cout << "recieved data is : <" << m_recieved_content << ">\n";
 #endif
@@ -136,6 +136,7 @@ general_err_t esp32_http_sal::get(const std::string& api_call, std::string& outp
 
 	return ge_err;
 }
+/*
 general_err_t esp32_http_sal::get(const std::string& api_call, json& output)
 {
 #ifdef DEBUG
@@ -149,7 +150,9 @@ general_err_t esp32_http_sal::get(const std::string& api_call, json& output)
 		Logger::write({err, GR_NO_RESPONSE, "Not able to call get command <" + api_call + ">"});
 		return err;
 	}
-
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> We successfully recieved a string, lets convert it to json >> ");
+#endif
 	output = json::parse(str, nullptr, false);
 	if(output.is_discarded())
 	{
@@ -164,6 +167,8 @@ general_err_t esp32_http_sal::get(const std::string& api_call, json& output)
 
 	return GE_OK;
 }
+*/
+
 general_err_t esp32_http_sal::post(const std::string& api_call, const std::string& content)
 {
 #ifdef DEBUG

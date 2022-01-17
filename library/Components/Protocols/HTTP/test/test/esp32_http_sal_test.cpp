@@ -28,11 +28,3 @@ TEST(ESP32_HTTP_GRP, get_string)
 	CHECK_EQUAL(GE_OK, err); // we expect OK
 	STRCMP_EQUAL("", out.c_str());
 }
-// test init
-TEST(ESP32_HTTP_GRP, get_JSON_bad_parse)
-{
-	json out;
-	auto err = m_http.get("/test", out);
-	CHECK_EQUAL(GE_NO_DATA, err); // we expect OK
-	STRCMP_EQUAL("<discarded>", out.dump().c_str());
-}
