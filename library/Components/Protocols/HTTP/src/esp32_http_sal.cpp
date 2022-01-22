@@ -20,7 +20,7 @@
 
 #include "../include/esp32_http_sal.hpp"
 #include "../include/esp32_http_settings.hpp"
-#define DEBUG // default uncommeted
+//#define DEBUG // default uncommeted
 
 //#ifdef DEBUG
 static const char* LOG_TAG = "esp32_sal";
@@ -44,14 +44,14 @@ esp_err_t esp32_http_sal::_http_event_handle(esp_http_client_event_t* evt)
 			break;
 		case HTTP_EVENT_ON_HEADER:
 			LOG_PRINT_INFO(LOG_TAG, "HTTP_EVENT_ON_HEADER");
-			//	printf("%.*s", evt->data_len, (char*)evt->data);
+			printf("%.*s", evt->data_len, (char*)evt->data);
 			break;
 		case HTTP_EVENT_ON_DATA:
 			LOG_PRINT_INFO(LOG_TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
 			if(!esp_http_client_is_chunked_response(evt->client))
 			{
-				//	std::string str((char*)evt->data, (size_t)evt->data_len);
-				m_recieved_content = std::string((char*)evt->data, (size_t)evt->data_len);
+				std::string str((char*)evt->data, (size_t)evt->data_len);
+				m_recieved_content = str;
 #ifdef DEBUG
 				std::cout << "recieved data is : <" << m_recieved_content << ">\n";
 #endif
@@ -136,49 +136,103 @@ general_err_t esp32_http_sal::get(const std::string& api_call, std::string& outp
 
 	return ge_err;
 }
-/*
-general_err_t esp32_http_sal::get(const std::string& api_call, json& output)
-{
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, ">> esp32_http_sal::getJSON >> ");
-#endif
-	// Executable code:
-	std::string str;
-	auto err = get(api_call, str);
-	if(err != GE_OK)
-	{
-		Logger::write({err, GR_NO_RESPONSE, "Not able to call get command <" + api_call + ">"});
-		return err;
-	}
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, ">> We successfully recieved a string, lets convert it to json >> ");
-#endif
-	output = json::parse(str, nullptr, false);
-	if(output.is_discarded())
-	{
-		Logger::write({GE_NO_DATA, GR_NO_RESPONSE,
-					   "Not able to convert string to json: str<" + str + "> : json <" +
-						   output.dump() + ">"});
-		return GE_NO_DATA;
-	}
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, "<<  esp32_http_sal::getJSON << ");
-#endif
-
-	return GE_OK;
-}
-*/
-
-general_err_t esp32_http_sal::post(const std::string& api_call, const std::string& content)
+general_err_t esp32_http_sal::post(const std::string& api_call, const content_type& type,
+								   const uint8_t* content, const size_t& content_length)
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> esp32_sal::post >> ");
 #endif
 	// Executable code:
+	general_err_t ge_err = GE_OK;
+#ifdef __ESP32__
+	esp_http_client_config_t config = DEFAULT_HTTP_CONFIG;
+	config.url = m_server.c_str();
+	config.host = m_server.c_str();
+	config.port = m_port;
+	config.path = api_call.c_str();
+	config.method = esp_http_client_method_t::HTTP_METHOD_POST;
+	config.event_handler = this->_http_event_handle;
+
+	m_client = esp_http_client_init(&config);
+
+	// POST
+	switch(type)
+	{
+		case content_type::IMAGE: {
+			esp_http_client_set_header(m_client, "Content-Type", "image/jpeg");
+			break;
+		}
+	}
+
+	esp_http_client_set_post_field(m_client, (char*)content, content_length);
+	esp_err_t err = esp_http_client_perform(m_client);
+	if(err == ESP_OK)
+	{
+		std::cout << " HTTP Get Status : <" << (int)esp_http_client_get_status_code(m_client)
+				  << ">\n";
+	}
+	else
+	{
+		std::cout << "Error in HTTP request <" << (int)err << ">\n";
+		ge_err = GE_FAIL;
+	}
+
+	esp_http_client_cleanup(m_client);
+#endif
 
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<<  esp32_sal::post << ");
 #endif
 
-	return GE_OK;
+	return ge_err;
+}
+general_err_t esp32_http_sal::post(const std::string& api_call, const content_type& type,
+								   const std::string& content)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> esp32_sal::post >> ");
+#endif
+	// Executable code:
+	general_err_t ge_err = GE_OK;
+#ifdef __ESP32__
+	esp_http_client_config_t config = DEFAULT_HTTP_CONFIG;
+	config.url = m_server.c_str();
+	config.host = m_server.c_str();
+	config.port = m_port;
+	config.path = api_call.c_str();
+	config.method = esp_http_client_method_t::HTTP_METHOD_POST;
+	config.event_handler = this->_http_event_handle;
+
+	m_client = esp_http_client_init(&config);
+
+	// POST
+	switch(type)
+	{
+		case content_type::IMAGE: {
+			esp_http_client_set_header(m_client, "Content-Type", "image/jpeg");
+			break;
+		}
+	}
+
+	esp_http_client_set_post_field(m_client, content.c_str(), content.size());
+	esp_err_t err = esp_http_client_perform(m_client);
+	if(err == ESP_OK)
+	{
+		std::cout << " HTTP Get Status : <" << (int)esp_http_client_get_status_code(m_client)
+				  << ">\n";
+	}
+	else
+	{
+		std::cout << "Error in HTTP request <" << (int)err << ">\n";
+		ge_err = GE_FAIL;
+	}
+
+	esp_http_client_cleanup(m_client);
+#endif
+
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<<  esp32_sal::post << ");
+#endif
+
+	return ge_err;
 }

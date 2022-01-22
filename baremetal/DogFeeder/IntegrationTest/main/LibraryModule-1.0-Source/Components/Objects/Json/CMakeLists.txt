@@ -8,8 +8,6 @@ cmake_minimum_required(VERSION 3.18.4)
 set(LIBNAME JSON_OBJECT)
 
 
-set(COSTUM_SRC_FILES ${COSTUM_SRC_FILES} "${CMAKE_CURRENT_LIST_DIR}/src/json_object.cpp;" CACHE STRING "avaliable build src" FORCE)
-
 set(COSTUM_INC_FILES ${COSTUM_INC_FILES} "${CMAKE_CURRENT_LIST_DIR}/include" CACHE STRING "avaliable build inc" FORCE)
 
 # addin this for specifc testing:

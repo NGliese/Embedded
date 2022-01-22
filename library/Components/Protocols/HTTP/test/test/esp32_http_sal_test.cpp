@@ -28,3 +28,10 @@ TEST(ESP32_HTTP_GRP, get_string)
 	CHECK_EQUAL(GE_OK, err); // we expect OK
 	STRCMP_EQUAL("", out.c_str());
 }
+
+// test init
+TEST(ESP32_HTTP_GRP, post)
+{
+	auto err = m_http.post("/esp32_postTest", esp32_http_sal::content_type::IMAGE, "{image}");
+	CHECK_EQUAL(GE_OK, err);
+}

@@ -27,9 +27,10 @@
 
 #include "../include/MG996R.hpp"
 
-static constexpr float MIN_VALUE = 2.5; //<! start position of servo motor [duty cycle]
-static constexpr float MAX_VALUE = 13; //<! end position of servo motor   [duty cycle]
-
+constexpr float MIN_VALUE = 2.5; //<! start position of servo motor [duty cycle]
+constexpr float MAX_VALUE = 13; //<! end position of servo motor   [duty cycle]
+constexpr float SLOW_INCREMENT = 0.1; //<! incremental value for the slow method [delta duty cycle]
+constexpr std::uint8_t SLOW_DELAY = 60; //<! delay for the slow method [ms]
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
@@ -51,10 +52,12 @@ general_err_t MG996R::setPoint(const float& value)
 	// Executable code:
 	if(value > MAX_VALUE)
 	{
+		m_setPointValue = MAX_VALUE;
 		return GE_UPPER_BOUNDERY;
 	}
 	if(value < MIN_VALUE)
 	{
+		m_setPointValue = MIN_VALUE;
 		return GE_LOWER_BOUNDERY;
 	}
 	if(value == m_setPointValue)
@@ -101,4 +104,38 @@ general_err_t MG996R::setToMaximum(void)
 general_err_t MG996R::setToMinimum(void)
 {
 	return execute(MIN_VALUE);
+}
+
+general_err_t MG996R::setToMaximumSlowly(void)
+{
+	general_err_t err = GE_OK;
+	do
+	{
+		float tick = getValue() + SLOW_INCREMENT;
+		err = setPoint(tick);
+		if(err == GE_NO_DATA)
+		{
+			return err;
+		}
+		err = actuate();
+		Timeservice::wait_ms(SLOW_DELAY);
+	} while(getValue() < MAX_VALUE && err == GE_OK);
+	return err;
+}
+
+general_err_t MG996R::setToMinimumSlowly(void)
+{
+	general_err_t err = GE_OK;
+	do
+	{
+		float tick = getValue() - SLOW_INCREMENT;
+		err = setPoint(tick);
+		if(err == GE_NO_DATA)
+		{
+			return err;
+		}
+		err = actuate();
+		Timeservice::wait_ms(SLOW_DELAY);
+	} while(getValue() > MIN_VALUE && err == GE_OK);
+	return err;
 }

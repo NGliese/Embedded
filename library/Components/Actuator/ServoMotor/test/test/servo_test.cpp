@@ -49,13 +49,13 @@ TEST(SERVO_GRP, set_setval)
 TEST(SERVO_GRP, set_setval_upper)
 {
 	m_friend.setPoint(100.1);
-	DOUBLES_EQUAL(m_friend.getSetPoint(), 0, 3);
+	DOUBLES_EQUAL(m_friend.getSetPoint(), 13, 3);
 }
 // test init
 TEST(SERVO_GRP, set_setval_lower)
 {
 	m_friend.setPoint(-100.1);
-	DOUBLES_EQUAL(m_friend.getSetPoint(), 0, 3);
+	DOUBLES_EQUAL(m_friend.getSetPoint(), 2.5F, 3);
 }
 
 // test init
@@ -77,4 +77,62 @@ TEST(SERVO_GRP, actuat_min)
 {
 	m_servo.setToMinimum();
 	CHECK(m_servo.getValue() == 2.5);
+}
+
+// test init
+TEST(SERVO_GRP, OpenSlowly_1_run)
+{
+	m_servo.setToMinimum(); // is minimum now
+
+	general_err_t err = GE_OK;
+	float tick = m_servo.getValue() + 1.0;
+	DOUBLES_EQUAL(tick, 3.5, 2);
+	m_servo.execute(tick);
+	DOUBLES_EQUAL(m_servo.getValue(), 3.5, 2);
+}
+// test init
+TEST(SERVO_GRP, OpenSlowly_loop_run)
+{
+	m_servo.setToMinimum(); // is minimum now
+
+	general_err_t err = GE_OK;
+	do
+	{
+		float tick = m_servo.getValue() + 1.0;
+		err = m_friend.setPoint(tick);
+		if(err == GE_NO_DATA)
+		{
+			FAIL("Somethings wrong");
+		}
+		err = m_friend.actuate();
+		DOUBLES_EQUAL(m_servo.getValue(), tick, 2);
+		std::cout << "servo motor is : " << m_servo.getValue() << "\n";
+		CHECK_EQUAL(GE_OK, err);
+
+	} while(m_servo.getValue() < 13 && err == GE_OK);
+	std::cout << "servo motor FINISHED is : " << m_servo.getValue() << "\n";
+	DOUBLES_EQUAL(m_servo.getValue(), 13, 2);
+}
+
+TEST(SERVO_GRP, Closelowly_loop_run)
+{
+	m_servo.setToMaximum(); // is minimum now
+
+	general_err_t err = GE_OK;
+	do
+	{
+		float tick = m_servo.getValue() - 1.0;
+		err = m_friend.setPoint(tick);
+		if(err == GE_NO_DATA)
+		{
+			FAIL("Somethings wrong");
+		}
+		err = m_friend.actuate();
+		DOUBLES_EQUAL(m_servo.getValue(), tick, 2);
+		std::cout << "servo motor is : " << m_servo.getValue() << "\n";
+		CHECK_EQUAL(GE_OK, err);
+
+	} while(m_servo.getValue() > 2.5 && err == GE_OK);
+	std::cout << "servo motor FINISHED is : " << m_servo.getValue() << "\n";
+	DOUBLES_EQUAL(m_servo.getValue(), 2.5, 2);
 }

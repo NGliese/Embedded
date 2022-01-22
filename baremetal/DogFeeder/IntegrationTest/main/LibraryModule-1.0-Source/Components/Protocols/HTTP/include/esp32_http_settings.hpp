@@ -38,8 +38,9 @@ esp_http_client_config_t DEFAULT_HTTP_CONFIG = {
 	.transport_type =
 		esp_http_client_transport_t::HTTP_TRANSPORT_UNKNOWN, /*!< HTTP transport type, see
 																 `esp_http_client_transport_t` */
-	.buffer_size = 1024, /*!< HTTP receive buffer size */
-	.buffer_size_tx = 1024, /*!< HTTP transmit buffer size */
+	.buffer_size = 5120, /*!< HTTP receive buffer size */
+	//.buffer_size_tx = 1024, /*!< HTTP transmit buffer size */
+	.buffer_size_tx = 5120, /*!< HTTP transmit buffer size */
 	.user_data = nullptr, /*!< HTTP user_data context */
 	.is_async = false, /*!< Set asynchronous mode, only supported with HTTPS for now */
 	.use_global_ca_store = true, /*!< Use a global ca_store for all the connections in which this

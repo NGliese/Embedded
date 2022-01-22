@@ -11,7 +11,7 @@
 #include <Timeservice.hpp>
 #include <WiFi_API.hpp>
 #include <Timeservice.hpp>
-
+#include <jsmn_object.hpp>
 #include <MQTT_Message.hpp>
 #include <PWM_API_ESP32.hpp>
 #include <ADC_API_ESP32.hpp>
@@ -20,6 +20,8 @@
 #include <DogFeederDoor.hpp>
 #include <Maintainer.hpp>
 #include <esp32_http_sal.hpp>
+
+#include <ActiveCurrentSensor.hpp>
 void test_mqtt()
 {
 	   /* -------------- INIT WIFI --------------------- */
@@ -253,7 +255,8 @@ void test_door()
     }
 
 }
-
+constexpr std::uint8_t DOOR_CLOSE = 100;
+constexpr std::uint8_t DOOR_OPEN = 200;
 void test_get_door_status(){
 
 esp32_http_sal m_http{"192.168.1.157",1880};
@@ -270,6 +273,26 @@ for(;;)
 }
 
 
+
+void test_get_jsmn(){
+
+esp32_http_sal m_http{"192.168.1.157",1880};
+for(;;)
+{
+    std::cout << " ... Getting request ... \n";
+    Timeservice::wait_sec(5);
+    std::string out;
+    if(m_http.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << "test_get_jsmn:: recieved output is : <" << out << ">\n";
+        std::string str = out;
+          auto val = jsmn_object::getParsedIntegerValue(out,"value");
+         std::cout << " converted value is : <" << val <<">\n";
+        if(val == DOOR_CLOSE) { std::cout << "CLOSE DOOR \n";}
+        if(val == DOOR_OPEN) { std::cout << "OPEN DOOR \n";}
+    }
+}
+}
 
 void test_get_door_status_http_semaphore_test(){
 
@@ -307,18 +330,136 @@ for(;;)
 }
 }
 
-void test_get_json(){
-esp32_http_sal m_http{"192.168.1.157",1880};
-for(;;)
+void test_jsmn_and_door()
 {
+   
+    mg996r_conf_t motor_conf;
+    auto& pwm_conf = motor_conf.conf;
+
+    pwm_conf.channel = LEDC_CHANNEL_0;
+    pwm_conf.duty = 50;
+    pwm_conf.frequency = 50;
+    pwm_conf.m_pin = GPIO_NUM_27; // pwm1
+    pwm_conf.mode = LEDC_LOW_SPEED_MODE;
+
+    motor_conf.name = "motor";
+    DogFeederDoor m_door{motor_conf};
+    esp32_http_sal m_http{"192.168.1.157",1880};
+
+    for(;;)
+    {
     std::cout << " ... Getting request ... \n";
     Timeservice::wait_sec(5);
-    static json out;
+    std::string out;
     if(m_http.get("/getDogFeederFlag",out) == GE_OK)
     {
-        std::cout << " recieved output is222 : <" << out<< ">\n";
+        std::cout << "test_get_jsmn:: recieved output is : <" << out << ">\n";
+        std::string str = out;
+          auto val = jsmn_object::getParsedIntegerValue(out,"value");
+         std::cout << " converted value is : <" << val <<">\n";
+        if(val == DOOR_CLOSE) {
+                std::cout << " ... Closing door ... \n";
+                General_Error::printError("Close door", m_door.close());
+             }
+        if(val == DOOR_OPEN) {         
+                std::cout << " ... Opening door ... \n";
+                General_Error::printError("Open door", m_door.open());
+                }
+    }
+
+    }
+
+}
+
+void test_activeCurrentSensor(){
+
+
+          ADC_API_ESP32::config adc_conf;
+
+          adc_conf.name = "adc_test";
+          adc_conf.samples = 64;
+          adc_conf.channel = ADC1_CHANNEL_5;
+          adc_conf.vRef  = 1114;
+
+MQTT_Message::msg_conf_t msg_conf{
+    .entity_id=db_id::DOGFEEDER_CURRENT_SENSOR,
+    .buffer_size = 100,    
+};
+
+    ActiveCurrentSensor m_sensor{adc_conf,msg_conf};
+    m_sensor.start();
+
+    for(;;)
+    {
+        std::cout << " ... Measuring adc ...\n";
+        m_sensor.activateQueue();
+        Timeservice::wait_sec(25);
     }
 }
+
+void test_everything_connected(){
+
+        mg996r_conf_t motor_conf;
+    auto& pwm_conf = motor_conf.conf;
+
+    pwm_conf.channel = LEDC_CHANNEL_0;
+    pwm_conf.duty = 50;
+    pwm_conf.frequency = 50;
+    pwm_conf.m_pin = GPIO_NUM_27; // pwm1
+    pwm_conf.mode = LEDC_LOW_SPEED_MODE;
+
+    motor_conf.name = "motor";
+    DogFeederDoor m_door{motor_conf};
+    esp32_http_sal m_http{"192.168.1.157",1880};
+
+          ADC_API_ESP32::config adc_conf;
+
+          adc_conf.name = "adc_test";
+          adc_conf.samples = 64;
+          adc_conf.channel = ADC1_CHANNEL_5;
+          adc_conf.vRef  = 1114;
+
+MQTT_Message::msg_conf_t msg_conf{
+    .entity_id=db_id::DOGFEEDER_CURRENT_SENSOR,
+    .buffer_size = 400,    
+};
+
+    ActiveCurrentSensor m_sensor{adc_conf,msg_conf};
+    m_sensor.start();
+    uint8_t OLD_VALUE = 0;
+    constexpr size_t SLEEP_TIME = 5 * 60;
+    for(;;)
+    {
+        std::cout << " ... Measuring adc ...\n";
+    
+          std::cout << " ... Getting request ... \n";
+    Timeservice::wait_sec(SLEEP_TIME);
+    std::string out;
+    if(m_http.get("/getDogFeederFlag",out) == GE_OK)
+    {
+        std::cout << "test_get_jsmn:: recieved output is : <" << out << ">\n";
+        std::string str = out;
+          auto val = jsmn_object::getParsedIntegerValue(out,"value");
+         std::cout << " converted value is : <" << val <<">\n";
+        if(val == DOOR_CLOSE) {
+            if(OLD_VALUE != val){
+             m_sensor.activateQueue();
+            }
+                std::cout << " ... Closing door ... \n";
+                General_Error::printError("Close door", m_door.close());
+             }
+        if(val == DOOR_OPEN) {  
+            
+                 if(OLD_VALUE != val){
+             m_sensor.activateQueue();
+            }     
+                std::cout << " ... Opening door ... \n";
+                General_Error::printError("Open door", m_door.open());
+                }
+                OLD_VALUE = val;
+    }
+
+    }
 }
 
 const wifi_conf_t wifi_conf{
@@ -343,7 +484,11 @@ m_maintain.start();
 //test_door();
 //test_get_door_status();
 //test_get_door_status_http_semaphore_test();
-test_get_json();
+//test_get_json();
+//test_get_jsmn();
+//test_jsmn_and_door();
+//test_activeCurrentSensor();
+test_everything_connected();
 for(;;)
 {
    std::cout << "Running a test ! \n ";

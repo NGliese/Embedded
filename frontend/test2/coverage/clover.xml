@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1642775571282" clover="3.2.0">
+  <project timestamp="1642775571283" name="All files">
+    <metrics statements="26" coveredstatements="22" conditionals="4" coveredconditionals="2" methods="11" coveredmethods="9" elements="41" coveredelements="33" complexity="0" loc="26" ncloc="26" packages="2" files="2" classes="2"/>
+    <package name="OperatorsInterface.Components.Login_API.parts">
+      <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <file name="Logic.js" path="/home/embedded/Projects/WReg/src/OperatorsInterface/Components/Login_API/parts/Logic.js">
+        <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Shared">
+      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <file name="HTTP_API.js" path="/home/embedded/Projects/WReg/src/Shared/HTTP_API.js">
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

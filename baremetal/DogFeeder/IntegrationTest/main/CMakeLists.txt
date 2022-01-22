@@ -25,7 +25,7 @@ include(${INSTALL_PATH}${LIB_NAME}/cmake/LibraryGetter.cmake)
 set(UNWANTED_LIBS  CMake latex Template AnalysisTools Sensor )
 GetLibraryFiles(COSTUM_SOURCE_LIST COSTUM_HEADER_LIST UNWANTED_LIBS)
 
-set(WANTED_OBJECTS_LIBS )
+set(WANTED_OBJECTS_LIBS ActiveCurrentSensor)
 GetLibraryFilesBaseOnFolders(ADD_SOURCE_LIST ADD_HEADER_LIST WANTED_OBJECTS_LIBS)
 ###############################################################################################################
 #                               Basic ESP32 setup
