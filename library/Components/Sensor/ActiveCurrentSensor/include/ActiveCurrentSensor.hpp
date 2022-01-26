@@ -40,6 +40,7 @@
 #include "../../../Protocols/MQTT/include/mqtt_api_v2.hpp"
 #include "../../../RTOS/FreeRTOS/include/FreeRTOS.h"
 #include "../../../RTOS/FreeRTOS/include/Task.h"
+#include <atomic>
 #include <iostream>
 
 /*------------------------------------------------------------------------------+
@@ -61,6 +62,10 @@ class ActiveCurrentSensor final : public Task
 	~ActiveCurrentSensor();
 	void run(void* data) override;
 	void activateQueue();
+	auto& isRunning()
+	{
+		return m_isRunning;
+	}
 
   private:
 	general_err_t main_function(void);
@@ -68,6 +73,7 @@ class ActiveCurrentSensor final : public Task
 	ADC_API_ESP32 m_adc;
 	MQTT_Message m_msg;
 	mqtt_api_v2 m_mqtt;
+	std::atomic<bool> m_isRunning;
 };
 
 /*------------------------------------------------------------------------------+

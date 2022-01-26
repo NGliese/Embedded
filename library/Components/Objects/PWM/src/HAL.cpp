@@ -62,7 +62,7 @@ HAL_ESP32::HAL_ESP32(const config& conf) : m_conf{conf}
 	led_conf.channel = conf.channel;
 	led_conf.intr_type = LEDC_INTR_DISABLE; // we do not use interrupts
 	led_conf.timer_sel = LEDC_TIMER_1; // should not be needed to select timers
-	led_conf.duty = 0;
+	led_conf.duty = conf.duty;
 	led_conf.hpoint = 0;
 
 	err = ledc_channel_config(&led_conf);
@@ -71,6 +71,8 @@ HAL_ESP32::HAL_ESP32(const config& conf) : m_conf{conf}
 		std::cout << " could not initialize ledc_channel_config ... restarting ! \n";
 		exit(-1);
 	}
+
+	setDutyCycle(conf.duty);
 
 #endif
 }

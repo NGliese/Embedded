@@ -36,7 +36,7 @@ TEST_GROUP(SERVO_GRP)
 // test init
 TEST(SERVO_GRP, init_val)
 {
-	DOUBLES_EQUAL(m_servo.getValue(), 0, 1);
+	DOUBLES_EQUAL(m_servo.getValue(), 10.0, 1);
 }
 // test init
 TEST(SERVO_GRP, set_setval)
@@ -135,4 +135,38 @@ TEST(SERVO_GRP, Closelowly_loop_run)
 	} while(m_servo.getValue() > 2.5 && err == GE_OK);
 	std::cout << "servo motor FINISHED is : " << m_servo.getValue() << "\n";
 	DOUBLES_EQUAL(m_servo.getValue(), 2.5, 2);
+}
+
+TEST(SERVO_GRP, initialize_ctor)
+{
+	const uint8_t DEEP_SLEEP_DUTY_CYCLE = 13;
+
+	MG996R servo1{{"test", {1, DEEP_SLEEP_DUTY_CYCLE, 1000, 2, 3}}};
+	friend_MG996R friend1{&servo1};
+	CHECK_EQUAL(friend1.getSetPoint(), DEEP_SLEEP_DUTY_CYCLE);
+	CHECK_EQUAL(friend1.getSetPoint(), friend1.getmValue());
+}
+
+TEST(SERVO_GRP, deepsleep_memory)
+{
+	uint8_t DEEP_SLEEP_DUTY_CYCLE = 13;
+
+	MG996R servo1{{"test", {1, DEEP_SLEEP_DUTY_CYCLE, 1000, 2, 3}}};
+	friend_MG996R friend1{&servo1};
+
+	{
+		DEEP_SLEEP_DUTY_CYCLE = 5;
+		MG996R servo2{{"test", {1, DEEP_SLEEP_DUTY_CYCLE, 1000, 2, 3}}};
+		friend_MG996R friend2{&servo2};
+		CHECK_EQUAL(friend2.getSetPoint(), 5);
+		CHECK_EQUAL(friend2.getSetPoint(), friend2.getmValue());
+		DEEP_SLEEP_DUTY_CYCLE = 15;
+	}
+
+	{
+		MG996R servo2{{"test", {1, DEEP_SLEEP_DUTY_CYCLE, 1000, 2, 3}}};
+		friend_MG996R friend2{&servo2};
+		CHECK_EQUAL(friend2.getSetPoint(), 15);
+		CHECK_EQUAL(friend2.getSetPoint(), friend2.getmValue());
+	}
 }

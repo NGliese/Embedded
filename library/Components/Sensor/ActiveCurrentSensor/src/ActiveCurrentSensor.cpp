@@ -28,7 +28,7 @@ static const char* LOG_TAG = "ActiveCurrentSensor";
 
 ActiveCurrentSensor::ActiveCurrentSensor(const ADC_API_ESP32::config& adc_conf,
 										 const MQTT_Message::msg_conf_t& msg_conf)
-	: m_adc{adc_conf}, m_msg{msg_conf}
+	: m_adc{adc_conf}, m_msg{msg_conf}, m_isRunning{false}
 {
 	m_queue.initialize(1, recieved_queue_message.size());
 }
@@ -52,17 +52,19 @@ void ActiveCurrentSensor::run(void* data)
 	std::string str;
 	for(;;)
 	{
-		if(m_queue.recieve(&str, 50000)) // we should wait forever here
+		if(!m_queue.recieve(&str, 50000)) // we should wait forever here
 		{
-			// if we dont have anythin inside the queue, we will go back to sleep
-			continue;
+			// check OTA flag
+			// this might be a blocking call ( expected )
+			Maintainer::checkOTAUpdate();
+			m_isRunning = true;
+			// run main function
+			main_function();
+			m_isRunning = false;
 		}
-		// check OTA flag
-		// this might be a blocking call ( expected )
-		Maintainer::checkOTAUpdate();
-		// run main function
-		main_function();
 	}
+	// exit the thread
+	// this->stop();
 }
 
 general_err_t ActiveCurrentSensor::main_function()
