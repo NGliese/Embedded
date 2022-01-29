@@ -6,7 +6,7 @@ This project is using a RPI4B and a rpi cam v2.1 together with opensource librar
 As our security camera is positioned in an outdoor enviroment, we have to consider the weather and seasons. In order to not spend too much time designing a perfect container, a solution was made with a simple waterproof plastic container. The image below shows the design
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoor_Main_CCTV/Images/20210904_103507.jpg" width="400" height="600">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoorMain_CCTV/Images/20210904_103507.jpg" width="400" height="600">
 </p>
 
 ## Software achitecture
@@ -20,7 +20,7 @@ The software design is fairly simple, as is the complexity of the project requir
 All of this can be handled in a sequencial manner and therefor a simple for-ever loop is chosen as the main driver.
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoor_Main_CCTV/Images/flowdiagram.png" width="400" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoorMain_CCTV/Images/flowdiagram.png" width="400" height="500">
 </p>
 
 
@@ -44,14 +44,14 @@ The Image_Helper class is used to split up the code in the main loop, i dont lik
 
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoor_Main_CCTV/Images/blockdiagram.png" width="550" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoorMain_CCTV/Images/blockdiagram.png" width="550" height="500">
 </p>
 
 ## Demonstration
 The Camera is recording 24/7 but will only save images when it sees movement, which is decieded in the foreground extracting together with the connected component analysis.
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoor_Main_CCTV/Images/delivery.gif" width="400" height="400" >
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoorMain_CCTV/Images/delivery.gif" width="400" height="400" >
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoor_Main_CCTV/Images/walkTheDog.gif" width="400" height="400">
+  <img src="https://github.com/NGliese/Embedded/blob/master/linux/RPI/OutDoorMain_CCTV/Images/walkTheDog.gif" width="400" height="400">
 </p>
