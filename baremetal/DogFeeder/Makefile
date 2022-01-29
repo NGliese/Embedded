@@ -16,12 +16,12 @@ endif
 
 # make all : format the code using clang-tiny, document by doxygen, apply unittest coverage and zip everythin up
 
-all: inst_sip_int inst_sip_rel default_int default_rel
+all: inst_sip_int inst_sip_rel format default_int default_rel
 
-Integration: inst_sip_int default_int #flash_int
-Int_Flash : inst_sip_int default_int flash_int
+Integration: inst_sip_int format default_int #flash_int
+Int_Flash : inst_sip_int  format default_int flash_int
 
-Release: inst_sip_rel default_rel package_rel #flash_rel
+Release: inst_sip_rel format default_rel package_rel #flash_rel
 
 
 # install sip lib for integration target
@@ -69,5 +69,9 @@ package_rel: |
 .PHONY: flash_rel
 flash_rel: | $(REL_BUILD)
 	$(Q) cd $(REL_BUILD);  idf.py -p /dev/ttyUSB0 flash monitor;
+	
+.PHONY: format
+format: |
+	$(Q) sh ./tools/format.sh;
 
 

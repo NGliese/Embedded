@@ -40,6 +40,10 @@ static const char* LOG_TAG = "MG996R";
 MG996R::MG996R(const mg996r_conf_t& conf)
 	: Actuator_Base(conf), m_pwm{conf.conf, "pwm"}, m_setPointValue{m_value}
 {
+	// this is the only way to initialize m_value to a non-zero value
+	// even though static analysis complains
+	m_value = conf.conf.duty;
+	m_setPointValue = m_value;
 }
 
 MG996R::~MG996R() {}

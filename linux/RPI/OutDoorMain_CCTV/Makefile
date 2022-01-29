@@ -28,7 +28,7 @@ RPI_IP="192.168.1.241"
 
 # make all : format the code using clang-tiny, document by doxygen, apply unittest coverage and zip everythin up
 
-all: install_sip zip_project upload_to_rpi unzip_project build_remote
+all: install_sip format zip_project upload_to_rpi unzip_project build_remote
 
 build: build_remote
 
@@ -84,4 +84,7 @@ clean:
 distclean:
 	$(Q) rm -rf $(BUILD_INTEGRATION)
 
+.PHONY: format
+format: |
+	$(Q) sh ./tools/format.sh;
 

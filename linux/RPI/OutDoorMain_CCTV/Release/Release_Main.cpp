@@ -11,14 +11,12 @@
 
 #include "../LibraryModule-1.0-Source/Components/Objects/Timeservice/include/Timeservice.hpp"
 
-int main(int argc, char** argv )
+int main(int argc, char** argv)
 {
+	for(;;)
+	{
+		std::cout << "Running a test ! \n";
 
-for(;;)
-{
-   std::cout << "Running a test ! \n";
-
-   Timeservice::wait_sec(5);
-}
-
+		Timeservice::wait_sec(5);
+	}
 }

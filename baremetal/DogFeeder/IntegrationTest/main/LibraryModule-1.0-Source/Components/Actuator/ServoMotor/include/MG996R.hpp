@@ -161,6 +161,10 @@ class friend_MG996R
 	{
 		return m_sensor->m_setPointValue;
 	}
+	auto getmValue(void)
+	{
+		return m_sensor->m_value;
+	}
 
   private:
 	MG996R* m_sensor;

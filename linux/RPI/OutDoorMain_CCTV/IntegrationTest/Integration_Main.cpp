@@ -11,12 +11,11 @@
 
 #include "../LibraryModule-1.0-Source/Components/Objects/Timeservice/include/Timeservice.hpp"
 
-#include "components/include/System_Overall.hpp"
 #include "components/include/RPICam_Capture.hpp"
+#include "components/include/System_Overall.hpp"
 
-int main(int argc, char** argv )
+int main(int argc, char** argv)
 {
-
 #if 0 // TEST ENV
    RPICam_Capture m_sys;
    //m_sys.stream() ;
@@ -31,9 +30,7 @@ int main(int argc, char** argv )
   // m_sys.backgroundsubstractor_GMG_Save();
 #endif
 #if 1
-   System_Overall m_sys;
-   m_sys.run();
+	System_Overall m_sys;
+	m_sys.run();
 #endif
-
-
 }

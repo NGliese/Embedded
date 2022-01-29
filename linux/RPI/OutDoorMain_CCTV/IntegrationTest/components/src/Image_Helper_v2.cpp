@@ -5,8 +5,6 @@
  *      Author: espenv
  */
 
-
-
 /***********************************************************************************************+
  *  \brief       -- XX -- Library - CPP Source file
  *  \par
@@ -27,7 +25,6 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/Image_Helper_v2.hpp"
 
 #define KNN_MAX_DIV_MIN (80)
@@ -39,140 +36,142 @@
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "Image_Helper_v2";
+static const char* LOG_TAG = "Image_Helper_v2";
 #endif
 
-Image_Helper_v2::Image_Helper_v2() : m_isDataValid{false}, m_container{{0,0,0,{0,0}},{},{},{}},
-        m_background1{ {0.6,Background_Extractor::type::MOG2,2,1} },
-        m_background2{ {0.6,Background_Extractor::type::KNN,2,1} }{
-
-if(m_interface.open() != GE_OK)
+Image_Helper_v2::Image_Helper_v2()
+	: m_isDataValid{false}, m_container{{0, 0, 0, {0, 0}}, {}, {}, {}},
+	  m_background1{{0.6, Background_Extractor::type::MOG2, 2, 1}},
+	  m_background2{{0.6, Background_Extractor::type::KNN, 2, 1}}
 {
-    std::cout << " Cant reach database! \n";
-    exit(-1);
+	if(m_interface.open() != GE_OK)
+	{
+		std::cout << " Cant reach database! \n";
+		exit(-1);
+	}
 }
 
+Image_Helper_v2::~Image_Helper_v2() {}
+
+general_err_t Image_Helper_v2::doGeometryCalculation(const cv::Mat& image)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doTemperatureCalculation >> ");
+#endif
+	// Executable code:
+
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doTemperatureCalculation << ");
+#endif
+
+	return GE_OK;
 }
 
-Image_Helper_v2::~Image_Helper_v2() {
+general_err_t Image_Helper_v2::doTemperatureCalculation(const cv::Mat& image)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doTemperatureCalculation >> ");
+#endif
+	// Executable code:
+	auto mean = cv::mean(image);
+	double min, max;
+	cv::minMaxLoc(image, &min, &max);
+
+	m_container.ROI_image.max = static_cast<uint16_t>(max);
+	m_container.ROI_image.min = static_cast<uint16_t>(min);
+	m_container.ROI_image.mean = static_cast<uint16_t>(mean[0]);
+
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doTemperatureCalculation << ");
+#endif
+
+	return GE_OK;
 }
 
-general_err_t Image_Helper_v2::doGeometryCalculation(const cv::Mat& image) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doTemperatureCalculation >> ");
-    #endif
-    // Executable code:
+general_err_t Image_Helper_v2::doOutlierDetection(const cv::Mat& image)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doOutlierDetection >> ");
+#endif
 
+	cv::Mat edge;
+	doImageProcessing(image, edge);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doTemperatureCalculation << ");
-    #endif
+	m_container.m_outlier.background1.data = m_background1.statsConnectedComponents(edge);
+	m_container.m_outlier.background2.data = m_background2.statsConnectedComponents(edge);
 
-    return GE_OK;
+	m_background1.view();
+
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doOutlierDetection << ");
+#endif
+
+	return GE_OK;
 }
 
-general_err_t Image_Helper_v2::doTemperatureCalculation(const cv::Mat& image) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doTemperatureCalculation >> ");
-    #endif
-    // Executable code:
-    auto mean = cv::mean(image);
-    double min,max;
-    cv::minMaxLoc(image,&min,&max);
+bool Image_Helper_v2::isObjectValid(void)
+{
+	bool valid = false;
 
-    m_container.ROI_image.max = static_cast<uint16_t>(max);
-    m_container.ROI_image.min = static_cast<uint16_t>(min);
-    m_container.ROI_image.mean = static_cast<uint16_t>(mean[0]);
-
-
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doTemperatureCalculation << ");
-    #endif
-
-    return GE_OK;
+	if((m_container.m_outlier.background1.data.maxConnected > MOG2_MAX_DIV_MIN) and
+	   (m_container.m_outlier.background1.data.maxConnected < MOG2_MAX_DIV_MAX))
+	{
+		if((m_container.m_outlier.background2.data.ellipse.area < MOG2_MAX_AREA))
+		{
+			valid = true;
+		}
+	}
+	return valid;
 }
 
-general_err_t Image_Helper_v2::doOutlierDetection(const cv::Mat& image) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doOutlierDetection >> ");
-    #endif
+void Image_Helper_v2::reportAnalysis(void)
+{
+	using MSG = Message_Protocol;
+	using HANDLER = Message_Handler;
 
-    cv::Mat edge;
-    doImageProcessing(image, edge);
+	std::string str = HANDLER::postgres_start();
 
-    m_container.m_outlier.background1.data = m_background1.statsConnectedComponents(edge);
-    m_container.m_outlier.background2.data = m_background2.statsConnectedComponents(edge);
+	auto& time = m_container.m_aquicision.timeOfCapture;
+	auto& img_aq = m_container.m_aquicision;
+	auto& temp_ROI = m_container.ROI_image;
+	auto& outliers = m_container.m_outlier;
+	auto& geometry = m_container.m_geometry;
 
-    m_background1.view();
+	str += HANDLER::to_Postgres_Subject(
+		MSG{{map.at(db_id::CCTV01_MOG2_CC), 0}, {outliers.background1.data.maxConnected, time}});
+	str += HANDLER::postgres_append();
+	str += HANDLER::to_Postgres_Subject(
+		MSG{{map.at(db_id::CCTV01_HEIGHT), 0}, {outliers.background1.data.ellipse.height, time}});
+	str += HANDLER::postgres_append();
+	str += HANDLER::to_Postgres_Subject(
+		MSG{{map.at(db_id::CCTV01_WIDTH), 0}, {outliers.background1.data.ellipse.width, time}});
+	str += HANDLER::postgres_append();
+	str += HANDLER::to_Postgres_Subject(
+		MSG{{map.at(db_id::CCTV01_AREA), 0}, {outliers.background1.data.ellipse.area, time}});
+	str += HANDLER::postgres_append();
+	str += HANDLER::to_Postgres_Subject(MSG{
+		{map.at(db_id::CCTV01_ASPECT), 0}, {outliers.background1.data.ellipse.aspect_ratio, time}});
+	str += HANDLER::postgres_append();
+	str +=
+		HANDLER::to_Postgres_Subject(MSG{{map.at(db_id::CCTV01_AMOUNT), 0},
+										 {outliers.background1.data.amount_of_connections, time}});
+	str += HANDLER::postgres_append();
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doOutlierDetection << ");
-    #endif
+	str += HANDLER::to_Postgres_Subject(
+		MSG{{map.at(db_id::CCTV01_KNN_CC), 0}, {outliers.background2.data.maxConnected, time}});
 
-    return GE_OK;
-}
+	str += HANDLER::postgres_end();
 
-
-
-bool Image_Helper_v2::isObjectValid(void) {
-
-    bool valid = false;
-
-    if( (m_container.m_outlier.background1.data.maxConnected > MOG2_MAX_DIV_MIN) and (m_container.m_outlier.background1.data.maxConnected < MOG2_MAX_DIV_MAX)   )
-    {
-        if( (m_container.m_outlier.background2.data.ellipse.area < MOG2_MAX_AREA)  )
-        {
-            valid =  true;
-        }
-    }
-    return valid;
-}
-
-void Image_Helper_v2::reportAnalysis(void) {
-
-       using MSG = Message_Protocol;
-       using HANDLER = Message_Handler;
-
-       std::string str= HANDLER::postgres_start();
-
-
-       auto& time = m_container.m_aquicision.timeOfCapture;
-       auto& img_aq = m_container.m_aquicision;
-       auto& temp_ROI = m_container.ROI_image;
-       auto& outliers = m_container.m_outlier;
-       auto& geometry = m_container.m_geometry;
-
-
-
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_MOG2_CC),0} , {outliers.background1.data.maxConnected, time} } );
-       str+= HANDLER::postgres_append();
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_HEIGHT),0} , {outliers.background1.data.ellipse.height, time} } );
-       str+= HANDLER::postgres_append();
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_WIDTH),0} , {outliers.background1.data.ellipse.width, time} } );
-       str+= HANDLER::postgres_append();
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_AREA),0} , {outliers.background1.data.ellipse.area, time} } );
-       str+= HANDLER::postgres_append();
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_ASPECT),0} , {outliers.background1.data.ellipse.aspect_ratio, time} } );
-       str+= HANDLER::postgres_append();
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_AMOUNT),0} , {outliers.background1.data.amount_of_connections, time} } );
-       str+= HANDLER::postgres_append();
-
-
-       str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_KNN_CC),0} , {outliers.background2.data.maxConnected, time} } );
-
-
-       str+= HANDLER::postgres_end();
-
-       m_interface.post( str );
+	m_interface.post(str);
 }
 
 #define IMAGE_PATH_RAW ("/media/pi/RPI_ROBOT/Lepton_img/Raw/")
 #define IMAGE_PATH_COLOR ("/media/pi/usb/CCTV/MEGA/color/")
 
-void Image_Helper_v2::reportImages(const cv::Mat& raw,const cv::Mat& raw_ROI,const cv::Mat& visual) {
-
-    saveImage(visual,"visual",IMAGE_PATH_COLOR);
-
+void Image_Helper_v2::reportImages(const cv::Mat& raw, const cv::Mat& raw_ROI,
+								   const cv::Mat& visual)
+{
+	saveImage(visual, "visual", IMAGE_PATH_COLOR);
 }
 /**
  * @brief doPreproccessing
@@ -195,23 +194,24 @@ void Image_Helper_v2::reportImages(const cv::Mat& raw,const cv::Mat& raw_ROI,con
  *    -
  *    -
  */
-general_err_t Image_Helper_v2::doPreproccessing(const cv::Mat& raw,
-        cv::Mat& normalized_u8, cv::Mat& visual) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doPreproccessing >> ");
-    #endif
-    // Executable code:
+general_err_t Image_Helper_v2::doPreproccessing(const cv::Mat& raw, cv::Mat& normalized_u8,
+												cv::Mat& visual)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::doPreproccessing >> ");
+#endif
+	// Executable code:
 
-    cv::normalize(raw,normalized_u8,0,255,cv::NORM_MINMAX);
-    normalized_u8.convertTo(normalized_u8,CV_8UC1);
-    normalized_u8.copyTo(visual);
-    cv::applyColorMap(visual,visual,cv::COLORMAP_HOT);
+	cv::normalize(raw, normalized_u8, 0, 255, cv::NORM_MINMAX);
+	normalized_u8.convertTo(normalized_u8, CV_8UC1);
+	normalized_u8.copyTo(visual);
+	cv::applyColorMap(visual, visual, cv::COLORMAP_HOT);
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doPreproccessing << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::doPreproccessing << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 /**
  * @brief  doRegionOfInterestCut
@@ -232,80 +232,76 @@ general_err_t Image_Helper_v2::doPreproccessing(const cv::Mat& raw,
  *    -
  */
 general_err_t Image_Helper_v2::doRegionOfInterestCut(const cv::Mat& raw, const cv::Rect& ROI,
-        cv::Mat& raw_ROI) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::saveImage >> ");
-    #endif
-    // Executable code:
-    raw_ROI = cv::Mat(raw, ROI).clone();
+													 cv::Mat& raw_ROI)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::saveImage >> ");
+#endif
+	// Executable code:
+	raw_ROI = cv::Mat(raw, ROI).clone();
 
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::saveImage << ");
-    #endif
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::saveImage << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 
-bool Image_Helper_v2::isDataValid(void) {
-    return m_isDataValid;
+bool Image_Helper_v2::isDataValid(void)
+{
+	return m_isDataValid;
 }
 
-general_err_t Image_Helper_v2::setDataToValid(const timeval& timeOfCapture) {
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::setDataToValid >> ");
-    #endif
-    // Executable code:
-    m_isDataValid = true;
-    m_container.m_aquicision.timeOfCapture = timeOfCapture;
-    #ifdef DEBUG
-    LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::setDataToValid << ");
-    #endif
+general_err_t Image_Helper_v2::setDataToValid(const timeval& timeOfCapture)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> Image_Helper_v2::setDataToValid >> ");
+#endif
+	// Executable code:
+	m_isDataValid = true;
+	m_container.m_aquicision.timeOfCapture = timeOfCapture;
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<< Image_Helper_v2::setDataToValid << ");
+#endif
 
-    return GE_OK;
+	return GE_OK;
 }
 
-void Image_Helper_v2::saveImage(const cv::Mat& image, const std::string& name,const std::string& path) {
-    std::string full_path;
-  //  full_path =  path + std::to_string(time.tv_sec)+"_"+std::to_string(time.tv_usec)+name+".png";
-   full_path =  path + Timeservice::getCurrentDate()+"_"+name+".png";
-    std::cout << "writing to path : " << full_path << "\n";
-    cv::imwrite(full_path.c_str(),image);
-
+void Image_Helper_v2::saveImage(const cv::Mat& image, const std::string& name,
+								const std::string& path)
+{
+	std::string full_path;
+	//  full_path =  path +
+	//  std::to_string(time.tv_sec)+"_"+std::to_string(time.tv_usec)+name+".png";
+	full_path = path + Timeservice::getCurrentDate() + "_" + name + ".png";
+	std::cout << "writing to path : " << full_path << "\n";
+	cv::imwrite(full_path.c_str(), image);
 }
 
-
-
-void Image_Helper_v2::reset() {
-    m_isDataValid = false;
+void Image_Helper_v2::reset()
+{
+	m_isDataValid = false;
 }
 
-general_err_t Image_Helper_v2::doImageProcessing(const cv::Mat &src,
-        cv::Mat &dist) {
+general_err_t Image_Helper_v2::doImageProcessing(const cv::Mat& src, cv::Mat& dist)
+{
+	Utility_Image::equalizeIllumination(src, dist);
 
-
-    Utility_Image::equalizeIllumination(src,dist);
-
-    src.copyTo(dist);
-
+	src.copyTo(dist);
 }
 
-void Image_Helper_v2::reportAlarm(void) {
+void Image_Helper_v2::reportAlarm(void)
+{
+	using MSG = Message_Protocol;
+	using HANDLER = Message_Handler;
 
-    using MSG = Message_Protocol;
-    using HANDLER = Message_Handler;
+	std::string str = HANDLER::postgres_start();
 
-    std::string str= HANDLER::postgres_start();
+	auto& time = m_container.m_aquicision.timeOfCapture;
 
+	str += HANDLER::to_Postgres_Subject(MSG{{map.at(db_id::CCTV01_ALARM), 0}, {100, time}});
 
-    auto& time = m_container.m_aquicision.timeOfCapture;
+	str += HANDLER::postgres_end();
 
-
-
-    str+= HANDLER::to_Postgres_Subject( MSG{ {map.at(db_id::CCTV01_ALARM),0} , {100, time} } );
-
-
-    str+= HANDLER::postgres_end();
-
-    m_interface.post( str );
-
+	m_interface.post(str);
 }
