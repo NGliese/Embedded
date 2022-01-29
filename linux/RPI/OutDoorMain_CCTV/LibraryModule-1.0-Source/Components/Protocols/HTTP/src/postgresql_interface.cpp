@@ -29,7 +29,7 @@
 
 #ifdef __RPI__
 #ifdef __WITH_DATABASE__
- static pqxx::connection m_connect("dbname = sensordb user = write2db password = 1234 \
+static pqxx::connection m_connect("dbname = sensordb user = write2db password = 1234 \
          hostaddr = 192.168.1.157 port = 5432");
 #endif
 #endif
@@ -40,10 +40,7 @@
 static const char* LOG_TAG = "postgresql_interface";
 #endif
 
-postgresql_interface::~postgresql_interface()
-{
-	
-}
+postgresql_interface::~postgresql_interface() {}
 
 general_err_t postgresql_interface::open(void)
 {
@@ -55,7 +52,7 @@ general_err_t postgresql_interface::open(void)
 #ifdef __WITH_DATABASE__
 	try
 	{
-	    m_connect = pqxx::connection("dbname = sensordb user = write2db password = 1234 \
+		m_connect = pqxx::connection("dbname = sensordb user = write2db password = 1234 \
             hostaddr = 192.168.1.157 port = 5432");
 	}
 	catch(const std::exception& e)

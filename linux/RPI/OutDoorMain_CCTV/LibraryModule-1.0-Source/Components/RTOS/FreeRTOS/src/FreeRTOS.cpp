@@ -121,7 +121,8 @@ uint32_t FreeRTOS::Semaphore::wait(const std::string& owner)
 	return m_value;
 } // wait
 
-FreeRTOS::Semaphore::Semaphore(const std::string& name) :m_name{name},m_owner{"<N/A>"}, m_value{0}, m_usePthreads{false}
+FreeRTOS::Semaphore::Semaphore(const std::string& name)
+	: m_name{name}, m_owner{"<N/A>"}, m_value{0}, m_usePthreads{false}
 {
 #ifdef __ESP32__
 	if(m_usePthreads)
@@ -137,11 +138,11 @@ FreeRTOS::Semaphore::Semaphore(const std::string& name) :m_name{name},m_owner{"<
 		 * 190813-bug, can binary work? :: https://github.com/espressif/arduino-esp32/issues/2723
 		 */
 		m_semaphore = xSemaphoreCreateBinary();
+		// it looks like, whenever a semaphore is created
+		// we have to release it ?? @gliese
+		give();
 	}
 #endif
-
-
-
 }
 
 FreeRTOS::Semaphore::~Semaphore()

@@ -28,10 +28,10 @@
 #include "../include/Curl_SAL.hpp"
 
 #define DB_CONNECTION_TIMEOUT (2)
-#define DB_SEND_TIMEOUT       (2)
-#define DATA_OK                  (0)
-#define WITH_DATABASE_CONNECTION    (0)
-#define MAX_DATA_VALUE           (10000)
+#define DB_SEND_TIMEOUT (2)
+#define DATA_OK (0)
+#define WITH_DATABASE_CONNECTION (0)
+#define MAX_DATA_VALUE (10000)
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
@@ -89,7 +89,7 @@ general_err_t Curl_SAL::initialize(void)
  *    -
  *    -
  */
-general_err_t Curl_SAL::rpi_open(void)
+general_err_t Curl_SAL::open(void)
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> Curl_SAL::rpi_close >> ");
@@ -111,7 +111,7 @@ general_err_t Curl_SAL::rpi_open(void)
  *    -
  *    -
  */
-general_err_t Curl_SAL::rpi_close(void)
+general_err_t Curl_SAL::close(void)
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> Curl_SAL::rpi_publish >> ");
@@ -136,7 +136,7 @@ general_err_t Curl_SAL::rpi_close(void)
  *    -
  *    -
  */
-general_err_t Curl_SAL::rpi_publish(const std::string& str)
+general_err_t Curl_SAL::post(const std::string& str)
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> Curl_SAL::rpi_publish >> ");

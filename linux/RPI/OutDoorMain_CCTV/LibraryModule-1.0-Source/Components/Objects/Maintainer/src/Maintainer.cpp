@@ -52,14 +52,23 @@ Maintainer::Maintainer(const wifi_conf_t& wifi_conf, size_t delay_sec, int prior
     }
 #endif
 	Timeservice::wait_ms(1000);
-	auto err = Timeservice::initialize_sntp();
+	general_err_t err = GE_OK;
+	size_t count = 1;
+	do
+	{
+		std::cout << "[Maintainer] setting up sntp, attempt <" << (int)count << "/3> ...\n";
+		err = Timeservice::initialize_sntp();
+		Timeservice::wait_ms(1000);
+	} while(err != GE_OK && count++ < 3);
+
 	if(err != GE_OK)
 	{
 		std::cout << "[Maintainer] not able to get RTC, rebooting ...\n";
 		Timeservice::wait_ms(1000);
 		exit(-1);
 	}
-	Timeservice::wait_ms(1000);
+	std::cout << "[Maintainer] sntp successfully initialized in  <" << (int)count
+			  << "> attempts ...\n";
 	start_time = Timeservice::getTimeNow();
 #ifdef __WITH_OTA__
 	// in the maintainer class, we want to enable OTA service. In this point of the code we are sure

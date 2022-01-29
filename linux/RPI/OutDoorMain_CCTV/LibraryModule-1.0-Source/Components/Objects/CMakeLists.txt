@@ -19,7 +19,8 @@ add_subdirectory(QueryTools) # LINUX
 add_subdirectory(Rulebase)
 add_subdirectory(Timeservice) 
 add_subdirectory(Watchdog) # PORTABLE
-
+add_subdirectory(Json) # PORTABLE
+add_subdirectory(JSMN) # PORTABLE
 
 
 

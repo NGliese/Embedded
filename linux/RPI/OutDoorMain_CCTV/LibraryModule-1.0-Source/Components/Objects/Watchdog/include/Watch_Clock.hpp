@@ -32,7 +32,6 @@
  |
  +-----------------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------------------+
  |   		 					Datasheet Awareness              		        |
  +------------------------------------------------------------------------------+
@@ -53,8 +52,6 @@
  |
   +-----------------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------------------+
  |   		 					Includes                     		            |
  +------------------------------------------------------------------------------*/
@@ -63,8 +60,6 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-
-
 
 #include "../../../Interfaces/WatchdogBase/include/Watchdog_Base.hpp"
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
@@ -78,21 +73,18 @@
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
+class Watch_Clock : public Watchdog_Base<uint32_t>
+{
+  public:
+	Watch_Clock(const size_t& parameter);
+	Watch_Clock();
+	~Watch_Clock();
+	general_err_t initialize(uint32_t parameter) override;
+	watchdog_event_t watch() override;
+	general_err_t reset();
 
-
-class Watch_Clock : public Watchdog_Base<uint32_t>{
-public:
-        Watch_Clock(const size_t& parameter );
-        Watch_Clock();
-        ~Watch_Clock();
-        general_err_t initialize(uint32_t parameter) override;
-        watchdog_event_t watch() override;
-        general_err_t reset();
-
-
-private:
-        uint32_t m_last_time = 0;
+  private:
+	uint32_t m_last_time = 0;
 };
-
 
 #endif /* MAIN_COMPONENTS_WATCHDOG_INCLUDE_WATCH_CLOCK_HPP_ */

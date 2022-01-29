@@ -5,8 +5,6 @@
  *      Author: nikolaj
  */
 
-
-
 /***********************************************************************************************+
  *  \brief       -- XX -- Library - CPP Source file
  *  \par
@@ -27,29 +25,24 @@
  *
  ***********************************************************************************************/
 
-
 #include "../include/DogFeederDoor.hpp"
-
 
 //#define DEBUG // default uncommeted
 
 #ifdef DEBUG
-static const char *LOG_TAG = "DogFeederDoor";
+static const char* LOG_TAG = "DogFeederDoor";
 #endif
 
-DogFeederDoor::DogFeederDoor(const mg996r_conf_t& conf) : m_motor{conf} {
+DogFeederDoor::DogFeederDoor(const mg996r_conf_t& conf) : m_motor{conf} {}
+
+DogFeederDoor::~DogFeederDoor() {}
+
+general_err_t DogFeederDoor::open()
+{
+	return m_motor.setToMaximumSlowly();
 }
 
-DogFeederDoor::~DogFeederDoor() {
-}
-
-general_err_t DogFeederDoor::open() {
-
-
-
-    return m_motor.setToMaximum();
-}
-
-general_err_t DogFeederDoor::close() {
-    return m_motor.setToMinimum();
+general_err_t DogFeederDoor::close()
+{
+	return m_motor.setToMinimumSlowly();
 }
