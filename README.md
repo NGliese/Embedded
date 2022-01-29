@@ -1,7 +1,8 @@
 
-[![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ngliese.github.io/docs/html/)
-[![CodeCoverage](https://img.shields.io/badge/CodeCoverage-gcov-brightgreen)](https://ngliese.github.io/coverage/html/)
-[![Complexity](https://img.shields.io/badge/Complexity-lizard-red)](https://ngliese.github.io/complexity/complexity.html)
+[![Documentation | Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ngliese.github.io/docs/html/)
+[![CodeCoverage | gcov](https://img.shields.io/badge/CodeCoverage-gcov-brightgreen)](https://ngliese.github.io/coverage/html/)
+[![Complexity | Lizard](https://img.shields.io/badge/Complexity-lizard-red)](https://ngliese.github.io/complexity/complexity.html)
+[![Static analysis | CppCheck ](https://img.shields.io/badge/Complexity-lizard-red)](https://ngliese.github.io/cppcheck/html/index.html)
 # Embedded Repo
 This repository is a collection of hobby projects by Nikolaj Gliese Pedersen.
 
