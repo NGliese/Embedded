@@ -8,7 +8,9 @@
 */
 
 #include <ADC_API_ESP32.hpp>
+#include <ActiveCurrentSensor.hpp>
 #include <DogFeederDoor.hpp>
+#include <ErrorCodeParser.hpp>
 #include <MG996R.hpp>
 #include <MQTT_Message.hpp>
 #include <Maintainer.hpp>
@@ -20,9 +22,10 @@
 #include <iostream>
 #include <jsmn_object.hpp>
 
-#include <ActiveCurrentSensor.hpp>
-
 #include <esp_sleep.h> // sleep
+
+const wifi_conf_t wifi_conf{.ssid = WIFI_SSID_LOCAL, .password = WIFI_PWD_LOCAL};
+
 void test_mqtt()
 {
 	/* -------------- INIT WIFI --------------------- */
@@ -54,12 +57,8 @@ void test_mqtt()
 void simple_connect()
 {
 	/* -------------- INIT WIFI --------------------- */
-	wifi_conf_t m_conf;
-#if 1
-	m_conf.ssid = WIFI_SSID_LOCAL;
-	m_conf.password = WIFI_PWD_LOCAL; // no one can see this password :)
-#endif
-	static WiFi_API m_api{m_conf};
+
+	static WiFi_API m_api{wifi_conf};
 
 	if(m_api.connect() != GE_OK)
 	{
@@ -569,6 +568,7 @@ void init_motor_and_open()
 	motor_conf.name = "motor";
 	DogFeederDoor m_door{motor_conf};
 	General_Error::printError("Open door", m_door.open());
+	Timeservice::wait_sec(5);
 }
 
 void init_motor_and_close()
@@ -585,6 +585,7 @@ void init_motor_and_close()
 	motor_conf.name = "motor";
 	DogFeederDoor m_door{motor_conf};
 	General_Error::printError("Close door", m_door.close());
+	Timeservice::wait_sec(5);
 }
 
 general_err_t run_everything()
@@ -615,23 +616,25 @@ general_err_t run_everything()
 		std::cout << " converted value is : <" << val << ">\n";
 		if(val == DOOR_CLOSE)
 		{
-			rtc_noinit_pwm_data = 2.5;
 			if(OLD_VALUE != val)
 			{
 				m_sensor.activateQueue();
 				std::cout << " ... Closing door ... \n";
 				init_motor_and_close();
 			}
+			// update rtc value
+			rtc_noinit_pwm_data = 2.5;
 		}
 		if(val == DOOR_OPEN)
 		{
-			rtc_noinit_pwm_data = 13;
 			if(OLD_VALUE != val)
 			{
 				m_sensor.activateQueue();
 				std::cout << " ... Opening door ... \n";
 				init_motor_and_open();
 			}
+			// update rtc value
+			rtc_noinit_pwm_data = 13;
 		}
 		OLD_VALUE = val;
 	}
@@ -645,11 +648,16 @@ general_err_t run_everything()
 
 void test_sleep_and_everything()
 {
+	mqtt_api_v2 mqtt;
+	MQTT_Message msg{{db_id::DOGFEEDER_ERROR_CODE, 1}};
 	switch(esp_sleep_get_wakeup_cause())
 	{
 		case ESP_SLEEP_WAKEUP_TIMER: {
 			std::cout << "woke up from deep sleep ... @time : <" << (int)Timeservice::getTimeNow()
 					  << "\n";
+			ErrorCodeParser::postToMqtt(db_id::DOGFEEDER_ERROR_CODE, GE_OK,
+										"Just woke up running sequence");
+			Timeservice::wait_sec(5);
 			auto err = run_everything();
 			if(err != GE_OK)
 			{
@@ -659,17 +667,22 @@ void test_sleep_and_everything()
 			break;
 		}
 		case ESP_SLEEP_WAKEUP_UNDEFINED:
-		default:
+		default: {
 			printf("Not a deep sleep reset\n");
+
+			ErrorCodeParser::postToMqtt(db_id::DOGFEEDER_ERROR_CODE, GE_NO_DATA,
+										"Just rebooted no data available");
+			Timeservice::wait_sec(5);
+		}
 	}
-	const int wakeup_time_sec = 15 * 60;
+	const int wakeup_time_sec = 30 * 60;
+	//	const int wakeup_time_sec = 60;
 	std::cout << " enabling timer wake-up from deep sleep, sleeping for  <" << wakeup_time_sec
 			  << "> sec \n";
 	esp_sleep_enable_timer_wakeup(wakeup_time_sec * 1000000);
 
 	esp_deep_sleep_start();
 }
-const wifi_conf_t wifi_conf{.ssid = WIFI_SSID_LOCAL, .password = WIFI_PWD_LOCAL};
 
 #ifdef __cplusplus
 extern "C" {
@@ -684,6 +697,8 @@ void app_main(void)
 {
 	static Maintainer m_maintain{wifi_conf};
 	m_maintain.start();
+
+	// simple_connect();
 	// test_door();
 	// test_door_init_open();
 	// test_door_init_open_deepSleep();

@@ -94,6 +94,11 @@ general_err_t Timeservice::wait_ms(size_t ms_to_wait)
  */
 uint64_t Timeservice::getTimeNow() noexcept
 {
+#ifdef __UNITTEST__
+#ifdef __WITH_MOCK_TIME__ // can be used to overwrite the timestamp in unit tests
+	return 1000UL;
+#endif
+#endif
 	return std::chrono::duration_cast<std::chrono::milliseconds>(
 			   std::chrono::system_clock::now().time_since_epoch())
 		.count();

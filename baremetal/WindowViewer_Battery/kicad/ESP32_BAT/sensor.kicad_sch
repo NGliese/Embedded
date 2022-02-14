@@ -1,0 +1,16 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 45d6ca36-34ad-4049-a6e3-f78c9835bc7a)
+
+  (paper "A4")
+
+  (title_block
+    (title "SENSOR")
+    (date "2022-02-14")
+    (rev "1.0")
+  )
+
+  (lib_symbols
+  )
+
+)

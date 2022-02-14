@@ -29,6 +29,7 @@ target_link_libraries(${LIBNAME}_tests PRIVATE  CppUTest CppUTestExt LibraryModu
 ###############################################################
 target_sources(${LIBNAME}_tests PRIVATE test_main.cpp
 test/ge_test.cpp
+test/ErrorCodeParser_test.cpp
 )
 ###############################################################
 #															  #

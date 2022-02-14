@@ -1,6 +1,6 @@
 import Card from '../components/Card'
 import { Outlet, Link } from "react-router-dom";
-
+import React, { useState,useEffect } from 'react';
 
 function Home() {
 
