@@ -140,6 +140,7 @@ void Image_Helper_v2::reportAnalysis(void)
 	str += HANDLER::to_Postgres_Subject(
 		MSG{{map.at(db_id::CCTV01_MOG2_CC), 0}, {outliers.background1.data.maxConnected, time}});
 	str += HANDLER::postgres_append();
+	/*
 	str += HANDLER::to_Postgres_Subject(
 		MSG{{map.at(db_id::CCTV01_HEIGHT), 0}, {outliers.background1.data.ellipse.height, time}});
 	str += HANDLER::postgres_append();
@@ -156,6 +157,7 @@ void Image_Helper_v2::reportAnalysis(void)
 		HANDLER::to_Postgres_Subject(MSG{{map.at(db_id::CCTV01_AMOUNT), 0},
 										 {outliers.background1.data.amount_of_connections, time}});
 	str += HANDLER::postgres_append();
+	*/
 
 	str += HANDLER::to_Postgres_Subject(
 		MSG{{map.at(db_id::CCTV01_KNN_CC), 0}, {outliers.background2.data.maxConnected, time}});

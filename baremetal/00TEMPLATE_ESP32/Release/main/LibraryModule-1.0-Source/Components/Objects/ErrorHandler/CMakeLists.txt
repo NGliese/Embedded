@@ -9,6 +9,7 @@ set(LIBNAME ERRORHANDLER)
 
 
 set(COSTUM_SRC_FILES ${COSTUM_SRC_FILES} "${CMAKE_CURRENT_LIST_DIR}/src/General_Error.cpp;" CACHE STRING "avaliable build src" FORCE)
+set(COSTUM_SRC_FILES ${COSTUM_SRC_FILES} "${CMAKE_CURRENT_LIST_DIR}/src/ErrorCodeParser.cpp;" CACHE STRING "avaliable build src" FORCE)
 
 set(COSTUM_INC_FILES ${COSTUM_INC_FILES} "${CMAKE_CURRENT_LIST_DIR}/include" CACHE STRING "avaliable build inc" FORCE)
 

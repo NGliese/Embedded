@@ -99,7 +99,12 @@ enum class db_id
 	CCTV01_AREA,
 	CCTV01_ASPECT,
 	CCTV01_AMOUNT,
-	CCTV01_ALARM
+	CCTV01_ALARM,
+	/* DOGFEEDER */
+	DOGFEEDER_CURRENT_SENSOR,
+	DOGFEEDER_DOOR_SIGNAL,
+	DOGFEEDER_ERROR_CODE,
+	DOGFEEDER_ACTUATOR_SET_POINT,
 };
 
 static const std::map<db_id, uint32_t> map{
@@ -139,14 +144,18 @@ static const std::map<db_id, uint32_t> map{
 	{db_id::CCTV01_DEBUG3, 34},
 	{db_id::CCTV01_DEBUG4, 35},
 	{db_id::CCTV01_DEBUG5, 36},
-	{db_id::CCTV01_KNN_CC, 37},
-	{db_id::CCTV01_MOG2_CC, 38},
+	{db_id::CCTV01_KNN_CC, 102},
+	{db_id::CCTV01_MOG2_CC, 103},
 	{db_id::CCTV01_HEIGHT, 39},
 	{db_id::CCTV01_WIDTH, 40},
 	{db_id::CCTV01_AREA, 41},
 	{db_id::CCTV01_ASPECT, 42},
 	{db_id::CCTV01_AMOUNT, 43},
-	{db_id::CCTV01_ALARM, 44},
+	{db_id::CCTV01_ALARM, 108},
+	{db_id::DOGFEEDER_DOOR_SIGNAL, 104},
+	{db_id::DOGFEEDER_ERROR_CODE, 105},
+	{db_id::DOGFEEDER_CURRENT_SENSOR, 106},
+	{db_id::DOGFEEDER_ACTUATOR_SET_POINT, 107},
 };
 
 #endif /* COMPONENTS_DATA_PROTOCOL_INCLUDE_ID_BASE_HPP_ */

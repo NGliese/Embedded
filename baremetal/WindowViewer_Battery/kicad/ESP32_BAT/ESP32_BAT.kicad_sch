@@ -11,8 +11,88 @@
   )
 
   (lib_symbols
+    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+      (property "Reference" "H" (id 0) (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "MountingHole" (id 1) (at 0 3.175 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "mounting hole" (id 4) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Mounting Hole without connection" (id 5) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "MountingHole*" (id 6) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "MountingHole_0_1"
+        (circle (center 0 0) (radius 1.27)
+          (stroke (width 1.27) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+      )
+    )
   )
 
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 151.13 53.34 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 1c069984-2fce-4f70-ba4f-87967bf2ddec)
+    (property "Reference" "H3" (id 0) (at 153.67 52.0699 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 153.67 54.6099 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965" (id 2) (at 151.13 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 151.13 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 151.13 44.45 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 47b1df4a-c084-4591-b8e3-97fd68b9682f)
+    (property "Reference" "H2" (id 0) (at 153.67 43.1799 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 153.67 45.7199 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965" (id 2) (at 151.13 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 151.13 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 151.13 35.56 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 5173610c-baff-4ec3-9a9a-5154f96f17d0)
+    (property "Reference" "H1" (id 0) (at 153.67 34.2899 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 153.67 36.8299 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965" (id 2) (at 151.13 35.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 151.13 35.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
 
   (sheet (at 208.28 64.77) (size 36.83 35.56) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
@@ -58,6 +138,9 @@
   )
 
   (symbol_instances
+    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/91e47082-d70a-4eec-9f53-bb40dcd6f202"
+      (reference "#PWR01") (unit 1) (value "+3.3V") (footprint "")
+    )
     (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/1b4ae642-e081-470c-a428-1fd2c8712305"
       (reference "#PWR0101") (unit 1) (value "+5V") (footprint "")
     )
@@ -160,7 +243,7 @@
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/4457130d-b077-4388-b42c-c74af2d9dee4"
       (reference "#PWR0134") (unit 1) (value "GND") (footprint "")
     )
-    (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/18d57c17-b777-46d5-9adc-709c48da03df"
+    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/c8437c88-e613-4a94-9ec9-19c73e6d097b"
       (reference "#PWR0135") (unit 1) (value "GND") (footprint "")
     )
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/f5e2dfce-4d91-46a9-81cb-ead5eec59e3e"
@@ -211,6 +294,15 @@
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/f8f26802-fdca-4753-9ddf-f30eb6c2e08d"
       (reference "D2") (unit 1) (value "D_Schottky") (footprint "gliese:CUS10S30")
     )
+    (path "/5173610c-baff-4ec3-9a9a-5154f96f17d0"
+      (reference "H1") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965")
+    )
+    (path "/47b1df4a-c084-4591-b8e3-97fd68b9682f"
+      (reference "H2") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965")
+    )
+    (path "/1c069984-2fce-4f70-ba4f-87967bf2ddec"
+      (reference "H3") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965")
+    )
     (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/bb5bbef4-d651-462e-9e0e-058e4a59c047"
       (reference "J1") (unit 1) (value "Conn_01x04_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
@@ -219,6 +311,9 @@
     )
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/bac4e38b-6354-45c9-8839-342ac2255949"
       (reference "J3") (unit 1) (value "Conn_01x03_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    )
+    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/ccd78811-1189-45b6-94e4-254f617ef160"
+      (reference "J4") (unit 1) (value "Conn_01x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/bbb382be-4b6a-4fc6-91df-62dade4a51cb"
       (reference "Q1") (unit 1) (value "BC817") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -259,8 +354,8 @@
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/186393a1-874b-438b-b168-ad06921a7cfa"
       (reference "R12") (unit 1) (value "0") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
-    (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/c3affdc5-1ece-4fd3-83d5-c8e49ec7e1e9"
-      (reference "R13") (unit 1) (value "0") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/9c0c976b-7fa2-4d60-a146-ac3209f4fa09"
+      (reference "R13") (unit 1) (value "10k") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/1cbc8570-6077-4a0c-8f74-7bf0dc51b0ae/83128908-7808-4723-b26c-8992131a5841"
       (reference "R14") (unit 1) (value "100k") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
@@ -290,16 +385,16 @@
       (reference "TP7") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
     )
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/2b3b4a51-7e07-4b91-ab71-ab278123abc8"
-      (reference "TP8") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
+      (reference "TP8") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/d6fb4ff4-8786-4de7-8762-c0da97e9cfee"
-      (reference "TP9") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
+      (reference "TP9") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/331c21ba-4768-48bb-b623-edb11000bbd8"
-      (reference "TP10") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
+      (reference "TP10") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/054de54e-529a-4351-8223-07ae05e99bcf"
-      (reference "TP11") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
+      (reference "TP11") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/279243f8-1dfd-44f5-ac4e-245243c70d45"
       (reference "TP12") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
@@ -307,8 +402,8 @@
     (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/a665320e-dea1-40a2-a343-1caf83c22304"
       (reference "TP13") (unit 1) (value "TestPoint") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
     )
-    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/b5c37567-3300-47fd-b18f-244f23783d3c"
-      (reference "U1") (unit 1) (value "ESP32-S2-WROVER") (footprint "RF_Module:ESP32-S2-WROVER")
+    (path "/ac57bf13-f9c0-4cc2-ad04-7a6ba98578e1/baf9ecc9-2c9f-45e7-abd3-125411520de6"
+      (reference "U1") (unit 1) (value "ESP32-WROOM-32") (footprint "RF_Module:ESP32-WROOM-32")
     )
     (path "/33355e7a-bdad-4c5e-9a72-f8e88287314d/2a688f85-180c-4d51-b28f-aaced3e18466"
       (reference "U2") (unit 1) (value "AP7365") (footprint "Package_SO:TSOP-5_1.65x3.05mm_P0.95mm")
