@@ -7,7 +7,7 @@ The block diagram below shows the achitecute. The aim is to have a sensor-thread
 and also to the databroker for further analysis.
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/blockdiagram.png" width="400" height="600">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/blockdiagram.png" width="600" height="600">
 </p>
 
 ## Software achitecture
@@ -18,7 +18,7 @@ The databroker is responsible of updating the new_data flag as well as posting q
 Below is a dataflow diagram indicating the expected memory usage for each task.
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/dataflow.png" width="400" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/dataflow.png" width="600" height="600">
 </p>
 
 
@@ -26,5 +26,5 @@ Below is a dataflow diagram indicating the expected memory usage for each task.
 Seen below is raw data aquired by the adc on the esp32 and posted through the mqtt service to grafana. 
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/grafana_waterRunning.png" width="400" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/grafana_waterRunning.png" width="600" height="500">
 </p>
