@@ -26,5 +26,5 @@ Below is a dataflow diagram indicating the expected memory usage for each task.
 Seen below is raw data aquired by the adc on the esp32 and posted through the mqtt service to grafana. 
 
 <p align="center">
-  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/grafana_waterRunning.png" width="600" height="500">
+  <img src="https://github.com/NGliese/Embedded/blob/master/baremetal/WaterMeter/docs/img/grafana_waterRunning.png" width="900" height="500">
 </p>
