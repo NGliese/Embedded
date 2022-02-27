@@ -8,13 +8,13 @@
 */
 
 #include <ADC_API_ESP32.hpp>
+#include <DistanceSensorController.hpp>
 #include <GPIO_API.hpp>
 #include <MQTT_Message.hpp>
 #include <Maintainer.hpp>
 #include <Timeservice.hpp>
 #include <iostream>
 #include <mqtt_api_v2.hpp>
-
 void test_adc()
 {
 	ADC_API_ESP32::config adc_conf;
@@ -105,13 +105,48 @@ void app_main(void);
 }
 #endif
 
+constexpr size_t AMOUNT_OF_MEASUREMENTS = 300;
+constexpr size_t WAIT_DELAY = 100;
+constexpr SensorControllerBase::init_conf DEFAULT_CONF{
+	.buffer_raw_conf{.entity_id = db_id::WATERSTATION_RAW_ADC,
+					 .buffer_size = AMOUNT_OF_MEASUREMENTS},
+	.buffer_external_conf{.entity_id = db_id::WATERSTATION_RAW_ADC,
+						  .buffer_size = AMOUNT_OF_MEASUREMENTS},
+	.task_delay = 5U,
+	.error_code_id = db_id::WATERSTATION_ERROR_CODE,
+};
+
+const ADC_API_ESP32::config DEFAULT_ADC{
+
+	.name = "adc_test",
+	.samples = 64U,
+	.channel = ADC1_CHANNEL_6, // GPIO34
+	.vRef = 1114UL,
+
+};
+
+void sensor_controller_test()
+{
+	DistanceSensorController m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC}};
+
+	m_controller.start();
+
+	for(;;)
+	{
+		std::cout << " testing sensor_controller_test.... \n";
+		Timeservice::wait_sec(10);
+	}
+}
+
 void app_main(void)
 {
 	Maintainer m_maintain{wifi_conf};
 	m_maintain.start();
 
-	test_adc();
+	// test_adc();
 	// measure_and_send();
+
+	sensor_controller_test();
 	for(;;)
 	{
 		std::cout << "Running a test ! \n ";

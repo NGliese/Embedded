@@ -9,6 +9,7 @@ add_subdirectory(Actuator)
 add_subdirectory(AnalysisTools) #
 
 add_subdirectory(Connector)
+add_subdirectory(Controller)
 
 add_subdirectory(Interfaces)
 

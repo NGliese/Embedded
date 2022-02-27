@@ -15,7 +15,7 @@ add_subdirectory(PWMBase)
 add_subdirectory(QueryBase)
 add_subdirectory(SensorBase)
 add_subdirectory(WatchdogBase)
-
+add_subdirectory(SensorControllerBase)
 
 
 
