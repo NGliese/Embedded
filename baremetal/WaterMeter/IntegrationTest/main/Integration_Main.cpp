@@ -75,7 +75,7 @@ void measure_and_send()
 		m_msg.clear(); // make sure it is cleared
 		for(size_t i = 0; i < AMOUNT_OF_MEASUREMENTS; i++)
 		{
-			m_msg.addData(m_adc.measureValue());
+			m_msg.addData(Timeservice::getTimeNow(), m_adc.measureValue());
 			Timeservice::wait_ms(WAIT_DELAY);
 		}
 		m_mqtt.publish("mqtt/burst_msg", m_msg.toString());
@@ -110,8 +110,8 @@ void app_main(void)
 	Maintainer m_maintain{wifi_conf};
 	m_maintain.start();
 
-	//	test_adc();
-	measure_and_send();
+	test_adc();
+	// measure_and_send();
 	for(;;)
 	{
 		std::cout << "Running a test ! \n ";
