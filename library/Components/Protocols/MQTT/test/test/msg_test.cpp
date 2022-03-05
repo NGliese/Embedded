@@ -79,3 +79,33 @@ TEST(MSG_GRP, append_a_msg)
 
 	std::cout << " test string : msg buffer " << str << "\n";
 }
+
+TEST(MSG_GRP, copy_a_message)
+{
+	MQTT_Message msg1{id, 3}, msg2{id, 3}, msg3{id, 3};
+	msg1.addData(120);
+	msg2.addData(160);
+	msg3.addData(180);
+
+	msg1.append(msg2);
+	msg1.append(msg3);
+
+	msg1.copyTo(msg2);
+
+	LONGS_EQUAL(msg2.getBufferSize(), msg1.getBufferSize());
+}
+TEST(MSG_GRP, copy_a_message_wrongly)
+{
+	MQTT_Message msg1{15, 3}, msg2{id, 3}, msg3{id, 3};
+	msg1.addData(120);
+	msg2.addData(160);
+	msg3.addData(180);
+
+	msg1.append(msg2);
+	msg1.append(msg3);
+
+	auto err = msg1.copyTo(msg2);
+
+	CHECK_EQUAL(GE_OVERFLOW, err);
+	// LONGS_EQUAL(msg2.getBufferSize(), msg1.getBufferSize());
+}

@@ -72,25 +72,25 @@ class SensorControllerBase : public Task
 	inline void setWantDataTrue()
 	{
 		setWantData(true);
-	}
-	inline void setDataReadyFalse()
-	{
 		setDataReady(false);
 	}
+
 	inline const auto& getSafeBuffer()
 	{
 		return m_buffer_external;
+	}
+	inline const bool isDataReady()
+	{
+		return m_data_ready_flag;
 	}
 
   protected:
 	inline void setDataReadyTrue()
 	{
 		setDataReady(true);
-	}
-	inline void setWantDataFalse()
-	{
 		setWantData(false);
 	}
+
 	general_err_t postData(const MQTT_Message& message,
 						   const std::string& topic = "mqtt/burst_msg");
 	inline void postError(const general_err_t& err, const std::string& error_message)

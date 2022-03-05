@@ -306,26 +306,21 @@ void FreeRTOS::Semaphore::setName(const std::string& name)
 	m_name = name;
 } // setName
 
-FreeRTOS::Queue::Queue() {}
-
-FreeRTOS::Queue::~Queue() {}
+// FreeRTOS::Queue::Queue() {}
 /**
  * @brief Initialize the queue.
  * @param [in] amount of items
  * @param [in] size of one item
  */
-int FreeRTOS::Queue::initialize(size_t amount_of_items, size_t size_of_item)
+FreeRTOS::Queue::Queue(size_t amount_of_items, size_t size_of_item)
 {
 #ifdef __ESP32__
 	m_handle = xQueueCreate(amount_of_items, size_of_item);
 #endif
-	return 0;
 }
-/**
- * @brief Send data to the queue
- * @param [in] item willing to send
- * @param [in] delay willing to wait
- */
+
+FreeRTOS::Queue::~Queue() {}
+
 int FreeRTOS::Queue::send(const void* const item_to_send, size_t delay)
 {
 	if(m_handle == 0)
@@ -344,11 +339,7 @@ int FreeRTOS::Queue::send(const void* const item_to_send, size_t delay)
 	// ok
 	return 0;
 }
-/**
- * @brief Recieve data from the queue
- * @param [out] buffer with recieved item
- * @param [in] delay willing to wait
- */
+
 int FreeRTOS::Queue::recieve(void* pvBuffer, size_t delay)
 {
 	if(m_handle == 0)

@@ -119,6 +119,12 @@ class MQTT_Message
 	{
 		return m_buffer_size;
 	}
+	auto getEntityId()
+	{
+		return m_entity_id;
+	}
+
+	general_err_t copyTo(MQTT_Message& message);
 
   private:
 	const uint64_t m_entity_id;
