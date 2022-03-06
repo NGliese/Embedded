@@ -71,8 +71,8 @@ void System_Overall::run(void)
 		{
 			m_helper.reportAnalysis();
 			m_helper.reportImages(raw, edge, visual);
-			if(Timebased_rules::isItNight())
-			// if(Timebased_rules::isItVacation() or Timebased_rules::isItNight())
+			// if(Timebased_rules::isItNight())
+			if(Timebased_rules::isItVacation() or Timebased_rules::isItNight())
 			{
 				m_helper.reportAlarm();
 			}

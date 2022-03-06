@@ -119,7 +119,7 @@ general_err_t GPIO_API::setHigh()
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<< GPIO_API::setHigh << ");
 #endif
-
+	is_high = true;
 	return m_hal.setValue(m_pin, GPIO_HAL::io_val_t::HIGH);
 }
 
@@ -147,7 +147,7 @@ general_err_t GPIO_API::setLow()
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<< GPIO_API::setLow << ");
 #endif
-
+	is_high = true;
 	return m_hal.setValue(m_pin, GPIO_HAL::io_val_t::LOW);
 }
 /**
@@ -164,8 +164,7 @@ bool GPIO_API::isHigh() const
 {
 	if(is_Output)
 	{
-		std::cout << "this is an output, we cannot read the value from it \n";
-		return false;
+		return is_high;
 	}
 
 	return m_hal.getValue(m_pin) == GPIO_HAL::io_val_t::HIGH ? true : false;
@@ -185,8 +184,7 @@ bool GPIO_API::isLow() const
 {
 	if(is_Output)
 	{
-		std::cout << "this is an output, we cannot read the value from it \n";
-		return false;
+		return is_high;
 	}
 
 	return m_hal.getValue(m_pin) == GPIO_HAL::io_val_t::LOW ? true : false;

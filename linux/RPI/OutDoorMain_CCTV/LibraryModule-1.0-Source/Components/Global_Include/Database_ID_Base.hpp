@@ -105,6 +105,11 @@ enum class db_id
 	DOGFEEDER_DOOR_SIGNAL,
 	DOGFEEDER_ERROR_CODE,
 	DOGFEEDER_ACTUATOR_SET_POINT,
+
+	/* WaterStation */
+	WATERSTATION_RAW_ADC,
+	WATERSTATION_COUNTER,
+	WATERSTATION_ERROR_CODE,
 };
 
 static const std::map<db_id, uint32_t> map{
@@ -156,6 +161,11 @@ static const std::map<db_id, uint32_t> map{
 	{db_id::DOGFEEDER_ERROR_CODE, 105},
 	{db_id::DOGFEEDER_CURRENT_SENSOR, 106},
 	{db_id::DOGFEEDER_ACTUATOR_SET_POINT, 107},
+
+	{db_id::WATERSTATION_RAW_ADC, 109},
+	{db_id::WATERSTATION_COUNTER, 111},
+	{db_id::WATERSTATION_ERROR_CODE, 110},
+
 };
 
 #endif /* COMPONENTS_DATA_PROTOCOL_INCLUDE_ID_BASE_HPP_ */

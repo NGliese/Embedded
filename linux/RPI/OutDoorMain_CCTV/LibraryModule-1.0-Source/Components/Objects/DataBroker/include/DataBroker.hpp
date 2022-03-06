@@ -99,7 +99,6 @@ class Queue_MOCK : public FreeRTOS::Queue
 	/* data */
 	bool m_hasBeenCalled = false;
 	size_t m_amountOfCalls = 0;
-	size_t m_dataCalledWith = 0;
 
   public:
 	Queue_MOCK(size_t amount_of_items, size_t size_of_item)
@@ -113,13 +112,9 @@ class Queue_MOCK : public FreeRTOS::Queue
 	{
 		return m_amountOfCalls;
 	}
-	auto dataCalledWith()
-	{
-		return m_dataCalledWith;
-	}
 	int send(const void* const item_to_send, size_t delay) override
 	{
-		m_dataCalledWith = *(static_cast<const std::atomic<size_t>*>(item_to_send));
+		// static_cast<std::atomic<size_t>>(item_to_send);
 		m_hasBeenCalled = true;
 		m_amountOfCalls++;
 	}
