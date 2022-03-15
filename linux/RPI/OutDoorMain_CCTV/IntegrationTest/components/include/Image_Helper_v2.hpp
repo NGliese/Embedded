@@ -140,6 +140,7 @@ class Image_Helper_v2
 	void reportImages(const cv::Mat& raw, const cv::Mat& raw_ROI, const cv::Mat& visual);
 
 	void saveImage(const cv::Mat& image, const std::string& name, const std::string& path);
+	void save2Python(const cv::Mat& image, const std::string& name, const std::string& path);
 	void reset();
 
 	inline void incrementImageCaptureSuccess(void)

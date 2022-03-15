@@ -80,3 +80,16 @@ TEST(TEMP_GRP, run_main_with_data)
 	LONGS_EQUAL(1, m_queue.amountOfCalls());
 	LONGS_EQUAL(0xdeadbeef, m_queue.dataCalledWith());
 }
+
+// test init
+TEST(TEMP_GRP, run_main_with_data_andflag)
+{
+	Queue_MOCK m_queue{3, sizeof(int)};
+	m_broker.addQueue(&m_queue);
+	// do something
+	m_sensorFriend.setDataReady();
+	CHECK_EQUAL(GE_OK, m_friend.runMain());
+	CHECK(m_queue.hasBeenCalled());
+	LONGS_EQUAL(1, m_queue.amountOfCalls());
+	LONGS_EQUAL(0xdeadbeef, m_queue.dataCalledWith());
+}

@@ -35,6 +35,11 @@
 #define MOG2_MAX_AREA (20000)
 //#define DEBUG // default uncommeted
 
+#define IMAGE_PATH_RAW ("/media/pi/RPI_ROBOT/Lepton_img/Raw/")
+#define IMAGE_PATH_COLOR ("/media/pi/usb/CCTV/MEGA/color/")
+
+#define IMAGE_PATH_PYTHON ("/media/pi/usb/CCTV/MEGA/python/")
+
 #ifdef DEBUG
 static const char* LOG_TAG = "Image_Helper_v2";
 #endif
@@ -167,13 +172,11 @@ void Image_Helper_v2::reportAnalysis(void)
 	m_interface.post(str);
 }
 
-#define IMAGE_PATH_RAW ("/media/pi/RPI_ROBOT/Lepton_img/Raw/")
-#define IMAGE_PATH_COLOR ("/media/pi/usb/CCTV/MEGA/color/")
-
 void Image_Helper_v2::reportImages(const cv::Mat& raw, const cv::Mat& raw_ROI,
 								   const cv::Mat& visual)
 {
 	saveImage(visual, "visual", IMAGE_PATH_COLOR);
+	save2Python(visual, "Python_Test", IMAGE_PATH_PYTHON);
 }
 /**
  * @brief doPreproccessing
@@ -267,6 +270,15 @@ general_err_t Image_Helper_v2::setDataToValid(const timeval& timeOfCapture)
 #endif
 
 	return GE_OK;
+}
+
+void Image_Helper_v2::save2Python(const cv::Mat& image, const std::string& name,
+								  const std::string& path)
+{
+	std::string full_path;
+	full_path = path + name + ".png";
+	std::cout << "writing to path : " << full_path << "\n";
+	cv::imwrite(full_path.c_str(), image);
 }
 
 void Image_Helper_v2::saveImage(const cv::Mat& image, const std::string& name,

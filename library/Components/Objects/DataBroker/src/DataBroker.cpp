@@ -26,6 +26,19 @@ constexpr size_t QUEUE_SEND_MAX_TIMOUT = 100;
 #ifdef DEBUG
 static const char* LOG_TAG = "DataBroker";
 #endif
+general_err_t DataBroker::addServiceFlag(std::atomic<bool>* flag)
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
+#endif
+	// Executable code:
+	m_flag_array.push_back(flag);
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
+#endif
+
+	return GE_OK;
+}
 general_err_t DataBroker::addQueue(FreeRTOS::Queue* queue)
 {
 #ifdef DEBUG
@@ -54,6 +67,25 @@ general_err_t DataBroker::main_function()
 		std::for_each(
 			m_queue_array.begin(), m_queue_array.end(),
 			[&inUseCoder](FreeRTOS::Queue* ele) { ele->send(&inUseCoder, QUEUE_SEND_MAX_TIMOUT); });
+
+		/**
+		 * @brief check all the available flags to see if any of the
+		 * services are in use. If they are in use, wait 500ms and poll again
+		 * 	- we are assuming that we will hit a break at some point.
+		 */
+		bool isActive = false;
+		do
+		{
+			std::for_each(m_flag_array.begin(), m_flag_array.end(),
+						  [&isActive](std::atomic<bool>* ele) {
+							  if(*ele)
+							  {
+								  isActive = true;
+							  }
+						  });
+			Timeservice::wait_ms(500);
+		} while(isActive);
+
 		// wait for each service to be executed
 #if 0
 		while(inUseCounter > 0)

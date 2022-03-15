@@ -35,6 +35,7 @@
 /*-----------------------------------------------------------------------------*/
 
 #include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
+
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 #include "../../../RTOS/FreeRTOS/include/FreeRTOS.h"
 #include "../../../RTOS/FreeRTOS/include/Task.h"
@@ -60,12 +61,14 @@ class DataBroker final : public Task
 		: m_delay_ms{delay_ms}, m_sensor{sensor} {};
 	~DataBroker(){};
 	general_err_t addQueue(FreeRTOS::Queue* queue);
+	general_err_t addServiceFlag(std::atomic<bool>* flag);
 
   private:
 	void run(void* data) override;
 	general_err_t main_function();
 	general_err_t pushQueues();
 	std::vector<FreeRTOS::Queue*> m_queue_array;
+	std::vector<std::atomic<bool>*> m_flag_array;
 	const size_t m_delay_ms;
 	SensorControllerBase& m_sensor;
 };

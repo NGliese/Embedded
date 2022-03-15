@@ -54,7 +54,7 @@
  +------------------------------------------------------------------------------*/
 
 template<typename T, db_id ErrorID>
-class ServiceBase : public Task
+class ServiceBase
 {
 #ifdef __UNITTEST__
 	friend class friend_ServiceBase;
@@ -142,8 +142,9 @@ class ServiceBase : public Task
 		}
 	}
 
-  private:
 	std::atomic<bool> m_isActive;
+
+  private:
 	FreeRTOS::Queue m_queue;
 	T& m_buffer;
 	mqtt_api_v2 m_mqtt;

@@ -49,23 +49,18 @@ general_err_t DataBroker::main_function()
 	if(m_sensor.isDataReady())
 	{
 		// auto& buffer = m_sensor.getSafeBuffer();
-		std::atomic<size_t> inUseCounter;
-		inUseCounter = 0; // reset
-		std::for_each(m_queue_array.begin(), m_queue_array.end(),
-					  [&inUseCounter](FreeRTOS::Queue* ele) {
-						  // we *know* that the buffer is in use for each service
-						  // therefor lets make it the databrokers responsible for
-						  // incrementing the inUseCounter and the services'
-						  // responsible to decrement it
-						  inUseCounter++;
-						  ele->send(&inUseCounter, QUEUE_SEND_MAX_TIMOUT);
-					  });
+		std::atomic<size_t> inUseCoder;
+		inUseCoder = 0xdeadbeef; // reset
+		std::for_each(
+			m_queue_array.begin(), m_queue_array.end(),
+			[&inUseCoder](FreeRTOS::Queue* ele) { ele->send(&inUseCoder, QUEUE_SEND_MAX_TIMOUT); });
 		// wait for each service to be executed
+#if 0
 		while(inUseCounter > 0)
 		{
 			Timeservice::wait_ms(500);
 		}
-
+#endif
 		return GE_OK;
 	}
 	/*
