@@ -20,6 +20,7 @@ add_subdirectory(Protocols)
 add_subdirectory(RTOS)
 
 add_subdirectory(Sensor)
+add_subdirectory(Service)
 
 add_subdirectory(User)
 

@@ -83,18 +83,7 @@ class GPIO_API
 
 	inline void toggle()
 	{
-		if(!is_Output)
-		{
-			return;
-		}
-		if(isHigh())
-		{
-			setLow();
-		}
-		else
-		{
-			setHigh();
-		}
+		isHigh() == true ? setLow() : setHigh();
 	}
 	general_err_t setToInput();
 	general_err_t setToOutput();

@@ -69,11 +69,12 @@ class ActiveCurrentSensor final : public Task
 
   private:
 	general_err_t main_function(void);
-	FreeRTOS::Queue m_queue;
+
 	ADC_API_ESP32 m_adc;
 	MQTT_Message m_msg;
 	mqtt_api_v2 m_mqtt;
 	std::atomic<bool> m_isRunning;
+	FreeRTOS::Queue m_queue;
 };
 
 /*------------------------------------------------------------------------------+

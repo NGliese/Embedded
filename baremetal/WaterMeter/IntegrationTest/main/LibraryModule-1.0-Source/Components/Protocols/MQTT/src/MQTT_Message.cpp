@@ -228,3 +228,30 @@ general_err_t MQTT_Message::append(const MQTT_Message& msg)
 
 	return GE_OK;
 }
+
+general_err_t MQTT_Message::copyTo(MQTT_Message& message) const
+{
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, ">> MQTT_Message::fcn >> ");
+#endif
+	if(this->getMaxAllowedBufferSize() != message.getMaxAllowedBufferSize())
+	{
+		return GE_OVERFLOW;
+	}
+	if(this->getEntityId() != message.getEntityId())
+	{
+		return GE_OVERFLOW;
+	}
+	// Executable code:
+	message.clear();
+	for(const auto& ele : this->getData())
+	{
+		// for each element in input message, call addData(...) to append internal buffer
+		message.addData(ele.first, ele.second);
+	}
+#ifdef DEBUG
+	LOG_PRINT_INFO(LOG_TAG, "<<  MQTT_Message::fcn << ");
+#endif
+
+	return GE_OK;
+}

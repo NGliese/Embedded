@@ -28,9 +28,10 @@ static const char* LOG_TAG = "ActiveCurrentSensor";
 
 ActiveCurrentSensor::ActiveCurrentSensor(const ADC_API_ESP32::config& adc_conf,
 										 const MQTT_Message::msg_conf_t& msg_conf)
-	: m_adc{adc_conf}, m_msg{msg_conf}, m_isRunning{false}
+	: m_adc{adc_conf}, m_msg{msg_conf}, m_isRunning{false}, m_queue{1,
+																	recieved_queue_message.size()}
 {
-	m_queue.initialize(1, recieved_queue_message.size());
+	// m_queue.initialize(1, recieved_queue_message.size());
 }
 ActiveCurrentSensor::~ActiveCurrentSensor() {}
 

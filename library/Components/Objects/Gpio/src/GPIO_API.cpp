@@ -27,7 +27,7 @@
 
 #include "../include/GPIO_API.hpp"
 
-//#define DEBUG // default uncommeted
+#define DEBUG // default uncommeted
 
 #ifdef DEBUG
 static const char* LOG_TAG = "GPIO_API";
@@ -147,7 +147,7 @@ general_err_t GPIO_API::setLow()
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<< GPIO_API::setLow << ");
 #endif
-	is_high = true;
+	is_high = false;
 	return m_hal.setValue(m_pin, GPIO_HAL::io_val_t::LOW);
 }
 /**

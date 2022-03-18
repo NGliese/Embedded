@@ -1,17 +1,17 @@
-#ifndef _COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
-#define _COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
+#ifndef _COMPONENTS_OBJECTS_DATABROKER_INCLUDE_DATABROKER_HPP_
+#define _COMPONENTS_OBJECTS_DATABROKER_INCLUDE_DATABROKER_HPP_
 /*------------------------------------------------------------------------------+
  |   		 	C L A S S   I N F O R M A T I O N                               |
  +------------------------------------------------------------------------------+
  |  ToDo: check auto generated function comment
  |
- |  @file  DistanceSensorController.hpp
+ |  @file  DataBroker.hpp
  |
  |  @author        :  Nikolaj Gliese Pedersen
  |  @email         :  <nikolajgliese@tutanota.com>
- |  @date		   : 2022-02-27
+ |  @date		   : 2022-03-01
  |
- |  @brief  	   :  This class, DistanceSensorController.hpp, is designed as:
+ |  @brief  	   :  This class, DataBroker.hpp, is designed as:
  |
  |
  |
@@ -33,10 +33,16 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-#include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
-#include "../../../Objects/ADC/include/ADC_API_ESP32.hpp"
-#include <iostream>
 
+#include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
+#include "../../../Interfaces/ServiceBase/include/ServiceBase.hpp"
+#include "../../../Objects/Timeservice/include/Timeservice.hpp"
+#include "../../../RTOS/FreeRTOS/include/FreeRTOS.h"
+#include "../../../RTOS/FreeRTOS/include/Task.h"
+#include <algorithm> // For std::for_each()
+#include <atomic>
+#include <iostream>
+#include <vector>
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
@@ -44,30 +50,27 @@
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
-
-class DistanceSensorController final : public SensorControllerBase
+class DataBroker final : public Task
 {
 #ifdef __UNITTEST__
-	friend class friend_DistanceSensorController;
+	friend class friend_DataBroker;
 #endif
   public:
-	struct config
+	DataBroker(const size_t delay_ms, SensorControllerBase& sensor)
+		: m_delay_ms{delay_ms}, m_sensor{sensor} {};
+	~DataBroker(){};
+	general_err_t addService(ServiceBase<MQTT_Message>* service);
+	inline const MQTT_Message& getSafeBuffer()
 	{
-		SensorControllerBase::init_conf init_conf;
-		const uint64_t time_between_adc_measurements;
-		ADC_API_ESP32::config adc_conf;
-	};
-	DistanceSensorController(const DistanceSensorController::config& conf)
-		: SensorControllerBase{conf.init_conf},
-		  m_time_between_adc_measurements{conf.time_between_adc_measurements},
-		  m_adc{conf.adc_conf} {};
-	~DistanceSensorController(){};
+		return m_sensor.getSafeBuffer();
+	}
 
   private:
-	general_err_t main_function() override;
-	general_err_t updateInternalBuffer();
-	const uint64_t m_time_between_adc_measurements;
-	ADC_API_ESP32 m_adc;
+	void run(void* data) override;
+	general_err_t main_function();
+	const size_t m_delay_ms;
+	SensorControllerBase& m_sensor;
+	std::vector<ServiceBase<MQTT_Message>*> m_service_array;
 };
 
 /*------------------------------------------------------------------------------+
@@ -75,20 +78,20 @@ class DistanceSensorController final : public SensorControllerBase
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_DistanceSensorController
+class friend_DataBroker
 {
   public:
-	explicit friend_DistanceSensorController(DistanceSensorController* sensor)
-		: m_sensor{sensor} {};
-	~friend_DistanceSensorController(){};
-	void setDataReady()
+	explicit friend_DataBroker(DataBroker* sensor) : m_sensor{sensor} {};
+	~friend_DataBroker(){};
+	auto runMain()
 	{
-		m_sensor->setDataReadyTrue();
+		return m_sensor->main_function();
 	}
 
   private:
-	DistanceSensorController* m_sensor;
+	DataBroker* m_sensor;
 };
+
 #endif
 
-#endif //_COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
+#endif //_COMPONENTS_OBJECTS_DATABROKER_INCLUDE_DATABROKER_HPP_

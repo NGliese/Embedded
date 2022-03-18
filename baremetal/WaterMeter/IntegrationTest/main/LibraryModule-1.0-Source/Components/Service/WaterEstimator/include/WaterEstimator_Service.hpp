@@ -1,17 +1,17 @@
-#ifndef _COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
-#define _COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
+#ifndef _COMPONENTS_SERVICE_WATERESTIMATOR_INCLUDE_WATERESTIMATOR_SERVICE_HPP_
+#define _COMPONENTS_SERVICE_WATERESTIMATOR_INCLUDE_WATERESTIMATOR_SERVICE_HPP_
 /*------------------------------------------------------------------------------+
  |   		 	C L A S S   I N F O R M A T I O N                               |
  +------------------------------------------------------------------------------+
  |  ToDo: check auto generated function comment
  |
- |  @file  DistanceSensorController.hpp
+ |  @file  WaterEstimator_Service.hpp
  |
  |  @author        :  Nikolaj Gliese Pedersen
  |  @email         :  <nikolajgliese@tutanota.com>
- |  @date		   : 2022-02-27
+ |  @date		   : 2022-03-18
  |
- |  @brief  	   :  This class, DistanceSensorController.hpp, is designed as:
+ |  @brief  	   :  This class, WaterEstimator_Service.hpp, is designed as:
  |
  |
  |
@@ -33,8 +33,8 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-#include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
-#include "../../../Objects/ADC/include/ADC_API_ESP32.hpp"
+#include "../../../Interfaces/ServiceBase/include/ServiceBase.hpp"
+
 #include <iostream>
 
 /*------------------------------------------------------------------------------+
@@ -45,29 +45,19 @@
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class DistanceSensorController final : public SensorControllerBase
+class WaterEstimator_Service final : public ServiceBase_HW_TEST<MQTT_Message>
 {
 #ifdef __UNITTEST__
-	friend class friend_DistanceSensorController;
+	friend class friend_WaterEstimator_Service;
 #endif
   public:
-	struct config
-	{
-		SensorControllerBase::init_conf init_conf;
-		const uint64_t time_between_adc_measurements;
-		ADC_API_ESP32::config adc_conf;
-	};
-	DistanceSensorController(const DistanceSensorController::config& conf)
-		: SensorControllerBase{conf.init_conf},
-		  m_time_between_adc_measurements{conf.time_between_adc_measurements},
-		  m_adc{conf.adc_conf} {};
-	~DistanceSensorController(){};
+	WaterEstimator_Service(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
+						   const db_id error_id, GPIO_API pin)
+		: ServiceBase_HW_TEST(queue_size, size_of_item, buffer, error_id, pin){};
+	~WaterEstimator_Service(){};
 
   private:
-	general_err_t main_function() override;
-	general_err_t updateInternalBuffer();
-	const uint64_t m_time_between_adc_measurements;
-	ADC_API_ESP32 m_adc;
+	general_err_t mainFunction();
 };
 
 /*------------------------------------------------------------------------------+
@@ -75,20 +65,15 @@ class DistanceSensorController final : public SensorControllerBase
  +------------------------------------------------------------------------------*/
 
 #ifdef __UNITTEST__
-class friend_DistanceSensorController
+class friend_WaterEstimator_Service
 {
   public:
-	explicit friend_DistanceSensorController(DistanceSensorController* sensor)
-		: m_sensor{sensor} {};
-	~friend_DistanceSensorController(){};
-	void setDataReady()
-	{
-		m_sensor->setDataReadyTrue();
-	}
+	explicit friend_WaterEstimator_Service(WaterEstimator_Service* sensor) : m_sensor{sensor} {};
+	~friend_WaterEstimator_Service(){};
 
   private:
-	DistanceSensorController* m_sensor;
+	WaterEstimator_Service* m_sensor;
 };
 #endif
 
-#endif //_COMPONENTS_CONTROLLER_DISTANCESENSORCONTROLLER_INCLUDE_DISTANCESENSORCONTROLLER_HPP_
+#endif //_COMPONENTS_SERVICE_WATERESTIMATOR_INCLUDE_WATERESTIMATOR_SERVICE_HPP_

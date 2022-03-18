@@ -8,11 +8,13 @@
 */
 
 #include <ADC_API_ESP32.hpp>
+#include <DataBroker.hpp>
 #include <DistanceSensorController.hpp>
 #include <GPIO_API.hpp>
 #include <MQTT_Message.hpp>
 #include <Maintainer.hpp>
 #include <Timeservice.hpp>
+#include <WaterEstimator_Service.hpp>
 #include <iostream>
 #include <mqtt_api_v2.hpp>
 void test_adc()
@@ -138,6 +140,34 @@ void sensor_controller_test()
 	}
 }
 
+void service_test()
+{
+	DistanceSensorController m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC}};
+	m_controller.start();
+
+	DataBroker m_broker{1000, m_controller};
+
+	// init services
+	WaterEstimator_Service m_service{3, sizeof(int), m_broker.getSafeBuffer(),
+									 db_id::WATERSTATION_ERROR_CODE, GPIO_HAL::pin::GPIO_NUM_27};
+	m_service.start();
+
+	// add services
+	m_broker.addService(&m_service);
+
+	// start broker
+
+	m_broker.start();
+
+	// test pins
+
+	for(;;)
+	{
+		std::cout << " testing sensor_controller_test.... \n";
+		Timeservice::wait_sec(5);
+	}
+}
+
 void app_main(void)
 {
 	Maintainer m_maintain{wifi_conf};
@@ -145,8 +175,9 @@ void app_main(void)
 
 	// test_adc();
 	// measure_and_send();
+	// sensor_controller_test();
 
-	sensor_controller_test();
+	service_test();
 	for(;;)
 	{
 		std::cout << "Running a test ! \n ";

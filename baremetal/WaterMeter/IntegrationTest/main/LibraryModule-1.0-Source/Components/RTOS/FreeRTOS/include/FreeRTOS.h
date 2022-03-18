@@ -76,10 +76,26 @@ class FreeRTOS
 	class Queue
 	{
 	  public:
-		Queue();
+		// Queue();
+		/**
+		 * @brief Construct a new Queue object
+		 *
+		 * @param amount_of_items
+		 * @param size_of_item  : use sizeof(ITEM_OF_INTEREST)
+		 */
+		explicit Queue(size_t amount_of_items, size_t size_of_item);
 		~Queue();
-		int initialize(size_t amount_of_items, size_t size_of_item);
-		int send(const void* const item_to_send, size_t delay);
+		/**
+		 * @brief Send data to the queue
+		 * @param [in] item willing to send
+		 * @param [in] delay willing to wait
+		 */
+		virtual int send(const void* const item_to_send, size_t delay);
+		/**
+		 * @brief Recieve data from the queue
+		 * @param [out] buffer with recieved item
+		 * @param [in] delay willing to wait
+		 */
 		int recieve(void* pvBuffer, size_t delay);
 
 	  private:
@@ -90,5 +106,40 @@ class FreeRTOS
 #endif
 	};
 };
+
+/*------------------------------------------------------------------------------+
+ |   		 				 Unit Test Class               		                |
+ +------------------------------------------------------------------------------*/
+
+#ifdef __UNITTEST__
+class Queue_MOCK : public FreeRTOS::Queue
+{
+  private:
+	/* data */
+	bool m_hasBeenCalled = false;
+	size_t m_amountOfCalls = 0;
+	size_t m_dataCalledWith = 0;
+
+  public:
+	Queue_MOCK(size_t amount_of_items, size_t size_of_item)
+		: FreeRTOS::Queue(amount_of_items, size_of_item){};
+	~Queue_MOCK(){};
+	auto hasBeenCalled()
+	{
+		return m_hasBeenCalled;
+	}
+	auto amountOfCalls()
+	{
+		return m_amountOfCalls;
+	}
+	int send(const void* const item_to_send, size_t delay) override
+	{
+		// m_dataCalledWith = *(static_cast<const std::atomic<size_t>*>(item_to_send));
+		m_hasBeenCalled = true;
+		m_amountOfCalls++;
+		return 0;
+	}
+};
+#endif
 
 #endif /* MAIN_FREERTOS_H_ */

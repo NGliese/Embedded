@@ -16,7 +16,7 @@ add_subdirectory(QueryBase)
 add_subdirectory(SensorBase)
 add_subdirectory(WatchdogBase)
 add_subdirectory(SensorControllerBase)
-
+add_subdirectory(ServiceBase)
 
 
 
