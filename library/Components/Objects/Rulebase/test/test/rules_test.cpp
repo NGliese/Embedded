@@ -22,5 +22,5 @@ TEST_GROUP(TEMPL_GRP){void setup(){
 // test init
 TEST(TEMPL_GRP, isItNight)
 {
-	CHECK_EQUAL(true, Timebased_rules::isItNight());
+	CHECK_EQUAL(false, Timebased_rules::isItNight());
 }

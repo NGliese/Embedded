@@ -229,7 +229,7 @@ general_err_t MQTT_Message::append(const MQTT_Message& msg)
 	return GE_OK;
 }
 
-general_err_t MQTT_Message::copyTo(MQTT_Message& message)
+general_err_t MQTT_Message::copyTo(MQTT_Message& message) const
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> MQTT_Message::fcn >> ");

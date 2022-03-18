@@ -26,26 +26,15 @@ constexpr size_t QUEUE_SEND_MAX_TIMOUT = 100;
 #ifdef DEBUG
 static const char* LOG_TAG = "DataBroker";
 #endif
-general_err_t DataBroker::addServiceFlag(std::atomic<bool>* flag)
+
+general_err_t DataBroker::addService(ServiceBase<MQTT_Message>* service)
 {
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
-#endif
-	// Executable code:
-	m_flag_array.push_back(flag);
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
 #endif
 
-	return GE_OK;
-}
-general_err_t DataBroker::addQueue(FreeRTOS::Queue* queue)
-{
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
-#endif
-	// Executable code:
-	m_queue_array.push_back(queue);
+	m_service_array.push_back(service);
+
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
 #endif
@@ -64,9 +53,10 @@ general_err_t DataBroker::main_function()
 		// auto& buffer = m_sensor.getSafeBuffer();
 		std::atomic<size_t> inUseCoder;
 		inUseCoder = 0xdeadbeef; // reset
-		std::for_each(
-			m_queue_array.begin(), m_queue_array.end(),
-			[&inUseCoder](FreeRTOS::Queue* ele) { ele->send(&inUseCoder, QUEUE_SEND_MAX_TIMOUT); });
+		std::for_each(m_service_array.begin(), m_service_array.end(),
+					  [&inUseCoder](ServiceBase<MQTT_Message>* ele) {
+						  ele->getQueue().send(&inUseCoder, QUEUE_SEND_MAX_TIMOUT);
+					  });
 
 		/**
 		 * @brief check all the available flags to see if any of the
@@ -76,9 +66,9 @@ general_err_t DataBroker::main_function()
 		bool isActive = false;
 		do
 		{
-			std::for_each(m_flag_array.begin(), m_flag_array.end(),
-						  [&isActive](std::atomic<bool>* ele) {
-							  if(*ele)
+			std::for_each(m_service_array.begin(), m_service_array.end(),
+						  [&isActive](ServiceBase<MQTT_Message>* ele) {
+							  if(ele->isActive())
 							  {
 								  isActive = true;
 							  }
@@ -86,13 +76,6 @@ general_err_t DataBroker::main_function()
 			Timeservice::wait_ms(500);
 		} while(isActive);
 
-		// wait for each service to be executed
-#if 0
-		while(inUseCounter > 0)
-		{
-			Timeservice::wait_ms(500);
-		}
-#endif
 		return GE_OK;
 	}
 	/*
@@ -107,20 +90,6 @@ general_err_t DataBroker::main_function()
 #endif
 
 	return GE_NO_DATA;
-}
-
-general_err_t DataBroker::pushQueues()
-{
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
-#endif
-	// Executable code:
-
-#ifdef DEBUG
-	LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
-#endif
-
-	return GE_OK;
 }
 
 void DataBroker::run(void* data)

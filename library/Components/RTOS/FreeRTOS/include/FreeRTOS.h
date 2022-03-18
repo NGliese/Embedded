@@ -107,4 +107,39 @@ class FreeRTOS
 	};
 };
 
+/*------------------------------------------------------------------------------+
+ |   		 				 Unit Test Class               		                |
+ +------------------------------------------------------------------------------*/
+
+#ifdef __UNITTEST__
+class Queue_MOCK : public FreeRTOS::Queue
+{
+  private:
+	/* data */
+	bool m_hasBeenCalled = false;
+	size_t m_amountOfCalls = 0;
+	size_t m_dataCalledWith = 0;
+
+  public:
+	Queue_MOCK(size_t amount_of_items, size_t size_of_item)
+		: FreeRTOS::Queue(amount_of_items, size_of_item){};
+	~Queue_MOCK(){};
+	auto hasBeenCalled()
+	{
+		return m_hasBeenCalled;
+	}
+	auto amountOfCalls()
+	{
+		return m_amountOfCalls;
+	}
+	int send(const void* const item_to_send, size_t delay) override
+	{
+		// m_dataCalledWith = *(static_cast<const std::atomic<size_t>*>(item_to_send));
+		m_hasBeenCalled = true;
+		m_amountOfCalls++;
+		return 0;
+	}
+};
+#endif
+
 #endif /* MAIN_FREERTOS_H_ */

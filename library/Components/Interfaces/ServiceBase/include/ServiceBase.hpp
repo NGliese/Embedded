@@ -53,27 +53,25 @@
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-template<typename T, db_id ErrorID>
+template<typename BUFFER_TYPE, typename QUEUE_TYPE = FreeRTOS::Queue>
 class ServiceBase : public Task
 {
 #ifdef __UNITTEST__
 	friend class friend_ServiceBase;
 #endif
   public:
-	ServiceBase(size_t queue_size, size_t size_of_item, const T& buffer)
-		: m_isActive{false}, m_queue{queue_size, size_of_item}, m_buffer{buffer} {};
+	ServiceBase(size_t queue_size, size_t size_of_item, const BUFFER_TYPE& buffer,
+				const db_id error_id)
+		: m_queue{queue_size, size_of_item}, m_isActive{false}, m_buffer{buffer}, m_error_id{
+																					  error_id} {};
 	virtual ~ServiceBase(){};
 	inline const auto& isActive() const
 	{
 		return m_isActive;
 	}
-	inline const auto& getQueue() const
+	inline auto& getQueue()
 	{
 		return m_queue;
-	}
-	general_err_t setBuffer(const T& buffer)
-	{
-		m_buffer = buffer;
 	}
 
   protected:
@@ -135,18 +133,21 @@ class ServiceBase : public Task
 				if(err != GE_OK)
 				{
 					ErrorCodeParser::postToMqtt(
-						ErrorID, err, "Some error happend in the execution of main function");
+						m_error_id, err, "Some error happend in the execution of main function");
 				}
 			}
 			setIsActive(false);
 		}
 	}
 
+  protected:
+	QUEUE_TYPE m_queue;
+
   private:
 	std::atomic<bool> m_isActive;
-	FreeRTOS::Queue m_queue;
-	T& m_buffer;
+	const BUFFER_TYPE& m_buffer;
 	mqtt_api_v2 m_mqtt;
+	db_id m_error_id;
 };
 
 /*------------------------------------------------------------------------------+
@@ -157,12 +158,70 @@ class ServiceBase : public Task
 class friend_ServiceBase
 {
   public:
-	explicit friend_ServiceBase(ServiceBase* sensor) : m_sensor{sensor} {};
+	explicit friend_ServiceBase(ServiceBase<MQTT_Message>* sensor) : m_sensor{sensor} {};
 	~friend_ServiceBase(){};
 
   private:
-	ServiceBase* m_sensor;
+	ServiceBase<MQTT_Message>* m_sensor;
 };
+
+class service_MOCK : public ServiceBase<MQTT_Message, Queue_MOCK>
+{
+  public:
+	service_MOCK(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
+				 const db_id error_id)
+		: ServiceBase(queue_size, size_of_item, buffer, error_id){};
+	~service_MOCK(){};
+
+	auto hasBeenCalled()
+	{
+		return m_queue.hasBeenCalled();
+	}
+	auto amountOfCalls()
+	{
+		return m_queue.amountOfCalls();
+	}
+
+  private:
+	general_err_t mainFunction() override
+	{
+#ifdef DEBUG
+		LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
+#endif
+		// Executable code:
+
+#ifdef DEBUG
+		LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
+#endif
+
+		return GE_OK;
+	}
+};
+
+class service_SIMPLE : public ServiceBase<MQTT_Message>
+{
+  public:
+	service_SIMPLE(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
+				   const db_id error_id)
+		: ServiceBase(queue_size, size_of_item, buffer, error_id){};
+	~service_SIMPLE(){};
+
+  private:
+	general_err_t mainFunction() override
+	{
+#ifdef DEBUG
+		LOG_PRINT_INFO(LOG_TAG, ">> DataBroker::fcn >> ");
+#endif
+		// Executable code:
+
+#ifdef DEBUG
+		LOG_PRINT_INFO(LOG_TAG, "<<  DataBroker::fcn << ");
+#endif
+
+		return GE_OK;
+	}
+};
+
 #endif
 
 #endif //_COMPONENTS_INTERFACES_SERVICEBASE_INCLUDE_SERVICEBASE_HPP_

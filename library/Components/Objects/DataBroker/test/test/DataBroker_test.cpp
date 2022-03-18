@@ -54,13 +54,6 @@ TEST(TEMP_GRP, init)
 	DataBroker m_broker{100, m_controller};
 	CHECK(true);
 }
-// test init
-TEST(TEMP_GRP, add_queue)
-{
-	Queue_MOCK m_queue{3, sizeof(MQTT_Message)};
-	CHECK_EQUAL(GE_OK, m_broker.addQueue(&m_queue));
-	LONGS_EQUAL(1, m_friend.getQueueSize());
-}
 
 // test init
 TEST(TEMP_GRP, run_main_no_data)
@@ -71,25 +64,10 @@ TEST(TEMP_GRP, run_main_no_data)
 // test init
 TEST(TEMP_GRP, run_main_with_data)
 {
-	Queue_MOCK m_queue{3, sizeof(int)};
-	m_broker.addQueue(&m_queue);
+	MQTT_Message buffer{{db_id::DEBUG_ID1, 1}};
+	service_SIMPLE m_mock{3, sizeof(int), buffer, db_id::DEBUG_ID2};
+	m_broker.addService(&m_mock);
 	// do something
 	m_sensorFriend.setDataReady();
 	CHECK_EQUAL(GE_OK, m_friend.runMain());
-	CHECK(m_queue.hasBeenCalled());
-	LONGS_EQUAL(1, m_queue.amountOfCalls());
-	LONGS_EQUAL(0xdeadbeef, m_queue.dataCalledWith());
-}
-
-// test init
-TEST(TEMP_GRP, run_main_with_data_andflag)
-{
-	Queue_MOCK m_queue{3, sizeof(int)};
-	m_broker.addQueue(&m_queue);
-	// do something
-	m_sensorFriend.setDataReady();
-	CHECK_EQUAL(GE_OK, m_friend.runMain());
-	CHECK(m_queue.hasBeenCalled());
-	LONGS_EQUAL(1, m_queue.amountOfCalls());
-	LONGS_EQUAL(0xdeadbeef, m_queue.dataCalledWith());
 }

@@ -4,18 +4,18 @@
  *  Created on: Jul 7, 2020
  *      Author: espenv
  */
-// #include "../../include/esp32Cam.hpp" // example of include
+#include "../../include/ServiceBase.hpp" // example of include
 #include <iostream>
 
 // ------------- INCLUDE ABOVE ----------------
 #include "CppUTest/TestHarness.h"
 
 // clang-format off
-TEST_GROUP(TEMP_GRP){
-
-	
+TEST_GROUP(SERVICE_TEST){
+	MQTT_Message buffer{{db_id::DEBUG_ID1,1}};
+	service_MOCK m_mock{10,10,buffer,db_id::DEBUG_ID2};
 	void setup(){
-
+	
 	}
 	void teardown(){
 	// Uninit stuff
@@ -24,7 +24,7 @@ TEST_GROUP(TEMP_GRP){
 // clang-format on
 
 // test init
-TEST(TEMP_GRP, init)
+TEST(SERVICE_TEST, notActive)
 {
-	CHECK(true);
+	CHECK_FALSE(m_mock.isActive());
 }

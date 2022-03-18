@@ -35,7 +35,7 @@
 /*-----------------------------------------------------------------------------*/
 
 #include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
-
+#include "../../../Interfaces/ServiceBase/include/ServiceBase.hpp"
 #include "../../../Objects/Timeservice/include/Timeservice.hpp"
 #include "../../../RTOS/FreeRTOS/include/FreeRTOS.h"
 #include "../../../RTOS/FreeRTOS/include/Task.h"
@@ -50,7 +50,6 @@
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
-
 class DataBroker final : public Task
 {
 #ifdef __UNITTEST__
@@ -60,17 +59,18 @@ class DataBroker final : public Task
 	DataBroker(const size_t delay_ms, SensorControllerBase& sensor)
 		: m_delay_ms{delay_ms}, m_sensor{sensor} {};
 	~DataBroker(){};
-	general_err_t addQueue(FreeRTOS::Queue* queue);
-	general_err_t addServiceFlag(std::atomic<bool>* flag);
+	general_err_t addService(ServiceBase<MQTT_Message>* service);
+	inline const MQTT_Message& getSafeBuffer()
+	{
+		return m_sensor.getSafeBuffer();
+	}
 
   private:
 	void run(void* data) override;
 	general_err_t main_function();
-	general_err_t pushQueues();
-	std::vector<FreeRTOS::Queue*> m_queue_array;
-	std::vector<std::atomic<bool>*> m_flag_array;
 	const size_t m_delay_ms;
 	SensorControllerBase& m_sensor;
+	std::vector<ServiceBase<MQTT_Message>*> m_service_array;
 };
 
 /*------------------------------------------------------------------------------+
@@ -83,10 +83,6 @@ class friend_DataBroker
   public:
 	explicit friend_DataBroker(DataBroker* sensor) : m_sensor{sensor} {};
 	~friend_DataBroker(){};
-	auto getQueueSize()
-	{
-		return m_sensor->m_queue_array.size();
-	}
 	auto runMain()
 	{
 		return m_sensor->main_function();
@@ -94,38 +90,6 @@ class friend_DataBroker
 
   private:
 	DataBroker* m_sensor;
-};
-
-class Queue_MOCK : public FreeRTOS::Queue
-{
-  private:
-	/* data */
-	bool m_hasBeenCalled = false;
-	size_t m_amountOfCalls = 0;
-	size_t m_dataCalledWith = 0;
-
-  public:
-	Queue_MOCK(size_t amount_of_items, size_t size_of_item)
-		: FreeRTOS::Queue(amount_of_items, size_of_item){};
-	~Queue_MOCK(){};
-	auto hasBeenCalled()
-	{
-		return m_hasBeenCalled;
-	}
-	auto amountOfCalls()
-	{
-		return m_amountOfCalls;
-	}
-	auto dataCalledWith()
-	{
-		return m_dataCalledWith;
-	}
-	int send(const void* const item_to_send, size_t delay) override
-	{
-		m_dataCalledWith = *(static_cast<const std::atomic<size_t>*>(item_to_send));
-		m_hasBeenCalled = true;
-		m_amountOfCalls++;
-	}
 };
 
 #endif
