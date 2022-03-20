@@ -27,7 +27,7 @@
 
 #include "../include/GPIO_API.hpp"
 
-#define DEBUG // default uncommeted
+//#define DEBUG // default uncommeted
 
 #ifdef DEBUG
 static const char* LOG_TAG = "GPIO_API";

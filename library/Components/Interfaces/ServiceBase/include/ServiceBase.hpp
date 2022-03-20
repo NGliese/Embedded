@@ -65,7 +65,7 @@ class ServiceBase : public Task
   public:
 	ServiceBase(size_t queue_size, size_t size_of_item, const BUFFER_TYPE& buffer,
 				const db_id error_id)
-		: m_queue{queue_size, size_of_item}, m_test_pin{}, m_isActive{false}, m_buffer{buffer},
+		: m_queue{queue_size, size_of_item}, m_test_pin{}, m_buffer{buffer}, m_isActive{false},
 		  m_error_id{error_id} {};
 	virtual ~ServiceBase(){};
 	inline const auto& isActive() const
@@ -146,10 +146,11 @@ class ServiceBase : public Task
   protected:
 	QUEUE_TYPE m_queue;
 	GPIO_API m_test_pin;
+	const BUFFER_TYPE& m_buffer;
 
   private:
 	std::atomic<bool> m_isActive;
-	const BUFFER_TYPE& m_buffer;
+
 	mqtt_api_v2 m_mqtt;
 	db_id m_error_id;
 };
@@ -162,11 +163,11 @@ class ServiceBase_HW_TEST : public ServiceBase<BUFFER_TYPE, QUEUE_TYPE>
 {
   public:
 	ServiceBase_HW_TEST(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
-						const db_id error_id, GPIO_API test_pin)
+						const db_id error_id, GPIO_HAL::pin test_pin)
 		: ServiceBase<BUFFER_TYPE, QUEUE_TYPE>(queue_size, size_of_item, buffer, error_id),
 		  m_test_pin{test_pin}
 	{
-		test_pin.setToOutput();
+		m_test_pin.setToOutput();
 	};
 	~ServiceBase_HW_TEST(){};
 
@@ -175,6 +176,8 @@ class ServiceBase_HW_TEST : public ServiceBase<BUFFER_TYPE, QUEUE_TYPE>
 	{
 		ServiceBase<BUFFER_TYPE, QUEUE_TYPE>::setIsActive(isActive); // call the base function
 		isActive == true ? m_test_pin.setHigh() : m_test_pin.setLow();
+		std::cout << " setisActive to : "
+				  << (isActive == true ? "m_test_pin.setHigh()" : "m_test_pin.setLow()") << "\n";
 	}
 	GPIO_API m_test_pin;
 };

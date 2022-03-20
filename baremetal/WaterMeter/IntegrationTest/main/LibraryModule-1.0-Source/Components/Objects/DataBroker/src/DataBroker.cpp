@@ -77,6 +77,8 @@ general_err_t DataBroker::main_function()
 			Timeservice::wait_ms(500);
 		} while(isActive);
 
+		// just collected the data
+		m_sensor.setDataReady(false);
 		return GE_OK;
 	}
 	/*

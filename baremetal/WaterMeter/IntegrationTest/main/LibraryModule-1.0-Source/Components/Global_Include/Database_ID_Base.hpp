@@ -110,6 +110,8 @@ enum class db_id
 	WATERSTATION_RAW_ADC,
 	WATERSTATION_COUNTER,
 	WATERSTATION_ERROR_CODE,
+	WATERSTATION_MAX_ADC_VAL,
+	WATERSTATION_MIN_ADC_VAL,
 };
 
 static const std::map<db_id, uint32_t> map{
@@ -165,7 +167,8 @@ static const std::map<db_id, uint32_t> map{
 	{db_id::WATERSTATION_RAW_ADC, 109},
 	{db_id::WATERSTATION_COUNTER, 111},
 	{db_id::WATERSTATION_ERROR_CODE, 110},
-
+	{db_id::WATERSTATION_MAX_ADC_VAL, 112},
+	{db_id::WATERSTATION_MIN_ADC_VAL, 113},
 };
 
 #endif /* COMPONENTS_DATA_PROTOCOL_INCLUDE_ID_BASE_HPP_ */

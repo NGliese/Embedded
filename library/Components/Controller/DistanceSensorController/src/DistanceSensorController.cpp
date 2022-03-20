@@ -39,7 +39,7 @@ general_err_t DistanceSensorController::main_function()
 		m_buffer_raw.addData(Timeservice::getTimeNow(), m_adc.measureValue());
 		Timeservice::wait_ms(m_time_between_adc_measurements);
 	}
-	// auto err = postData(m_buffer_raw); // do we want to send to prada?
+	auto err = postData(m_buffer_raw); // do we want to send to prada?
 	updateInternalBuffer();
 #ifdef DEBUG
 	LOG_PRINT_INFO(LOG_TAG, "<<  DistanceSensorController::fcn << ");

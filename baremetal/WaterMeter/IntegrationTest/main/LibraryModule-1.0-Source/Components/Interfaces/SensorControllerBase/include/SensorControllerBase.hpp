@@ -66,13 +66,14 @@ class SensorControllerBase : public Task
 
 	SensorControllerBase(const init_conf& conf)
 		: m_buffer_raw{conf.buffer_raw_conf}, m_buffer_external{conf.buffer_external_conf},
-		  m_delay{conf.task_delay}, m_error_id{conf.error_code_id} {};
+		  m_want_data_flag{false}, m_data_ready_flag{false}, m_delay{conf.task_delay},
+		  m_error_id{conf.error_code_id} {};
 	virtual ~SensorControllerBase(){};
 
 	inline void setWantDataTrue()
 	{
 		setWantData(true);
-		setDataReady(false);
+		//	setDataReady(false);
 	}
 
 	inline const auto& getSafeBuffer()
@@ -82,6 +83,10 @@ class SensorControllerBase : public Task
 	inline const bool isDataReady()
 	{
 		return m_data_ready_flag;
+	}
+	inline void setDataReady(bool flag)
+	{
+		m_data_ready_flag = flag;
 	}
 
   protected:
@@ -106,10 +111,6 @@ class SensorControllerBase : public Task
 	const db_id m_error_id;
 
   private:
-	inline void setDataReady(bool flag)
-	{
-		m_data_ready_flag = flag;
-	}
 	inline void setWantData(bool flag)
 	{
 		m_want_data_flag = flag;

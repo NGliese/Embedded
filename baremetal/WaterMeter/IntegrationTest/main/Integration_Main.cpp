@@ -107,8 +107,8 @@ void app_main(void);
 }
 #endif
 
-constexpr size_t AMOUNT_OF_MEASUREMENTS = 300;
-constexpr size_t WAIT_DELAY = 100;
+constexpr size_t AMOUNT_OF_MEASUREMENTS = 150;
+constexpr size_t WAIT_DELAY = 5;
 constexpr SensorControllerBase::init_conf DEFAULT_CONF{
 	.buffer_raw_conf{.entity_id = db_id::WATERSTATION_RAW_ADC,
 					 .buffer_size = AMOUNT_OF_MEASUREMENTS},
@@ -142,10 +142,11 @@ void sensor_controller_test()
 
 void service_test()
 {
-	DistanceSensorController m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC}};
+	DistanceSensorController_HW_TEST m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC},
+												  GPIO_HAL::pin::GPIO_NUM_26};
 	m_controller.start();
 
-	DataBroker m_broker{1000, m_controller};
+	DataBroker m_broker{50, m_controller};
 
 	// init services
 	WaterEstimator_Service m_service{3, sizeof(int), m_broker.getSafeBuffer(),

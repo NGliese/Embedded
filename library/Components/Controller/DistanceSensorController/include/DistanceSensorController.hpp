@@ -35,6 +35,7 @@
 /*-----------------------------------------------------------------------------*/
 #include "../../../Interfaces/SensorControllerBase/include/SensorControllerBase.hpp"
 #include "../../../Objects/ADC/include/ADC_API_ESP32.hpp"
+#include "../../../Objects/Gpio/include/GPIO_API.hpp"
 #include <iostream>
 
 /*------------------------------------------------------------------------------+
@@ -45,7 +46,7 @@
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class DistanceSensorController final : public SensorControllerBase
+class DistanceSensorController : public SensorControllerBase
 {
 #ifdef __UNITTEST__
 	friend class friend_DistanceSensorController;
@@ -63,13 +64,40 @@ class DistanceSensorController final : public SensorControllerBase
 		  m_adc{conf.adc_conf} {};
 	~DistanceSensorController(){};
 
+  protected:
+	virtual general_err_t main_function() override;
+
   private:
-	general_err_t main_function() override;
 	general_err_t updateInternalBuffer();
 	const uint64_t m_time_between_adc_measurements;
 	ADC_API_ESP32 m_adc;
 };
 
+/*------------------------------------------------------------------------------+
+ |   		 					HARDWARE Test Class       		                |
+ +------------------------------------------------------------------------------*/
+
+class DistanceSensorController_HW_TEST : public DistanceSensorController
+{
+  public:
+	DistanceSensorController_HW_TEST(const DistanceSensorController::config& conf,
+									 const GPIO_HAL::pin test_pin)
+		: DistanceSensorController(conf), m_test_pin{test_pin}
+	{
+		m_test_pin.setToOutput();
+	}
+	~DistanceSensorController_HW_TEST(){};
+
+  private:
+	GPIO_API m_test_pin;
+	virtual general_err_t main_function() override
+	{
+		m_test_pin.setHigh();
+		auto err = DistanceSensorController::main_function();
+		m_test_pin.setLow();
+		return err;
+	}
+};
 /*------------------------------------------------------------------------------+
  |   		 				 Unit Test Class               		                |
  +------------------------------------------------------------------------------*/

@@ -33,10 +33,10 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
+#include "../../../AnalysisTools/PeriodEstimator/include/PeriodeEstimator.hpp"
 #include "../../../Interfaces/ServiceBase/include/ServiceBase.hpp"
-
+#include <algorithm> // For std::for_each()
 #include <iostream>
-
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
@@ -52,12 +52,19 @@ class WaterEstimator_Service final : public ServiceBase_HW_TEST<MQTT_Message>
 #endif
   public:
 	WaterEstimator_Service(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
-						   const db_id error_id, GPIO_API pin)
-		: ServiceBase_HW_TEST(queue_size, size_of_item, buffer, error_id, pin){};
+						   const db_id error_id, const GPIO_HAL::pin pin)
+		: ServiceBase_HW_TEST(queue_size, size_of_item, buffer, error_id, pin),
+		  msg_max{{db_id::WATERSTATION_MAX_ADC_VAL, 1}},
+		  msg_min{{db_id::WATERSTATION_MIN_ADC_VAL, 1}}, msg_count{
+															 {db_id::WATERSTATION_COUNTER, 100}} {};
 	~WaterEstimator_Service(){};
 
   private:
 	general_err_t mainFunction();
+	MQTT_Message msg_max;
+	MQTT_Message msg_min;
+	MQTT_Message msg_count;
+	PeriodeEstimator<1900, 1800> m_estimator;
 };
 
 /*------------------------------------------------------------------------------+
