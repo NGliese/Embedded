@@ -28,8 +28,10 @@
 #endif
 
 #ifdef __ESP32__
-#define GPIO_PIN (gpio_num_t)
+#define GPIO_PIN gpio_num_t
+#define ADC_PIN adc1_channel_t
 #else
 #define GPIO_PIN uint16_t
+#define ADC_PIN uint16_t
 #endif
 #endif /* BPS_INCLUDE_BASIC_HPP_ */

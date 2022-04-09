@@ -65,9 +65,11 @@
 #include "../../../Connector/WiFi/include/WiFi_API.hpp"
 #include "../../../RTOS/FreeRTOS/include/Task.h"
 
+#include "../../../Global_Include/Database_ID_Base.hpp"
 #include "../../../Objects/OTA/include/OTA.hpp"
 #include "../../../Protocols/MQTT/include/mqtt_api_v2.hpp"
 
+#include "../../../Objects/ErrorHandler/include/ErrorCodeParser.hpp"
 #include <vector>
 
 // this macro is placed in the cmake files of the project
@@ -88,7 +90,8 @@ class Maintainer final : public Task
 	friend class friend_Maintainer;
 #endif
   public:
-	explicit Maintainer(const wifi_conf_t& wifi_conf, size_t delay_sec = 60, int priority = 2);
+	explicit Maintainer(const wifi_conf_t& wifi_conf, const db_id& error_id,
+						bool withPeriodicReboot = true, size_t delay_sec = 60, int priority = 2);
 	~Maintainer();
 	static general_err_t install_system_test_fuction(bool (*callbackfunction)(void));
 	void run(void* data) override;
@@ -119,7 +122,8 @@ class Maintainer final : public Task
 	size_t m_delay_sec;
 
 	WiFi_API m_wifi;
-
+	const db_id m_error_id;
+	const bool m_withPeriodicReboot;
 #ifdef __WITH_OTA__
 	mqtt_api_v2 m_mqtt;
 #endif

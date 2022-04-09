@@ -36,8 +36,8 @@ static const char* LOG_TAG = "Timebased_rules";
 constexpr int NIGHT_TIME_START = 20;
 constexpr int NIGHT_TIME_END = 5;
 
-constexpr int VACATION_START = 4;
-constexpr int VACATION_END = 12;
+constexpr int VACATION_START = 6;
+constexpr int VACATION_END = 15;
 bool Timebased_rules::isItNight(void)
 {
 	time_t now = time(0);

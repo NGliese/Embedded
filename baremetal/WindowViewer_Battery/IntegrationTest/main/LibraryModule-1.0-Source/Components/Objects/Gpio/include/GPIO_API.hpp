@@ -77,9 +77,14 @@ class GPIO_API
 	friend class friend_GPIO_API;
 #endif
   public:
-	GPIO_API() : m_pin{(GPIO_HAL::pin)0}, is_Output{false} {};
-	GPIO_API(const GPIO_HAL::pin& pin) : m_pin{pin}, is_Output{false} {};
+	GPIO_API() : m_pin{(GPIO_HAL::pin)0}, is_Output{false}, is_high{false} {};
+	GPIO_API(const GPIO_HAL::pin& pin) : m_pin{pin}, is_Output{false}, is_high{false} {};
 	~GPIO_API();
+
+	inline void toggle()
+	{
+		isHigh() == true ? setLow() : setHigh();
+	}
 	general_err_t setToInput();
 	general_err_t setToOutput();
 	general_err_t setHigh();
@@ -101,7 +106,7 @@ class GPIO_API
   private:
 	GPIO_HAL::pin m_pin;
 	bool is_Output;
-
+	bool is_high;
 	GPIO_HAL m_hal;
 };
 

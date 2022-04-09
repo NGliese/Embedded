@@ -53,6 +53,13 @@ Background_Extractor::~Background_Extractor() {}
 
 uint32_t Background_Extractor::countConnectedComponents(const cv::Mat& raw)
 {
+	// make sure we do not feed in an empty image
+
+	if(raw.empty())
+	{
+		std::cerr << "we recieved an empty image in countConnectedComponents! \n";
+		return 0;
+	}
 	// update ref for images
 	m_previous = m_current;
 	m_current = raw;

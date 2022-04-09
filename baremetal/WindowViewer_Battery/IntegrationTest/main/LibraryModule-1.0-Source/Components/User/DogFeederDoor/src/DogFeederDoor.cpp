@@ -39,10 +39,10 @@ DogFeederDoor::~DogFeederDoor() {}
 
 general_err_t DogFeederDoor::open()
 {
-	return m_motor.setToMaximum();
+	return m_motor.setToMaximumSlowly();
 }
 
 general_err_t DogFeederDoor::close()
 {
-	return m_motor.setToMinimum();
+	return m_motor.setToMinimumSlowly();
 }

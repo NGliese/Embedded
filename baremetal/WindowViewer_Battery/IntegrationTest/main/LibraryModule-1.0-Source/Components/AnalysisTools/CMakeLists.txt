@@ -7,4 +7,5 @@ It is recommendend to use 3.17+ due to some changes (?)
 cmake_minimum_required(VERSION 3.18.4)
 
 add_subdirectory(ImageAnalysis_OpenCV)
+add_subdirectory(PeriodEstimator)
 

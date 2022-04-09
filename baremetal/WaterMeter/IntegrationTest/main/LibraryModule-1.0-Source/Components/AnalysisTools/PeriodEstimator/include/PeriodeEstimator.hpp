@@ -33,17 +33,18 @@
 #include "../../../Global_Include/BASIC.hpp"
 #include "../../../Objects/ErrorHandler/include/General_Error.hpp"
 /*-----------------------------------------------------------------------------*/
-
+#include "../../../Objects/NonVolatileStorage/include/NVS.hpp"
 #include <iostream>
 
 /*------------------------------------------------------------------------------+
  |                               Typedef                                        |
  +------------------------------------------------------------------------------*/
-
+constexpr uint64_t COUNTER_VALUE = 491327;
+constexpr uint64_t INIT_VALUE = 0x44;
 /*------------------------------------------------------------------------------+
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
-template<uint64_t HIGH_THRESHOLD, uint64_t LOW_THRESHOLD>
+template<uint64_t HIGH_THRESHOLD, uint64_t LOW_THRESHOLD, typename NVS_TYPE>
 class PeriodeEstimator
 {
 #ifdef __UNITTEST__
@@ -57,11 +58,21 @@ class PeriodeEstimator
 		LOW,
 		UNDEF
 	};
-	PeriodeEstimator(const uint64_t counter = 0)
+	PeriodeEstimator()
 		: m_high_threshold{HIGH_THRESHOLD}, m_low_threshold{LOW_THRESHOLD},
-		  m_current_state{states::UNDEF}, m_last_state{states::UNDEF}, m_counter{counter}
+		  m_current_state{states::UNDEF}, m_last_state{states::UNDEF}, m_counter{COUNTER_VALUE}
 	{
 		static_assert(LOW_THRESHOLD < HIGH_THRESHOLD);
+
+		if(NVS<NVS_TYPE>::read_u64("INIT_KEY") != INIT_VALUE)
+		{
+			NVS<NVS_TYPE>::write_u64("COUNTER", COUNTER_VALUE);
+			NVS<NVS_TYPE>::write_u64("INIT_KEY", INIT_VALUE);
+		}
+		else
+		{
+			m_counter = NVS<NVS_TYPE>::read_u64("COUNTER");
+		}
 	};
 	~PeriodeEstimator(){};
 	/**
@@ -84,12 +95,11 @@ class PeriodeEstimator
 	}
 	/**
 	 * @brief Get the Period Counter object
-	 *
 	 * @return auto const&
 	 */
 	auto const getPeriodCounter()
 	{
-		return m_counter / PERIODE_SCALER;
+		return m_counter;
 	}
 
   private:
@@ -126,6 +136,7 @@ class PeriodeEstimator
 			if(m_current_state == states::HIGH)
 			{
 				m_counter++;
+				NVS<NVS_TYPE>::write_u64("COUNTER", m_counter);
 				return GE_OK;
 			}
 		}
@@ -174,17 +185,18 @@ class PeriodeEstimator
 class friend_PeriodeEstimator
 {
   public:
-	explicit friend_PeriodeEstimator(PeriodeEstimator<100, 10>* sensor) : m_sensor{sensor} {};
+	explicit friend_PeriodeEstimator(PeriodeEstimator<100, 10, NVS_MOCK>* sensor)
+		: m_sensor{sensor} {};
 	~friend_PeriodeEstimator(){};
-	auto decideStateChange(const PeriodeEstimator<100, 10>::states& state)
+	auto decideStateChange(const PeriodeEstimator<100, 10, NVS_MOCK>::states& state)
 	{
 		return m_sensor->decideStateChange(state);
 	}
-	auto setInitialState(const PeriodeEstimator<100, 10>::states& state)
+	auto setInitialState(const PeriodeEstimator<100, 10, NVS_MOCK>::states& state)
 	{
 		return m_sensor->setInitialState(state);
 	}
-	auto setNextState(const PeriodeEstimator<100, 10>::states& state)
+	auto setNextState(const PeriodeEstimator<100, 10, NVS_MOCK>::states& state)
 	{
 		return m_sensor->setNextState(state);
 	}
@@ -196,17 +208,17 @@ class friend_PeriodeEstimator
 	{
 		return m_sensor->m_last_state;
 	}
-	void setCurrentState(const PeriodeEstimator<100, 10>::states& state)
+	void setCurrentState(const PeriodeEstimator<100, 10, NVS_MOCK>::states& state)
 	{
 		m_sensor->m_current_state = state;
 	}
-	void setLastState(const PeriodeEstimator<100, 10>::states& state)
+	void setLastState(const PeriodeEstimator<100, 10, NVS_MOCK>::states& state)
 	{
 		m_sensor->m_last_state = state;
 	}
 
   private:
-	PeriodeEstimator<100, 10>* m_sensor;
+	PeriodeEstimator<100, 10, NVS_MOCK>* m_sensor;
 };
 #endif
 

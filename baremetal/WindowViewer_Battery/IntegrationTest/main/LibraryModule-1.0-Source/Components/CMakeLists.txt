@@ -9,6 +9,7 @@ add_subdirectory(Actuator)
 add_subdirectory(AnalysisTools) #
 
 add_subdirectory(Connector)
+add_subdirectory(Controller)
 
 add_subdirectory(Interfaces)
 
@@ -19,6 +20,7 @@ add_subdirectory(Protocols)
 add_subdirectory(RTOS)
 
 add_subdirectory(Sensor)
+add_subdirectory(Service)
 
 add_subdirectory(User)
 

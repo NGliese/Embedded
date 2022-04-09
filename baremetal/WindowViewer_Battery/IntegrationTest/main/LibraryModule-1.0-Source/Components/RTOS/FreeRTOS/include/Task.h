@@ -59,6 +59,7 @@ class Task
 	 * This function must be implemented in the subclass that represents the actual task to run.
 	 * When a task is started by calling start(), this is the code that is executed in the
 	 * newly created task.
+	 * WHY IS IT NOT PRIVATE???
 	 *
 	 * @param [in] data The data passed in to the newly started task.
 	 */

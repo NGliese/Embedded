@@ -102,9 +102,9 @@ class MQTT_Message
 	{
 		return m_data.empty();
 	};
-	const std::string toString(void); // copy
+	const std::string toString(void) const; // copy
 	general_err_t clear(void);
-	auto getBufferSize(void)
+	auto getBufferSize(void) const
 	{
 		return m_data.size();
 	}
@@ -115,13 +115,23 @@ class MQTT_Message
 	{
 		return m_data;
 	};
+	auto getMaxAllowedBufferSize() const
+	{
+		return m_buffer_size;
+	}
+	auto getEntityId() const
+	{
+		return m_entity_id;
+	}
+
+	general_err_t copyTo(MQTT_Message& message) const;
 
   private:
 	const uint64_t m_entity_id;
 	const size_t m_buffer_size;
 	std::vector<std::pair<uint64_t, uint64_t>> m_data;
 #ifdef __ESP32__
-	FreeRTOS::Semaphore m_semaphore;
+	mutable FreeRTOS::Semaphore m_semaphore;
 #else
 	std::string m_semaphore; // dirty fix for ctor
 #endif

@@ -106,8 +106,30 @@ class MG996R final : public Actuator_Base<mg996r_conf_t, float>
   public:
 	MG996R(const mg996r_conf_t& conf);
 	~MG996R();
+	/**
+	 * @brief Set the To Maximum value
+	 *
+	 * @return general_err_t
+	 */
 	general_err_t setToMaximum(void) override;
+	/**
+	 * @brief Set the To Minimum value
+	 *
+	 * @return general_err_t
+	 */
 	general_err_t setToMinimum(void) override;
+	/**
+	 * @brief Set the To Maximum Slowly value
+	 * @attention  the function is executing with a velocity of ~1sec
+	 * @return general_err_t
+	 */
+	general_err_t setToMaximumSlowly(void);
+	/**
+	 * @brief Set the To Minimum Slowly value
+	 * @attention  the function is executing with a velocity of ~1sec
+	 * @return general_err_t
+	 */
+	general_err_t setToMinimumSlowly(void);
 
   private:
 	general_err_t setPoint(const float& value) override;
@@ -138,6 +160,10 @@ class friend_MG996R
 	auto getSetPoint(void)
 	{
 		return m_sensor->m_setPointValue;
+	}
+	auto getmValue(void)
+	{
+		return m_sensor->m_value;
 	}
 
   private:

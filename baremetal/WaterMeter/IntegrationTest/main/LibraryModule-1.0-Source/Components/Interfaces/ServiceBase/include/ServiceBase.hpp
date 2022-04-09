@@ -105,7 +105,15 @@ class ServiceBase : public Task
 	 */
 	general_err_t postData(const MQTT_Message& message, const std::string& topic = "mqtt/burst_msg")
 	{
-		return m_mqtt.publish(topic, message.toString());
+		// post only if data is available
+		if(message.getBufferSize() > 0)
+		{
+			return m_mqtt.publish(topic, message.toString());
+		}
+		else
+		{
+			return GE_NO_DATA;
+		}
 	}
 
 	/**

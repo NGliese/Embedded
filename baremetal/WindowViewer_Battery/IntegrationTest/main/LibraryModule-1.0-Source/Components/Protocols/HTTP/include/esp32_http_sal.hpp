@@ -64,6 +64,11 @@ class esp32_http_sal
 	 * @return general_err_t
 	 */
 	general_err_t get(const std::string& api_call, std::string& output);
+
+	enum class content_type
+	{
+		IMAGE
+	};
 	/**
 	 * @brief
 	 *
@@ -71,7 +76,10 @@ class esp32_http_sal
 	 * @param content
 	 * @return general_err_t
 	 */
-	general_err_t post(const std::string& api_call, const std::string& content);
+	general_err_t post(const std::string& api_call, const content_type& type,
+					   const std::string& content);
+	general_err_t post(const std::string& api_call, const content_type& type,
+					   const uint8_t* content, const size_t& content_length);
 
   private:
 	std::string m_server;

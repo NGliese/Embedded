@@ -142,15 +142,14 @@ void sensor_controller_test()
 
 void service_test()
 {
-	DistanceSensorController_HW_TEST m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC},
-												  GPIO_HAL::pin::GPIO_NUM_26};
+	DistanceSensorController m_controller{{DEFAULT_CONF, WAIT_DELAY, DEFAULT_ADC}};
 	m_controller.start();
 
 	DataBroker m_broker{50, m_controller};
 
 	// init services
 	WaterEstimator_Service m_service{3, sizeof(int), m_broker.getSafeBuffer(),
-									 db_id::WATERSTATION_ERROR_CODE, GPIO_HAL::pin::GPIO_NUM_27};
+									 db_id::WATERSTATION_ERROR_CODE};
 	m_service.start();
 
 	// add services
@@ -171,9 +170,10 @@ void service_test()
 
 void app_main(void)
 {
-	Maintainer m_maintain{wifi_conf};
+	Maintainer m_maintain{wifi_conf, db_id::WATERSTATION_ERROR_CODE, false};
 	m_maintain.start();
-
+	Timeservice::wait_sec(5);
+	ErrorCodeParser::postToMqtt(db_id::WATERSTATION_ERROR_CODE, GE_OK, "We have just rebooted");
 	// test_adc();
 	// measure_and_send();
 	// sensor_controller_test();

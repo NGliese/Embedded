@@ -45,15 +45,15 @@
  |   		 					 Class                     		                |
  +------------------------------------------------------------------------------*/
 
-class WaterEstimator_Service final : public ServiceBase_HW_TEST<MQTT_Message>
+class WaterEstimator_Service final : public ServiceBase<MQTT_Message>
 {
 #ifdef __UNITTEST__
 	friend class friend_WaterEstimator_Service;
 #endif
   public:
 	WaterEstimator_Service(size_t queue_size, size_t size_of_item, const MQTT_Message& buffer,
-						   const db_id error_id, const GPIO_HAL::pin pin)
-		: ServiceBase_HW_TEST(queue_size, size_of_item, buffer, error_id, pin),
+						   const db_id error_id)
+		: ServiceBase(queue_size, size_of_item, buffer, error_id),
 		  msg_max{{db_id::WATERSTATION_MAX_ADC_VAL, 1}},
 		  msg_min{{db_id::WATERSTATION_MIN_ADC_VAL, 1}}, msg_count{
 															 {db_id::WATERSTATION_COUNTER, 100}} {};
@@ -64,7 +64,11 @@ class WaterEstimator_Service final : public ServiceBase_HW_TEST<MQTT_Message>
 	MQTT_Message msg_max;
 	MQTT_Message msg_min;
 	MQTT_Message msg_count;
-	PeriodeEstimator<1900, 1800> m_estimator;
+#ifdef __ESP32__
+	PeriodeEstimator<1900, 1800, NVS_esp32> m_estimator;
+#else
+	PeriodeEstimator<1900, 1800, NVS_MOCK> m_estimator;
+#endif
 };
 
 /*------------------------------------------------------------------------------+

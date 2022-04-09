@@ -79,7 +79,7 @@ class Message_Handler
 
 	static inline std::string postgres_start(void)
 	{
-		return "INSERT INTO MEASUREMENTS (tstz,sensor_id,value) VALUES ";
+		return "INSERT INTO MEASURES (tstz,sensor_id,value) VALUES ";
 	};
 
 	static const std::string to_Postgres_Subject(const Message_Protocol& msg);

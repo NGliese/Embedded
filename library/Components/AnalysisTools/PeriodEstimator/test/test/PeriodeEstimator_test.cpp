@@ -10,11 +10,11 @@
 
 // ------------- INCLUDE ABOVE ----------------
 #include "CppUTest/TestHarness.h"
-using states = PeriodeEstimator<100, 10>::states;
+using states = PeriodeEstimator<100, 10, NVS_MOCK>::states;
 // clang-format off
 TEST_GROUP(PERI_GRP){
 
-	PeriodeEstimator<100, 10> m_estimator;
+	PeriodeEstimator<100, 10,NVS_MOCK> m_estimator;
 	friend_PeriodeEstimator m_friend{&m_estimator};
 	void setup(){
 		m_friend.setCurrentState(states::UNDEF);
@@ -29,7 +29,7 @@ TEST_GROUP(PERI_GRP){
 // test init
 TEST(PERI_GRP, init)
 {
-	PeriodeEstimator<100, 10> estimator;
+	PeriodeEstimator<100, 10, NVS_MOCK> estimator;
 	CHECK(states::UNDEF == m_friend.getCurrentState());
 }
 // fails due to static assert ( expected )
@@ -55,7 +55,7 @@ TEST(PERI_GRP, changeFromInitState)
 	m_friend.setInitialState(new_state);
 	CHECK(states::HIGH == m_friend.getCurrentState());
 	CHECK(states::MIDDLE == m_friend.getLastState());
-	LONGS_EQUAL(0, m_estimator.getPeriodCounter());
+	LONGS_EQUAL(491327, m_estimator.getPeriodCounter());
 }
 // test init
 TEST(PERI_GRP, setNextState)
@@ -65,7 +65,7 @@ TEST(PERI_GRP, setNextState)
 	m_friend.setNextState(states::MIDDLE);
 	CHECK(states::MIDDLE == m_friend.getCurrentState());
 	CHECK(states::HIGH == m_friend.getLastState());
-	LONGS_EQUAL(0, m_estimator.getPeriodCounter());
+	LONGS_EQUAL(491327, m_estimator.getPeriodCounter());
 }
 // test init
 TEST(PERI_GRP, setNextNextState)
@@ -76,7 +76,7 @@ TEST(PERI_GRP, setNextNextState)
 	m_friend.setNextState(states::LOW);
 	CHECK(states::LOW == m_friend.getCurrentState());
 	CHECK(states::MIDDLE == m_friend.getLastState());
-	LONGS_EQUAL(0, m_estimator.getPeriodCounter());
+	LONGS_EQUAL(491327, m_estimator.getPeriodCounter());
 }
 // test init
 TEST(PERI_GRP, setNextState_FULLPERIODE)
@@ -89,7 +89,7 @@ TEST(PERI_GRP, setNextState_FULLPERIODE)
 	m_friend.setNextState(states::HIGH);
 	CHECK(states::HIGH == m_friend.getCurrentState());
 	CHECK(states::MIDDLE == m_friend.getLastState());
-	LONGS_EQUAL(1, m_estimator.getPeriodCounter());
+	LONGS_EQUAL(491328, m_estimator.getPeriodCounter());
 }
 /*
 // test init

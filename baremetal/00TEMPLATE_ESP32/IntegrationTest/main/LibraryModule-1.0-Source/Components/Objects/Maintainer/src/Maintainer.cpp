@@ -37,8 +37,10 @@ static std::vector<bool (*)(void)> maintainer_pointer_vec;
 static const char* LOG_TAG = "Maintainer";
 #endif
 
-Maintainer::Maintainer(const wifi_conf_t& wifi_conf, size_t delay_sec, int priority)
-	: m_faulthandler{"Maintainer"}, m_delay_sec{delay_sec}, m_wifi{wifi_conf}
+Maintainer::Maintainer(const wifi_conf_t& wifi_conf, const db_id& error_id, bool withPeriodicReboot,
+					   size_t delay_sec, int priority)
+	: m_faulthandler{"Maintainer"}, m_delay_sec{delay_sec}, m_wifi{wifi_conf}, m_error_id{error_id},
+	  m_withPeriodicReboot{withPeriodicReboot}
 {
 	setPriority(priority);
 	setName("Maintainer");
@@ -52,14 +54,23 @@ Maintainer::Maintainer(const wifi_conf_t& wifi_conf, size_t delay_sec, int prior
     }
 #endif
 	Timeservice::wait_ms(1000);
-	auto err = Timeservice::initialize_sntp();
+	general_err_t err = GE_OK;
+	size_t count = 1;
+	do
+	{
+		std::cout << "[Maintainer] setting up sntp, attempt <" << (int)count << "/3> ...\n";
+		err = Timeservice::initialize_sntp();
+		Timeservice::wait_ms(1000);
+	} while(err != GE_OK && count++ < 3);
+
 	if(err != GE_OK)
 	{
 		std::cout << "[Maintainer] not able to get RTC, rebooting ...\n";
 		Timeservice::wait_ms(1000);
 		exit(-1);
 	}
-	Timeservice::wait_ms(1000);
+	std::cout << "[Maintainer] sntp successfully initialized in  <" << (int)count
+			  << "> attempts ...\n";
 	start_time = Timeservice::getTimeNow();
 #ifdef __WITH_OTA__
 	// in the maintainer class, we want to enable OTA service. In this point of the code we are sure
@@ -106,7 +117,10 @@ void Maintainer::run(void* data)
 	{
 		Timeservice::wait_sec(m_delay_sec);
 		check_system_functions();
-		periodic_restart();
+		if(m_withPeriodicReboot)
+		{
+			periodic_restart();
+		}
 	}
 }
 /**
@@ -131,6 +145,7 @@ general_err_t Maintainer::periodic_restart(void)
 	{
 		m_faulthandler.handleFault(
 			{FaultHandler_n::severity::very_high, "periodic_restart", "We are forcing a restart"});
+		ErrorCodeParser::postToMqtt(m_error_id, GE_TIMEOUT, "We are forcing a restart");
 	}
 
 #ifdef DEBUG
@@ -164,6 +179,9 @@ general_err_t Maintainer::check_system_functions(void)
 			m_faulthandler.handleFault({FaultHandler_n::severity::very_high,
 										"Maintainer::check_system_functions",
 										"A fault has been detected in the system checks!"});
+			ErrorCodeParser::postToMqtt(m_error_id, GE_FAIL,
+										"Function 'check_system_functions' failed to execute");
+
 			return GE_FAIL;
 		}
 	}

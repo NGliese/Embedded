@@ -13,7 +13,7 @@
 
 TEST_GROUP(MAINTAINER_GRP)
 {
-	Maintainer m_maintainer{{}};
+	Maintainer m_maintainer{{}, db_id::DEBUG_ID1};
 	friend_Maintainer m_friend{&m_maintainer};
 
 	void setup() {}

@@ -14,6 +14,7 @@ add_subdirectory(Gpio)
 add_subdirectory(Logger)
 add_subdirectory(Maintainer) # ESP32 -- lets wait with this big component
 add_subdirectory(Message) # PORTABLE
+add_subdirectory(NonVolatileStorage) # PORTABLE
 add_subdirectory(OTA) # ESP32
 add_subdirectory(PWM)
 add_subdirectory(QueryTools) # LINUX
